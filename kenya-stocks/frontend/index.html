@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kenya Stocks Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Kenyan Stock Market - Prototype</h1>
+    <p>V0: sample data from backend, real NSE data coming next.</p>
+  </header>
+
+  <main>
+    <section id="stocks-section">
+      <h2>Sample Stocks</h2>
+      <table id="stocks-table">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Price (KES)</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be populated by app.js -->
+        </tbody>
+      </table>
+      <div id="status"></div>
+    </section>
+
+    <section id="announcements-section">
+      <h2>Latest Announcements (sample from NSE)</h2>
+      <table id="announcements-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Populated by app.js -->
+        </tbody>
+      </table>
+      <div id="ann-status"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

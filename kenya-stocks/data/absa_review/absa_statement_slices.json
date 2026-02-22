@@ -1,0 +1,112 @@
+[
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2020,
+    "period": "30-Jun-2020",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2020\\ABSA_Bank_Kenya_Plc_30_Jun_2020_financials.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2020,
+    "period": "30-Sep-2020",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2020\\ABSA_Bank_Kenya_Plc_30_Sep_2020_financials.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2022,
+    "period": "31-Dec-2021",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2022\\ABSA_Bank_Kenya_Plc_31_Dec_2021_audited.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2022,
+    "period": "31-Dec-2021",
+    "statement_type": "cash_flow",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2022\\ABSA_Bank_Kenya_Plc_31_Dec_2021_audited.pdf",
+    "start_page": 2,
+    "end_page": 3,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2022,
+    "period": "31-Mar-2022",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2022\\ABSA_Bank_Kenya_Plc_31_Mar_2022_financials.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2023,
+    "period": "30-Jun-2023",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2023\\ABSA_Bank_Kenya_Plc_30_Jun_2023_financials.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2024,
+    "period": "31-Dec-2023",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2024\\ABSA_Bank_Kenya_Plc_31_Dec_2023_audited.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2024,
+    "period": "30-Jun-2024",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2024\\ABSA_Bank_Kenya_Plc_30_Jun_2024_financials.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2024,
+    "period": "31-Mar-2024",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2024\\ABSA_Bank_Kenya_Plc_31_Mar_2024_financials.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  },
+  {
+    "company": "ABSA Bank Kenya Plc",
+    "year": 2025,
+    "period": "30-Sep-2025",
+    "statement_type": "income",
+    "pdf_path": "C:\\Users\\nthig\\.openclaw\\workspace\\kenya-stocks\\data\\nse\\2025\\ABSA_Bank_Kenya_Plc_30_Sep_2025_financials.pdf",
+    "start_page": 1,
+    "end_page": 1,
+    "currency_hint": null,
+    "scale_hint": null
+  }
+]

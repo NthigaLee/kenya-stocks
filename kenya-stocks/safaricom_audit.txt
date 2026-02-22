@@ -1,0 +1,106 @@
+﻿================================================================================
+  AUDIT: Safaricom
+================================================================================
+
+  PDFs found: 4
+  JSON entries: 3
+
+--------------------------------------------------------------------------------
+  FILE: 2019/Safaricom_PLC_30_Sep_2019_financials.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  revenue                            [not found]
+  ebitda                             [not found]
+  operating_profit                   [not found]
+  profit_before_tax                  [not found]
+  profit_after_tax                   [not found]
+  basic_eps                          [not found]
+  dividend_per_share                 [not found]
+  total_assets                       [not found]
+  mpesa_revenue                      [not found]
+  subscribers                        [not found]
+  operating_cash_flow                [not found]
+  capex                              [not found]
+
+  JSON MATCH FOUND (period: 30-Sep-2019):
+  revenue/total_income           JSON=[null]  PDFΓëê           None
+  total_assets                   JSON=[null]  PDFΓëê           None
+  total_equity                   JSON=[null]  PDFΓëê           None
+  profit_after_tax               JSON=[null]  PDFΓëê           None
+  basic_eps                      JSON=[null]  PDFΓëê           None
+
+--------------------------------------------------------------------------------
+  FILE: 2019/Safaricom_PLC_31_March_2019_audited.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  revenue                            [not found]
+  ebitda                             [not found]
+  operating_profit                   [not found]
+  profit_before_tax                  [not found]
+  profit_after_tax                   [not found]
+  basic_eps                          [not found]
+  dividend_per_share                 [not found]
+  total_assets                       [not found]
+  mpesa_revenue                      [not found]
+  subscribers                        [not found]
+  operating_cash_flow                [not found]
+  capex                              [not found]
+
+  JSON MATCH FOUND (period: 31-March-2019):
+  revenue/total_income           JSON=[null]  PDFΓëê           None
+  total_assets                   JSON=[null]  PDFΓëê           None
+  total_equity                   JSON=[null]  PDFΓëê           None
+  profit_after_tax               JSON=[null]  PDFΓëê           None
+  basic_eps                      JSON=[null]  PDFΓëê           None
+
+--------------------------------------------------------------------------------
+  FILE: 2020/Safaricom_Plc_31_Mar_2020_audited.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  revenue                                    251    ΓåÉ Service revenue 251.22 251.22 239.77 4.8% Cash generated from operatioΓÇª
+  ebitda                                 113,388    ΓåÉ amortisation (EBITDA) 113388..0044 113344..6633 112244..3300 88..33%% ΓÇª
+  operating_profit                   [not found]
+  profit_before_tax                  [not found]
+  profit_after_tax                            74    ΓåÉ Profit after tax 73.66 7744..7700 62.49 1199..55%%
+  basic_eps                                   11    ΓåÉ Basic and diluted earnings per share (EPS) 11..8844 1.86 1.56 19.5% suΓÇª
+  dividend_per_share                          11    ΓåÉ Proposed dividend per share (DPS) 11..4400 1.40 1.25
+  total_assets                       [not found]
+  mpesa_revenue                               33    ΓåÉ Share of profit of Joint Venture (M-PESA Global Services Limited) 33..ΓÇª
+  subscribers                                 31    ΓåÉ 31 March 2020. M-PESA one month active customers increased 10.0% to 24ΓÇª
+  operating_cash_flow                      7,744    ΓåÉ Direct costs ((7744..7700)) ((7744..7700)) ((7711..8800)) 4.0% Net casΓÇª
+  capex                                       15    ΓåÉ KShs Bn IFRS 15/16 IFRS 15/IAS17 IFRS15/IAS17 IFRS 15/IAS17 Capital exΓÇª
+
+  JSON MATCH FOUND (period: 31-Mar-2020):
+  revenue/total_income           JSON=            251  PDFΓëê      73.667744  (diff: 70.7%)
+  total_assets                   JSON=[null]  PDFΓëê      73.667744
+  total_equity                   JSON=        114,433  PDFΓëê      73.667744  (diff: 99.9%)
+  profit_after_tax               JSON=             74  PDFΓëê      73.667744  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDFΓëê           11.0
+
+--------------------------------------------------------------------------------
+  FILE: 2024/extracts_from_the_financial_books_of_Safaricom_PLC_31_Mar_2024_audited.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  revenue                                335,353    ΓåÉ Service revenue 335,353.1 295,692.3 326,564.6 291,806.4 Cash flows froΓÇª
+  ebitda                                  42,010    ΓåÉ Earnings Before Interest, Tax, Depreciation and Dividends paid (42,010ΓÇª
+  operating_profit                        80,345    ΓåÉ Operating profit (EBIT) 80,344.8 84,997.4 138,290.7 119,070.7
+  profit_before_tax                  [not found]
+  profit_after_tax                        42,658    ΓåÉ Profit after tax 42,658.4 52,482.8 82,653.8 74,939.6 (Decrease) / incrΓÇª
+  basic_eps                                    2    ΓåÉ Basic and diluted earnings per share (EPS)* 1.57 1.55 2.06 1.87
+  dividend_per_share                 [not found]
+  total_assets                           641,164    ΓåÉ Total assets 641,164.3 509,207.0 371,291.1 328,053.7 increased by 20.3ΓÇª
+  mpesa_revenue                               13    ΓåÉ affecting our customers disposable income. Our GroupΓÇÖs Service revenueΓÇª
+  subscribers                                  7    ΓåÉ Other comprehensive income: Mobile Data and Fixed Data. Overall, the GΓÇª
+  operating_cash_flow                [not found]
+  capex                                    7,278    ΓåÉ Exchange differences on translation of foreign operations (7,278.1) 10ΓÇª
+
+  WARNING: No matching JSON entry found for this PDF
+
+
+  COVERAGE SUMMARY for Safaricom:
+  PDFs available: ['2019/Safaricom_PLC_30_Sep_2019_financials.pdf', '2019/Safaricom_PLC_31_March_2019_audited.pdf', '2020/Safaricom_Plc_31_Mar_2020_audited.pdf', '2024/extracts_from_the_financial_books_of_Safaricom_PLC_31_Mar_2024_audited.pdf']
+

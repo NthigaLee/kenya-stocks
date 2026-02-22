@@ -1,0 +1,568 @@
+
+KENYA STOCKS — PDF AUDIT REPORT
+Generated: 2026-02-22
+
+================================================================================
+  AUDIT: ABSA
+================================================================================
+
+  PDFs found: 9
+  JSON entries: 9
+
+--------------------------------------------------------------------------------
+  FILE: 2020/ABSA_Bank_Kenya_Plc_30_Jun_2020_financials.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  net_interest_income                [not found]
+  total_income                     2,814,426,141    ← Deferred tax assets 28,144 26,141 Total income 30,962 26,923
+  operating_expenses                 [not found]
+  profit_before_tax                  [not found]
+  profit_after_tax                   [not found]
+  basic_eps                          [not found]
+  dividend_per_share                 [not found]
+  total_assets                   568,015,490,128    ← Total assets 568,015 490,128 Operating loss (4,551) (2,490)
+  total_equity                   211,432,138,344    ← Total current liabilities 211,432 138,344 b. Minimum shareholders' fun…
+  customer_deposits                  [not found]
+  loans_and_advances                 [not found]
+  impairment_charges             439,252,418,050    ← Financial assets at fair value through OCI 439,252 418,050 Impairment …
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Jun-2020):
+  revenue/total_income           JSON=         28,144  PDF≈   2814426141.0  (diff: 9999992.9%)
+  total_assets                   JSON=        568,015  PDF≈ 568015490128.0  (diff: 99999986.3%)
+  total_equity                   JSON=        356,582  PDF≈ 211432138344.0  (diff: 59294014.2%)
+  profit_after_tax               JSON=[null]  PDF≈   2814426141.0
+  basic_eps                      JSON=[null]  PDF≈   2814426141.0
+
+--------------------------------------------------------------------------------
+  FILE: 2020/ABSA_Bank_Kenya_Plc_30_Sep_2020_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3.0 Net interest income 16,801,899 23,126,804 5,612,801 11,262,961 17,…
+  total_income                                 5    ← 5.0 Total operating income 24,321,027 33,144,829 8,361,890 16,369,304 …
+  operating_expenses                           6    ← 6.0 Operating expenses headquarters on Waiyaki Way, Nairobi.
+  profit_before_tax                            7    ← 7.0 Profit before tax and exceptional items 8,781,639 11,857,471 3,269…
+  profit_after_tax                            12    ← 12 Profit after tax and exceptional items 5,347,181 7,161,445 1,833,58…
+  basic_eps                                    1    ← Earnings per share (Shs) 0.98 1.32 0.34 0.07 0.30 1.02 1.37 0.36 0.11 …
+  dividend_per_share                          -1    ← Dividends per share (Shs) - 1.10 - - - - 1.10 - - -
+  total_assets                       [not found]
+  total_equity                                35    ← 35 Paid up / assigned capital 2,715,768 2,715,768 2,715,768 2,715,768 …
+  customer_deposits                            2    ← 2.1 Customer deposits 5,025,588 6,466,845 1,538,216 3,193,841 4,838,21…
+  loans_and_advances                           9    ← 9 Loans and advances to customers (net) 194,193,949 194,894,941 202,95…
+  impairment_charges             79,874,667,807,800,881,821,550,457,189,826,560    ← a) Held to Maturity: - - - - - - - - - d ) less: loan loss provisions …
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Sep-2020):
+  revenue/total_income           JSON=[null]  PDF≈            5.0
+  total_assets                   JSON=[null]  PDF≈            5.0
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=             12  PDF≈           12.0  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          0.981
+
+--------------------------------------------------------------------------------
+  FILE: 2022/ABSA_Bank_Kenya_Plc_31_Dec_2021_audited.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3.0 Net interest income 23,280,874 25,111,578 23,381,254 25,256,912 tr…
+  total_income                                 5    ← 5.0 Total operating income 33,585,983 35,730,491 34,521,558 36,921,442…
+  operating_expenses                           2    ← 2.3 Other interest expenses 182,041 128,541 182,041 129,944 On Transfo…
+  profit_before_tax                            7    ← 7.0 Profit before tax and exceptional items 8,299,860 14,724,856 8,848…
+  profit_after_tax                             2    ← 2.0 Interest expense billion. This has supported a strong growth in pr…
+  basic_eps                                    1    ← Earnings per share (Shs) 0.69 1.90 0.77 2.00
+  dividend_per_share                           4    ← 4.4 Dividend income - - - - dividend per share payment of KES 1.1 whic…
+  total_assets                                21    ← 21 Total assets 377,935,772 428,746,218 379,440,676 428,689,603 k) Min…
+  total_equity                                31    ← C Shareholders' Funds each ordinary share on the issued and paid up sh…
+  customer_deposits                            2    ← 1.5 Total interest income 31,393,575 31,987,750 31,440,093 32,038,310 …
+  loans_and_advances                           9    ← 9 Loans and advances to customers (net) 208,854,694 234,234,076 208,85…
+  impairment_charges                           3    ← 3 Kenya Government and other securities held for dealing purposes 36,3…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 31-Dec-2021):
+  revenue/total_income           JSON=              1  PDF≈            5.0  (diff: 257.1%)
+  total_assets                   JSON=             21  PDF≈           21.0  (diff: 0.0%)
+  total_equity                   JSON=             31  PDF≈           31.0  (diff: 0.0%)
+  profit_after_tax               JSON=              2  PDF≈            2.0  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          0.691
+
+--------------------------------------------------------------------------------
+  FILE: 2022/ABSA_Bank_Kenya_Plc_31_Mar_2022_financials.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3.0 Net interest income 5,931,859 25,111,578 6,840,222 5,963,759 25,25…
+  total_income                                 5    ← 5.0 Total operating income 8,530,566 35,730,491 9,545,388 8,815,588 36…
+  operating_expenses                           6    ← 6.0 Operating expenses
+  profit_before_tax              32,118,681,472,485,641,181,028,881,085,895,813,751,635,968    ← Profit before tax and exceptional items 3,211,868 14,724,856 4,015,620…
+  profit_after_tax                            40    ← 40 Other reserves 176,688 111,263 152,916 176,688 111,263 152,916 stro…
+  basic_eps                                    0    ← Earnings per Share (Shs) 0.42 1.90 0.51 0.45 2.00 0.54
+  dividend_per_share                          -1    ← Dividends per share (Shs) - 1.10 - - 1.10 -
+  total_assets                                38    ← 38 Retained earnings / (Accumulated losses) 43,281,614 45,154,608 47,9…
+  total_equity                                35    ← 35 Paid up / Assigned capital 2,715,768 2,715,768 2,715,768 2,715,768 …
+  customer_deposits                           23    ← 23 Customer deposits 258,633,865 270,737,198 271,759,616 257,071,483 2…
+  loans_and_advances                           9    ← 9 Loans and advances to customers (net) 218,265,767 234,234,076 242,67…
+  impairment_charges             441,829,084,419,566,833,989,599,854,328,625,771,540,786,446,336    ← dealing purposes 44,182,908 44,195,668 48,920,541 44,182,908 44,195,66…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 31-Mar-2022):
+  revenue/total_income           JSON=             37  PDF≈            5.0  (diff: 86.5%)
+  total_assets                   JSON=             38  PDF≈           38.0  (diff: 0.0%)
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=             40  PDF≈           40.0  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          0.421
+
+--------------------------------------------------------------------------------
+  FILE: 2023/ABSA_Bank_Kenya_Plc_30_Jun_2023_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3.0 Net interest income 14,343,849 32,131,322 9,304,240 19,110,109 14,…
+  total_income                                 5    ← 5.0 Total operating income 20,230,852 44,555,765 13,316,791 26,410,512…
+  operating_expenses                           6    ← 6.0 Operating expenses
+  profit_before_tax                            7    ← 7.0 Profit before tax and exceptional items 8,598,066 19,832,431 5,956…
+  profit_after_tax                            38    ← 38 Retained earnings/(Accumulated losses) 51,469,518 53,163,772 57,291…
+  basic_eps                                    1    ← Earnings per Share (Shs) 1.09 2.55 0.76 1.42 1.16 2.69 0.82 1.53 at th…
+  dividend_per_share                           0    ← Dividends per share (Shs) 0.20 1.35 - 0.20 0.20 1.35 - 0.20
+  total_assets                       [not found]
+  total_equity                                35    ← 35 Paid up/Assigned capital 2,715,768 2,715,768 2,715,768 2,715,768 2,…
+  customer_deposits                            2    ← 2.1 Customer deposits 3,363,787 7,114,100 2,167,288 4,747,773 3,303,13…
+  loans_and_advances                           9    ← 9 Loans and advances to customers(net) 261,535,623 283,578,543 309,973…
+  impairment_charges                           4    ← 4 Financial assets at fair value through profit and loss - - - - - - -…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Jun-2023):
+  revenue/total_income           JSON=              4  PDF≈            5.0  (diff: 13.6%)
+  total_assets                   JSON=[null]  PDF≈            5.0
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=             38  PDF≈           38.0  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          1.092
+
+--------------------------------------------------------------------------------
+  FILE: 2024/ABSA_Bank_Kenya_Plc_30_Jun_2024_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3.0 Net interest income 19,110,109 39,748,738 11,262,376 22,737,674 19…
+  total_income                                 5    ← 5.0 Total operating income 26,410,512 52,802,147 15,869,043 30,761,702…
+  operating_expenses                           6    ← 6.0 Operating expenses We also empowered small enterprises and women-l…
+  profit_before_tax                            7    ← 7.0 Profit before tax and exceptional items 11,276,560 22,259,756 7,97…
+  profit_after_tax                            38    ← 38 Retained earnings/(Accumulated losses) 59,513,564 59,830,614 65,421…
+  basic_eps                                    1    ← Earnings per Share (Shs) 1.42 2.83 1.03 1.86 1.53 3.01 1.09 1.97 The s…
+  dividend_per_share                           0    ← Dividends per share (Shs) 0.20 1.55 - 0.20 0.20 1.55 - 0.20 presented …
+  total_assets                       [not found]
+  total_equity                                35    ← 35 Paid up/Assigned capital 2,715,768 2,715,768 2,715,768 2,715,768 2,…
+  customer_deposits                            2    ← 2.1 Customer deposits 4,747,773 12,126,927 4,360,516 9,087,450 4,655,4…
+  loans_and_advances                           9    ← 9 Loans and advances to customers(net) 317,946,670 335,713,679 326,839…
+  impairment_charges                           4    ← 4 Financial assets at fair value through profit and loss - - - - - - -…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Jun-2024):
+  revenue/total_income           JSON=              4  PDF≈            5.0  (diff: 16.3%)
+  total_assets                   JSON=[null]  PDF≈            5.0
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=             38  PDF≈           38.0  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          1.422
+
+--------------------------------------------------------------------------------
+  FILE: 2024/ABSA_Bank_Kenya_Plc_31_Dec_2023_audited.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3.0 Net interest income 32,131,322 39,748,738 32,315,358 40,043,785
+  total_income                                 5    ← 5.0 Total operating income 44,555,765 52,802,147 45,987,938 54,571,303…
+  operating_expenses                           6    ← 6.0 Operating expenses 23 May 2024, to the members of the Company list…
+  profit_before_tax                            7    ← 7.0 Profit before tax and exceptional items 19,832,431 22,259,756 20,8…
+  profit_after_tax                             1    ← 1.1 Loans and advances to customers 30,681,559 44,252,616 30,681,559 4…
+  basic_eps                                    3    ← Earnings per share (Shs) 2.55 2.83 2.69 3.01 by:
+  dividend_per_share                           1    ← Dividends per share (Shs) 1.35 1.55 1.35 1.55
+  total_assets                                21    ← 21 Total assets 477,290,548 520,301,038 477,233,937 519,795,508 j) Cor…
+  total_equity                                31    ← C Shareholders' funds We are delighted to present to you our financial…
+  customer_deposits                            2    ← 2.1 Customer deposits 7,114,100 12,126,927 6,975,120 11,876,693 operat…
+  loans_and_advances                           9    ← 9 Loans and advances to customers(net) 283,578,543 335,713,679 283,578…
+  impairment_charges                           4    ← 4 Financial assets at fair value through profit and loss - - - - d) Le…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 31-Dec-2023):
+  revenue/total_income           JSON=[null]  PDF≈            5.0
+  total_assets                   JSON=             21  PDF≈           21.0  (diff: 0.0%)
+  total_equity                   JSON=             31  PDF≈           31.0  (diff: 0.0%)
+  profit_after_tax               JSON=              1  PDF≈            1.1  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          2.552
+
+--------------------------------------------------------------------------------
+  FILE: 2024/ABSA_Bank_Kenya_Plc_31_Mar_2024_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3.0 Net interest income 9,304,240 39,748,738 11,262,376 9,355,755 40,0…
+  total_income                                 5    ← 5.0 Total operating income 13,316,791 52,802,147 15,869,043 13,860,730…
+  operating_expenses                           6    ← 6.0 Operating expenses Chairman Managing Director Chief Financial Offi…
+  profit_before_tax                            7    ← 7.0 Profit before tax and exceptional items 5,956,789 22,259,756 7,973…
+  profit_after_tax                            42    ← 42 Capital grants - - - - - - reported a 34% year-on-year growth in pr…
+  basic_eps                                    1    ← Earnings per share (Shs) 0.76 2.83 1.03 0.82 3.01 1.09
+  dividend_per_share                          -2    ← Dividends per share (Shs) - 1.55 - - 1.55 -
+  total_assets                                21    ← 21 Total assets 514,817,820 520,301,038 498,117,680 514,604,084 519,79…
+  total_equity                                35    ← 35 Paid up/assigned capital 2,715,768 2,715,768 2,715,768 2,715,768 2,…
+  customer_deposits                           41    ← 41 Proposed dividends 6,246,266 7,332,574 7,332,574 6,246,266 7,332,57…
+  loans_and_advances                           9    ← 9 Loans and advances to customers(net) 309,973,217 335,713,679 326,839…
+  impairment_charges                           4    ← 4 Financial assets at fair value through profit and loss - - - - - - d…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 31-Mar-2024):
+  revenue/total_income           JSON=             40  PDF≈            5.0  (diff: 87.5%)
+  total_assets                   JSON=             21  PDF≈           21.0  (diff: 0.0%)
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=             42  PDF≈           42.0  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          0.762
+
+--------------------------------------------------------------------------------
+  FILE: 2025/ABSA_Bank_Kenya_Plc_30_Sep_2025_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          2    ← 2.0 Interest expenses margins, which saw our net interest income drop …
+  total_income                                 5    ← 5.0 Total operating income 45,130,347 60,183,208 14,965,023 29,874,859…
+  operating_expenses                           6    ← 6.0 Operating expenses (KES 20.1 billion), representing the largest tr…
+  profit_before_tax                            7    ← 7.0 Profit before tax and exceptional items 19,707,542 27,974,542 8,06…
+  profit_after_tax                             2    ← 1.5 Total interest income 48,591,544 64,653,553 15,036,852 29,870,641 …
+  basic_eps                                    3    ← Earnings per Share (Shs) 2.54 3.62 1.04 1.97 2.83 2.71 3.84 1.14 2.15 …
+  dividend_per_share                          -2    ← Dividends per share (Shs) - 1.75 - 0.20 - - 1.75 - 0.20 -
+  total_assets                                 2    ← 2.4 Total interest expenses 14,508,324 19,049,128 3,959,883 7,896,642 …
+  total_equity                                 5    ← C Shareholders' Funds l) Excess / (Deficiency) 5.1% 6.5% 6.8% 7.1% 7.5…
+  customer_deposits                            2    ← 2.1 Customer deposits 13,782,250 18,508,137 3,541,068 6,992,163 10,065…
+  loans_and_advances                           9    ← 9 Loans and advances to customers(net) 311,460,505 309,097,555 308,376…
+  impairment_charges             70,678,722,953,599,905,124,034,949,811,959,553,421,584,815,404,471,572,521,914,149,889,840,720,661,811,292,012,544    ← b) Fair value through other comprehensive income (FVOCI) 70,678,722 95…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Sep-2025):
+  revenue/total_income           JSON=              2  PDF≈            5.0  (diff: 233.3%)
+  total_assets                   JSON=              2  PDF≈            2.4  (diff: 0.0%)
+  total_equity                   JSON=              5  PDF≈            5.1  (diff: 0.0%)
+  profit_after_tax               JSON=              2  PDF≈            1.5  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈          2.543
+
+
+  COVERAGE SUMMARY for ABSA:
+  PDFs available: ['2020/ABSA_Bank_Kenya_Plc_30_Jun_2020_financials.pdf', '2020/ABSA_Bank_Kenya_Plc_30_Sep_2020_financials.pdf', '2022/ABSA_Bank_Kenya_Plc_31_Dec_2021_audited.pdf', '2022/ABSA_Bank_Kenya_Plc_31_Mar_2022_financials.pdf', '2023/ABSA_Bank_Kenya_Plc_30_Jun_2023_financials.pdf', '2024/ABSA_Bank_Kenya_Plc_30_Jun_2024_financials.pdf', '2024/ABSA_Bank_Kenya_Plc_31_Dec_2023_audited.pdf', '2024/ABSA_Bank_Kenya_Plc_31_Mar_2024_financials.pdf', '2025/ABSA_Bank_Kenya_Plc_30_Sep_2025_financials.pdf']
+
+================================================================================
+  AUDIT: StanChart
+================================================================================
+
+  PDFs found: 8
+  JSON entries: 8
+
+--------------------------------------------------------------------------------
+  FILE: 2019/Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2019_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3 NET INTEREST INCOME/(LOSS) 9,842,875 19,396,297 4,979,257 9,846,027
+  total_income                                 5    ← 5 TOTAL OPERATING INCOME 14,663,490 28,597,520 7,369,881 14,559,215
+  operating_expenses                           6    ← 6 OTHER OPERATING EXPENSES
+  profit_before_tax              692,027,111,846,616,605,906,933,121,024    ← Profit before taxation 6 ,920,271 1 1,846,616 6 ,387,196 1 1,433,567
+  profit_after_tax                    -4,705,902    ← Net profit for the period - - - - - - 4 ,705,902 - 4 ,705,902
+  basic_eps                                   18    ← 18 EARNINGS PER SHARE- BASIC & DILUTED (KShs) 1 2.76 2 3.09 6 .89 1 3.…
+  dividend_per_share                          19    ← 19 DIVIDEND PER SHARE -DECLARED (KShs) 5 .00 1 9.00 - 5 .00
+  total_assets                                21    ← 21.TOTAL ASSETS 2 95,955,246 2 85,404,023 3 01,366,355 2 94,542,970
+  total_equity                                35    ← 35. Paid up/Assigned Capital 1 ,997,553 1 ,997,553 1 ,997,553 1 ,997,5…
+  customer_deposits                           23    ← 23. Customer deposits 2 30,845,308 2 24,284,420 2 32,774,655 2 28,499,…
+  loans_and_advances                           9    ← 9. Loans and advances to customers (net) 1 11,748,653 1 18,651,550 1 1…
+  impairment_charges                          39    ← 39. Statutory loan loss reserves - - 5 1,103 7 59,286
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Jun-2019):
+  revenue/total_income           JSON=[null]  PDF≈            5.0
+  total_assets                   JSON=             21  PDF≈           21.0  (diff: 0.0%)
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=              4  PDF≈     -4705902.0  (diff: 117647650.0%)
+  basic_eps                      JSON=[null]  PDF≈           18.0
+
+--------------------------------------------------------------------------------
+  FILE: 2020/Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2020_audited.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  net_interest_income            9,371,914,470,569,819,823,888,564,003,912,592,606,280,641,716,588,564,709,376    ← NET INTEREST INCOME/(LOSS) 9,371,914 4,705,698 19,341,640 9,781,735 9,…
+  total_income                   13,231,587,661,066,727,931,746,126,143,118,286,247,820,721,572,354,589,351,477,248    ← TOTAL OPERATING INCOME 13,231,587 6,610,667 28,853,580 13,951,029 13,7…
+  operating_expenses                           1    ← OTHER OPERATING EXPENSES Cash and cash equivalents at 1 January 24,567…
+  profit_before_tax              510,531,312,173,857    ← Profit before taxation 5,105,313 12,173,857
+  profit_after_tax                    -3,233,064    ← INTEREST INCOME Net profit for the period - - - 3,233,064 - 3,233,064
+  basic_eps                                    8    ← EARNINGS PER SHARE - BASIC AND DILUTED (KShs) 8.26 5.14 25.68 12.40 9.…
+  dividend_per_share                         -13    ← DIVIDEND PER SHARE - DECLARED (KShs) - - 12.50 5.00 - - 12.50 5.00
+  total_assets                   327,214,126,311,432,001,015,310,626,488,873,902,835,327,589,716,184,532,455,165,903,587,246,080    ← TOTAL ASSETS 327,214,126 311,432,013 302,295,903 293,472,453 327,198,5…
+  total_equity                                35    ← 35. Paid up/Assigned Capital 1,997,553 1,997,553 1,997,553 1,997,553
+  customer_deposits              256,496,288,243,550,736,554,261,281,129,526,463,790,609,800,013,298,257,259,888,107,642,159,104    ← Customer deposits 256,496,288 243,550,712 228,433,515 228,499,892 256,…
+  loans_and_advances             134,317,139,125,536,617,236,529,144,485,234,715,056,150,551,081,900,145,585,791,425,893,629,952    ← Loans and advances to customers (net) 134,317,139 125,536,619 128,690,…
+  impairment_charges             78,951,111,360,778,094,347,180,253,983,830,959,689,214,220,828,672    ← Financial assets at fair value through profit and loss 789,511 1,136,0…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Jun-2020):
+  revenue/total_income           JSON=[null]  PDF≈1.3231587661066728e+61
+  total_assets                   JSON=    327,214,126  PDF≈3.27214126311432e+71  (diff: 100000000095176832504336479253538519227720181191132516978618531840.0%)
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=      3,233,064  PDF≈     -3233064.0  (diff: 200.0%)
+  basic_eps                      JSON=[null]  PDF≈          8.265
+
+--------------------------------------------------------------------------------
+  FILE: 2020/Standard_Chartered_Bank_Kenya_Ltd_30_Sep_2020_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3 NET INTEREST INCOME/(LOSS) 14,660,521 19,472,493 4,723,154 9,393,949…
+  total_income                                 5    ← 5 TOTAL OPERATING INCOME 21,620,567 28,699,913 6,958,767 13,796,516 20…
+  operating_expenses                           6    ← 6 OTHER OPERATING EXPENSES
+  profit_before_tax                  [not found]
+  profit_after_tax                   [not found]
+  basic_eps                                   18    ← 18 EARNINGS PER SHARE- BASIC & DILUTED (KShs) 1 6.15 2 1.35 5 .21 8 .3…
+  dividend_per_share                          19    ← 19 DIVIDEND PER SHARE -DECLARED (KShs) 5 .00 1 2.50 - - -
+  total_assets                                21    ← 21.TOTAL ASSETS 290,564,005 302,139,056 311,477,425 327,198,511 314,38…
+  total_equity                                35    ← 35. Paid up/Assigned Capital 1 ,997,553 1 ,997,553 1 ,997,553 1 ,997,5…
+  customer_deposits                           23    ← 23. Customer deposits 2 24,759,544 2 28,433,515 2 43,550,712 2 56,496,…
+  loans_and_advances                           9    ← 9. Loans and advances to customers (net) 1 18,500,094 1 28,690,341 1 2…
+  impairment_charges                          39    ← 39. Statutory loan loss reserves 1 ,051,441 1 ,477,402 1 ,681,216 1 ,3…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Sep-2020):
+  revenue/total_income           JSON=[null]  PDF≈            5.0
+  total_assets                   JSON=             21  PDF≈           21.0  (diff: 0.0%)
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=[null]  PDF≈            5.0
+  basic_eps                      JSON=[null]  PDF≈           18.0
+
+--------------------------------------------------------------------------------
+  FILE: 2020/Standard_Chartered_Bank_Kenya_Ltd_31_Mar_2020_audited.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  net_interest_income            47,056,981,934,164,052,141,110,108,646,958,216,316,452,864    ← NET INTEREST INCOME/(LOSS) 4,705,698 19,341,640 4,947,935 4,723,154 19…
+  total_income                   66,106,672,885,358,069,162,198,435,325,478,250,100,031,488    ← TOTAL OPERATING INCOME 6,610,667 28,853,580 7,050,154 6,958,767 28,699…
+  operating_expenses             428,006,572,592,415,163,711,782,082,182,119,424    ← Loan loss provision 428,006 572,592 415,139 428,006 572,592 415,139
+  profit_before_tax                  [not found]
+  profit_after_tax                   [not found]
+  basic_eps                                    5    ← EARNINGS PER SHARE-BASIC & DILUTED (KShs) 5.14 25.68 6.28 5.73 23.49 6…
+  dividend_per_share                         -20    ← DIVIDEND PER SHARE-DECLARED (KShs) - 20.00 - - 20.00 -
+  total_assets                   311,432,013,302,295,919,908,052,880,471,877,236,331,126,689,758,183,424    ← TOTAL ASSETS 311,432,013 302,295,903 300,226,174 311,477,425 302,139,0…
+  total_equity                       [not found]
+  customer_deposits              243,550,712,228,433,502,702,646,360,610,052,140,502,392,451,522,101,248    ← Customer deposits 243,550,712 228,433,515 232,774,655 243,550,712 228,…
+  loans_and_advances             125,536,619,128,690,351,678,720,351,853,529,842,388,713,295,797,288,960    ← Loans and advances to customers (net) 125,536,619 128,690,341 117,564,…
+  impairment_charges             11,360,778,095,814,610,949,430,250,657,338,621,952    ← Financial Assets at fair value through profit and loss 1,136,077 809,5…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 31-Mar-2020):
+  revenue/total_income           JSON=[null]  PDF≈6.610667288535807e+43
+  total_assets                   JSON=    311,432,013  PDF≈3.114320133022959e+53  (diff: 100000000097066424450802664329002749621948121088.0%)
+  total_equity                   JSON=[null]  PDF≈6.610667288535807e+43
+  profit_after_tax               JSON=[null]  PDF≈6.610667288535807e+43
+  basic_eps                      JSON=[null]  PDF≈         5.1425
+
+--------------------------------------------------------------------------------
+  FILE: 2022/Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2022_financials.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3 NET INTEREST INCOME/(LOSS) 9,115,386 18,809,424 4,922,456 10,014,042
+  total_income                                 5    ← 5 TOTAL OPERATING INCOME 14,112,995 29,164,419 7,409,153 15,556,209
+  operating_expenses                           6    ← 6 OTHER OPERATING EXPENSES
+  profit_before_tax              756,933,112,598,053,656,015,793,029,120    ← Profit before tax 7,569,331 12,598,053 7,099,517 12,141,504
+  profit_after_tax                    -9,043,839    ← Profit for the year - - - 9,043,839 - - - - 9,043,839
+  basic_eps                                   18    ← 18 EARNINGS PER SHARE- BASIC & DILUTED 12.69 2 3.49 6 .87 13.87
+  dividend_per_share                          19    ← 19 DIVIDEND PER SHARE -DECLARED (KShs) - 1 9.00 - -
+  total_assets                                21    ← 21.TOTAL ASSETS 345,646,341 334,871,938 340,912,859 364,291,624
+  total_equity                                35    ← 35. Paid up/Assigned Capital 2,169,253 2,169,253 2,169,253 2,169,253
+  customer_deposits                           23    ← 23. Customer deposits 278,186,884 265,469,114 265,381,349 286,911,608
+  loans_and_advances                           9    ← 9. Loans and advances to customers (net) 130,275,654 125,974,590 128,0…
+  impairment_charges                          39    ← 39. Statutory loan loss reserves 1,358,939 1,249,844 1,804,730 2,176,1…
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 30-Jun-2022):
+  revenue/total_income           JSON=[null]  PDF≈            5.0
+  total_assets                   JSON=             21  PDF≈           21.0  (diff: 0.0%)
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=      9,043,839  PDF≈     -9043839.0  (diff: 200.0%)
+  basic_eps                      JSON=[null]  PDF≈           18.0
+
+--------------------------------------------------------------------------------
+  FILE: 2024/Standard_Chartered_Bank_Kenya_Ltd_31_Dec_2023_financials.pdf
+  CONSOLIDATION: Group + Company
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3 NET INTEREST INCOME/(LOSS) 22,223,065 29,325,087 22,206,052 29,323,4…
+  total_income                                 5    ← 5 TOTAL OPERATING INCOME 33,977,048 41,728,586 33,510,336 40,937,408
+  operating_expenses                           6    ← 6 OTHER OPERATING EXPENSES
+  profit_before_tax              17,103,199,196,684,821,373,353,432,449,024    ← Profit before tax 17,103,199 19,668,482 17,138,414 19,366,888
+  profit_after_tax                   -12,057,935    ← Profit for the year - - - 12,057,935 - - - - 12,057,935
+  basic_eps                                   18    ← 18 EARNINGS PER SHARE- BASIC & DILUTED 3 1.47 3 6.17 3 2.47 3 6.39
+  dividend_per_share                          19    ← 19 DIVIDEND PER SHARE -DECLARED (KShs) 2 2.00 2 9.00 2 2.00 2 9.00
+  total_assets                                21    ← 21.TOTAL ASSETS 381,260,015 428,962,175 3 81,630,646 4 29,278,578
+  total_equity                                35    ← 35. Paid up/Assigned Capital 2,169,253 2,169,253 2 ,169,253 2 ,169,253
+  customer_deposits                           23    ← 23. Customer deposits 278,879,309 342,853,241 2 78,879,309 3 42,853,24…
+  loans_and_advances                           9    ← 9. Loans and advances to customers (net) 139,412,560 163,161,777 1 39,…
+  impairment_charges                          39    ← 39. Statutory loan loss reserves 2,255,690 - 2 ,255,690 -
+  capital_ratio                      [not found]
+
+  JSON MATCH FOUND (period: 31-Dec-2023):
+  revenue/total_income           JSON=[null]  PDF≈            5.0
+  total_assets                   JSON=             21  PDF≈           21.0  (diff: 0.0%)
+  total_equity                   JSON=[null]  PDF≈           35.0
+  profit_after_tax               JSON=     12,057,935  PDF≈    -12057935.0  (diff: 200.0%)
+  basic_eps                      JSON=[null]  PDF≈           18.0
+
+--------------------------------------------------------------------------------
+  FILE: 2025/Standard_Chartered_Bank_Kenya_Ltd_00_1_51_financials.pdf
+  CONSOLIDATION: Group + Company
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3 NET INTEREST INCOME/(LOSS) 16,518,800 33,265,303 8,207,644 15,301,08…
+  total_income                                 5    ← 5 TOTAL OPERATING INCOME 26,075,034 50,677,085 11,597,509 22,086,411 2…
+  operating_expenses                           6    ← 6 OTHER OPERATING EXPENSES
+  profit_before_tax              28,208,236,109,009,753,073,395,546,718,208    ← Profit before tax 28,208,236 10,900,975 27,849,144 10,465,923
+  profit_after_tax                   -20,060,587    ← Profit for the year - - - 2 0,060,587 - - - - 2 0,060,587
+  basic_eps                                   18    ← 18 EARNINGS PER SHARE- BASIC & DILUTED 2 6.99 5 2.65 1 2.75 2 1.18 2 5…
+  dividend_per_share                          19    ← 19 DIVIDEND PER SHARE -DECLARED (KShs) 8 .00 4 5.00 - 8 .00 8 .00 4 5.…
+  total_assets                                21    ← 21.TOTAL ASSETS 3 77,283,638 3 84,574,089 3 82,256,405 3 72,089,615 37…
+  total_equity                                35    ← 35. Paid up/Assigned Capital 2 ,169,253 2 ,169,253 2 ,169,253 2 ,169,2…
+  customer_deposits                           23    ← 23. Customer deposits 2 76,402,120 2 95,690,089 2 85,213,531 2 90,589,…
+  loans_and_advances                           9    ← 9. Loans and advances to customers (net) 1 49,309,000 1 51,647,379 1 3…
+  impairment_charges                          39    ← 39. Statutory loan loss reserves - - - 297,258 - - - 297,258
+  capital_ratio                      [not found]
+
+  WARNING: No matching JSON entry found for this PDF
+
+--------------------------------------------------------------------------------
+  FILE: 2025/Standard_Chartered_Bank_Ltd_31_Dec_2024_financials.pdf
+  CONSOLIDATION: Group + Company
+
+  EXTRACTED METRICS:
+  net_interest_income                          3    ← 3 NET INTEREST INCOME/(LOSS) 29,325,087 33,265,303 29,323,425 33,242,8…
+  total_income                                 5    ← 5 TOTAL OPERATING INCOME 41,728,586 50,677,085 40,937,408 49,722,168
+  operating_expenses                           6    ← 6 OTHER OPERATING EXPENSES
+  profit_before_tax              19,668,482,282,082,360,833,069,784,498,176    ← Profit before tax 19,668,482 28,208,236 19,366,888 27,849,144
+  profit_after_tax                   -13,835,467    ← Profit for the year - - - 1 3,835,467 - - - - 1 3,835,467
+  basic_eps                                   18    ← 18 EARNINGS PER SHARE- BASIC & DILUTED 3 6.17 5 2.65 3 6.39 5 2.65
+  dividend_per_share                          19    ← 19 DIVIDEND PER SHARE -DECLARED (KShs) 2 9.00 4 5.00 2 9.00 4 5.00
+  total_assets                                21    ← 21.TOTAL ASSETS 428,962,175 384,574,089 4 29,278,578 3 85,205,868
+  total_equity                                35    ← 35. Paid up/Assigned Capital 2,169,253 2,169,253 2 ,169,253 2 ,169,253
+  customer_deposits                           23    ← 23. Customer deposits 342,853,241 295,690,089 3 42,853,241 2 95,690,08…
+  loans_and_advances                           9    ← 9. Loans and advances to customers (net) 163,161,777 151,647,379 1 63,…
+  impairment_charges                          39    ← 39. Statutory loan loss reserves - - - -
+  capital_ratio                      [not found]
+
+  WARNING: No matching JSON entry found for this PDF
+
+
+  COVERAGE SUMMARY for StanChart:
+  PDFs available: ['2019/Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2019_financials.pdf', '2020/Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2020_audited.pdf', '2020/Standard_Chartered_Bank_Kenya_Ltd_30_Sep_2020_financials.pdf', '2020/Standard_Chartered_Bank_Kenya_Ltd_31_Mar_2020_audited.pdf', '2022/Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2022_financials.pdf', '2024/Standard_Chartered_Bank_Kenya_Ltd_31_Dec_2023_financials.pdf', '2025/Standard_Chartered_Bank_Kenya_Ltd_00_1_51_financials.pdf', '2025/Standard_Chartered_Bank_Ltd_31_Dec_2024_financials.pdf']
+  WARNING: JSON entry period='' has no obvious matching PDF
+
+================================================================================
+  AUDIT: Safaricom
+================================================================================
+
+  PDFs found: 4
+  JSON entries: 3
+
+--------------------------------------------------------------------------------
+  FILE: 2019/Safaricom_PLC_30_Sep_2019_financials.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  revenue                            [not found]
+  ebitda                             [not found]
+  operating_profit                   [not found]
+  profit_before_tax                  [not found]
+  profit_after_tax                   [not found]
+  basic_eps                          [not found]
+  dividend_per_share                 [not found]
+  total_assets                       [not found]
+  mpesa_revenue                      [not found]
+  subscribers                        [not found]
+  operating_cash_flow                [not found]
+  capex                              [not found]
+
+  JSON MATCH FOUND (period: 30-Sep-2019):
+  revenue/total_income           JSON=[null]  PDF≈           None
+  total_assets                   JSON=[null]  PDF≈           None
+  total_equity                   JSON=[null]  PDF≈           None
+  profit_after_tax               JSON=[null]  PDF≈           None
+  basic_eps                      JSON=[null]  PDF≈           None
+
+--------------------------------------------------------------------------------
+  FILE: 2019/Safaricom_PLC_31_March_2019_audited.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  revenue                            [not found]
+  ebitda                             [not found]
+  operating_profit                   [not found]
+  profit_before_tax                  [not found]
+  profit_after_tax                   [not found]
+  basic_eps                          [not found]
+  dividend_per_share                 [not found]
+  total_assets                       [not found]
+  mpesa_revenue                      [not found]
+  subscribers                        [not found]
+  operating_cash_flow                [not found]
+  capex                              [not found]
+
+  JSON MATCH FOUND (period: 31-March-2019):
+  revenue/total_income           JSON=[null]  PDF≈           None
+  total_assets                   JSON=[null]  PDF≈           None
+  total_equity                   JSON=[null]  PDF≈           None
+  profit_after_tax               JSON=[null]  PDF≈           None
+  basic_eps                      JSON=[null]  PDF≈           None
+
+--------------------------------------------------------------------------------
+  FILE: 2020/Safaricom_Plc_31_Mar_2020_audited.pdf
+  CONSOLIDATION: Group (Consolidated)
+
+  EXTRACTED METRICS:
+  revenue                                    251    ← Service revenue 251.22 251.22 239.77 4.8% Cash generated from operatio…
+  ebitda                                 113,388    ← amortisation (EBITDA) 113388..0044 113344..6633 112244..3300 88..33%% …
+  operating_profit                   [not found]
+  profit_before_tax                  [not found]
+  profit_after_tax                            74    ← Profit after tax 73.66 7744..7700 62.49 1199..55%%
+  basic_eps                                   11    ← Basic and diluted earnings per share (EPS) 11..8844 1.86 1.56 19.5% su…
+  dividend_per_share                          11    ← Proposed dividend per share (DPS) 11..4400 1.40 1.25
+  total_assets                       [not found]
+  mpesa_revenue                               33    ← Share of profit of Joint Venture (M-PESA Global Services Limited) 33..…
+  subscribers                                 31    ← 31 March 2020. M-PESA one month active customers increased 10.0% to 24…
+  operating_cash_flow                      7,744    ← Direct costs ((7744..7700)) ((7744..7700)) ((7711..8800)) 4.0% Net cas…
+  capex                                       15    ← KShs Bn IFRS 15/16 IFRS 15/IAS17 IFRS15/IAS17 IFRS 15/IAS17 Capital ex…
+
+  JSON MATCH FOUND (period: 31-Mar-2020):
+  revenue/total_income           JSON=            251  PDF≈      73.667744  (diff: 70.7%)
+  total_assets                   JSON=[null]  PDF≈      73.667744
+  total_equity                   JSON=        114,433  PDF≈      73.667744  (diff: 99.9%)
+  profit_after_tax               JSON=             74  PDF≈      73.667744  (diff: 0.0%)
+  basic_eps                      JSON=[null]  PDF≈           11.0
+
+--------------------------------------------------------------------------------
+  FILE: 2024/extracts_from_the_financial_books_of_Safaricom_PLC_31_Mar_2024_audited.pdf
+  CONSOLIDATION: Unknown
+
+  EXTRACTED METRICS:
+  revenue                                335,353    ← Service revenue 335,353.1 295,692.3 326,564.6 291,806.4 Cash flows fro…
+  ebitda                                  42,010    ← Earnings Before Interest, Tax, Depreciation and Dividends paid (42,010…
+  operating_profit                        80,345    ← Operating profit (EBIT) 80,344.8 84,997.4 138,290.7 119,070.7
+  profit_before_tax                  [not found]
+  profit_after_tax                        42,658    ← Profit after tax 42,658.4 52,482.8 82,653.8 74,939.6 (Decrease) / incr…
+  basic_eps                                    2    ← Basic and diluted earnings per share (EPS)* 1.57 1.55 2.06 1.87
+  dividend_per_share                 [not found]
+  total_assets                           641,164    ← Total assets 641,164.3 509,207.0 371,291.1 328,053.7 increased by 20.3…
+  mpesa_revenue                               13    ← affecting our customers disposable income. Our Group’s Service revenue…
+  subscribers                                  7    ← Other comprehensive income: Mobile Data and Fixed Data. Overall, the G…
+  operating_cash_flow                [not found]
+  capex                                    7,278    ← Exchange differences on translation of foreign operations (7,278.1) 10…
+
+  WARNING: No matching JSON entry found for this PDF
+
+
+  COVERAGE SUMMARY for Safaricom:
+  PDFs available: ['2019/Safaricom_PLC_30_Sep_2019_financials.pdf', '2019/Safaricom_PLC_31_March_2019_audited.pdf', '2020/Safaricom_Plc_31_Mar_2020_audited.pdf', '2024/extracts_from_the_financial_books_of_Safaricom_PLC_31_Mar_2024_audited.pdf']
+
+================================================================================
+AUDIT COMPLETE
+================================================================================
