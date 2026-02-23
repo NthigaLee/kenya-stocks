@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSE Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="topnav">
+    <div class="topnav-left">
+      <span class="logo">📈 NSE Insights</span>
+      <span class="breadcrumb">/ <span id="breadcrumb-company">Select a company</span></span>
+    </div>
+    <div class="topnav-right">
+      <div class="index-pill">NSE 20 <span class="idx-val" id="nse20-val">1,653</span> <span class="idx-chg negative">-0.43%</span></div>
+      <div class="index-pill">NSE All Share <span class="idx-val" id="nseall-val">169.3</span> <span class="idx-chg positive">+0.12%</span></div>
+    </div>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <select id="company-select">
+        <option value="">-- Select Company --</option>
+        <option value="ABSA">ABSA</option>
+        <option value="STANCHART">STANCHART</option>
+        <option value="SAFARICOM">SAFARICOM</option>
+        <option value="KCB">KCB</option>
+        <option value="EQUITY">EQUITY</option>
+        <option value="COOP">COOP</option>
+      </select>
+      <span class="exchange-tag">NSE</span>
+      <button id="search-btn" onclick="loadCompany()">Search</button>
+    </div>
+  </div>
+
+  <!-- Main Dashboard (hidden until company selected) -->
+  <div id="dashboard" class="hidden">
+
+    <!-- Company Header -->
+    <div class="company-header">
+      <div class="company-info">
+        <div class="company-logo" id="company-logo">🏦</div>
+        <div>
+          <div class="company-name" id="company-name">—</div>
+          <div class="company-meta" id="company-meta">— | NSE</div>
+        </div>
+      </div>
+      <div class="company-price-block">
+        <div class="company-price" id="company-price">—</div>
+        <div class="company-eps-pill" id="company-eps-pill">Latest EPS: —</div>
+        <div class="company-latest-year" id="company-latest-year"></div>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid" id="stats-grid">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Chart Toggle -->
+    <div class="chart-controls">
+      <span class="chart-section-label">Historical Financials</span>
+      <div class="period-toggle">
+        <button class="toggle-btn active" id="toggle-annual" onclick="setPeriod('annual')">Annually</button>
+        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')" disabled title="Quarterly coming soon">Quarterly</button>
+      </div>
+    </div>
+
+    <!-- Charts Grid Row 1 -->
+    <div class="charts-grid" id="charts-row1">
+      <div class="chart-card" id="card-revenue">
+        <div class="chart-card-header">
+          <span class="chart-title">Revenue / NII</span>
+          <span class="chart-expand">⤢</span>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-revenue"></canvas></div>
+      </div>
+      <div class="chart-card" id="card-pat">
+        <div class="chart-card-header">
+          <span class="chart-title">Net Income (PAT)</span>
+          <span class="chart-expand">⤢</span>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-pat"></canvas></div>
+      </div>
+      <div class="chart-card" id="card-eps">
+        <div class="chart-card-header">
+          <span class="chart-title">EPS</span>
+          <span class="chart-expand">⤢</span>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-eps"></canvas></div>
+      </div>
+      <div class="chart-card" id="card-dps">
+        <div class="chart-card-header">
+          <span class="chart-title">Dividends Per Share</span>
+          <span class="chart-expand">⤢</span>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-dps"></canvas></div>
+      </div>
+      <div class="chart-card" id="card-nii">
+        <div class="chart-card-header">
+          <span class="chart-title">Net Interest Income</span>
+          <span class="chart-expand">⤢</span>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-nii"></canvas></div>
+      </div>
+    </div>
+
+  </div><!-- /#dashboard -->
+
+  <!-- Empty state -->
+  <div id="empty-state" class="empty-state">
+    <div class="empty-icon">📊</div>
+    <div class="empty-title">NSE Company Insights</div>
+    <div class="empty-sub">Select a company above to view financials, charts, and key metrics.</div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
