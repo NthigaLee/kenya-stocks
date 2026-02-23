@@ -238,12 +238,15 @@ def detect_consolidation(text: str) -> str:
 
 def detect_units(text: str) -> str:
     t = text.lower()
+    # Check millions FIRST — table headers like "Group (KShs Mn)" are stronger indicators
+    # than in-narrative mentions like "(KShs Bn)" which refer to total amounts, not table units.
+    if ("kes millions" in t or "ksh millions" in t or "in millions" in t
+            or "ksh mn" in t or "kshs mn" in t or "ksh. mn" in t or "kshs. mn" in t):
+        return "KES_millions"
     if ("kes billions" in t or "ksh billions" in t or "in billions" in t
             or "kshs bn" in t or "ksh bn" in t or "kes bn" in t
             or "kshs. bn" in t or "ksh. bn" in t):
         return "KES_billions"
-    if "kes millions" in t or "ksh millions" in t or "in millions" in t:
-        return "KES_millions"
     # Most NSE bank results are in KES thousands (stated as "KES thousands" or just implied)
     if "thousands" in t:
         return "KES_thousands"
@@ -368,8 +371,20 @@ def extract_bank_metrics(lines: List[str]) -> Dict[str, Optional[float]]:
     deposits_line = find_line(lines, "customer deposits")
     deposits = val(deposits_line)
 
-    # Loans and advances — try several phrasings
-    loans_line = find_line(lines, "loans and advances to customers", "loans and advances")
+    # Loans and advances — exclude "non-performing" / "insider" / fee / provision lines
+    # that appear earlier in ABSA's CBK regulatory table and would be matched first.
+    loans_line = find_line_excluding(
+        lines,
+        "loans and advances to customers",
+        "non-performing", "non performing", "insider", "fees", "provision",
+    )
+    if loans_line is None:
+        loans_line = find_line_excluding(
+            lines,
+            "loans and advances",
+            "non-performing", "non performing", "insider", "fees", "provision",
+            "contingent",
+        )
     if loans_line is None:
         loans_line = find_line(lines, "net loans", "advances to customers")
     loans = val(loans_line)
