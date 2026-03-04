@@ -1,186 +1,111 @@
 """
-NSE Live Prices module
-Fetches real-time/delayed prices for Nairobi Securities Exchange stocks
-using yfinance (NSE tickers use .NR suffix on Yahoo Finance).
+NSE Live Prices — scrapes live.mystocks.co.ke mobile pages
+Delayed end-of-day quotes, no API key required.
 """
 from __future__ import annotations
 
+import re
 import time
-from typing import Dict, Optional
-import yfinance as yf
+from typing import Dict, Optional, List
 
-# Mapping: our internal ticker -> Yahoo Finance ticker
-# NSE stocks trade on Yahoo Finance with .NR suffix
-NSE_TICKER_MAP = {
-    "ABSA":  "ABSA.NR",
-    "BAMB":  "BAMB.NR",
-    "BATK":  "BAT.NR",
-    "BKG":   "BKG.NR",
-    "BOC":   "BOC.NR",
-    "BRIT":  "BRIT.NR",
-    "CARB":  "CARB.NR",
-    "CFC":   "CFC.NR",
-    "CIC":   "CIC.NR",
-    "COOP":  "COOP.NR",
-    "CPKL":  "CPIN.NR",
-    "DTK":   "DTK.NR",
-    "EABL":  "EABL.NR",
-    "EAPC":  "EAPC.NR",
-    "EQTY":  "EQTY.NR",
-    "FANB":  "FANB.NR",
-    "FTGH":  "FTGH.NR",
-    "HAFR":  "HAFR.NR",
-    "HBZE":  "HBZE.NR",
-    "HFCK":  "HFCK.NR",
-    "IMH":   "IMH.NR",
-    "JUB":   "JUB.NR",
-    "KAKZ":  "KAKZ.NR",
-    "KAPA":  "KAPA.NR",
-    "KCB":   "KCB.NR",
-    "KEGN":  "KEGN.NR",
-    "KPLC":  "KPLC.NR",
-    "LKH":   "LKH.NR",
-    "LMRU":  "LMRU.NR",
-    "LONG":  "LONG.NR",
-    "NCBA":  "NCBA.NR",
-    "NMG":   "NMG.NR",
-    "NSE":   "NSE.NR",
-    "SASN":  "SASN.NR",
-    "SCAN":  "SCAN.NR",
-    "SCBK":  "SCBK.NR",
-    "SCOM":  "SCOM.NR",
-    "SGL":   "SGL.NR",
-    "SLAM":  "SLAM.NR",
-    "TCL":   "TCL.NR",
-    "TOTL":  "TOTL.NR",
-    "TPSE":  "TPSE.NR",
-    "UMME":  "UMME.NR",
-    "UNGA":  "UNGA.NR",
-    "WTK":   "WTK.NR",
-    "XPRS":  "XPRS.NR",
+import requests
+from bs4 import BeautifulSoup
+
+MYSTOCKS_BASE = "https://live.mystocks.co.ke/m/stock="
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+        "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
+    )
 }
 
-# Simple in-memory cache (price, timestamp)
+NSE_TICKERS = [
+    "ABSA","BAMB","BAT","BKG","BOC","BRIT","CARB","CFC","CIC","COOP",
+    "CPKL","CTM","DTK","EABL","EAPC","EQTY","FANB","FTGH","HAFR","HBZE",
+    "HFCK","IMH","JUB","KAPA","KCB","KEGN","KPLC","NCBA","NMG","NSE",
+    "SASN","SCAN","SCBK","SCOM","SGL","SLAM","TCL","TPSE","UMME","UNGA","WTK","XPRS",
+]
+
+# Internal alias map (our ticker → mystocks ticker)
+TICKER_ALIAS = {
+    "BATK": "BAT",
+    "CTUM": "CTM",
+}
+
+# In-memory cache
 _cache: Dict[str, tuple] = {}
-CACHE_TTL_SECONDS = 300  # 5-minute cache
+CACHE_TTL = 300  # 5 minutes
+
+
+def _parse_price_page(html: str, ticker: str) -> Optional[dict]:
+    """Parse a mystocks mobile stock page and extract price data."""
+    soup = BeautifulSoup(html, "lxml")
+    text = soup.get_text(" ", strip=True)
+
+    # Pattern: "KES 30.55   0.50 (1.61%)" or "KES 30.55   -0.50 (-1.61%)"
+    price_match = re.search(r'KES\s+([\d,]+\.?\d*)\s+([-\d.]+)\s+\(([-\d.]+)%\)', text)
+    if not price_match:
+        # Try alternate: just price
+        price_match2 = re.search(r'KES\s+([\d,]+\.?\d*)', text)
+        if not price_match2:
+            return None
+        price = float(price_match2.group(1).replace(",", ""))
+        return {"ticker": ticker, "price": price, "change": None, "change_pct": None, "currency": "KES", "cached_at": int(time.time())}
+
+    price = float(price_match.group(1).replace(",", ""))
+    change = float(price_match.group(2))
+    change_pct = float(price_match.group(3))
+    prev_close = round(price - change, 2)
+
+    return {
+        "ticker": ticker,
+        "price": price,
+        "prev_close": prev_close,
+        "change": change,
+        "change_pct": change_pct,
+        "currency": "KES",
+        "cached_at": int(time.time()),
+    }
 
 
 def get_price(ticker: str) -> Optional[dict]:
-    """
-    Fetch live/delayed price for a single NSE ticker.
-    Returns dict with price, change, change_pct, volume, currency.
-    """
-    yf_ticker = NSE_TICKER_MAP.get(ticker.upper())
-    if not yf_ticker:
-        return None
+    """Fetch live price for a single NSE ticker."""
+    ticker = ticker.upper()
+    ms_ticker = TICKER_ALIAS.get(ticker, ticker)
 
-    # Check cache
     cached = _cache.get(ticker)
-    if cached and (time.time() - cached[1]) < CACHE_TTL_SECONDS:
+    if cached and (time.time() - cached[1]) < CACHE_TTL:
         return cached[0]
 
     try:
-        t = yf.Ticker(yf_ticker)
-        info = t.fast_info
-
-        price = getattr(info, "last_price", None)
-        prev_close = getattr(info, "previous_close", None)
-        volume = getattr(info, "last_volume", None)
-
-        if not price:
-            # Fallback: try history
-            hist = t.history(period="2d")
-            if not hist.empty:
-                price = float(hist["Close"].iloc[-1])
-                prev_close = float(hist["Close"].iloc[-2]) if len(hist) > 1 else None
-
-        if not price:
-            return None
-
-        change = round(price - prev_close, 2) if prev_close else None
-        change_pct = round((change / prev_close) * 100, 2) if change and prev_close else None
-
-        result = {
-            "ticker": ticker,
-            "yf_ticker": yf_ticker,
-            "price": round(price, 2),
-            "prev_close": round(prev_close, 2) if prev_close else None,
-            "change": change,
-            "change_pct": change_pct,
-            "volume": volume,
-            "currency": "KES",
-            "cached_at": int(time.time()),
-        }
-
-        _cache[ticker] = (result, time.time())
+        resp = requests.get(f"{MYSTOCKS_BASE}{ms_ticker}", headers=HEADERS, timeout=10)
+        resp.raise_for_status()
+        result = _parse_price_page(resp.text, ticker)
+        if result:
+            _cache[ticker] = (result, time.time())
         return result
-
     except Exception as e:
         return {"ticker": ticker, "error": str(e)}
 
 
-def get_all_prices(tickers: Optional[list] = None) -> Dict[str, dict]:
-    """
-    Fetch prices for all (or a subset of) NSE tickers in bulk.
-    Uses yfinance download for efficiency.
-    """
+def get_all_prices(tickers: Optional[List[str]] = None) -> Dict[str, dict]:
+    """Fetch prices for all (or subset of) NSE tickers."""
     if tickers is None:
-        tickers = list(NSE_TICKER_MAP.keys())
+        tickers = NSE_TICKERS
 
-    # Check which need fresh fetch
     now = time.time()
-    stale = [t for t in tickers if t not in _cache or (now - _cache[t][1]) >= CACHE_TTL_SECONDS]
-    fresh = {t: _cache[t][0] for t in tickers if t not in stale}
+    results = {}
 
-    if stale:
-        yf_tickers = [NSE_TICKER_MAP[t] for t in stale if t in NSE_TICKER_MAP]
-        try:
-            data = yf.download(
-                tickers=" ".join(yf_tickers),
-                period="2d",
-                interval="1d",
-                group_by="ticker",
-                auto_adjust=True,
-                progress=False,
-                threads=True,
-            )
+    for ticker in tickers:
+        ticker = ticker.upper()
+        cached = _cache.get(ticker)
+        if cached and (now - cached[1]) < CACHE_TTL:
+            results[ticker] = cached[0]
+        else:
+            data = get_price(ticker)
+            if data and "error" not in data:
+                results[ticker] = data
+            time.sleep(0.1)  # polite delay
 
-            for ticker in stale:
-                yf_t = NSE_TICKER_MAP.get(ticker)
-                if not yf_t:
-                    continue
-                try:
-                    if len(yf_tickers) == 1:
-                        closes = data["Close"]
-                    else:
-                        closes = data[yf_t]["Close"]
-
-                    closes = closes.dropna()
-                    if closes.empty:
-                        continue
-
-                    price = float(closes.iloc[-1])
-                    prev_close = float(closes.iloc[-2]) if len(closes) > 1 else None
-                    change = round(price - prev_close, 2) if prev_close else None
-                    change_pct = round((change / prev_close) * 100, 2) if change and prev_close else None
-
-                    result = {
-                        "ticker": ticker,
-                        "price": round(price, 2),
-                        "prev_close": round(prev_close, 2) if prev_close else None,
-                        "change": change,
-                        "change_pct": change_pct,
-                        "currency": "KES",
-                        "cached_at": int(now),
-                    }
-                    _cache[ticker] = (result, now)
-                    fresh[ticker] = result
-
-                except Exception:
-                    continue
-
-        except Exception as e:
-            # Bulk fetch failed — return whatever we have cached
-            pass
-
-    return fresh
+    return results

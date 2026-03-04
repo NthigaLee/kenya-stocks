@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional, List
 
 from scrapers import fetch_africanfinancials_sample, fetch_nse_announcements_sample
-from prices import get_price, get_all_prices, NSE_TICKER_MAP
+from prices import get_price, get_all_prices, NSE_TICKERS
 
 app = FastAPI(title="Kenya Stocks API", version="1.0.0")
 
@@ -41,22 +41,18 @@ async def all_prices(tickers: Optional[str] = Query(None, description="Comma-sep
 @app.get("/prices/{ticker}")
 async def single_price(ticker: str):
     """Fetch live/delayed price for a single NSE ticker (e.g. SCOM, KCB, EQTY)."""
-    ticker = ticker.upper()
-    if ticker not in NSE_TICKER_MAP:
-        raise HTTPException(status_code=404, detail=f"Ticker '{ticker}' not supported. GET /tickers for full list.")
-    result = get_price(ticker)
+    result = get_price(ticker.upper())
     if not result:
         raise HTTPException(status_code=503, detail=f"Could not fetch price for {ticker}.")
+    if "error" in result:
+        raise HTTPException(status_code=503, detail=result["error"])
     return result
 
 
 @app.get("/tickers")
 async def list_tickers():
-    """List all supported NSE tickers and their Yahoo Finance equivalents."""
-    return {
-        "count": len(NSE_TICKER_MAP),
-        "tickers": NSE_TICKER_MAP,
-    }
+    """List all supported NSE tickers."""
+    return {"count": len(NSE_TICKERS), "tickers": NSE_TICKERS}
 
 
 # ── Announcements ────────────────────────────────────────────────────────────
