@@ -274,11 +274,17 @@ function getTemplate(sector) {
 }
 
 // ---- Load Prices ----
+const API_BASE = 'https://kenya-stocks-1.onrender.com';
+
 async function loadPrices() {
   try {
-    const resp = await fetch('prices.json');
-    if (resp.ok) NSE_PRICES = await resp.json();
+    const resp = await fetch(`${API_BASE}/prices`);
+    if (resp.ok) {
+      const data = await resp.json();
+      NSE_PRICES = data.tickers || {};
+    }
   } catch (e) {
+    console.warn('Live prices unavailable, falling back to static:', e);
     NSE_PRICES = {};
   }
   for (const [ticker, priceData] of Object.entries(NSE_PRICES)) {
