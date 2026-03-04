@@ -26,12 +26,7 @@
     <div class="search-bar">
       <select id="company-select">
         <option value="">-- Select Company --</option>
-        <option value="ABSA">ABSA</option>
-        <option value="STANCHART">STANCHART</option>
-        <option value="SAFARICOM">SAFARICOM</option>
-        <option value="KCB">KCB</option>
-        <option value="EQUITY">EQUITY</option>
-        <option value="COOP">COOP</option>
+        <!-- Options populated dynamically from NSE_COMPANIES in app.js -->
       </select>
       <span class="exchange-tag">NSE</span>
       <button id="search-btn" onclick="loadCompany()">Search</button>
@@ -52,6 +47,7 @@
       </div>
       <div class="company-price-block">
         <div class="company-price" id="company-price">—</div>
+        <div class="company-price-change" id="company-price-change"></div>
         <div class="company-eps-pill" id="company-eps-pill">Latest EPS: —</div>
         <div class="company-latest-year" id="company-latest-year"></div>
       </div>
@@ -67,46 +63,29 @@
       <span class="chart-section-label">Historical Financials</span>
       <div class="period-toggle">
         <button class="toggle-btn active" id="toggle-annual" onclick="setPeriod('annual')">Annually</button>
-        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')" disabled title="Quarterly coming soon">Quarterly</button>
+        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')" >Quarterly</button>
       </div>
     </div>
 
-    <!-- Charts Grid Row 1 -->
-    <div class="charts-grid" id="charts-row1">
-      <div class="chart-card" id="card-revenue">
-        <div class="chart-card-header">
-          <span class="chart-title">Revenue / NII</span>
-          <span class="chart-expand">⤢</span>
-        </div>
-        <div class="chart-wrap"><canvas id="chart-revenue"></canvas></div>
+    <!-- Dynamic Charts — populated by sector template in app.js -->
+    <div id="sector-charts-container">
+      <!-- JS builds chart cards here based on company sector -->
+    </div>
+
+    <!-- Valuation Estimates Panel -->
+    <div id="valuation-panel" class="valuation-panel hidden">
+      <div class="chart-controls" style="margin-top:1.5rem">
+        <span class="chart-section-label">Estimated Valuation</span>
+        <span class="valuation-disclaimer">Estimates only — not investment advice</span>
       </div>
-      <div class="chart-card" id="card-pat">
-        <div class="chart-card-header">
-          <span class="chart-title">Net Income (PAT)</span>
-          <span class="chart-expand">⤢</span>
-        </div>
-        <div class="chart-wrap"><canvas id="chart-pat"></canvas></div>
+      <div class="valuation-grid" id="valuation-grid">
+        <!-- Populated by JS -->
       </div>
-      <div class="chart-card" id="card-eps">
-        <div class="chart-card-header">
-          <span class="chart-title">EPS</span>
-          <span class="chart-expand">⤢</span>
-        </div>
-        <div class="chart-wrap"><canvas id="chart-eps"></canvas></div>
+      <div class="valuation-summary" id="valuation-summary">
+        <!-- Overall verdict -->
       </div>
-      <div class="chart-card" id="card-dps">
-        <div class="chart-card-header">
-          <span class="chart-title">Dividends Per Share</span>
-          <span class="chart-expand">⤢</span>
-        </div>
-        <div class="chart-wrap"><canvas id="chart-dps"></canvas></div>
-      </div>
-      <div class="chart-card" id="card-nii">
-        <div class="chart-card-header">
-          <span class="chart-title">Net Interest Income</span>
-          <span class="chart-expand">⤢</span>
-        </div>
-        <div class="chart-wrap"><canvas id="chart-nii"></canvas></div>
+      <div class="valuation-assumptions" id="valuation-assumptions">
+        <!-- Assumptions disclosure -->
       </div>
     </div>
 
@@ -119,7 +98,11 @@
     <div class="empty-sub">Select a company above to view financials, charts, and key metrics.</div>
   </div>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <div class="data-updated" id="data-updated">
+    Prices as of 25 Feb 2026 via NSE &middot; Financial data extracted from company filings
+  </div>
+
+  <script src="data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
