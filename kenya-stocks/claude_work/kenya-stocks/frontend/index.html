@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSE Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="topnav">
+    <div class="topnav-left">
+      <span class="logo">📈 NSE Insights</span>
+      <span class="breadcrumb">/ <span id="breadcrumb-company">Select a company</span></span>
+    </div>
+    <div class="topnav-right">
+      <div class="index-pill">NSE 20 <span class="idx-val" id="nse20-val">1,653</span> <span class="idx-chg negative">-0.43%</span></div>
+      <div class="index-pill">NSE All Share <span class="idx-val" id="nseall-val">169.3</span> <span class="idx-chg positive">+0.12%</span></div>
+    </div>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <select id="company-select">
+        <option value="">-- Select Company --</option>
+        <!-- Options populated dynamically from NSE_COMPANIES in app.js -->
+      </select>
+      <span class="exchange-tag">NSE</span>
+      <button id="search-btn" onclick="loadCompany()">Search</button>
+    </div>
+  </div>
+
+  <!-- Main Dashboard (hidden until company selected) -->
+  <div id="dashboard" class="hidden">
+
+    <!-- Company Header -->
+    <div class="company-header">
+      <div class="company-info">
+        <div class="company-logo" id="company-logo">🏦</div>
+        <div>
+          <div class="company-name" id="company-name">—</div>
+          <div class="company-meta" id="company-meta">— | NSE</div>
+        </div>
+      </div>
+      <div class="company-price-block">
+        <div class="company-price" id="company-price">—</div>
+        <div class="company-price-change" id="company-price-change"></div>
+        <div class="company-eps-pill" id="company-eps-pill">Latest EPS: —</div>
+        <div class="company-latest-year" id="company-latest-year"></div>
+      </div>
+    </div>
+
+
+    <!-- Stock Price Chart -->
+    <div id="price-chart-section" class="price-chart-section hidden">
+      <div class="price-chart-header">
+        <span class="chart-section-label">Stock Price</span>
+        <div class="price-range-group">
+          <button class="price-range-btn" data-range="1D" onclick="loadStockPrice(activeCompany&&activeCompany.ticker,'1D')">1D</button>
+          <button class="price-range-btn" data-range="1W" onclick="loadStockPrice(activeCompany&&activeCompany.ticker,'1W')">1W</button>
+          <button class="price-range-btn" data-range="1M" onclick="loadStockPrice(activeCompany&&activeCompany.ticker,'1M')">1M</button>
+          <button class="price-range-btn" data-range="6M" onclick="loadStockPrice(activeCompany&&activeCompany.ticker,'6M')">6M</button>
+          <button class="price-range-btn active" data-range="1Y" onclick="loadStockPrice(activeCompany&&activeCompany.ticker,'1Y')">1Y</button>
+          <button class="price-range-btn" data-range="5Y" onclick="loadStockPrice(activeCompany&&activeCompany.ticker,'5Y')">5Y</button>
+        </div>
+        <span id="price-change-pill" class="price-change-pill"></span>
+      </div>
+      <div class="price-chart-card">
+        <div id="price-chart-loading" class="price-chart-loading hidden">Loading price data…</div>
+        <div id="price-chart-error" class="price-chart-error hidden">⚠️ Price data unavailable. Try a different range or check connection.</div>
+        <div class="chart-wrap" style="height:280px;"><canvas id="chart-price"></canvas></div>
+      </div>
+    </div>
+    <!-- Stats Grid -->
+    <div class="stats-grid" id="stats-grid">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Chart Toggle -->
+    <div class="chart-controls">
+      <span class="chart-section-label">Historical Financials</span>
+      <div class="period-toggle">
+        <button class="toggle-btn active" id="toggle-annual" onclick="setPeriod('annual')">Annually</button>
+        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')" >Quarterly</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Charts — populated by sector template in app.js -->
+    <div id="sector-charts-container">
+      <!-- JS builds chart cards here based on company sector -->
+    </div>
+
+    <!-- Valuation Estimates Panel -->
+    <div id="valuation-panel" class="valuation-panel hidden">
+      <div class="chart-controls" style="margin-top:1.5rem">
+        <span class="chart-section-label">Estimated Valuation</span>
+        <span class="valuation-disclaimer">Estimates only — not investment advice</span>
+      </div>
+      <div class="valuation-grid" id="valuation-grid">
+        <!-- Populated by JS -->
+      </div>
+      <div class="valuation-summary" id="valuation-summary">
+        <!-- Overall verdict -->
+      </div>
+      <div class="valuation-assumptions" id="valuation-assumptions">
+        <!-- Assumptions disclosure -->
+      </div>
+    </div>
+
+  </div><!-- /#dashboard -->
+
+  <!-- Empty state -->
+  <div id="empty-state" class="empty-state">
+    <div class="empty-icon">📊</div>
+    <div class="empty-title">NSE Company Insights</div>
+    <div class="empty-sub">Select a company above to view financials, charts, and key metrics.</div>
+  </div>
+
+  <div class="data-updated" id="data-updated">
+    Prices as of 25 Feb 2026 via NSE &middot; Financial data extracted from company filings
+  </div>
+
+  <script src="data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
