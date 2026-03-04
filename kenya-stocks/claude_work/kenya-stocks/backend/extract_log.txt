@@ -1,0 +1,590 @@
+Processing 416 PDF files.
+Index has 434 entries for cross-referencing.
+[1/416] 30_June_2015_unknown.pdf
+  ⚠ 30_June_2015_unknown.pdf: empty/scanned PDF, skipping
+[2/416] 31_Mar_2015_unknown.pdf
+  ⚠ 31_Mar_2015_unknown.pdf: empty/scanned PDF, skipping
+[3/416] audited.pdf
+  ⚠ audited.pdf: empty/scanned PDF, skipping
+[4/416] Barclays_Bank_30_June_2015_financials.pdf
+  ⚠ Barclays_Bank_30_June_2015_financials.pdf: empty/scanned PDF, skipping
+[5/416] Co_operative_Bank_31_March_2015_financials.pdf
+  ⚠ Co_operative_Bank_31_March_2015_financials.pdf: empty/scanned PDF, skipping
+[6/416] Eaagads_Limited_unknown_period_audited.pdf
+  ⚠ Eaagads_Limited_unknown_period_audited.pdf: empty/scanned PDF, skipping
+[7/416] GROUP_COMPANY_GROUP_COMPANY_31_March_2015_financials.pdf
+[8/416] I_M_Holdings_Ltd_unknown_period_audited.pdf
+  ⚠ I_M_Holdings_Ltd_unknown_period_audited.pdf: empty/scanned PDF, skipping
+[9/416] National_Bank_of_Kenya_31_March_2015_audited.pdf
+[10/416] STANDARD_CHARTERED_BANK_KENYA_LIMITED_69_1_69_financials.pdf
+[11/416] WILLIAMSON_TEA_KENYA_LIMITED_31_March_2015_audited.pdf
+[12/416] audited.pdf
+  ⚠ audited.pdf: empty/scanned PDF, skipping
+[13/416] TransCentury_Limited_TCL_or_the_Group_is_pleased_t_31_DECEMBER_2016_fi
+[14/416] 30_June_2017_audited.pdf
+  ⚠ 30_June_2017_audited.pdf: empty/scanned PDF, skipping
+[15/416] BANK_KCB_GROUP_PLC_COMPANY_KCB_GROUP_PLC_CONSOLIDA_31_December_2017_au
+[16/416] CIC_INSURANCE_GROUP_LIMITED_30_June_2017_financials.pdf
+[17/416] E_In_x_te_ch_re_a_s_n_t_g_e_e_x_l_p_o_e_s_n_s_s_e_31_DECEMBER_2017_aud
+[18/416] KCB_GROUP_PLC_30_September_2017_audited.pdf
+[19/416] unknown.pdf
+  ⚠ unknown.pdf: empty/scanned PDF, skipping
+[20/416] 30_Sep_2018_audited.pdf
+  ⚠ 30_Sep_2018_audited.pdf: empty/scanned PDF, skipping
+[21/416] 30_September_2018_unknown.pdf
+  ⚠ 30_September_2018_unknown.pdf: empty/scanned PDF, skipping
+[22/416] 31_Dec_2018_unknown.pdf
+  ⚠ 31_Dec_2018_unknown.pdf: empty/scanned PDF, skipping
+[23/416] audited.pdf
+  ⚠ audited.pdf: empty/scanned PDF, skipping
+[24/416] Crown_Paints_Kenya_Plc_31_Dec_2018_audited.pdf
+[25/416] E_A_Portland_Cement_Plc_31_DECEMBER_2018_financials.pdf
+[26/416] Flame_Tree_Group_Holdings_Ltd_31_Dec_2018_audited.pdf
+[27/416] Jubilee_Holdings_Limited_30_Jun_2018_audited.pdf
+[28/416] Jubilee_Holdings_Ltd_31_Dec_2018_audited.pdf
+  ⚠ Jubilee_Holdings_Ltd_31_Dec_2018_audited.pdf: empty/scanned PDF, skipping
+[29/416] Kapchorua_Tea_Kenya_PLC_31_Mar_2018_audited.pdf
+[30/416] Kenya_Airways_Plc_31_Dec_2018_audited.pdf
+  ⚠ Kenya_Airways_Plc_31_Dec_2018_audited.pdf: empty/scanned PDF, skipping
+[31/416] Kurwitu_Ventures_Ltd_31_Dec_2018_audited.pdf
+  ⚠ Kurwitu_Ventures_Ltd_31_Dec_2018_audited.pdf: empty/scanned PDF, skipping
+[32/416] Nation_Media_Group_Ltd_31_Dec_2018_audited.pdf
+  ⚠ Nation_Media_Group_Ltd_31_Dec_2018_audited.pdf: empty/scanned PDF, skipping
+[33/416] Newgold_Issuer_RF_Limited_interim_financial_statem_30_September_2018_f
+[34/416] Sameer_Africa_Plc_31_Dec_2018_audited.pdf
+  ⚠ Sameer_Africa_Plc_31_Dec_2018_audited.pdf: empty/scanned PDF, skipping
+[35/416] TPS_Eastern_Africa_Ltd_31_Dec_18_audited.pdf
+[36/416] UAP_Holdings_Ltd_31_Dec_2018_audited.pdf
+[37/416] UNAUDITED_FINANCIAL_STATEMENTS_FOR_THE_SIX_MONTHS_30_JUNE_2018_financi
+[38/416] unknown.pdf
+  ⚠ unknown.pdf: empty/scanned PDF, skipping
+[39/416] Williamson_Tea_Kenya_PLC_31_Mar_2018_audited.pdf
+[40/416] Wpp_Scangroup_Plc_31_Dec_2018_audited.pdf
+  ⚠ Wpp_Scangroup_Plc_31_Dec_2018_audited.pdf: empty/scanned PDF, skipping
+[41/416] 30_Jun_2019_unknown.pdf
+  ⚠ 30_Jun_2019_unknown.pdf: empty/scanned PDF, skipping
+[42/416] 30_Sep_2019_audited.pdf
+  ⚠ 30_Sep_2019_audited.pdf: empty/scanned PDF, skipping
+[43/416] 31_March_2019_audited.pdf
+  ⚠ 31_March_2019_audited.pdf: empty/scanned PDF, skipping
+[44/416] AUDITED_CONDENSED_31_DECEMBER_2019_audited.pdf
+[45/416] Bamburi_Cement_Ltd_30_June_2019_financials.pdf
+  ⚠ Bamburi_Cement_Ltd_30_June_2019_financials.pdf: empty/scanned PDF, skipping
+[46/416] Barclays_Bank_of_Kenya_Ltd_30_Jun_2019_financials.pdf
+[47/416] BOC_Kenya_Plc_30_Jun_2019_financials.pdf
+  ⚠ BOC_Kenya_Plc_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[48/416] BOC_Kenya_Plc_31_Dec_2019_audited.pdf
+  ⚠ BOC_Kenya_Plc_31_Dec_2019_audited.pdf: empty/scanned PDF, skipping
+[49/416] Britam_Holdings_Plc_30_Jun_2019_financials.pdf
+  ⚠ Britam_Holdings_Plc_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[50/416] Car_General_Kenya_Plc_31_Mar_2019_audited.pdf
+  ⚠ Car_General_Kenya_Plc_31_Mar_2019_audited.pdf: empty/scanned PDF, skipping
+[51/416] Carbacid_Investment_Plc_31_July_2019_audited.pdf
+[52/416] Centum_Investment_Co_Plc_31_March_2019_audited.pdf
+  ⚠ Centum_Investment_Co_Plc_31_March_2019_audited.pdf: empty/scanned PDF, skipping
+[53/416] CIC_Insurance_Group_Plc_30_Jun_2019_financials.pdf
+[54/416] Co_operative_Bank_of_Kenya_Ltd_30_June_2019_financials.pdf
+  ⚠ Co_operative_Bank_of_Kenya_Ltd_30_June_2019_financials.pdf: empty/scanned PDF, skipping
+[55/416] Co_operative_Bank_of_Kenya_Ltd_30_Sep_2019_audited.pdf
+  ⚠ Co_operative_Bank_of_Kenya_Ltd_30_Sep_2019_audited.pdf: empty/scanned PDF, skipping
+[56/416] Crown_Paints_Kenya_Plc_30_Jun_2019_financials.pdf
+  ⚠ Crown_Paints_Kenya_Plc_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[57/416] Crown_Paints_Kenya_Plc_31_Dec_2019_audited.pdf
+[58/416] E_A_Portland_Cement_Plc_30_Dec_2019_financials.pdf
+  ⚠ E_A_Portland_Cement_Plc_30_Dec_2019_financials.pdf: empty/scanned PDF, skipping
+[59/416] E_A_Portland_Cement_Plc_30_Jun_2019_audited.pdf
+  ⚠ E_A_Portland_Cement_Plc_30_Jun_2019_audited.pdf: empty/scanned PDF, skipping
+[60/416] Eaagads_Limited_31_Mar_2019_audited.pdf
+[61/416] East_African_Cables_Plc_30_Jun_2019_financials.pdf
+[62/416] East_African_Cables_Plc_31_Dec_2019_audited.pdf
+[63/416] Equity_Group_Holdings_Plc_31_Mar_2019_financials.pdf
+  ⚠ Equity_Group_Holdings_Plc_31_Mar_2019_financials.pdf: empty/scanned PDF, skipping
+[64/416] Family_Bank_Limited_31_Dec_18_audited.pdf
+[65/416] Family_Bank_Ltd_30_Jun_2019_financials.pdf
+  ⚠ Family_Bank_Ltd_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[66/416] Family_Bank_Ltd_30_Sep_2019_financials.pdf
+[67/416] Flame_Tree_Group_Holdings_Ltd_30_Jun_2019_financials.pdf
+[68/416] Flame_Tree_Group_Holdings_Ltd_31_Dec_2019_financials.pdf
+[69/416] HF_Group_Plc_30_June_2019_audited.pdf
+  ⚠ HF_Group_Plc_30_June_2019_audited.pdf: empty/scanned PDF, skipping
+[70/416] HF_Group_Plc_30_Sep_2019_audited.pdf
+  ⚠ HF_Group_Plc_30_Sep_2019_audited.pdf: empty/scanned PDF, skipping
+[71/416] Home_Afrika_Ltd_30_Jun_2019_audited.pdf
+[72/416] I_M_Holdings_PLC_30_SEPTEMBER_2019_audited.pdf
+[73/416] I_M_Holdings_PLC_31_Mar_2019_audited.pdf
+[74/416] Jubilee_Holdings_Ltd_30_Jun_2019_financials.pdf
+[75/416] Kapchorua_Tea_Kenya_Plc_30_Sep_2019_financials.pdf
+[76/416] KCB_Group_Plc_30_Jun_2019_financials.pdf
+[77/416] KCB_Group_Plc_31_Dec_2019_audited.pdf
+  ⚠ KCB_Group_Plc_31_Dec_2019_audited.pdf: empty/scanned PDF, skipping
+[78/416] Kenya_Orchards_Limited_31_Dec_2019_financials.pdf
+  ⚠ Kenya_Orchards_Limited_31_Dec_2019_financials.pdf: empty/scanned PDF, skipping
+[79/416] Kenya_Orchards_Ltd_30_Jun_2019_financials.pdf
+  ⚠ Kenya_Orchards_Ltd_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[80/416] Kenya_Power_Lighting_Plc_30_Jun_2019_audited.pdf
+  ⚠ Kenya_Power_Lighting_Plc_30_Jun_2019_audited.pdf: empty/scanned PDF, skipping
+[81/416] Kenya_Re_Insurance_Corporation_Ltd_31_Dec_2019_financials.pdf
+  ⚠ Kenya_Re_Insurance_Corporation_Ltd_31_Dec_2019_financials.pdf: empty/scanned PDF, skipping
+[82/416] Kurwitu_Ventures_Ltd_30_Jun_2019_financials.pdf
+  ⚠ Kurwitu_Ventures_Ltd_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[83/416] Liberty_Kenya_Holdings_Plc_30_Jun_2019_financials.pdf
+  ⚠ Liberty_Kenya_Holdings_Plc_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[84/416] Liberty_Kenya_Holdings_Plc_31_Dec_2019_audited.pdf
+  ⚠ Liberty_Kenya_Holdings_Plc_31_Dec_2019_audited.pdf: empty/scanned PDF, skipping
+[85/416] Longhorn_Publishers_PLC_30_Jun_2019_audited.pdf
+  ⚠ Longhorn_Publishers_PLC_30_Jun_2019_audited.pdf: empty/scanned PDF, skipping
+[86/416] Nairobi_Securities_Exchange_Plc_30_Jun_2019_financials.pdf
+[87/416] NAIROBI_SECURITIES_EXCHANGE_PLC_31_december_2019_audited.pdf
+[88/416] Nation_Media_Group_Plc_unknown_period_audited.pdf
+  ⚠ Nation_Media_Group_Plc_unknown_period_audited.pdf: empty/scanned PDF, skipping
+[89/416] National_Bank_of_Kenya_Ltd_30_Jun_2019_financials.pdf
+[90/416] National_Bank_of_Kenya_Ltd_31_Dec_2019_audited.pdf
+  ⚠ National_Bank_of_Kenya_Ltd_31_Dec_2019_audited.pdf: empty/scanned PDF, skipping
+[91/416] NIC_Group_Plc_30_Jun_2019_audited.pdf
+[92/416] NIC_Group_Plc_30_Sep_2019_audited.pdf
+[93/416] nse_31_Dec_2019_audited.pdf
+[94/416] On_behalf_of_the_Board_of_Directors_I_hereby_prese_31_Dec_2019_audited
+[95/416] Safaricom_PLC_30_Sep_2019_financials.pdf
+  ⚠ Safaricom_PLC_30_Sep_2019_financials.pdf: empty/scanned PDF, skipping
+[96/416] Safaricom_PLC_31_March_2019_audited.pdf
+  ⚠ Safaricom_PLC_31_March_2019_audited.pdf: empty/scanned PDF, skipping
+[97/416] Sanlam_Kenya_Plc_30_June_2019_financials.pdf
+  ⚠ Sanlam_Kenya_Plc_30_June_2019_financials.pdf: empty/scanned PDF, skipping
+[98/416] Sanlam_Kenya_Plc_31_Dec_2019_audited.pdf
+  ⚠ Sanlam_Kenya_Plc_31_Dec_2019_audited.pdf: empty/scanned PDF, skipping
+[99/416] Stanbic_Holdings_Plc_30_June_2019_financials.pdf
+  ⚠ Stanbic_Holdings_Plc_30_June_2019_financials.pdf: empty/scanned PDF, skipping
+[100/416] Stanbic_Holdings_Plc_31_Dec_2019_audited.pdf
+  ⚠ Stanbic_Holdings_Plc_31_Dec_2019_audited.pdf: empty/scanned PDF, skipping
+[101/416] Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2019_financials.pdf
+[102/416] Standard_Group_Plc_30_Jun_2019_audited.pdf
+[103/416] Stanlib_Fahari_I_REIT_31_Dec_2019_audited.pdf
+[104/416] UAP_Holdings_Ltd_30_Jun_2019_financials.pdf
+  ⚠ UAP_Holdings_Ltd_30_Jun_2019_financials.pdf: empty/scanned PDF, skipping
+[105/416] UNAUDITED_CONDENSED_30_Jun_2019_audited.pdf
+[106/416] UNAUDITED_CONDENSED_GROUP_RESULTS_FOR_THE_SIX_MONT_31_Dec_2019_financi
+[107/416] Unga_Group_Plc_30_Jun_2019_audited.pdf
+  ⚠ Unga_Group_Plc_30_Jun_2019_audited.pdf: empty/scanned PDF, skipping
+[108/416] Unga_Group_Plc_31_Dec_2019_financials.pdf
+  ⚠ Unga_Group_Plc_31_Dec_2019_financials.pdf: empty/scanned PDF, skipping
+[109/416] unknown.pdf
+  ⚠ unknown.pdf: empty/scanned PDF, skipping
+[110/416] Williamson_Tea_Kenya_Plc_30_Sep_2019_financials.pdf
+[111/416] Wpp_Scangroup_Plc_30_June_2019_financials.pdf
+  ⚠ Wpp_Scangroup_Plc_30_June_2019_financials.pdf: empty/scanned PDF, skipping
+[112/416] Wpp_Scangroup_Plc_31_Dec_2019_audited.pdf
+  ⚠ Wpp_Scangroup_Plc_31_Dec_2019_audited.pdf: empty/scanned PDF, skipping
+[113/416] 30_jun_2020_audited.pdf
+  ⚠ 30_jun_2020_audited.pdf: empty/scanned PDF, skipping
+[114/416] 30_Jun_2020_unknown.pdf
+  ⚠ 30_Jun_2020_unknown.pdf: empty/scanned PDF, skipping
+[115/416] 30_Sep_2020_audited.pdf
+  ⚠ 30_Sep_2020_audited.pdf: empty/scanned PDF, skipping
+[116/416] 31_dec_2020_audited.pdf
+  ⚠ 31_dec_2020_audited.pdf: empty/scanned PDF, skipping
+[117/416] ABSA_Bank_Kenya_Plc_30_Jun_2020_financials.pdf
+[118/416] ABSA_Bank_Kenya_Plc_30_Sep_2020_financials.pdf
+[119/416] Bamburi_Cement_Ltd_31_Dec_2020_audited.pdf
+[120/416] BAT_Kenya_Plc_30_Jun_2020_financials.pdf
+[121/416] BOC_Kenya_Plc_30_Jun_2020_financials.pdf
+  ⚠ BOC_Kenya_Plc_30_Jun_2020_financials.pdf: empty/scanned PDF, skipping
+[122/416] BOC_Kenya_Plc_31_Dec_2020_audited.pdf
+[123/416] Britam_Holdings_Plc_30_Jun_2020_financials.pdf
+  ⚠ Britam_Holdings_Plc_30_Jun_2020_financials.pdf: empty/scanned PDF, skipping
+[124/416] Britam_Holdings_Plc_31_Dec_2020_audited.pdf
+  ⚠ Britam_Holdings_Plc_31_Dec_2020_audited.pdf: empty/scanned PDF, skipping
+[125/416] Carbacid_Investments_Plc_31_Jan_2020_financials.pdf
+[126/416] Co_operative_Bank_of_Kenya_Ltd_30_Jun_2020_audited.pdf
+  ⚠ Co_operative_Bank_of_Kenya_Ltd_30_Jun_2020_audited.pdf: empty/scanned PDF, skipping
+[127/416] Co_operative_Bank_of_Kenya_Ltd_30_Sep_2020_audited.pdf
+[128/416] Co_operative_Bank_of_Kenya_Ltd_31_Dec_2020_audited.pdf
+[129/416] Crown_Paints_Kenya_Plc_30_Jun_2020_financials.pdf
+  ⚠ Crown_Paints_Kenya_Plc_30_Jun_2020_financials.pdf: empty/scanned PDF, skipping
+[130/416] Diamond_Trust_Bank_Kenya_Limited_30_September_2020_financials.pdf
+[131/416] Diamond_Trust_Bank_Kenya_Ltd_30_Jun_2020_financials.pdf
+[132/416] Diamond_Trust_Bank_Kenya_Ltd_31_Mar_2020_financials.pdf
+  ⚠ Diamond_Trust_Bank_Kenya_Ltd_31_Mar_2020_financials.pdf: empty/scanned PDF, skipping
+[133/416] E_A_Portland_Cement_Plc_31_Dec_2020_financials.pdf
+  ⚠ E_A_Portland_Cement_Plc_31_Dec_2020_financials.pdf: empty/scanned PDF, skipping
+[134/416] Eaagads_Limited_30_Sep_2020_audited.pdf
+[135/416] EAAGADS_LIMITED_31_MARCH_2020_audited.pdf
+[136/416] Equity_Group_Holdings_Plc_30_September_2020_financials.pdf
+[137/416] Equity_Group_Holdings_Plc_31_Dec_2020_audited.pdf
+[138/416] Equity_Group_Holdings_Plc_31_Mar_2020_financials.pdf
+[139/416] Family_Bank_Limited_30_Sep_2020_audited.pdf
+[140/416] Family_Bank_Ltd_30_Jun_2020_audited.pdf
+[141/416] Family_Bank_Ltd_31_Mar_2020_audited.pdf
+[142/416] Flame_Tree_Group_Holdings_Ltd_30_Jun_2020_financials.pdf
+[143/416] Flame_Tree_Group_Holdings_Ltd_31_Dec_2020_financials.pdf
+[144/416] HF_Group_Plc_30_Sep_2020_financials.pdf
+[145/416] HF_Group_Plc_31_Dec_2020_audited.pdf
+  ⚠ HF_Group_Plc_31_Dec_2020_audited.pdf: empty/scanned PDF, skipping
+[146/416] Home_Afrika_Ltd_30_Jun_2020_financials.pdf
+[147/416] Homeboyz_Entertainment_Plc_31_Dec_2020_audited.pdf
+[148/416] I_M_Holdings_Plc_30_Jun_2020_audited.pdf
+[149/416] ILAM_Fahari_I_REIT_30_June_2020_financials.pdf
+[150/416] ILAM_Fahari_I_REIT_31_Dec_2020_audited.pdf
+[151/416] Jubilee_Holdings_Limited_31_Dec_2020_audited.pdf
+  ⚠ Jubilee_Holdings_Limited_31_Dec_2020_audited.pdf: empty/scanned PDF, skipping
+[152/416] Jubilee_Holdings_Ltd_30_Jun_2020_financials.pdf
+[153/416] Kakuzi_Plc_30_Jun_2020_financials.pdf
+[154/416] Kapchorua_Tea_Kenya_Plc_30_Sep_2020_financials.pdf
+[155/416] Kapchorua_Tea_Kenya_Plc_31_Mar_2020_audited.pdf
+[156/416] KCB_Group_Plc_30_Jun_2020_financials.pdf
+[157/416] KCB_Group_Plc_31_Dec_2020_audited.pdf
+[158/416] Kenya_Power_Lighting_Plc_31_Dec_2020_financials.pdf
+[159/416] Kenya_Re_Insurance_Corporation_Ltd_30_Jun_2020_financials.pdf
+  ⚠ Kenya_Re_Insurance_Corporation_Ltd_30_Jun_2020_financials.pdf: empty/scanned PDF, skipping
+[160/416] Kurwitu_Ventures_Ltd_31_Dec_2020_financials.pdf
+  ⚠ Kurwitu_Ventures_Ltd_31_Dec_2020_financials.pdf: empty/scanned PDF, skipping
+[161/416] Liberty_Kenya_Holdings_Plc_31_Dec_2020_audited.pdf
+[162/416] LONGHORN_PUBLISHERS_PLC_31_dec_2020_financials.pdf
+[163/416] Nairobi_Securities_Exchange_Plc_30_Jun_2020_financials.pdf
+[164/416] Nation_Media_Group_Plc_30_Jun_2020_financials.pdf
+  ⚠ Nation_Media_Group_Plc_30_Jun_2020_financials.pdf: empty/scanned PDF, skipping
+[165/416] Nation_Media_Group_Plc_31_Dec_2020_audited.pdf
+[166/416] NCBA_Group_Plc_1_October_2019_audited.pdf
+[167/416] NCBA_Group_Plc_30_Jun_2020_audited.pdf
+[168/416] NCBA_Group_Plc_30_Sep_2020_audited.pdf
+[169/416] NCBA_Group_Plc_31_Dec_2020_audited.pdf
+[170/416] NewGold_Issuer_RF_Limited_31_Mar_2020_audited.pdf
+[171/416] Safaricom_Plc_31_Mar_2020_audited.pdf
+[172/416] Sanlam_Kenya_Plc_30_Jun_2020_financials.pdf
+  ⚠ Sanlam_Kenya_Plc_30_Jun_2020_financials.pdf: empty/scanned PDF, skipping
+[173/416] Stanbic_Holdings_Plc_30_Jun_2020_financials.pdf
+[174/416] Stanbic_Holdings_Plc_31_Dec_2020_audited.pdf
+[175/416] Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2020_audited.pdf
+[176/416] Standard_Chartered_Bank_Kenya_Ltd_30_Sep_2020_financials.pdf
+[177/416] Standard_Chartered_Bank_Kenya_Ltd_31_Mar_2020_audited.pdf
+[178/416] Standard_Group_Plc_30_Jun_2020_financials.pdf
+  ⚠ Standard_Group_Plc_30_Jun_2020_financials.pdf: empty/scanned PDF, skipping
+[179/416] The_Board_of_Directors_of_National_Bank_of_Kenya_L_31_March_20_audited
+[180/416] Unga_Group_Plc_30_Jun_2020_audited.pdf
+  ⚠ Unga_Group_Plc_30_Jun_2020_audited.pdf: empty/scanned PDF, skipping
+[181/416] Williamson_Tea_Kenya_Plc_30_Sep_2020_financials.pdf
+[182/416] Williamson_Tea_Kenya_Plc_31_Mar_2020_audited.pdf
+[183/416] Wpp_Scangroup_Plc_20_Jun_2020_audited.pdf
+  ⚠ Wpp_Scangroup_Plc_20_Jun_2020_audited.pdf: empty/scanned PDF, skipping
+[184/416] Wpp_Scangroup_Plc_31_July_2021_financials.pdf
+[185/416] 30_Sep_2021_unknown.pdf
+  ⚠ 30_Sep_2021_unknown.pdf: empty/scanned PDF, skipping
+[186/416] 31_mar_2021_unknown.pdf
+  ⚠ 31_mar_2021_unknown.pdf: empty/scanned PDF, skipping
+[187/416] BK_Group_Plc_30_Jun_2021_financials.pdf
+  ⚠ BK_Group_Plc_30_Jun_2021_financials.pdf: empty/scanned PDF, skipping
+[188/416] Britam_Holdings_Plc_30_Jun_2021_financials.pdf
+  ⚠ Britam_Holdings_Plc_30_Jun_2021_financials.pdf: empty/scanned PDF, skipping
+[189/416] Car_General_Kenya_Plc_31_Mar_2021_financials.pdf
+[190/416] Carbacid_Investments_Plc_31_Jan_2021_financials.pdf
+[191/416] Diamond_Trust_Bank_Kenya_Limited_31_March_2021_financials.pdf
+  ⚠ Diamond_Trust_Bank_Kenya_Limited_31_March_2021_financials.pdf: empty/scanned PDF, skipping
+[192/416] E_A_Portland_Cement_Plc_30_Jun_2021_audited.pdf
+  ⚠ E_A_Portland_Cement_Plc_30_Jun_2021_audited.pdf: empty/scanned PDF, skipping
+[193/416] Home_Afrika_Ltd_30_June_2021_financials.pdf
+[194/416] Homeboyz_Entertainment_Plc_30_Jun_2021_financials.pdf
+[195/416] Jubilee_Holdings_Limited_30_Jun_2021_financials.pdf
+[196/416] KAPCHORUA_TEA_KENYA_PLC_31_mar_2021_audited.pdf
+[197/416] KCB_Group_Plc_31_MARCH_2021_financials.pdf
+[198/416] Kenya_Electricity_Generating_Company_PLC_KenGen_30_Jun_2021_audited.pd
+[199/416] Kenya_Power_Lighting_Plc_30_Jun_2021_audited.pdf
+[200/416] NCBA_Group_Plc_30_Jun_2021_financials.pdf
+  ⚠ NCBA_Group_Plc_30_Jun_2021_financials.pdf: empty/scanned PDF, skipping
+[201/416] NewGold_Issuer_RF_Limited_30_Sep_2021_financials.pdf
+[202/416] NewGold_Issuer_RF_Limited_31_Mar_2021_audited.pdf
+[203/416] Olympia_Capital_Holdings_Plc_31_Aug_2021_financials.pdf
+  ⚠ Olympia_Capital_Holdings_Plc_31_Aug_2021_financials.pdf: empty/scanned PDF, skipping
+[204/416] Sasini_Plc_31_Mar_2021_financials.pdf
+  ⚠ Sasini_Plc_31_Mar_2021_financials.pdf: empty/scanned PDF, skipping
+[205/416] The_Standard_Group_PLC_GROUP_RESULTS_30_jun_2021_financials.pdf
+[206/416] Total_Kenya_Plc_31_Dec_2020_audited.pdf
+  ⚠ Total_Kenya_Plc_31_Dec_2020_audited.pdf: empty/scanned PDF, skipping
+[207/416] TotalEnergies_Marketing_Kenya_Plc_30_june_2021_financials.pdf
+[208/416] Unga_Group_Plc_30_Jun_2021_audited.pdf
+[209/416] Wpp_Scangroup_Plc_31_Dec_2020_audited.pdf
+  ⚠ Wpp_Scangroup_Plc_31_Dec_2020_audited.pdf: empty/scanned PDF, skipping
+[210/416] ABSA_Bank_Kenya_Plc_31_Dec_2021_audited.pdf
+[211/416] ABSA_Bank_Kenya_Plc_31_Mar_2022_financials.pdf
+[212/416] ANNOUNCEMENT_30_Sep_2021_audited.pdf
+[213/416] BAT_Kenya_Plc_30_Jun_2022_financials.pdf
+[214/416] BAT_Kenya_Plc_31_Dec_2021_audited.pdf
+  ⚠ BAT_Kenya_Plc_31_Dec_2021_audited.pdf: empty/scanned PDF, skipping
+[215/416] BK_Group_Plc_31_Dec_2021_audited.pdf
+[216/416] BK_Group_Plc_31_Mar_2022_financials.pdf
+[217/416] Britam_Holdings_Plc_31_Dec_2021_audited.pdf
+  ⚠ Britam_Holdings_Plc_31_Dec_2021_audited.pdf: empty/scanned PDF, skipping
+[218/416] Car_General_Kenya_Plc_30_Sep_2021_audited.pdf
+[219/416] Carbacid_Investments_Plc_31_Jan_2022_financials.pdf
+[220/416] Centum_Investment_Co_Plc_31_Mar_2022_financials.pdf
+  ⚠ Centum_Investment_Co_Plc_31_Mar_2022_financials.pdf: empty/scanned PDF, skipping
+[221/416] Co_operative_Bank_of_Kenya_Ltd_31_Mar_2022_audited.pdf
+[222/416] Crown_Paints_Kenya_Plc_31_Dec_2021_audited.pdf
+[223/416] Diamond_Trust_Bank_Kenya_Limited_30_Jun_2022_financials.pdf
+[224/416] Diamond_Trust_Bank_Kenya_Limited_31_Dec_2021_audited.pdf
+[225/416] Diamond_Trust_Bank_Kenya_Limited_31_March_2022_financials.pdf
+[226/416] East_African_Breweries_Ltd_30_June_2022_audited.pdf
+[227/416] East_African_Breweries_Plc_31_Dec_2021_financials.pdf
+[228/416] East_African_Portland_Cement_Plc_31_Dec_2021_financials.pdf
+  ⚠ East_African_Portland_Cement_Plc_31_Dec_2021_financials.pdf: empty/scanned PDF, skipping
+[229/416] Equity_Group_Holdings_Plc_30_Jun_2022_audited.pdf
+[230/416] Equity_Group_Holdings_Plc_31_Dec_2021_audited.pdf
+[231/416] Equity_Group_Holdings_Plc_31_Mar_2022_audited.pdf
+[232/416] Express_Kenya_Plc_31_Dec_2021_financials.pdf
+[233/416] Family_Bank_Ltd_31_Dec_2021_audited.pdf
+[234/416] Flame_Tree_Group_Holdings_Ltd_31_Dec_2021_financials.pdf
+[235/416] HF_Group_Plc_31_Dec_2021_audited.pdf
+  ⚠ HF_Group_Plc_31_Dec_2021_audited.pdf: empty/scanned PDF, skipping
+[236/416] Home_Afrika_Ltd_31_Dec_2021_financials.pdf
+[237/416] Homeboyz_Entertainment_Plc_31_Dec_2021_audited.pdf
+[238/416] I_M_Group_Plc_30_Jun_2022_financials.pdf
+[239/416] I_M_Holdings_Plc_31_Dec_2021_audited.pdf
+  ⚠ I_M_Holdings_Plc_31_Dec_2021_audited.pdf: empty/scanned PDF, skipping
+[240/416] I_M_Holdings_Plc_31_Mar_2022_audited.pdf
+[241/416] ILAM_Fahari_I_REIT_30_Jun_2022_financials.pdf
+[242/416] ILAM_Fahari_I_REIT_31_Dec_2021_audited.pdf
+[243/416] Jubilee_Holdings_Limited_31_Dec_2021_audited.pdf
+[244/416] Kakuzi_Plc_30_Jun_2022_financials.pdf
+[245/416] KCB_Group_Plc_30_Jun_2022_financials.pdf
+[246/416] KCB_Group_Plc_31_Mar_2022_financials.pdf
+[247/416] KenGen_Plc_31_Dec_2021_financials.pdf
+  ⚠ KenGen_Plc_31_Dec_2021_financials.pdf: empty/scanned PDF, skipping
+[248/416] Kenya_Airways_Plc_31_Dec_2021_audited.pdf
+  ⚠ Kenya_Airways_Plc_31_Dec_2021_audited.pdf: empty/scanned PDF, skipping
+[249/416] Kenya_Orchards_Limited_31_Dec_2021_financials.pdf
+  ⚠ Kenya_Orchards_Limited_31_Dec_2021_financials.pdf: empty/scanned PDF, skipping
+[250/416] Kenya_Plc_group_for_the_six_months_ended_30th_June_30_Jun_2022_financi
+[251/416] Kenya_Power_Lighting_Plc_31_Dec_2021_financials.pdf
+  ⚠ Kenya_Power_Lighting_Plc_31_Dec_2021_financials.pdf: empty/scanned PDF, skipping
+[252/416] Nation_Media_Group_Plc_30_Jun_2022_financials.pdf
+[253/416] Nation_Media_Group_Plc_31_Dec_2021_audited.pdf
+[254/416] NCBA_Group_Plc_30_Jun_2022_financials.pdf
+[255/416] NCBA_Group_Plc_31_Dec_2021_audited.pdf
+[256/416] NCBA_Group_Plc_31_Mar_2022_financials.pdf
+  ⚠ NCBA_Group_Plc_31_Mar_2022_financials.pdf: empty/scanned PDF, skipping
+[257/416] NewGold_Issuer_RF_Limited_31_Mar_2022_audited.pdf
+[258/416] Sameer_Africa_Plc_30_June_2022_financials.pdf
+  ⚠ Sameer_Africa_Plc_30_June_2022_financials.pdf: empty/scanned PDF, skipping
+[259/416] Sameer_Africa_Plc_31_Dec_2021_audited.pdf
+  ⚠ Sameer_Africa_Plc_31_Dec_2021_audited.pdf: empty/scanned PDF, skipping
+[260/416] Sasini_Plc_30_Sep_2021_financials.pdf
+[261/416] Sasini_Plc_31_Mar_2022_financials.pdf
+[262/416] Stanbic_Holdings_Plc_30_Jun_2022_financials.pdf
+[263/416] Stanbic_Holdings_Plc_31_Dec_2021_audited.pdf
+[264/416] Standard_Chartered_Bank_Kenya_Ltd_30_Jun_2022_financials.pdf
+[265/416] Standard_Group_Plc_31_Dec_2021_audited.pdf
+[266/416] THE_DIRECTORS_OF_CIC_INSURANCE_GROUP_PLC_ARE_PLEAS_31_Dec_2021_audited
+[267/416] TPS_Eastern_Africa_Plc_31_Dec_2021_audited.pdf
+  ⚠ TPS_Eastern_Africa_Plc_31_Dec_2021_audited.pdf: empty/scanned PDF, skipping
+[268/416] Umeme_Limited_30_Jun_2022_financials.pdf
+[269/416] UNAUDITED_CONDENSED_GROUP_RESULTS_FOR_THE_31_Dec_2021_financials.pdf
+[270/416] Unga_Group_Plc_31_Dec_2021_audited.pdf
+[271/416] Wpp_Scangroup_Plc_30_Jun_2022_financials.pdf
+  ⚠ Wpp_Scangroup_Plc_30_Jun_2022_financials.pdf: empty/scanned PDF, skipping
+[272/416] Wpp_Scangroup_Plc_31_Dec_2021_audited.pdf
+[273/416] 30_Jun_2023_unknown.pdf
+  ⚠ 30_Jun_2023_unknown.pdf: empty/scanned PDF, skipping
+[274/416] ABSA_Bank_Kenya_Plc_30_Jun_2023_financials.pdf
+[275/416] audited.pdf
+  ⚠ audited.pdf: empty/scanned PDF, skipping
+[276/416] Bamburi_Cement_Plc_30_Jun_2023_financials.pdf
+  ⚠ Bamburi_Cement_Plc_30_Jun_2023_financials.pdf: empty/scanned PDF, skipping
+[277/416] BAT_Kenya_Plc_30_Jun_2023_financials.pdf
+  ⚠ BAT_Kenya_Plc_30_Jun_2023_financials.pdf: empty/scanned PDF, skipping
+[278/416] BOC_Kenya_Plc_30_Jun_2023_financials.pdf
+[279/416] Carbacid_Investments_Plc_31_Jan_2023_financials.pdf
+[280/416] Co_operative_Bank_of_Kenya_Ltd_30_Jun_2023_audited.pdf
+[281/416] Crown_Paints_Kenya_Plc_30_JUNE_2023_financials.pdf
+[282/416] Diamond_Trust_Bank_Kenya_Limited_30_Jun_2023_financials.pdf
+  ⚠ Diamond_Trust_Bank_Kenya_Limited_30_Jun_2023_financials.pdf: empty/scanned PDF, skipping
+[283/416] Eaagads_Limited_31_MARCH_2023_audited.pdf
+[284/416] EAC_Plc_Unaudited_Interim_results_for_the_six_mont_30_JUNE_2023_financ
+[285/416] East_African_Breweries_Plc_30_June_2023_audited.pdf
+[286/416] Express_Kenya_Plc_30_Jun_2023_financials.pdf
+[287/416] I_M_Group_Plc_30_Jun_2023_financials.pdf
+[288/416] Kakuzi_Plc_30_Jun_2023_financials.pdf
+[289/416] KCB_Group_Plc_30_Jun_2023_financials.pdf
+[290/416] Kenya_Mortgage_Refinance_Company_PLC_30_Jun_2023_financials.pdf
+[291/416] Nairobi_Securities_Exchange_Plc_30_Jun_2023_financials.pdf
+[292/416] NCBA_Group_Plc_30_Jun_2023_financials.pdf
+[293/416] SAFARICOM_PLC_CONDENSED_AUDITED_RESULTS_FOR_THE_YE_31_Mar_2023_audited
+[294/416] Sanlam_Kenya_Plc_30_Jun_2023_financials.pdf
+[295/416] Sasini_Plc_31_Mar_2023_financials.pdf
+  ⚠ Sasini_Plc_31_Mar_2023_financials.pdf: empty/scanned PDF, skipping
+[296/416] Stanbic_Bank_Kenya_Limited_is_licensed_and_regulat_30_June_2023_financ
+[297/416] THE_BOARD_OF_DIRECTORS_OF_CIC_INSURANCE_GROUP_PLC_17_Dec_21_financials
+[298/416] The_Standard_Group_PLC_30_Jun_2023_financials.pdf
+[299/416] TPS_Eastern_Africa_Plc_30_Jun_2023_financials.pdf
+[300/416] Umeme_Limited_30_Jun_2023_financials.pdf
+[301/416] Wpp_Scangroup_Plc_30_Jun_2023_financials.pdf
+[302/416] ABSA_Bank_Kenya_Plc_30_Jun_2024_financials.pdf
+[303/416] ABSA_Bank_Kenya_Plc_31_Dec_2023_audited.pdf
+[304/416] ABSA_Bank_Kenya_Plc_31_Mar_2024_financials.pdf
+[305/416] Bamburi_Cement_Plc_30_Jun_2024_financials.pdf
+[306/416] BAT_Kenya_Plc_30_Jun_2024_financials.pdf
+  ⚠ BAT_Kenya_Plc_30_Jun_2024_financials.pdf: empty/scanned PDF, skipping
+[307/416] BAT_Kenya_Plc_31_Dec_2023_audited.pdf
+[308/416] BK_Group_Plc_0_2_56_financials.pdf
+[309/416] BK_Group_Plc_30_June_2024_financials.pdf
+  ⚠ BK_Group_Plc_30_June_2024_financials.pdf: empty/scanned PDF, skipping
+[310/416] BK_Group_Plc_31_Dec_2023_audited.pdf
+[311/416] BOC_Kenya_Plc_31_Dec_2023_audited.pdf
+[312/416] Britam_Holdings_Plc_30_Jun_2024_financials.pdf
+[313/416] Britam_Holdings_Plc_31_Dec_2023_audited.pdf
+[314/416] Carbacid_Investments_Plc_31_Jan_2024_financials.pdf
+[315/416] Carbacid_Investments_Plc_31_July_2024_audited.pdf
+[316/416] Cash_and_bank_balances_27_533_83_075_30_June_2024_audited.pdf
+[317/416] Co_operative_Bank_of_Kenya_Ltd_31_Dec_2023_audited.pdf
+[318/416] Co_operative_Bank_of_Kenya_Ltd_31_Mar_2024_audited.pdf
+[319/416] Crown_Paints_Kenya_Plc_31_Dec_2023_audited.pdf
+[320/416] Diamond_Trust_Bank_Kenya_Limited_31_Dec_2023_audited.pdf
+[321/416] Diamond_Trust_Bank_Kenya_Limited_31_March_2024_financials.pdf
+  ⚠ Diamond_Trust_Bank_Kenya_Limited_31_March_2024_financials.pdf: empty/scanned PDF, skipping
+[322/416] East_African_Breweries_Plc_30_June_2024_audited.pdf
+[323/416] East_African_Breweries_PLC_31_December_2023_financials.pdf
+[324/416] East_African_Portland_Cement_Plc_31_Dec_2023_financials.pdf
+[325/416] equity group holdings_30_Jun_2024_audited.pdf
+[326/416] Equity_Group_Holdings_Plc_31_Dec_2023_audited.pdf
+[327/416] Express_Kenya_Plc_31_Dec_2023_financials.pdf
+[328/416] extracts_from_the_financial_books_of_Safaricom_PLC_31_Mar_2024_audited
+[329/416] Family_Bank_Ltd_31_Dec_22_audited.pdf
+[330/416] Family_Bank_Ltd_31_Mar_23_financials.pdf
+[331/416] Flame_Tree_Group_Holdings_Ltd_31_Dec_2023_financials.pdf
+[332/416] HF_Group_Plc_30_September_2024_financials.pdf
+[333/416] HF_Group_Plc_31_Dec_2023_audited.pdf
+[334/416] HF_Group_Plc_31_Mar_2024_audited.pdf
+[335/416] home afrika_30_Jun_2024_audited.pdf
+[336/416] Homeboyz_Entertainment_Plc_31_Dec_2023_audited.pdf
+[337/416] Jubilee_Holdings_Limited_30_Jun_2024_financials.pdf
+[338/416] Jubilee_Holdings_Limited_31_DECEMBER_2023_audited.pdf
+[339/416] Kapchorua_Tea_Kenya_Plc_1_April_2023_financials.pdf
+[340/416] KCB_Group_Plc_31_Mar_2024_financials.pdf
+[341/416] KCB_KENYA_BANK_NATIONAL_BANK_OF_KENYA_KCB_GROUP_PL_31_Dec_2023_audited
+[342/416] KenGen_Plc_unknown_period_audited.pdf
+  ⚠ KenGen_Plc_unknown_period_audited.pdf: empty/scanned PDF, skipping
+[343/416] KenGen_Plc_unknown_period_financials.pdf
+[344/416] Kenya_Power_Lighting_Plc_30_Jun_2024_audited.pdf
+[345/416] LIMURU_TEA_PLC_30_Jun_2024_financials.pdf
+[346/416] LIMURU_TEA_PLC_31_December_2023_audited.pdf
+[347/416] Nation_Media_Group_Plc_30_June_2024_financials.pdf
+[348/416] Nation_Media_Group_Plc_31_Dec_2023_audited.pdf
+[349/416] NCBA_Group_Plc_26_March_2024_audited.pdf
+[350/416] NCBA_Group_Plc_31_Mar_2024_financials.pdf
+[351/416] NSE_Plc_30_June_2024_financials.pdf
+[352/416] SAFARICOM_PLC_CONDENSED_UNAUDITED_RESULTS_FOR_THE_30_September_2024_fi
+[353/416] Sanlam_Kenya_Plc_31_Dec_2023_audited.pdf
+[354/416] Sasini_Plc_31_Mar_2024_financials.pdf
+[355/416] Sasini_Plc_unknown_period_audited.pdf
+  ⚠ Sasini_Plc_unknown_period_audited.pdf: empty/scanned PDF, skipping
+[356/416] Stanbic_Holdings_Plc_is_regulated_by_the_Capital_M_30_June_2024_financ
+[357/416] Stanbic_Holdings_Plc_is_regulated_by_the_Capital_M_31_December_2023_au
+[358/416] Standard_Chartered_Bank_Kenya_Ltd_31_Dec_2023_financials.pdf
+[359/416] Standard_Group_Plc_31_December_2023_audited.pdf
+[360/416] The_Standard_Group_PLC_30_Jun_2024_financials.pdf
+[361/416] TPS_Eastern_Africa_Plc_unknown_period_audited.pdf
+  ⚠ TPS_Eastern_Africa_Plc_unknown_period_audited.pdf: empty/scanned PDF, skipping
+[362/416] TransCentury_Plc_30_Jun_2023_audited.pdf
+[363/416] TransCentury_PLC_TC_or_Group_is_pleased_to_announc_31_Dec_2022_financi
+[364/416] Umeme_Limited_30_Jun_2024_financials.pdf
+[365/416] Umeme_Limited_31_Dec_2023_audited.pdf
+[366/416] Unga_Group_Plc_31_Dec_2023_financials.pdf
+[367/416] Williamson_Tea_Kenya_1_April_2023_financials.pdf
+[368/416] Williamson_Tea_Kenya_31_Mar_2024_audited.pdf
+[369/416] Wpp_Scangroup_Plc_30_Jun_2024_financials.pdf
+[370/416] Wpp_Scangroup_Plc_31_Dec_2023_audited.pdf
+[371/416] ABSA_Bank_Kenya_Plc_30_Sep_2025_financials.pdf
+[372/416] audited.pdf
+  ⚠ audited.pdf: empty/scanned PDF, skipping
+[373/416] BK_Group_Plc_21_May_2025_financials.pdf
+[374/416] BK_Group_Plc_31_Dec_2024_audited.pdf
+[375/416] Carbacid_Investments_Plc_31_July_2025_audited.pdf
+[376/416] CIC_INSURANCE_GROUP_PLC_31_Dec_2024_audited.pdf
+[377/416] Co_operative_Bank_of_Kenya_Ltd_30_Sep_2025_audited.pdf
+[378/416] Crown_Paints_Kenya_Plc_30_JUNE_2025_financials.pdf
+[379/416] Diamond_Trust_Bank_Kenya_Limited_30_Jun_2025_financials.pdf
+[380/416] Diamond_Trust_Bank_Kenya_Limited_30_Sep_2025_financials.pdf
+  ⚠ Diamond_Trust_Bank_Kenya_Limited_30_Sep_2025_financials.pdf: empty/scanned PDF, skipping
+[381/416] Diamond_Trust_Bank_Kenya_Limited_31_Dec_2024_audited.pdf
+[382/416] East_African_Breweries_Plc_31_Dec_24_financials.pdf
+[383/416] Equity_Group_Holdings_Plc_30_Sep_2025_financials.pdf
+[384/416] Equity_Group_Holdings_Plc_31_Dec_2024_audited.pdf
+[385/416] Family_Bank_Ltd_31_Dec_23_audited.pdf
+[386/416] Family_Bank_Ltd_31_Mar_24_financials.pdf
+[387/416] HF_Group_Plc_31_Dec_2024_audited.pdf
+[388/416] Home_Afrika_Ltd_62_1_67_financials.pdf
+[389/416] I_M_Group_PLC_30_September_2025_financials.pdf
+[390/416] Income_after_impairment_charges_36_644_571_35_080_31_December_2024_aud
+[391/416] Jubilee_Holdings_Limited_31_Dec_2024_audited.pdf
+[392/416] Kakuzi_Plc_30_June_2025_financials.pdf
+[393/416] Kapchorua_Tea_Kenya_Plc_45_4_59_audited.pdf
+[394/416] KCB_Group_Plc_30_Sep_2025_audited.pdf
+[395/416] KCB_Group_Plc_31_Dec_2024_audited.pdf
+[396/416] KCB_Group_Plc_31_Mar_2025_audited.pdf
+[397/416] KenGen_30_June_2025_audited.pdf
+[398/416] Kenya_Re_Insurance_Corporation_Ltd_31_Dec_2024_audited.pdf
+[399/416] Liberty_Kenya_Holdings_Plc_30_June_2025_financials.pdf
+[400/416] nairobi business ventures_31_Mar_2025_financials.pdf
+[401/416] NCBA_Group_Plc_30_Sep_2025_financials.pdf
+[402/416] NCBA_Group_Plc_31_Mar_2025_financials.pdf
+  ⚠ NCBA_Group_Plc_31_Mar_2025_financials.pdf: empty/scanned PDF, skipping
+[403/416] NCBA_Group_Plc_57_May_2025_audited.pdf
+[404/416] olympia capital holdings_31_Aug_2025_financials.pdf
+[405/416] Sanlam_Kenya_Plc_30_Jun_2025_financials.pdf
+[406/416] Sanlam_Kenya_Plc_31_Dec_2024_audited.pdf
+[407/416] Stanbic_Holdings_Plc_is_regulated_by_the_Capital_M_30_June_2025_financ
+[408/416] Standard_Chartered_Bank_Kenya_Ltd_00_1_51_financials.pdf
+[409/416] Standard_Chartered_Bank_Ltd_31_Dec_2024_financials.pdf
+[410/416] The_Kenya_Power_Lighting_Company_Plc_30_Jun_2025_audited.pdf
+[411/416] The_Kenya_Power_Lighting_Company_Plc_31_DECEMBER_2024_financials.pdf
+[412/416] TransCentury_30_JUNE_2024_financials.pdf
+[413/416] TransCentury_31_DECEMBER_2023_audited.pdf
+[414/416] unknown.pdf
+  ⚠ unknown.pdf: empty/scanned PDF, skipping
+[415/416] Williamson_Tea_Kenya_72_9_07_audited.pdf
+[416/416] www_imbankgroup_com_investor_relations_imgroup_plc_30_September_2025_f
+
+✓ Extracted: 292  Errors: 124
+Writing to C:\Users\nthig\.claude\projects\kenya-stocks\data\nse\financials.json
+
+Company summary:
+  ABSA: 9 periods
+  BAMB: 2 periods
+  BATK: 3 periods
+  BKG: 6 periods
+  BOC: 3 periods
+  BRIT: 2 periods
+  CARB: 8 periods
+  CFC: 8 periods
+  COOP: 12 periods
+  CPKL: 6 periods
+  DTK: 8 periods
+  EABL: 6 periods
+  EAPC: 1 periods
+  EQTY: 10 periods
+  FANB: 10 periods
+  FTGH: 7 periods
+  HAFR: 6 periods
+  HBZE: 4 periods
+  HFCK: 5 periods
+  IMH: 58 periods
+  JUB: 8 periods
+  KAPA: 7 periods
+  KCB: 14 periods
+  KEGN: 3 periods
+  KPLC: 5 periods
+  NBK: 3 periods
+  NCBA: 11 periods
+  NMG: 5 periods
+  NSE: 6 periods
+  SASN: 3 periods
+  SCAN: 5 periods
+  SCBK: 9 periods
+  SCOM: 4 periods
+  SGL: 6 periods
+  SLAM: 4 periods
+  TCL: 5 periods
+  TPSE: 2 periods
+  UMME: 4 periods
+  UNGA: 3 periods
+  WTK: 8 periods
+  XPRS: 3 periods
+
+✓ Done
