@@ -4,6 +4,7 @@ from typing import Optional, List
 
 from scrapers import fetch_africanfinancials_sample, fetch_nse_announcements_sample
 from prices import get_price, get_all_prices, NSE_TICKERS
+from history import get_price_history
 
 app = FastAPI(title="Kenya Stocks API", version="1.0.0")
 
@@ -53,6 +54,17 @@ async def single_price(ticker: str):
 async def list_tickers():
     """List all supported NSE tickers."""
     return {"count": len(NSE_TICKERS), "tickers": NSE_TICKERS}
+
+
+@app.get("/history/{ticker}")
+async def price_history(ticker: str, range: str = "1y"):
+    """
+    Fetch historical price data for a NSE ticker.
+    range: 1d | 5d | 1mo | 6mo | 1y | 5y
+    Returns: { ticker, range, points: [{t: ms, v: price}] }
+    """
+    points = await get_price_history(ticker.upper(), range)
+    return {"ticker": ticker.upper(), "range": range, "points": points or []}
 
 
 # ── Announcements ────────────────────────────────────────────────────────────

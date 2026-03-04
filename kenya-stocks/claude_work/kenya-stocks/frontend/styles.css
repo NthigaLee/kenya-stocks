@@ -449,16 +449,24 @@ select option { background: var(--bg-surface); color: var(--text-primary); }
   .valuation-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* Dropdown optgroup — black text on light bg for visibility */
-select option,
-select optgroup {
-  background-color: #1e2d3d;
-  color: #e2e8f0;
+/* Dropdown options — dark bg, light text */
+select option {
+  background-color: #1e2d3d !important;
+  color: #e2e8f0 !important;
 }
+/* Sector group headers — white bg, black bold text */
 select optgroup {
-  color: #000000;
-  font-weight: 800;
-  background-color: #e2e8f0;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.05em !important;
+}
+select optgroup option {
+  background-color: #111827 !important;
+  color: #f0f4f8 !important;
+  font-weight: 400 !important;
+  font-size: 0.95rem !important;
 }
 
 /* Stock Price Chart */

@@ -385,20 +385,24 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
             color: '#5a6a7e', font: { size: 10 },
             callback: (v) => {
               const u = opts.units;
+              // Data stored in THOUSANDS of KES:
+              //   1,000,000 thousands = 1 Billion KES  → threshold 1e6
+              //   1,000 thousands     = 1 Million KES   → threshold 1e3
+              if (u === 'thousands') {
+                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'B';
+                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'M';
+                return v + 'K';
+              }
+              // Data stored in MILLIONS of KES:
+              //   1,000 millions = 1 Billion KES → threshold 1e3
               if (u === 'millions') {
-                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'T';
-                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'B';
+                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'B';
                 return v.toFixed(0) + 'M';
               }
-              if (u === 'thousands') {
-                if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(0) + 'B';
-                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'M';
-                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'K';
-                return v;
-              }
-              if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(0) + 'B';
-              if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'M';
-              if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'K';
+              // Raw values (EPS etc.)
+              if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(1) + 'B';
+              if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'M';
+              if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'K';
               return v;
             }
           }
@@ -613,24 +617,14 @@ const PRICE_RANGES = {
 let _activePriceRange = '1Y';
 
 async function fetchYahooChart(ticker, interval, range) {
-  const yfTicker = encodeURIComponent(ticker + '.NR');
-  const direct = `https://query1.finance.yahoo.com/v8/finance/chart/${yfTicker}?interval=${interval}&range=${range}`;
-  const proxy  = `https://corsproxy.io/?url=${encodeURIComponent(direct)}`;
-  for (const url of [direct, proxy]) {
-    try {
-      const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
-      if (!res.ok) continue;
-      const json = await res.json();
-      const result = json?.chart?.result?.[0];
-      if (!result) continue;
-      const timestamps = result.timestamp;
-      const closes     = result.indicators?.quote?.[0]?.close;
-      if (!timestamps || !closes) continue;
-      return timestamps
-        .map((t, i) => ({ t: t * 1000, v: closes[i] }))
-        .filter(p => p.v !== null && p.v !== undefined);
-    } catch (_) { /* try next */ }
-  }
+  // Route through our Render backend — Yahoo Finance has no NSE Kenya data
+  try {
+    const url = `${API_BASE}/history/${encodeURIComponent(ticker)}?range=${range}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (json.points && json.points.length > 0) return json.points;
+  } catch (_) {}
   return null;
 }
 
