@@ -924,10 +924,10 @@ function renderValuation(co) {
 
   const result = computeValuation(co);
   if (!result) {
-    panel.classList.add('hidden');
+    panel.style.display = 'none';
     return;
   }
-  panel.classList.remove('hidden');
+  panel.style.display = 'block';
 
   // Render model cards
   grid.innerHTML = result.models.map(m => {

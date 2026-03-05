@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NSE Insights</title>
+  <title>NSE Insights — Kenya Stock Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
@@ -12,12 +12,17 @@
   <!-- Top Navigation -->
   <nav class="topnav">
     <div class="topnav-left">
-      <span class="logo">📈 NSE Insights</span>
+      <span class="logo">
+        <div class="logo-dot"></div>
+        NSE Insights
+      </span>
       <span class="breadcrumb">/ <span id="breadcrumb-company">Select a company</span></span>
     </div>
     <div class="topnav-right">
       <div class="index-pill">NSE 20 <span class="idx-val" id="nse20-val">1,653</span> <span class="idx-chg negative">-0.43%</span></div>
       <div class="index-pill">NSE All Share <span class="idx-val" id="nseall-val">169.3</span> <span class="idx-chg positive">+0.12%</span></div>
+      <a class="nav-link-btn" href="landing.html">Home</a>
+      <a class="nav-link-btn primary" href="login.html">Sign in</a>
     </div>
   </nav>
 
@@ -26,7 +31,6 @@
     <div class="search-bar">
       <select id="company-select">
         <option value="">-- Select Company --</option>
-        <!-- Options populated dynamically from NSE_COMPANIES in app2.js -->
       </select>
       <span class="exchange-tag">NSE</span>
       <button id="search-btn" onclick="loadCompany()">Search</button>
@@ -53,8 +57,7 @@
       </div>
     </div>
 
-
-    <!-- Stock Price Chart -->
+    <!-- Stock Price Chart (full width, above the split) -->
     <div id="price-chart-section" class="price-chart-section hidden">
       <div class="price-chart-header">
         <span class="chart-section-label">Stock Price</span>
@@ -69,46 +72,44 @@
         <span id="price-change-pill" class="price-change-pill"></span>
       </div>
       <div class="price-chart-card">
-        <div id="price-chart-loading" class="price-chart-loading hidden">Loading price data...</div>
+        <div id="price-chart-loading" class="price-chart-loading hidden">Loading price data…</div>
         <div id="price-chart-error" class="price-chart-error hidden">Price data unavailable. Try a different range.</div>
-        <div class="chart-wrap" style="height:280px;"><canvas id="chart-price"></canvas></div>
+        <div class="chart-wrap" style="height:260px;"><canvas id="chart-price"></canvas></div>
       </div>
     </div>
-    <!-- Stats Grid -->
-    <div class="stats-grid" id="stats-grid">
-      <!-- Populated by JS -->
-    </div>
 
-    <!-- Chart Toggle -->
+    <!-- Stats Grid (full width) -->
+    <div class="stats-grid" id="stats-grid"></div>
+
+    <!-- Chart Toggle (full width) -->
     <div class="chart-controls">
       <span class="chart-section-label">Historical Financials</span>
       <div class="period-toggle">
-        <button class="toggle-btn active" id="toggle-annual" onclick="setPeriod('annual')">Annually</button>
-        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')" >Quarterly</button>
+        <button class="toggle-btn active" id="toggle-annual"    onclick="setPeriod('annual')">Annually</button>
+        <button class="toggle-btn"        id="toggle-quarterly" onclick="setPeriod('quarterly')">Quarterly</button>
       </div>
     </div>
 
-    <!-- Dynamic Charts — populated by sector template in app2.js -->
-    <div id="sector-charts-container">
-      <!-- JS builds chart cards here based on company sector -->
-    </div>
+    <!-- ── SPLIT LAYOUT: Charts left | Valuation right ── -->
+    <div class="dashboard-body">
 
-    <!-- Valuation Estimates Panel -->
-    <div id="valuation-panel" class="valuation-panel hidden">
-      <div class="chart-controls" style="margin-top:1.5rem">
-        <span class="chart-section-label">Estimated Valuation</span>
-        <span class="valuation-disclaimer">Estimates only — not investment advice</span>
+      <!-- Charts column -->
+      <div class="charts-area" id="sector-charts-container">
+        <!-- JS builds chart cards here based on sector template -->
       </div>
-      <div class="valuation-grid" id="valuation-grid">
-        <!-- Populated by JS -->
+
+      <!-- Valuation sidebar -->
+      <div class="valuation-sidebar" id="valuation-panel" style="display:none;">
+        <div class="val-sidebar-header">
+          <span class="val-sidebar-title">Valuation</span>
+          <span class="valuation-disclaimer">Estimates only</span>
+        </div>
+        <div class="valuation-grid" id="valuation-grid"></div>
+        <div class="valuation-summary" id="valuation-summary"></div>
+        <div class="valuation-assumptions" id="valuation-assumptions"></div>
       </div>
-      <div class="valuation-summary" id="valuation-summary">
-        <!-- Overall verdict -->
-      </div>
-      <div class="valuation-assumptions" id="valuation-assumptions">
-        <!-- Assumptions disclosure -->
-      </div>
-    </div>
+
+    </div><!-- /.dashboard-body -->
 
   </div><!-- /#dashboard -->
 
@@ -116,11 +117,11 @@
   <div id="empty-state" class="empty-state">
     <div class="empty-icon">📊</div>
     <div class="empty-title">NSE Company Insights</div>
-    <div class="empty-sub">Select a company above to view financials, charts, and key metrics.</div>
+    <div class="empty-sub">Select a company above to view financials, charts and key metrics.</div>
   </div>
 
   <div class="data-updated" id="data-updated">
-    Prices as of 25 Feb 2026 via NSE &middot; Financial data extracted from company filings
+    Prices via NSE · Financial data extracted from company filings · Not investment advice
   </div>
 
   <script src="data.js?v=5"></script>
