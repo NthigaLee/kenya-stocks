@@ -80,10 +80,8 @@ def period_label(record):
             mo = dt.month
             if ptype == "annual":
                 return dt.strftime("%b%Y")
-            if ptype == "half_year":
-                return f"H1 {yr}"
-            if ptype == "quarter":
-                # Determine quarter number from month
+            if ptype in ("half_year", "quarter"):
+                # Map month-end to quarter number (H1/Jun = Q2, Q3/Sep = Q3, etc.)
                 q = {3: "Q1", 6: "Q2", 9: "Q3", 12: "Q4"}.get(mo, f"Q{(mo-1)//3+1}")
                 return f"{q} {yr}"
             return dt.strftime("%b%Y")
