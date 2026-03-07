@@ -28,6 +28,92 @@ const NSE_COMPANIES = {
       {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 64286686.0, "pat": 22874591.0, "pbt": 28400754.0, "nii": 46703444.0, "eps": 0.85, "dps": 0.12, "totalAssets": 1351345471.0, "totalEquity": 206119370.0, "deposits": 1031466777.0, "loans": 808894832.0, "ebitda": null, "mpesa": null},
       {"year": 2025, "period": "Q3 2025", "periodType": "quarter", "dateKey": "2025-09-30", "revenue": 98811027.0, "pat": null, "pbt": null, "nii": 72146888.0, "eps": null, "dps": null, "totalAssets": 1404190326.0, "totalEquity": 210325777.0, "deposits": 1062960998.0, "loans": 850344983.0, "ebitda": null, "mpesa": null}
     ],
+  },
+
+  EQTY: {
+    name: "Equity Group Holdings PLC",
+    ticker: "EQTY",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 52.0,
+    latestPeriod: {"year": 2025, "period": "Q3 2025", "periodType": "quarter", "dateKey": "2025-09-30", "revenue": 65849444.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 985388288.0, "totalEquity": 126070494.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2020, "period": "Dec2020", "periodType": "annual", "dateKey": "2020-12-31", "revenue": null, "pat": 19790.0, "pbt": 31478.0, "nii": null, "eps": 466.8, "dps": 400.0, "totalAssets": 667649767.0, "totalEquity": 86697420.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2021, "period": "Dec2021", "periodType": "annual", "dateKey": "2021-12-31", "revenue": null, "pat": 39175.0, "pbt": 51881.0, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 93774197.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 1004243929.0, "totalEquity": 100766641.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 89271509.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 1027679730.0, "totalEquity": 123102110.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2020, "period": "Q1 2020", "periodType": "quarter", "dateKey": "2020-03-31", "revenue": 12687736.0, "pat": null, "pbt": 25856962.0, "nii": null, "eps": null, "dps": null, "totalAssets": 4935701.0, "totalEquity": 67538874.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2020, "period": "Q3 2020", "periodType": "quarter", "dateKey": "2020-09-30", "revenue": 39980566.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 511829030.0, "totalEquity": 78491773.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2022, "period": "Q1 2022", "periodType": "quarter", "dateKey": "2022-03-31", "revenue": 16532644.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 717976633.0, "totalEquity": 86409081.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2022, "period": "Q2 2022", "periodType": "half_year", "dateKey": "2022-06-30", "revenue": 33898064.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 774729987.0, "totalEquity": 98702087.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q3 2025", "periodType": "quarter", "dateKey": "2025-09-30", "revenue": 65849444.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 985388288.0, "totalEquity": 126070494.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  NCBA: {
+    name: "NCBA Group PLC",
+    ticker: "NCBA",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 45.0,
+    latestPeriod: {"year": 2023, "period": "Q2 2023", "periodType": "half_year", "dateKey": "2023-06-30", "revenue": 2018.0, "pat": 9348216.0, "pbt": null, "nii": null, "eps": 15.05, "dps": 9.76, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2021, "period": "Dec2021", "periodType": "annual", "dateKey": "2021-12-31", "revenue": 358296.0, "pat": null, "pbt": 339722.0, "nii": null, "eps": null, "dps": null, "totalAssets": 81434.0, "totalEquity": 2765.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2020, "period": "Q2 2020", "periodType": "half_year", "dateKey": "2020-06-30", "revenue": null, "pat": 2632161.0, "pbt": null, "nii": null, "eps": 4.9, "dps": 4.88, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2020, "period": "Q3 2020", "periodType": "quarter", "dateKey": "2020-09-30", "revenue": null, "pat": 2020.0, "pbt": null, "nii": null, "eps": 4.86, "dps": 4.88, "totalAssets": 519.0, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2022, "period": "Q2 2022", "periodType": "half_year", "dateKey": "2022-06-30", "revenue": 2018.0, "pat": 7770642.0, "pbt": null, "nii": null, "eps": 14.58, "dps": 6.08, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2023, "period": "Q2 2023", "periodType": "half_year", "dateKey": "2023-06-30", "revenue": 2018.0, "pat": 9348216.0, "pbt": null, "nii": null, "eps": 15.05, "dps": 9.76, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  SCBK: {
+    name: "Standard Chartered Bank Kenya",
+    ticker: "SCBK",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 195.0,
+    latestPeriod: {"year": 2022, "period": "Q2 2022", "periodType": "half_year", "dateKey": "2022-06-30", "revenue": null, "pat": 9043839.0, "pbt": 7569331.0, "nii": null, "eps": 18.0, "dps": 19.0, "totalAssets": 345646341.0, "totalEquity": 51706369.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 33977048.0, "pat": 12057935.0, "pbt": 19668482.0, "nii": null, "eps": 3.0, "dps": 2.0, "totalAssets": 428962175.0, "totalEquity": 61532267.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 41728586.0, "pat": 3835467.0, "pbt": 28208236.0, "nii": null, "eps": 3.0, "dps": 2.0, "totalAssets": 384574089.0, "totalEquity": 71776120.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2020, "period": "Q1 2020", "periodType": "quarter", "dateKey": "2020-03-31", "revenue": 6610667.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 311432013.0, "totalEquity": 49068888.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2020, "period": "Q2 2020", "periodType": "half_year", "dateKey": "2020-06-30", "revenue": 13231587.0, "pat": 3233064.0, "pbt": 5105313.0, "nii": null, "eps": 8.26, "dps": 12.5, "totalAssets": 327214126.0, "totalEquity": 50846552.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2022, "period": "Q2 2022", "periodType": "half_year", "dateKey": "2022-06-30", "revenue": null, "pat": 9043839.0, "pbt": 7569331.0, "nii": null, "eps": 18.0, "dps": 19.0, "totalAssets": 345646341.0, "totalEquity": 51706369.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  ABSA: {
+    name: "ABSA Bank Kenya PLC",
+    ticker: "ABSA",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 14.2,
+    latestPeriod: {"year": 2020, "period": "Q2 2020", "periodType": "half_year", "dateKey": "2020-06-30", "revenue": 28144.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 568015.0, "totalEquity": 356582.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2021, "period": "Dec2021", "periodType": "annual", "dateKey": "2021-12-31", "revenue": 33585983.0, "pat": null, "pbt": 8299860.0, "nii": 23280874.0, "eps": null, "dps": null, "totalAssets": 377935772.0, "totalEquity": 44969283.0, "deposits": 253630105.0, "loans": 208854694.0, "ebitda": null, "mpesa": null},
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 44555765.0, "pat": 30681559.0, "pbt": 19832431.0, "nii": 32131322.0, "eps": 2.83, "dps": 1.55, "totalAssets": 477290548.0, "totalEquity": 60811301.0, "deposits": 306662590.0, "loans": 283578543.0, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2020, "period": "Q2 2020", "periodType": "half_year", "dateKey": "2020-06-30", "revenue": 28144.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 568015.0, "totalEquity": 356582.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
   }
 
 };
