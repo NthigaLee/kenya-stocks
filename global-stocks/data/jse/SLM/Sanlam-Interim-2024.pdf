@@ -1,0 +1,465 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home | Error 404 | Sanlam</title>
+<meta charset="UTF-8" />
+<!-- prevent skype styles on telephone numbers -->
+<meta name="format-detection" content="telephone=no">
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+<meta name="author" content="Sanlam">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="https://use.typekit.net/npe3dbj.css">
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/fonts.css" />
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/desktop.css" media="only screen and (min-width: 1220px)" />
+<link rel="stylesheet" href="css/tablet.css" media="only screen and (max-width: 1210px)" />
+<link rel="stylesheet" href="css/mobile.css" media="only screen and (max-width: 600px)" />
+<link rel="stylesheet" href="css/print.css" media="print" />
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/iframeResizer.min.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/functions.js"></script>
+<!--<script src="js/clone.js"></script>-->
+<meta name="description" content="Welcome to Sanlam Global - Find the latest Sanlam financial performance reports, share information and market indicators.">
+<meta name="keywords" content="">
+</head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5Z9SB3');</script>
+<!-- End Google Tag Manager -->
+<header>
+<nav class="top-global-nav">
+<ul class="top-nav-left-list">
+<li><a href="https://www.sanlamonline.co.za/personal/insurance" target="_blank">PERSONAL</a></li>	
+<li><a href="https://www.sanlamonline.co.za/business" target="_blank">BUSINESS</a></li>	
+<li><a href=" https://www.sanlamonline.co.za/corporate" target="_blank">CORPORATE</a></li>
+<li><a href="index.php">INVESTOR RELATIONS</a></li>		
+</ul>
+<ul class="top-nav-right-list">
+<li><a href="investor-relations-contacts.php">CONTACT</a></li>	
+<li class="region">REGION</li>		
+</ul>
+</nav>
+
+
+<div class="region-block">
+<article class="clearfix">    
+
+<div class="col-4">
+<h4>South Africa</h4>
+<a href="https://www.sanlam.co.za" target="_blank">South Africa Home</a>
+<a href="https://www.sanlaminvestments.com" target="_blank">Sanlam Investments</a>
+<a href="https://sanlamprivatewealth.sanlam.com" target="_blank">Sanlam Private Wealth</a>
+<a href="https://www.glacier.co.za" target="_blank">Glacier by Sanlam</a>
+<a href="https://www.sanlam.co.za/bluestar/Pages/default.aspx" target="_blank">Sanlam BlueStar</a>
+</div> 
+<div class="col-4">
+<h4>Rest of Africa</h4>
+<a href="https://www.sanlam.co.za/investmentseastafrica" target="_blank">Sanlam Investments East Africa</a>
+<a href="https://www.sanlam.co.za/kenya" target="_blank">Sanlam Kenya</a>
+<a href="https://www.sanlam.co.za/mozambique" target="_blank">Sanlam Mozambique</a>
+<a href="https://www.sanlam.co.za/namibia" target="_blank">Sanlam Namibia</a>
+<a href="https://sanlamprivatewealth.mu" target="_blank">Sanlam Private Wealth Mauritius</a>
+<a href="https://rw.sanlam.com/" target="_blank">Sanlam Rwanda</a>
+<a href="https://www.sanlam.co.za/eswatini" target="_blank">Sanlam Swaziland</a>
+<a href="https://www.sanlam.co.za/tanzania" target="_blank">Sanlam Tanzania</a>
+<a href="https://www.sanlam.co.za/uganda" target="_blank">Sanlam Uganda</a>
+<a href="https://www.sanlam.co.za/zambia" target="_blank">Sanlam Zambia</a>    
+</div> 
+<div class="col-4">
+<h4>Europe</h4>
+<a href="https://www.sanlam.co.uk">Sanlam UK</a>
+<a href="https://www.sanlamsecuritiesuk.com/">Sanlam Securities UK</a>
+<a href="https://www.sanlamfour.com/">Sanlam FOUR</a>
+<a href="https://www.sanlam.co.za/ireland">Sanlam Asset Management Ireland</a>   
+</div> 
+<div class="col-4">
+<h4>Global</h4>
+<a href="https://www.sanlamgis.com/">Global Investment Solutions</a>
+<br>
+<h2>
+<a href="why-invest.php">Investor Relations</a>
+</h2>
+</div> 
+</article>   
+</div>  
+
+
+<nav class="main-nav">
+<a href="#" id="navBtn"></a>	
+<div class="logo"><a href="index.php"><img src="images/sanlam-logo.png" alt=""/></a></div>	
+<ul class="main-nav-list">
+<li><a href="index.php">Home</a></li>	
+<li rel="menu-1">About Sanlam
+<ul class="mobile-sub-menu">
+<li><a href="sanlam-at-a-glance.php">Sanlam at a glance</a></li>
+<li><a href="strategy.php">Our strategy</a></li>
+<li><a href="history.php">Our history</a></li>
+<li><a href="leadership.php">Leadership</a></li>
+<li><a href="sustainability.php">Sustainability</a></li>	
+<li><a href="sanlam-foundation.php">Sanlam Foundation</a></li>	
+<li><a href="transformation.php">Transformation</a></li>	
+</ul>	
+</li>	
+<li rel="menu-2">Investor centre
+<ul class="mobile-sub-menu">
+<li><a href="why-invest.php">Why invest in Sanlam</a></li>
+<li><a href="latest-performance.php">Our latest performance</a></li>
+<li><a href="sanlam-capital-market-days.php">Capital Markets Days</a></li>
+<li><a href="financial-reporting.php">Reporting centre</a></li>
+<li><a href="consensus-estimates.php">Consensus estimates</a></li>
+<li><a href="shareholder-information.php">Shareholder information</a></li>
+<li><a href="debt-investors.php">Debt investors</a></li>
+<li><a href="adr-holders.php">ADR holders</a></li>
+<li><a href="governance.php">Governance</a></li>
+<li><a href="investor-relations-contacts.php">Investor relations contacts</a></li>	
+</ul>	
+</li>
+
+<li rel="menu-3">Sustainability
+<ul class="mobile-sub-menu">
+<li><a href="sustainability.php">Sustainability</a></li>
+<li><a href="sanlam-foundation.php">Foundation</a></li>
+<li><a href="transformation.php">Transformation</a></li>
+<li><a href="governance.php">Governance</a></li>
+</ul>	
+</li>
+<li rel="menu-4"><a href="regulatory-news.php">SENS announcements</a></li>
+<li rel="menu-5">Media
+<ul class="mobile-sub-menu">
+<li><a href="media-releases.php">Media releases</a></li>
+<li><a href="videos.php">Our videos</a></li>
+<li><a href="podcasts.php">Podcasts</a></li>
+<!--
+<li><a href="regulatory-news.php">Regulatory news</a></li>
+<li><a href="https://www.sanlam.co.za/mediacentre/Pages/default.aspx#Default=%7B%22k%22%3A%22%22%2C%22r%22%3A%5B%7B%22n%22%3A%22comMediacategory%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%824d656469612052656c6561736573%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22%C7%82%C7%824d656469612052656c6561736573%5C%22%22%3A%22Media%20Releases%22%7D%7D%5D%7D">Media releases</a></li>
+-->
+</ul>	
+</li>
+<li rel="menu-6"><a href="G20-overview.php">G20 and B20</a></li>
+<li class="mobile-menu"><a href="investor-relations-contacts.php">Contact</a></li>    
+<li class="mobile-menu region">Region</li> 
+
+<div class="search">
+<form method="GET" action="search-results.php" class="active">
+<input type="search" class="search-box" placeholder="search" name="zoom_query" />
+<span class="search-button">
+<span class="search-icon"></span>
+</span></form> 
+</div>    
+</ul>
+
+
+
+<div class="nav-container">
+<div class="nav-content" id="menu-1">
+<article class="clearfix">
+<div class="mega-menu-left-col">
+<h1>About <strong>Sanlam</strong></h1>	
+<p>Sanlam is a diversified financial services company headquartered in South Africa, with a strong presence in 31&nbsp;countries, across the African continent and a presence in Asia.</p>	
+
+<ul class="sub-menu">
+<li><a href="sanlam-at-a-glance.php">Sanlam at a glance</a></li>
+<li><a href="strategy.php">Our strategy</a></li>
+<li><a href="history.php">Our history</a></li>
+<li><a href="leadership.php">Leadership</a></li>
+</ul>	
+</div>	
+
+
+<div class="mega-menu-right-col">
+<div class="img-container">
+<img src="images/home-news/computer.jpg" alt="Empowering future"/>
+<div class="content-container"> 
+<h3>The group reported strong operational performance in its 2024 annual results, highlighted by strong earnings growth, robust new business volumes and value of new business.</h3> 
+<p></p> 
+<a class="read-more" href="annual-results-2024.php">Read more</a>
+</div>	
+</div>	
+</div>	
+</article>	
+</div>
+
+
+
+<div class="nav-content" id="menu-2">
+<article class="clearfix">	
+<div class="mega-menu-left-col">
+<h1>Investor <strong>centre</strong></h1>	
+<p>Find information about our performance, dividends and investor events.</p>		
+<ul class="sub-menu">
+<li><a href="why-invest.php">Why invest in Sanlam</a></li>
+<li><a href="latest-performance.php">Our latest performance</a></li> 
+<li><a href="sanlam-capital-market-days.php">Capital Markets Days</a></li>    
+<li><a href="financial-reporting.php">Reporting centre</a></li>
+<li><a href="consensus-estimates.php">Consensus estimates</a></li>
+<li><a href="shareholder-information.php">Shareholder information</a></li>
+<li><a href="debt-investors.php">Debt investors</a></li>
+<li><a href="dividends.php">Dividend payment</a></li>
+<li><a href="investor-relations-contacts.php">Investor relations contacts</a></li>	
+</ul>	
+</div>	
+
+
+
+<div class="mega-menu-right-col">
+<div class="img-container">
+<img src="images/home-news/looking-up.jpg" alt="Empowering future"/>
+<div class="content-container"> 
+<h3>Capital Markets Days</h3> 
+<p>16 October 2025</p> 
+<a class="read-more" href="sanlam-capital-market-days.php" target="_blank">Read more</a>
+</div>	
+</div>	
+</div>
+</article>	
+</div>	
+
+
+<div class="nav-content" id="menu-3">
+<article class="clearfix">	
+<div class="mega-menu-left-col">
+<h1>About <strong>Sustainability</strong></h1>	
+<p>At Sanlam, our dedication to sustainability  stands as a central aspect of our purpose-led strategy. Our efforts remain focused on creating shared value, deepening financial inclusion and the promotion of sustainable investment decisions , environmental wellness and alignment with the SDGs.</p>		
+<ul class="sub-menu">
+<li><a href="sustainability.php">Sustainability</a></li>
+<li><a href="sanlam-foundation.php">Foundation</a></li>
+<li><a href="transformation.php">Transformation</a></li>
+<li><a href="governance.php">Governance</a></li>
+</ul>	
+</div>	
+
+
+
+<div class="mega-menu-right-col">
+<div class="img-container">
+<img src="images/home-news/cape-town.jpg" alt="Empowering future"/>
+<div class="content-container"> 
+<h3>Sanlam highlights strategy, growth ambitions and revised financial goals at 2025 Capital Markets Day</h3> 
+<p>Themed Leveraging Quality, Accelerating Growth, the event highlighted Sanlam's strong foundations, ambitious growth vectors and commitment.</p> 
+<a class="read-more" href="pdf/media-releases/2025/sanlam-strategy-16102025.pdf" target="_blank">Read more</a>
+</div>	
+</div>	
+</div>
+</article>	
+</div>
+
+
+
+<div class="nav-content" id="menu-5">
+<article class="clearfix">
+<div class="mega-menu-left-col">
+<h1>Media</h1>	
+<p>Find the latest media releases, Sanlam news, speeches and award wins.</p>		
+<ul class="sub-menu">
+<li><a href="media-releases.php">Media releases</a></li>
+<li><a href="videos.php">Our videos</a></li>
+<li><a href="podcasts.php">Podcasts</a></li>
+<!--<li><a href="https://www.sanlam.co.za/mediacentre/Pages/default.aspx#Default=%7B%22k%22%3A%22%22%2C%22r%22%3A%5B%7B%22n%22%3A%22comMediacategory%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%824d656469612052656c6561736573%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22%C7%82%C7%824d656469612052656c6561736573%5C%22%22%3A%22Media%20Releases%22%7D%7D%5D%7D" target="_blank">Media releases</a></li>-->
+</ul>	
+</div>	
+<div class="mega-menu-right-col">
+<div class="img-container">
+<img src="images/home-news/transformation.jpg" alt="Empowering future"/>
+<div class="content-container"> 
+<h3>Sanlam launches ZARU Stable Coin with Industry Partners </h3> 
+<p>A Rand-backed stablecoin called ZARU is launching through a collaboration by Luno, Sanlam Specialised Asset Management (Pty) Ltd, EasyEquities and Lesaka </p> 
+<a class="read-more" href="pdf/media-releases/2026/media-release-05022026.pdf">Read more</a>
+</div>	
+</div>	
+</div>	
+</article>	
+</div>
+
+
+<!--<div class="nav-content" id="menu-6">
+<article class="clearfix">
+<div class="mega-menu-left-col">
+<h1>G20</h1>	
+<p>The Group of Twenty (G20) is an international forum of both developing and developed countries which seeks to find solutions to global economic and financial issues.</p>		
+<ul class="sub-menu">
+<li><a href="G20-overview.php">Overview</a></li>
+<li><a href="#">About G20</a></li>
+<li><a href="#">Media</a></li>
+<li><a href="#">Events</a></li>
+</ul>	
+</div>	
+<div class="mega-menu-right-col">
+<div class="img-container">
+<img src="images/home-news/transformation.jpg" alt="Empowering future"/>
+<div class="content-container"> 
+<h3>Sanlam launches ZARU Stable Coin with Industry Partners </h3> 
+<p>A Rand-backed stablecoin called ZARU is launching through a collaboration by Luno, Sanlam Specialised Asset Management (Pty) Ltd, EasyEquities and Lesaka </p> 
+<a class="read-more" href="pdf/media-releases/2026/media-release-05022026.pdf">Read more</a>
+</div>	
+</div>	
+</div>	
+</article>	
+</div>-->
+
+	
+</div>	
+</nav>
+</header>
+
+
+<section class="background-grey">
+<article class="clearfix padding-64T padding-64B">
+<h2 class="switch-black padding-32B highlights B300">Error <strong>404</strong></h2>
+<p align="center"><img src="images/error-404.png"></p>
+<h3 align="center"><strong>PAGE NOT FOUND</strong></h3>
+<p align="center">This page you are looking for doesn't exist, see below or head over to the home page to choose a new direction.</p>
+
+
+<div class="col-2">
+<h4 class="padding-32T padding-32B"><strong>LEGAL</strong></h4>
+<ul class="list">	
+<li><a href="sanlams-privacy-policy.php">Sanlam's Privacy Notice</a></li>
+<li><a href="protection-of-personal-information.php">Protection of Personal Information</a></li>
+<li><a href="financial-advisory-and-intermediary-services-act.php">Financial Advisory and Intermediary Services Act (FAIS)</a></li>
+<li><a href="principles-and-practices-of-financial-management.php">Principles and Practices of Financial Management (PPFM)</a></li>
+<li><a href="promotion-of-access-to-information-act.php">Promotion of Access to Information Act (PAIA)</a></li>
+<li><a href="terms-of-use.php">Terms of Use (General, Email & SMS)</a></li>
+<li><a href="conflicts-of-interest-policies-in-terms-of-FAIS.php">Conflicts of Interest Policies in terms of FAIS</a></li>
+</ul>
+</div>
+
+<div class="col-2 no-marginR">
+<h4 class="padding-32T padding-32B"><strong>CONSENSUS ESTIMATES</strong></h4>
+<ul class="list">	
+<li><a href="consensus-estimates.php">Analysts' Consensus Estimates</a></li>
+</ul>
+</div>
+<br clear="all">
+
+
+<div style="border-bottom:1px solid #2E8ED3; display:block;">&nbsp;</div>
+
+
+<h4 class="padding-32T padding-32B"><strong>REGIONS</strong></h4>
+<div class="col-2">
+<h5><strong>South Africa</strong></h5>
+<a href="https://www.sanlam.co.za" target="_blank">South Africa Home</a><br>
+<a href="https://www.sanlaminvestments.com" target="_blank">Sanlam Investments</a><br>
+<a href="https://sanlamprivatewealth.sanlam.com" target="_blank">Sanlam Private Wealth</a><br>
+<a href="https://www.glacier.co.za" target="_blank">Glacier by Sanlam</a><br>
+<a href="https://www.sanlam.co.za/bluestar/Pages/default.aspx" target="_blank">Sanlam BlueStar</a> 
+
+<h5 class="margin-16T"><strong>Europe</strong></h5>
+<a href="https://www.sanlam.co.uk">Sanlam UK</a><br>
+<a href="https://www.sanlamsecuritiesuk.com/">Sanlam Securities UK</a><br>
+<a href="https://www.sanlamfour.com/">Sanlam FOUR</a><br>
+<a href="https://www.sanlam.co.za/ireland">Sanlam Asset Management Ireland</a>   
+</div>
+
+<div class="col-2">
+<h5><strong>Rest of Africa</strong></h5>
+<a href="https://www.sanlam.co.za/investmentseastafrica" target="_blank">Sanlam Investments East Africa</a><br>
+<a href="https://www.sanlam.co.za/kenya" target="_blank">Sanlam Kenya</a><br>
+<a href="https://www.sanlam.co.za/mozambique" target="_blank">Sanlam Mozambique</a><br>
+<a href="https://www.sanlam.co.za/namibia" target="_blank">Sanlam Namibia</a><br>
+<a href="https://sanlamprivatewealth.mu" target="_blank">Sanlam Private Wealth Mauritius</a><br>
+<a href="https://rw.sanlam.co.za/" target="_blank">Sanlam Rwanda</a><br>
+<a href="https://www.sanlam.co.za/swaziland" target="_blank">Sanlam Swaziland</a><br>
+<a href="https://www.sanlam.co.za/tanzania" target="_blank">Sanlam Tanzania</a><br>
+<a href="https://www.sanlam.co.za/uganda" target="_blank">Sanlam Uganda</a><br>
+<a href="https://www.sanlam.co.za/zambia" target="_blank">Sanlam Zambia</a>
+
+<h5 class="margin-16T"><strong>Global</strong></h5>
+<a href="https://www.sanlamgis.com/">Global Investment Solutions</a><br>
+<a href="why-invest">Investor Relations</a>
+</div>
+</article>
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+<article class="clearfix padding-64T padding-64B">
+
+<div class="col-5">
+<a href="index.php"><img src="images/sanlam-logo.png" alt=""/></a> 
+<p>0860 726 526</p>	
+<p>Sanlam Head Office</p>
+</div>
+
+<div class="col-5">
+<h5 class="switch-blue-4 padding-16B">About Sanlam</h5>	
+<ul class="footer-list">
+<li><a href="sanlam-at-a-glance.php">Sanlam at a glance</a></li>
+<li><a href="strategy.php">Our strategy</a></li>
+<li><a href="history.php">Our history</a></li>
+<li><a href="leadership.php">Leadership</a></li>
+<!--<li><a href="sustainability.php">Sustainability</a></li>	
+<li><a href="sanlam-foundation.php">Sanlam Foundation</a></li>
+<li><a href="transformation.php">Transformation</a></li>-->
+</ul>
+</div>
+
+<div class="col-5">
+<h5 class="switch-blue-4 padding-16B">Investor centre</h5>		
+<ul class="footer-list">
+<li><a href="why-invest.php">Why invest in Sanlam</a></li>
+<li><a href="latest-performance.php">Our latest performance</a></li> 
+<li><a href="sanlam-capital-market-days.php">Capital Markets Days</a></li>    
+<li><a href="financial-reporting.php">Reporting centre</a></li>
+<!--<li><a href="presentations.php">Presentations</a></li>-->
+<li><a href="shareholder-information.php">Shareholder information</a></li>
+<li><a href="debt-investors.php">Debt investors</a></li>
+<li><a href="dividends.php">Dividend payment</a></li>
+<!--<li><a href="adr-holders.php">ADR holders</a></li>
+<li><a href="governance.php">Governance</a></li>
+<li><a href="faq.php">Frequently asked questions</a></li>-->
+<li><a href="investor-relations-contacts.php">Investor relations contacts</a></li>	
+</ul>
+</div>
+
+<div class="col-5">
+<h5 class="switch-blue-4 padding-16B">Media</h5>	
+<ul class="footer-list">	
+<li><a href="regulatory-news.php">Regulatory news</a></li>
+<li><a href="https://www.sanlamonline.co.za/knowledge-hub" target="_blank">Press releases</a></li>
+<li><a href="videos.php">Our videos</a></li>
+</ul>
+</div>
+
+<div class="col-5 no-marginR">
+<h5 class="switch-blue-4 padding-16B">Legal</h5>	
+<ul class="footer-list">	
+<li><a href="sanlams-privacy-policy.php">Sanlam's Privacy Notice</a></li>
+<li><a href="protection-of-personal-information.php">Protection of Personal Information</a></li>
+<li><a href="financial-advisory-and-intermediary-services-act.php">Financial Advisory and Intermediary Services Act (FAIS)</a></li>
+<li><a href="principles-and-practices-of-financial-management.php">Principles and Practices of Financial Management (PPFM)</a></li>
+<li><a href="promotion-of-access-to-information-act.php">Promotion of Access to Information Act (PAIA)</a></li>
+<li><a href="terms-of-use.php">Terms of Use (General, Email & SMS)</a></li>
+<li><a href="conflicts-of-interest-policies-in-terms-of-FAIS.php">Conflicts of Interest Policies in terms of FAIS</a></li>
+
+<!--<li><a href="unsubscribe-from-portfolio-related-e-mail-communication.php">Unsubscribe from Portfolio Related E-mail Communication</a></li>-->
+</ul>
+</div>
+<br clear="all">
+<p class="margin-15T margin-15B">Copyright &copy; 2025 | All rights reserved. | Sanlam Limited is the licensed controlling company of the Sanlam Limited Insurance Group. Sanlam Life Insurance Limited is a licensed life insurer, authorised financial services provider and a registered credit provider (NCRCP43).</p>
+</article>
+</footer>
+
+</body>
+</html>

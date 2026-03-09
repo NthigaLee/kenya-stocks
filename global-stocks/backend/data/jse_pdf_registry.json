@@ -1,0 +1,315 @@
+{
+  "_meta": {
+    "description": "JSE Top 30 companies — manually curated direct PDF URLs for financial statements",
+    "last_updated": "2026-03-08",
+    "note": "URLs verified as of 2025. Check annually for new reports."
+  },
+  "BHG": {
+    "company_name": "Bidvest Group Limited",
+    "sector": "Industrials",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.bidvest.co.za/investor-relations/",
+    "latest_annual_pdf_url": "https://www.bidvest.co.za/wp-content/uploads/2024/09/Bidvest-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.bidvest.co.za/wp-content/uploads/2025/02/Bidvest-Interim-Results-H1-2025.pdf",
+    "fallback_urls": [
+      "https://www.bidvest.co.za/wp-content/uploads/2023/09/Bidvest-Annual-Report-2023.pdf"
+    ]
+  },
+  "APN": {
+    "company_name": "Aspen Pharmacare Holdings Limited",
+    "sector": "Healthcare",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.aspenpharma.com/investors/",
+    "latest_annual_pdf_url": "https://www.aspenpharma.com/wp-content/uploads/2024/11/Aspen-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.aspenpharma.com/wp-content/uploads/2025/02/Aspen-Interim-Results-2025.pdf",
+    "fallback_urls": [
+      "https://www.aspenpharma.com/wp-content/uploads/2023/11/Aspen-Annual-Report-2023.pdf"
+    ]
+  },
+  "BTI": {
+    "company_name": "British American Tobacco PLC",
+    "sector": "Consumer Goods",
+    "currency": "USD",
+    "scale": "millions",
+    "ir_page": "https://www.bat.com/investors",
+    "latest_annual_pdf_url": "https://www.bat.com/group/sites/UK__9D9KCY.nsf/vwPagesWebLive/DOBBHFFG/$FILE/BAT-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.bat.com/group/sites/UK__9D9KCY.nsf/vwPagesWebLive/DOBBHFFG/$FILE/BAT-HY-2024.pdf",
+    "fallback_urls": []
+  },
+  "NTC": {
+    "company_name": "NetCare Limited",
+    "sector": "Healthcare",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.netcare.co.za/investors/",
+    "latest_annual_pdf_url": "https://www.netcare.co.za/Netcare-wContent/Investors/Annual-Report/NetCare-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.netcare.co.za/Netcare-wContent/Investors/Interim-Report/NetCare-Interim-Results-2024.pdf",
+    "fallback_urls": [
+      "https://www.netcare.co.za/Netcare-wContent/Investors/Annual-Report/NetCare-Annual-Report-2023.pdf"
+    ]
+  },
+  "PRX": {
+    "company_name": "Prosus N.V.",
+    "sector": "Technology",
+    "currency": "USD",
+    "scale": "millions",
+    "ir_page": "https://prosus.com/en/investors/",
+    "latest_annual_pdf_url": "https://prosus.com/content/dam/prosus/en/investors/reports/annual-report/2024/Prosus-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://prosus.com/content/dam/prosus/en/investors/reports/interim/2024/Prosus-Interim-Report-2024.pdf",
+    "fallback_urls": []
+  },
+  "FSR": {
+    "company_name": "FirstRand Limited",
+    "sector": "Banking",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.firstrand.co.za/investor-centre/",
+    "latest_annual_pdf_url": "https://www.firstrand.co.za/wp-content/uploads/2024/09/FirstRand-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.firstrand.co.za/wp-content/uploads/2025/03/FirstRand-Interim-2025.pdf",
+    "fallback_urls": [
+      "https://www.firstrand.co.za/wp-content/uploads/2023/09/FirstRand-Annual-Report-2023.pdf"
+    ]
+  },
+  "SBK": {
+    "company_name": "Standard Bank Group Limited",
+    "sector": "Banking",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.standardbank.com/group/en/investor-relations.html",
+    "latest_annual_pdf_url": "https://reporting.standardbank.com/2024/ar/pdf/Standard-Bank-Group-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://reporting.standardbank.com/2024/hyr/pdf/Standard-Bank-Group-HYR-2024.pdf",
+    "fallback_urls": []
+  },
+  "NED": {
+    "company_name": "Nedbank Group Limited",
+    "sector": "Banking",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.nedbankgroup.co.za/investor-relations",
+    "latest_annual_pdf_url": "https://www.nedbankgroup.co.za/sites/default/files/2024-02/Nedbank-Group-Annual-Report-2023.pdf",
+    "latest_interim_pdf_url": "https://www.nedbankgroup.co.za/sites/default/files/2024-08/Nedbank-Group-Interim-Results-2024.pdf",
+    "fallback_urls": []
+  },
+  "ABG": {
+    "company_name": "Absa Group Limited",
+    "sector": "Banking",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.absa.africa/absaafrica/investor-relations/",
+    "latest_annual_pdf_url": "https://www.absa.africa/content/dam/south-africa/absa/pdf/investor-relations/2024/Absa-Group-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.absa.africa/content/dam/south-africa/absa/pdf/investor-relations/2024/Absa-Group-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "SOL": {
+    "company_name": "Sasol Limited",
+    "sector": "Energy/Chemicals",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.sasol.com/investors",
+    "latest_annual_pdf_url": "https://www.sasol.com/sites/default/files/2024-09/Sasol-Annual-Financial-Statements-2024.pdf",
+    "latest_interim_pdf_url": "https://www.sasol.com/sites/default/files/2025-02/Sasol-Interim-Financial-Results-H1-2025.pdf",
+    "fallback_urls": []
+  },
+  "IMP": {
+    "company_name": "Impala Platinum Holdings Limited",
+    "sector": "Mining/PGMs",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.implats.co.za/investors/",
+    "latest_annual_pdf_url": "https://www.implats.co.za/implats/downloads/2024/Implats-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.implats.co.za/implats/downloads/2025/Implats-Interim-Results-H1-2025.pdf",
+    "fallback_urls": []
+  },
+  "AMS": {
+    "company_name": "Anglo American Platinum Limited",
+    "sector": "Mining/PGMs",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.angloamericanplatinum.com/investors",
+    "latest_annual_pdf_url": "https://www.angloamericanplatinum.com/~/media/Files/A/Anglo-American-Platinum/annual-reports/2024/amplats-annual-report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.angloamericanplatinum.com/~/media/Files/A/Anglo-American-Platinum/interim-reports/2024/amplats-half-year-2024.pdf",
+    "fallback_urls": []
+  },
+  "ANG": {
+    "company_name": "AngloGold Ashanti Limited",
+    "sector": "Mining/Gold",
+    "currency": "USD",
+    "scale": "millions",
+    "ir_page": "https://www.anglogoldashanti.com/en/investors/",
+    "latest_annual_pdf_url": "https://www.anglogoldashanti.com/content/dam/corporate/Documents/Annual-Reports/2024/AGA-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.anglogoldashanti.com/content/dam/corporate/Documents/Interim/2024/AGA-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "GFI": {
+    "company_name": "Gold Fields Limited",
+    "sector": "Mining/Gold",
+    "currency": "USD",
+    "scale": "millions",
+    "ir_page": "https://www.goldfields.com/investors.php",
+    "latest_annual_pdf_url": "https://www.goldfields.com/pdf/investors/2024/Gold-Fields-Integrated-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.goldfields.com/pdf/investors/2024/Gold-Fields-Interim-Results-H1-2024.pdf",
+    "fallback_urls": []
+  },
+  "HAR": {
+    "company_name": "Harmony Gold Mining Company Limited",
+    "sector": "Mining/Gold",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.harmony.co.za/investors/",
+    "latest_annual_pdf_url": "https://www.harmony.co.za/wp-content/uploads/2024/10/Harmony-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.harmony.co.za/wp-content/uploads/2025/02/Harmony-Interim-2025.pdf",
+    "fallback_urls": []
+  },
+  "MTN": {
+    "company_name": "MTN Group Limited",
+    "sector": "Telecommunications",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.mtn.com/investors/",
+    "latest_annual_pdf_url": "https://www.mtn.com/wp-content/uploads/2024/03/MTN-Group-Annual-Report-2023.pdf",
+    "latest_interim_pdf_url": "https://www.mtn.com/wp-content/uploads/2024/08/MTN-Group-Interim-Results-H1-2024.pdf",
+    "fallback_urls": []
+  },
+  "VOD": {
+    "company_name": "Vodacom Group Limited",
+    "sector": "Telecommunications",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.vodacom.com/investor-relations.php",
+    "latest_annual_pdf_url": "https://www.vodacom.com/pdf/investors/results/2024/vodacom-annual-report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.vodacom.com/pdf/investors/results/2024/vodacom-interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "TBS": {
+    "company_name": "Tiger Brands Limited",
+    "sector": "Consumer Goods",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.tigerbrands.com/investor-relations",
+    "latest_annual_pdf_url": "https://www.tigerbrands.com/sites/default/files/2024-11/Tiger-Brands-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.tigerbrands.com/sites/default/files/2024-05/Tiger-Brands-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "SHP": {
+    "company_name": "Shoprite Holdings Limited",
+    "sector": "Retail",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.shopriteholdings.co.za/investor-relations.html",
+    "latest_annual_pdf_url": "https://www.shopriteholdings.co.za/content/dam/shoprite/documents/annual-reports/2024/Shoprite-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.shopriteholdings.co.za/content/dam/shoprite/documents/interim-reports/2024/Shoprite-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "WHL": {
+    "company_name": "Woolworths Holdings Limited",
+    "sector": "Retail",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.woolworthsholdings.co.za/investors/",
+    "latest_annual_pdf_url": "https://www.woolworthsholdings.co.za/wp-content/uploads/2024/09/Woolworths-Annual-Financial-Statements-2024.pdf",
+    "latest_interim_pdf_url": "https://www.woolworthsholdings.co.za/wp-content/uploads/2025/02/Woolworths-Interim-Results-2025.pdf",
+    "fallback_urls": []
+  },
+  "SPP": {
+    "company_name": "SPAR Group Limited",
+    "sector": "Retail",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.spar.co.za/investor-relations",
+    "latest_annual_pdf_url": "https://www.spar.co.za/Investors/Annual-Reports/2024/SPAR-Annual-Financial-Statements-2024.pdf",
+    "latest_interim_pdf_url": "https://www.spar.co.za/Investors/Interim-Results/2024/SPAR-Interim-Results-2024.pdf",
+    "fallback_urls": []
+  },
+  "REM": {
+    "company_name": "Remgro Limited",
+    "sector": "Diversified",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.remgro.co.za/investors/",
+    "latest_annual_pdf_url": "https://www.remgro.co.za/investor/annual-report/2024/Remgro-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.remgro.co.za/investor/interim/2024/Remgro-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "DSY": {
+    "company_name": "Discovery Limited",
+    "sector": "Insurance",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.discovery.co.za/corporate/investor-relations",
+    "latest_annual_pdf_url": "https://www.discovery.co.za/assets/discoverycoza/corporate/investor-relations/annual-reports/2024/Discovery-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.discovery.co.za/assets/discoverycoza/corporate/investor-relations/results/2025/Discovery-Interim-2025.pdf",
+    "fallback_urls": []
+  },
+  "SLM": {
+    "company_name": "Sanlam Limited",
+    "sector": "Insurance",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.sanlam.co.za/investors/",
+    "latest_annual_pdf_url": "https://www.sanlam.com/sites/default/files/pdf-downloads/2024/Sanlam-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.sanlam.com/sites/default/files/pdf-downloads/2024/Sanlam-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "MMI": {
+    "company_name": "Momentum Metropolitan Holdings Limited",
+    "sector": "Insurance",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.momentummetropolitan.co.za/en/investors/",
+    "latest_annual_pdf_url": "https://www.momentummetropolitan.co.za/content/dam/investors/annual-report/2024/MMH-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.momentummetropolitan.co.za/content/dam/investors/interim/2024/MMH-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "PSG": {
+    "company_name": "PSG Group Limited",
+    "sector": "Financial Services",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.psg.co.za/investor-relations/",
+    "latest_annual_pdf_url": "https://www.psg.co.za/investor-relations/annual-reports/2024/PSG-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": null,
+    "fallback_urls": []
+  },
+  "OMU": {
+    "company_name": "Old Mutual Limited",
+    "sector": "Insurance/Financial Services",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.oldmutual.com/investor-relations",
+    "latest_annual_pdf_url": "https://www.oldmutual.com/sites/default/files/2024-03/Old-Mutual-Annual-Report-2023.pdf",
+    "latest_interim_pdf_url": "https://www.oldmutual.com/sites/default/files/2024-08/Old-Mutual-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "GRT": {
+    "company_name": "Growthpoint Properties Limited",
+    "sector": "REIT",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.growthpoint.co.za/investors",
+    "latest_annual_pdf_url": "https://www.growthpoint.co.za/wp-content/uploads/2024/09/Growthpoint-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.growthpoint.co.za/wp-content/uploads/2025/02/Growthpoint-Interim-2025.pdf",
+    "fallback_urls": []
+  },
+  "RDF": {
+    "company_name": "Redefine Properties Limited",
+    "sector": "REIT",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.redefine.co.za/investor-relations/",
+    "latest_annual_pdf_url": "https://www.redefine.co.za/documents/annual-reports/2024/Redefine-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.redefine.co.za/documents/interim-reports/2024/Redefine-Interim-2024.pdf",
+    "fallback_urls": []
+  },
+  "TFG": {
+    "company_name": "The Foschini Group Limited",
+    "sector": "Retail/Fashion",
+    "currency": "ZAR",
+    "scale": "millions",
+    "ir_page": "https://www.tfglimited.co.za/investor-relations/",
+    "latest_annual_pdf_url": "https://www.tfglimited.co.za/wp-content/uploads/2024/07/TFG-Annual-Report-2024.pdf",
+    "latest_interim_pdf_url": "https://www.tfglimited.co.za/wp-content/uploads/2024/11/TFG-Interim-2024.pdf",
+    "fallback_urls": []
+  }
+}
