@@ -285,6 +285,7 @@ select optgroup {
   border-radius: 12px;
   overflow: hidden;
 }
+.tv-chart-container.tv-chart-full { height: 560px; }
 .tv-chart-error {
   display: flex;
   align-items: center;
@@ -307,6 +308,22 @@ select optgroup {
 @media (max-width: 768px) {
   .tv-chart-container { height: 280px; }
 }
+
+/* No Financial Data Notice */
+.no-data-notice {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 10px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.no-data-icon { font-size: 1.25rem; flex-shrink: 0; }
 
 /* Stock Price Chart Section */
 .price-chart-section {

@@ -64,6 +64,15 @@
       </div>
     </div>
 
+    <!-- No Financial Data Notice (shown for price-only stocks) -->
+    <div id="no-data-notice" class="no-data-notice hidden">
+      <span class="no-data-icon">📊</span>
+      <span id="no-data-text">Financial statements for this company are not yet available. Price chart powered by TradingView.</span>
+    </div>
+
+    <!-- Financial Content (hidden for price-only stocks) -->
+    <div id="financial-content">
+
     <!-- Stats Grid -->
     <div class="stats-grid" id="stats-grid">
       <!-- Populated by JS -->
@@ -159,6 +168,8 @@
       </div>
     </div>
 
+    </div><!-- /#financial-content -->
+
   </div><!-- /#dashboard -->
 
   <!-- Empty state -->
@@ -168,7 +179,8 @@
     <div class="empty-sub">Select a company above to view financials, charts, and key metrics.</div>
   </div>
 
+  <script src="nse_tickers.js?v=20260313-1"></script>
   <script src="data.js?v=20260307-1"></script>
-  <script src="app.js?v=20260307-1"></script>
+  <script src="app.js?v=20260313-1"></script>
 </body>
 </html>

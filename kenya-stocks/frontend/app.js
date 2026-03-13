@@ -6,19 +6,18 @@
 let activeCompany = null;
 let chartInstances = {};
 
-// ---- TradingView NSEKE Ticker Mapping ----
-// Format: our internal ticker → TradingView NSEKE symbol
-// Note: Safaricom is SCOM on NSE (not SAFARICOM)
-const NSEKE_TICKERS = {
-  ABSA: 'NSEKE:ABSA',
-  COOP: 'NSEKE:COOP',
-  DTB:  'NSEKE:DTB',
-  EQTY: 'NSEKE:EQTY',
-  KCB:  'NSEKE:KCB',
-  NCBA: 'NSEKE:NCBA',
-  SCBK: 'NSEKE:SCBK',
-  SCOM: 'NSEKE:SCOM',  // Safaricom (if added later)
-};
+// ---- Financial Data Coverage ----
+// Tickers (NSE_ALL_STOCKS keys / TV tickers) that have full financial data in NSE_COMPANIES
+const FINANCIAL_TICKERS = new Set(['ABSA', 'COOP', 'DTK', 'EQTY', 'KCB', 'NCBA', 'SCBK']);
+
+// Map from TV ticker (NSE_ALL_STOCKS key) → internal data key (NSE_COMPANIES key)
+// Only needed where they differ
+const TV_TO_INTERNAL = { 'DTK': 'DTB' };
+
+// Get TradingView NSEKE symbol from TV ticker
+function getTVSymbol(tvTicker) {
+  return `NSEKE:${tvTicker}`;
+}
 
 // ---- Chart.js Global Defaults ----
 Chart.defaults.color = '#94a3b8';
@@ -175,50 +174,71 @@ function barColors(n) {
 
 // ---- Load Company ----
 function loadCompany() {
-  const sel = document.getElementById('company-select').value;
-  if (!sel || !NSE_COMPANIES[sel]) {
+  const tvTicker = document.getElementById('company-select').value;
+  if (!tvTicker) {
     alert('Please select a company first.');
     return;
   }
-  const co = NSE_COMPANIES[sel];
+
+  const hasFinancials = FINANCIAL_TICKERS.has(tvTicker);
+  const internalTicker = TV_TO_INTERNAL[tvTicker] || tvTicker;
+  const co = hasFinancials ? NSE_COMPANIES[internalTicker] : null;
+  const companyName = co ? co.name : (NSE_ALL_STOCKS[tvTicker] || tvTicker);
+
   activeCompany = co;
   _currentCompany = co;
   _currentPeriod = 'annual';
-  // Reset toggle to annual
-  document.getElementById('toggle-annual').classList.add('active');
-  document.getElementById('toggle-quarterly').classList.remove('active');
 
   // Show dashboard, hide empty state
   document.getElementById('dashboard').classList.remove('hidden');
   document.getElementById('empty-state').classList.add('hidden');
 
   // Update breadcrumb
-  document.getElementById('breadcrumb-company').textContent = `${co.ticker} | NSE`;
+  document.getElementById('breadcrumb-company').textContent = `${companyName} (${tvTicker})`;
 
   // -- Company Header --
-  document.getElementById('company-logo').textContent = co.logo;
-  document.getElementById('company-name').textContent = co.name;
-  document.getElementById('company-meta').textContent = `${co.ticker} | ${co.exchange} · ${co.sector}`;
-  // Price: live via TradingView chart below — static latestPrice shown in stats grid
+  document.getElementById('company-logo').textContent = co ? co.logo : '🏢';
+  document.getElementById('company-name').textContent = companyName;
+  document.getElementById('company-meta').textContent =
+    co ? `${tvTicker} | ${co.exchange} · ${co.sector}` : `NSE:${tvTicker} · NSE Kenya`;
+
   const priceEl = document.getElementById('company-price');
-  priceEl.textContent = 'Live on chart';
+  priceEl.textContent = 'Live on chart ↓';
   priceEl.classList.add('tv-live-badge');
 
-  // Latest period (may be quarterly — more up-to-date than last annual)
-  const latest = co.latestPeriod || co.annuals[co.annuals.length - 1];
-  const latestLabel = latest.period || latest.year;
-  document.getElementById('company-eps-pill').textContent = `EPS (${latestLabel}): ${fmtEPS(latest.eps)}`;
-  document.getElementById('company-latest-year').textContent =
-    `Units: KES ${co.units} · Last period: ${latestLabel}`;
+  // -- TradingView Live Price Chart (always shown; full height for price-only stocks) --
+  initTradingViewChart(tvTicker, !hasFinancials);
 
-  // -- TradingView Live Price Chart --
-  initTradingViewChart(co.ticker);
+  if (hasFinancials && co) {
+    // Reset period toggle
+    document.getElementById('toggle-annual').classList.add('active');
+    document.getElementById('toggle-quarterly').classList.remove('active');
 
-  // -- Stats Grid --
-  renderStatsGrid(co);
+    // Latest period for header pills
+    const latest = co.latestPeriod || co.annuals[co.annuals.length - 1];
+    const latestLabel = latest.period || latest.year;
+    document.getElementById('company-eps-pill').textContent = `EPS (${latestLabel}): ${fmtEPS(latest.eps)}`;
+    document.getElementById('company-latest-year').textContent =
+      `Units: KES ${co.units} · Last period: ${latestLabel}`;
 
-  // -- Charts --
-  renderCharts(co, 'annual');
+    // Show financial sections, hide notice
+    document.getElementById('financial-content').classList.remove('hidden');
+    document.getElementById('no-data-notice').classList.add('hidden');
+
+    // -- Stats Grid & Charts --
+    renderStatsGrid(co);
+    renderCharts(co, 'annual');
+  } else {
+    // Price-only stock
+    document.getElementById('company-eps-pill').textContent = '';
+    document.getElementById('company-latest-year').textContent = 'Live price shown in chart below';
+
+    // Hide financial sections, show notice
+    document.getElementById('financial-content').classList.add('hidden');
+    document.getElementById('no-data-notice').classList.remove('hidden');
+    document.getElementById('no-data-text').textContent =
+      `📊 Financial statements for ${companyName} are not yet available. Price chart powered by TradingView.`;
+  }
 }
 
 // ---- Stats Grid ----
@@ -405,14 +425,15 @@ function renderCharts(co, period) {
 }
 
 // ---- TradingView Live Price Chart ----
-function initTradingViewChart(ticker) {
-  const nsekeTicker = NSEKE_TICKERS[ticker] || `NSEKE:${ticker}`;
+function initTradingViewChart(ticker, fullHeight) {
+  const nsekeTicker = getTVSymbol(ticker);
 
   const section   = document.getElementById('tv-chart-section');
   const container = document.getElementById('tradingview-chart-container');
   const link      = document.getElementById('tv-open-link');
 
   section.classList.remove('hidden');
+  container.classList.toggle('tv-chart-full', !!fullHeight);
 
   if (link) {
     link.href = `https://www.tradingview.com/chart/?symbol=${encodeURIComponent(nsekeTicker)}`;
@@ -465,40 +486,41 @@ function setPeriod(period) {
   renderCharts(_currentCompany, period);
 }
 
-// ---- Populate dropdown from NSE_COMPANIES (grouped by sector) ----
+// ---- Populate dropdown from NSE_ALL_STOCKS with two optgroups ----
+// Group 1: Full Data (7 companies) — Group 2: Price Chart Only (all others)
 function populateDropdown() {
   const sel = document.getElementById('company-select');
 
-  // Group tickers by sector
-  const sectors = {};
-  for (const [ticker, co] of Object.entries(NSE_COMPANIES)) {
-    const sec = co.sector || 'Other';
-    if (!sectors[sec]) sectors[sec] = [];
-    sectors[sec].push({ ticker, name: co.name });
-  }
-
-  // Sort sectors, put Banking first
-  const sectorOrder = ['Banking', 'Telecoms', 'FMCG', 'Insurance', 'Energy', 'Construction', 'Media', 'Agriculture', 'Manufacturing', 'Other'];
-  const sortedSectors = Object.keys(sectors).sort((a, b) => {
-    const ai = sectorOrder.indexOf(a);
-    const bi = sectorOrder.indexOf(b);
-    if (ai === -1 && bi === -1) return a.localeCompare(b);
-    if (ai === -1) return 1;
-    if (bi === -1) return -1;
-    return ai - bi;
+  // Full Data group
+  const fullDataGrp = document.createElement('optgroup');
+  fullDataGrp.label = '⭐ Full Data';
+  const fullTickers = [...FINANCIAL_TICKERS].sort((a, b) => {
+    const na = NSE_ALL_STOCKS[a] || a;
+    const nb = NSE_ALL_STOCKS[b] || b;
+    return na.localeCompare(nb);
   });
-
-  for (const sector of sortedSectors) {
-    const grp = document.createElement('optgroup');
-    grp.label = sector;
-    for (const { ticker, name } of sectors[sector].sort((a, b) => a.name.localeCompare(b.name))) {
-      const opt = document.createElement('option');
-      opt.value = ticker;
-      opt.textContent = `${ticker} — ${name}`;
-      grp.appendChild(opt);
-    }
-    sel.appendChild(grp);
+  for (const ticker of fullTickers) {
+    const name = NSE_ALL_STOCKS[ticker] || ticker;
+    const opt = document.createElement('option');
+    opt.value = ticker;
+    opt.textContent = `${ticker} — ${name}`;
+    fullDataGrp.appendChild(opt);
   }
+  sel.appendChild(fullDataGrp);
+
+  // Price Chart Only group (all stocks not in FINANCIAL_TICKERS)
+  const priceOnlyGrp = document.createElement('optgroup');
+  priceOnlyGrp.label = '📈 Price Chart Only';
+  const priceOnlyEntries = Object.entries(NSE_ALL_STOCKS)
+    .filter(([ticker]) => !FINANCIAL_TICKERS.has(ticker))
+    .sort((a, b) => a[1].localeCompare(b[1]));
+  for (const [ticker, name] of priceOnlyEntries) {
+    const opt = document.createElement('option');
+    opt.value = ticker;
+    opt.textContent = `${ticker} — ${name}`;
+    priceOnlyGrp.appendChild(opt);
+  }
+  sel.appendChild(priceOnlyGrp);
 }
 
 // ---- Enter key on select ----
