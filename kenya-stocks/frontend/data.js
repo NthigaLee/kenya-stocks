@@ -21,6 +21,56 @@ const NSE_COMPANIES = {
     ],
   },
 
+  BAMB: {
+    name: "Bamburi Cement PLC",
+    ticker: "BAMB",
+    exchange: "NSE",
+    sector: "Manufacturing",
+    logo: "\ud83c\udfed",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 65.0,
+    latestPeriod: {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 10904.0, "pat": -877.0, "pbt": 695.0, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 10904.0, "pat": -877.0, "pbt": 695.0, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 10904.0, "pat": -877.0, "pbt": 695.0, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  BATK: {
+    name: "BAT Kenya PLC",
+    ticker: "BATK",
+    exchange: "NSE",
+    sector: "FMCG",
+    logo: "\ud83c\udfed",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 465.0,
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 25557.0, "pat": 5568.0, "pbt": 8022.0, "nii": null, "eps": 55.68, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+    ],
+  },
+
+  BKG: {
+    name: "BK Group PLC",
+    ticker: "BKG",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 50.0,
+    annuals: [
+      {"year": 2025, "period": "May2025", "periodType": "unknown", "dateKey": "2025-05-21", "revenue": null, "pat": 2024.0, "pbt": 2024.0, "nii": null, "eps": 108.2, "dps": null, "totalAssets": 2606.0, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+    ],
+  },
+
   BOC: {
     name: "BOC Kenya PLC",
     ticker: "BOC",
@@ -65,10 +115,33 @@ const NSE_COMPANIES = {
     units: "thousands",
     latestPrice: 12.0,
     annuals: [
+      {"year": 2024, "period": "Jan2024", "periodType": "unknown", "dateKey": "2024-01-31", "revenue": 1080477.0, "pat": 485162.0, "pbt": 646882.0, "nii": null, "eps": 1.9, "dps": null, "totalAssets": null, "totalEquity": 4912418.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
       {"year": 2024, "period": "Jul2024", "periodType": "annual", "dateKey": "2024-07-31", "revenue": 2066315.0, "pat": 354492.0, "pbt": 1123758.0, "nii": null, "eps": 3.2, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
       {"year": 2025, "period": "Jul2025", "periodType": "annual", "dateKey": "2025-07-31", "revenue": 2099850.0, "pat": 1002914.0, "pbt": 1288564.0, "nii": null, "eps": 3.94, "dps": null, "totalAssets": null, "totalEquity": 6033183.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
     ],
     quarters: [
+    ],
+  },
+
+  IMH: {
+    name: "I&M Group PLC",
+    ticker: "IMH",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 24.0,
+    latestPeriod: {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": null, "pat": 295538.0, "pbt": 435245.0, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": 5472048.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 137767.0, "pat": null, "pbt": 10444.0, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": 192218.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 26348750.0, "pat": 2854633.0, "pbt": 3993720.0, "nii": null, "eps": 1.04, "dps": null, "totalAssets": 61937727.0, "totalEquity": 11013835.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 52849.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": 183067.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q1 2025", "periodType": "quarter", "dateKey": "2025-03-31", "revenue": 2025.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": null, "pat": 295538.0, "pbt": 435245.0, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": 5472048.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 324000.0, "pat": null, "pbt": 690000.0, "nii": null, "eps": null, "dps": null, "totalAssets": 45000.0, "totalEquity": 9000.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
     ],
   },
 
@@ -88,6 +161,40 @@ const NSE_COMPANIES = {
     ],
   },
 
+  CPKL: {
+    name: "Crown Paints Kenya PLC",
+    ticker: "CPKL",
+    exchange: "NSE",
+    sector: "Manufacturing",
+    logo: "\ud83c\udfed",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 40.0,
+    latestPeriod: {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 7412.0, "pat": null, "pbt": 548.0, "nii": null, "eps": null, "dps": null, "totalAssets": 8932.0, "totalEquity": 3618.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 348993.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 9291.0, "totalEquity": 619309.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 7412.0, "pat": null, "pbt": 548.0, "nii": null, "eps": null, "dps": null, "totalAssets": 8932.0, "totalEquity": 3618.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  DTB: {
+    name: "Diamond Trust Bank Kenya",
+    ticker: "DTB",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 60.0,
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": null, "pat": 7794972.0, "pbt": 425708.0, "nii": 36138804.0, "eps": 2.0, "dps": 6.0, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+    ],
+  },
+
   EABL: {
     name: "East African Breweries Ltd",
     ticker: "EABL",
@@ -99,10 +206,27 @@ const NSE_COMPANIES = {
     latestPrice: 155.0,
     latestPeriod: {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 124131.0, "pat": 10870.0, "pbt": 16771.0, "nii": null, "eps": 10.3, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
     annuals: [
-      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 66540.0, "pat": 6780.0, "pbt": 10095.0, "nii": null, "eps": 13.8, "dps": null, "totalAssets": null, "totalEquity": 38692.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 66540.0, "pat": 6780.0, "pbt": 10095.0, "nii": null, "eps": 13.8, "dps": null, "totalAssets": null, "totalEquity": 38692.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 67916.0, "pat": 8107.0, "pbt": 12147.0, "nii": null, "eps": 15.3, "dps": null, "totalAssets": null, "totalEquity": 15589.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
     ],
     quarters: [
       {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 124131.0, "pat": 10870.0, "pbt": 16771.0, "nii": null, "eps": 10.3, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  EAPC: {
+    name: "EA Portland Cement PLC",
+    ticker: "EAPC",
+    exchange: "NSE",
+    sector: "Manufacturing",
+    logo: "\ud83c\udfed",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 8.0,
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 1838798.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 32764649.0, "totalEquity": 18434269.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
     ],
   },
 
@@ -121,6 +245,7 @@ const NSE_COMPANIES = {
       {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 89271509.0, "pat": null, "pbt": null, "nii": 57214481.0, "eps": null, "dps": null, "totalAssets": 1027679730.0, "totalEquity": 123102110.0, "deposits": 609677691.0, "loans": null, "ebitda": null, "mpesa": null}
     ],
     quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 44519077.0, "pat": null, "pbt": null, "nii": 27948413.0, "eps": null, "dps": null, "totalAssets": 972933445.0, "totalEquity": 106048896.0, "deposits": 565195620.0, "loans": 459421000.0, "ebitda": null, "mpesa": null},
       {"year": 2025, "period": "Q3 2025", "periodType": "quarter", "dateKey": "2025-09-30", "revenue": 65849444.0, "pat": null, "pbt": null, "nii": 42043892.0, "eps": null, "dps": null, "totalAssets": 985388288.0, "totalEquity": 126070494.0, "deposits": 607951110.0, "loans": 423197110.0, "ebitda": null, "mpesa": null}
     ],
   },
@@ -143,6 +268,78 @@ const NSE_COMPANIES = {
     ],
   },
 
+  FMLY: {
+    name: "Family Bank Ltd",
+    ticker: "FMLY",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 6.2,
+    latestPeriod: {"year": 2025, "period": "Q1 2025", "periodType": "quarter", "dateKey": "2025-03-31", "revenue": 3622432.0, "pat": 845459.0, "pbt": 1207799.0, "nii": null, "eps": 0.66, "dps": 0.85, "totalAssets": 145883121.0, "totalEquity": 17303611.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 11868401.0, "pat": 2271182.0, "pbt": 3741970.0, "nii": null, "eps": 1.76, "dps": null, "totalAssets": 128465438.0, "totalEquity": 15740434.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 13149194.0, "pat": 2409893.0, "pbt": 3057703.0, "nii": null, "eps": 1.87, "dps": 0.56, "totalAssets": null, "totalEquity": 16402160.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-31", "revenue": 2945548.0, "pat": 685330.0, "pbt": 979043.0, "nii": null, "eps": 0.53, "dps": null, "totalAssets": 131853129.0, "totalEquity": 16031431.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q1 2025", "periodType": "quarter", "dateKey": "2025-03-31", "revenue": 3622432.0, "pat": 845459.0, "pbt": 1207799.0, "nii": null, "eps": 0.66, "dps": 0.85, "totalAssets": 145883121.0, "totalEquity": 17303611.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  HFCK: {
+    name: "HF Group PLC",
+    ticker: "HFCK",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 4.5,
+    latestPeriod: {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-31", "revenue": 798122.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 3336595.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 59145971.0, "totalEquity": 8301824.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-31", "revenue": 798122.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  HAFR: {
+    name: "Home Afrika Limited",
+    ticker: "HAFR",
+    exchange: "NSE",
+    sector: "Real Estate",
+    logo: "\ud83c\udfd8",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 0.5,
+    latestPeriod: {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 309409011.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 309409011.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 309409011.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  HBZE: {
+    name: "Homeboyz Entertainment PLC",
+    ticker: "HBZE",
+    exchange: "NSE",
+    sector: "Media",
+    logo: "\ud83c\udfb5",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 2.5,
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 332396860.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 182912491.0, "totalEquity": 2264983.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+    ],
+  },
+
   JUB: {
     name: "Jubilee Holdings Limited",
     ticker: "JUB",
@@ -159,6 +356,24 @@ const NSE_COMPANIES = {
     ],
   },
 
+  KAPA: {
+    name: "Kapchorua Tea Kenya PLC",
+    ticker: "KAPA",
+    exchange: "NSE",
+    sector: "Agriculture",
+    logo: "\ud83c\udf31",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 130.0,
+    latestPeriod: {"year": 2023, "period": "Q2 2023", "periodType": "quarter", "dateKey": "2023-04-01", "revenue": 1485770.0, "pat": 224096.0, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Q2 2023", "periodType": "quarter", "dateKey": "2023-04-01", "revenue": 1485770.0, "pat": 224096.0, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2023, "period": "Q2 2023", "periodType": "quarter", "dateKey": "2023-04-01", "revenue": 1485770.0, "pat": 224096.0, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
   KCB: {
     name: "KCB Group PLC",
     ticker: "KCB",
@@ -168,15 +383,55 @@ const NSE_COMPANIES = {
     currency: "KES",
     units: "thousands",
     latestPrice: 42.0,
-    latestPeriod: {"year": 2025, "period": "Q3 2025", "periodType": "quarter", "dateKey": "2025-09-30", "revenue": 98811027.0, "pat": null, "pbt": null, "nii": 72146888.0, "eps": null, "dps": null, "totalAssets": 1404190326.0, "totalEquity": 210325777.0, "deposits": 1062960998.0, "loans": 850344983.0, "ebitda": null, "mpesa": null},
+    latestPeriod: {"year": 2025, "period": "Q3 2025", "periodType": "half_year", "dateKey": "2025-09-30", "revenue": 98811027.0, "pat": null, "pbt": null, "nii": 72146888.0, "eps": null, "dps": null, "totalAssets": 1404190326.0, "totalEquity": 210325777.0, "deposits": 1062960998.0, "loans": 850344983.0, "ebitda": null, "mpesa": null},
     annuals: [
       {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 98100692.0, "pat": 25410014.0, "pbt": 33252179.0, "nii": 64774792.0, "eps": 0.47, "dps": 0.58, "totalAssets": 1425369827.0, "totalEquity": 138717804.0, "deposits": 1116875397.0, "loans": 740241723.0, "ebitda": null, "mpesa": null},
       {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 126653268.0, "pat": 45029313.0, "pbt": 58375497.0, "nii": 88856198.0, "eps": 0.83, "dps": 0.24, "totalAssets": 1277766539.0, "totalEquity": 183715437.0, "deposits": 971960594.0, "loans": 736614026.0, "ebitda": null, "mpesa": null}
     ],
     quarters: [
-      {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-31", "revenue": 30750467.0, "pat": 11169312.0, "pbt": 14619526.0, "nii": 20506602.0, "eps": 0.83, "dps": null, "totalAssets": 1327838470.0, "totalEquity": 151141853.0, "deposits": 997078186.0, "loans": 698236955.0, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Q3 2024", "periodType": "half_year", "dateKey": "2024-09-30", "revenue": 88572537.0, "pat": null, "pbt": null, "nii": 59849018.0, "eps": null, "dps": null, "totalAssets": 1325023040.0, "totalEquity": 164429835.0, "deposits": 1033725604.0, "loans": 726954611.0, "ebitda": null, "mpesa": null},
       {"year": 2025, "period": "Q1 2025", "periodType": "quarter", "dateKey": "2025-03-31", "revenue": 31526092.0, "pat": 11067572.0, "pbt": 14517952.0, "nii": 22448350.0, "eps": 0.82, "dps": 0.24, "totalAssets": 1329508593.0, "totalEquity": 195390252.0, "deposits": 1007061773.0, "loans": 760298000.0, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q1 2025", "periodType": "quarter", "dateKey": "2025-03-31", "revenue": 31526092.0, "pat": 11067572.0, "pbt": 14517952.0, "nii": 22448350.0, "eps": 0.82, "dps": 0.24, "totalAssets": 1329508593.0, "totalEquity": 195390252.0, "deposits": 1007061773.0, "loans": 760298000.0, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 64286686.0, "pat": 22874591.0, "pbt": 28400754.0, "nii": 46703444.0, "eps": 0.85, "dps": 0.12, "totalAssets": 1351345471.0, "totalEquity": 206119370.0, "deposits": 1031466777.0, "loans": 808894832.0, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q3 2025", "periodType": "half_year", "dateKey": "2025-09-30", "revenue": 98811027.0, "pat": null, "pbt": null, "nii": 72146888.0, "eps": null, "dps": null, "totalAssets": 1404190326.0, "totalEquity": 210325777.0, "deposits": 1062960998.0, "loans": 850344983.0, "ebitda": null, "mpesa": null},
       {"year": 2025, "period": "Q3 2025", "periodType": "quarter", "dateKey": "2025-09-30", "revenue": 98811027.0, "pat": null, "pbt": null, "nii": 72146888.0, "eps": null, "dps": null, "totalAssets": 1404190326.0, "totalEquity": 210325777.0, "deposits": 1062960998.0, "loans": 850344983.0, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  KEGN: {
+    name: "KenGen Co. PLC",
+    ticker: "KEGN",
+    exchange: "NSE",
+    sector: "Energy",
+    logo: "\u26a1",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 5.4,
+    latestPeriod: {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 56098.0, "pat": 10481.0, "pbt": 15473.0, "nii": null, "eps": 1.59, "dps": null, "totalAssets": null, "totalEquity": 284544.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 56098.0, "pat": 10481.0, "pbt": 15473.0, "nii": null, "eps": 1.59, "dps": null, "totalAssets": null, "totalEquity": 284544.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 56098.0, "pat": 10481.0, "pbt": 15473.0, "nii": null, "eps": 1.59, "dps": null, "totalAssets": null, "totalEquity": 284544.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  KPLC: {
+    name: "Kenya Power and Lighting Co.",
+    ticker: "KPLC",
+    exchange: "NSE",
+    sector: "Energy",
+    logo: "\u26a1",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 2.0,
+    latestPeriod: {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 219285.0, "pat": 24467.0, "pbt": 35375.0, "nii": null, "eps": 12.54, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 107425.0, "pat": 9970.0, "pbt": 14065.0, "nii": null, "eps": 5.11, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 231124.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 219285.0, "pat": 24467.0, "pbt": 35375.0, "nii": null, "eps": 12.54, "dps": null, "totalAssets": null, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
     ],
   },
 
@@ -198,6 +453,99 @@ const NSE_COMPANIES = {
     ],
   },
 
+  NCBA: {
+    name: "NCBA Group PLC",
+    ticker: "NCBA",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 45.0,
+    latestPeriod: {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-26", "revenue": 7175.0, "pat": 323074.0, "pbt": 453800.0, "nii": null, "eps": 33.41, "dps": 5.31, "totalAssets": 4833.0, "totalEquity": 811698.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-26", "revenue": 7175.0, "pat": 323074.0, "pbt": 453800.0, "nii": null, "eps": 33.41, "dps": 5.31, "totalAssets": 4833.0, "totalEquity": 811698.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-26", "revenue": 7175.0, "pat": 323074.0, "pbt": 453800.0, "nii": null, "eps": 33.41, "dps": 5.31, "totalAssets": 4833.0, "totalEquity": 811698.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  NSE: {
+    name: "Nairobi Securities Exchange",
+    ticker: "NSE",
+    exchange: "NSE",
+    sector: "Other",
+    logo: "\ud83d\udcc8",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 7.0,
+    latestPeriod: {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 429468.0, "pat": 54720.0, "pbt": 80007.0, "nii": null, "eps": 0.21, "dps": null, "totalAssets": 2116337.0, "totalEquity": 2116337.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 429468.0, "pat": 54720.0, "pbt": 80007.0, "nii": null, "eps": 0.21, "dps": null, "totalAssets": 2116337.0, "totalEquity": 2116337.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 429468.0, "pat": 54720.0, "pbt": 80007.0, "nii": null, "eps": 0.21, "dps": null, "totalAssets": 2116337.0, "totalEquity": 2116337.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  SLAM: {
+    name: "Sanlam Allianz Kenya",
+    ticker: "SLAM",
+    exchange: "NSE",
+    sector: "Insurance",
+    logo: "\ud83c\udfe2",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 10.0,
+    latestPeriod: {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 3737334.0, "pat": 30958.0, "pbt": 49949.0, "nii": null, "eps": null, "dps": null, "totalAssets": 41348687.0, "totalEquity": 41348687.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 6936282.0, "pat": 399836.0, "pbt": 242787.0, "nii": null, "eps": 3.17, "dps": null, "totalAssets": 35535212.0, "totalEquity": 6936282.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 7359029.0, "pat": 1378870.0, "pbt": 337388.0, "nii": null, "eps": null, "dps": null, "totalAssets": 39165932.0, "totalEquity": 39165932.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 3737334.0, "pat": 30958.0, "pbt": 49949.0, "nii": null, "eps": null, "dps": null, "totalAssets": 41348687.0, "totalEquity": 41348687.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  SASN: {
+    name: "Sasini PLC",
+    ticker: "SASN",
+    exchange: "NSE",
+    sector: "Agriculture",
+    logo: "\ud83c\udf31",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 20.0,
+    latestPeriod: {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-31", "revenue": 2998443.0, "pat": 124692.0, "pbt": null, "nii": null, "eps": -0.16, "dps": null, "totalAssets": null, "totalEquity": 14403282.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-31", "revenue": 2998443.0, "pat": 124692.0, "pbt": null, "nii": null, "eps": -0.16, "dps": null, "totalAssets": null, "totalEquity": 14403282.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q1 2024", "periodType": "quarter", "dateKey": "2024-03-31", "revenue": 2998443.0, "pat": 124692.0, "pbt": null, "nii": null, "eps": -0.16, "dps": null, "totalAssets": null, "totalEquity": 14403282.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  SBIC: {
+    name: "Stanbic Holdings PLC",
+    ticker: "SBIC",
+    exchange: "NSE",
+    sector: "Banking",
+    logo: "\ud83c\udfe6",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 105.0,
+    latestPeriod: {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 55391291.0, "pat": 108386582.0, "pbt": 8607882.0, "nii": null, "eps": 16.56, "dps": 3.8, "totalAssets": 473718726.0, "totalEquity": 74265288.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 49680368.0, "pat": 12157619.0, "pbt": 17093925.0, "nii": null, "eps": 30.75, "dps": 17.0, "totalAssets": 459283854.0, "totalEquity": 68554365.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Dec2024", "periodType": "annual", "dateKey": "2024-12-31", "revenue": 56526575.0, "pat": 99189705.0, "pbt": 18970787.0, "nii": null, "eps": 34.7, "dps": 20.74, "totalAssets": 454834386.0, "totalEquity": 75400572.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 50486630.0, "pat": 12157619.0, "pbt": 10028527.0, "nii": null, "eps": 18.25, "dps": 1.84, "totalAssets": 497930344.0, "totalEquity": 69360627.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2025, "period": "Q2 2025", "periodType": "half_year", "dateKey": "2025-06-30", "revenue": 55391291.0, "pat": 108386582.0, "pbt": 8607882.0, "nii": null, "eps": 16.56, "dps": 3.8, "totalAssets": 473718726.0, "totalEquity": 74265288.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
   SCBK: {
     name: "Standard Chartered Bank Kenya",
     ticker: "SCBK",
@@ -215,6 +563,62 @@ const NSE_COMPANIES = {
     ],
   },
 
+  SGL: {
+    name: "Standard Group PLC",
+    ticker: "SGL",
+    exchange: "NSE",
+    sector: "Media",
+    logo: "\ud83d\udcf0",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 18.0,
+    latestPeriod: {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 1049205.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 4303516.0, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 2381425.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 4097155.0, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 1049205.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 4303516.0, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  TCL: {
+    name: "TransCentury PLC",
+    ticker: "TCL",
+    exchange: "NSE",
+    sector: "Manufacturing",
+    logo: "\ud83c\udfed",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 1.5,
+    latestPeriod: {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 3089106.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 10789526.0, "totalEquity": 10789526.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2022, "period": "Dec2022", "periodType": "annual", "dateKey": "2022-12-31", "revenue": 5735750.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 12507102.0, "totalEquity": 12507102.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 2023.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 12507102.0, "totalEquity": 12507102.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2023, "period": "Q2 2023", "periodType": "half_year", "dateKey": "2023-06-30", "revenue": 2757062.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 13768563.0, "totalEquity": 13768563.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": 3089106.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 10789526.0, "totalEquity": 10789526.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  UMME: {
+    name: "Umeme Limited",
+    ticker: "UMME",
+    exchange: "NSE",
+    sector: "Energy",
+    logo: "\u26a1",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 5.0,
+    latestPeriod: {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": null, "pat": 12987.0, "pbt": 23577.0, "nii": null, "eps": null, "dps": null, "totalAssets": 2243407.0, "totalEquity": 2243407.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 2023.0, "pat": 11470.0, "pbt": 15384.0, "nii": null, "eps": 7.1, "dps": null, "totalAssets": 2347235.0, "totalEquity": null, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2024, "period": "Q2 2024", "periodType": "half_year", "dateKey": "2024-06-30", "revenue": null, "pat": 12987.0, "pbt": 23577.0, "nii": null, "eps": null, "dps": null, "totalAssets": 2243407.0, "totalEquity": 2243407.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
   UNGA: {
     name: "Unga Group Limited",
     ticker: "UNGA",
@@ -226,6 +630,40 @@ const NSE_COMPANIES = {
     latestPrice: 26.0,
     annuals: [
       {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 12426424.0, "pat": null, "pbt": null, "nii": null, "eps": null, "dps": null, "totalAssets": 10900009.0, "totalEquity": 10900009.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+    ],
+  },
+
+  WTK: {
+    name: "Williamson Tea Kenya PLC",
+    ticker: "WTK",
+    exchange: "NSE",
+    sector: "Agriculture",
+    logo: "\ud83c\udf31",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 330.0,
+    latestPeriod: {"year": 2023, "period": "Q2 2023", "periodType": "quarter", "dateKey": "2023-04-01", "revenue": 1982355.0, "pat": 461259.0, "pbt": 655840.0, "nii": null, "eps": 25.47, "dps": null, "totalAssets": 477110.0, "totalEquity": 2024.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null},
+    annuals: [
+      {"year": 2023, "period": "Q2 2023", "periodType": "quarter", "dateKey": "2023-04-01", "revenue": 1982355.0, "pat": 461259.0, "pbt": 655840.0, "nii": null, "eps": 25.47, "dps": null, "totalAssets": 477110.0, "totalEquity": 2024.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+    quarters: [
+      {"year": 2023, "period": "Q2 2023", "periodType": "quarter", "dateKey": "2023-04-01", "revenue": 1982355.0, "pat": 461259.0, "pbt": 655840.0, "nii": null, "eps": 25.47, "dps": null, "totalAssets": 477110.0, "totalEquity": 2024.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
+    ],
+  },
+
+  SCAN: {
+    name: "WPP Scangroup PLC",
+    ticker: "SCAN",
+    exchange: "NSE",
+    sector: "Media",
+    logo: "\ud83d\udce2",
+    currency: "KES",
+    units: "thousands",
+    latestPrice: 4.0,
+    annuals: [
+      {"year": 2023, "period": "Dec2023", "periodType": "annual", "dateKey": "2023-12-31", "revenue": 6612362.0, "pat": 133300.0, "pbt": 377960.0, "nii": null, "eps": null, "dps": null, "totalAssets": 8014801.0, "totalEquity": 5274475.0, "deposits": null, "loans": null, "ebitda": null, "mpesa": null}
     ],
     quarters: [
     ],

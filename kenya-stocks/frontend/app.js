@@ -6,13 +6,32 @@
 let activeCompany = null;
 let chartInstances = {};
 
-// ---- Financial Data Coverage ----
-// Tickers (NSE_ALL_STOCKS keys / TV tickers) that have full financial data in NSE_COMPANIES
-const FINANCIAL_TICKERS = new Set(['ABSA', 'COOP', 'DTK', 'EQTY', 'KCB', 'NCBA', 'SCBK']);
+// ---- Ticker Mappings ----
+// TV ticker (NSE_ALL_STOCKS key / TradingView NSEKE symbol) → internal key (NSE_COMPANIES key)
+// Only entries where they differ
+const TV_TO_INTERNAL = {
+  'DTK':  'DTB',    // Diamond Trust Bank
+  'BAT':  'BATK',   // BAT Kenya
+  'CRWN': 'CPKL',   // Crown Paints
+  'PORT': 'EAPC',   // EA Portland Cement
+  'KAPC': 'KAPA',   // Kapchorua Tea
+};
 
-// Map from TV ticker (NSE_ALL_STOCKS key) → internal data key (NSE_COMPANIES key)
-// Only needed where they differ
-const TV_TO_INTERNAL = { 'DTK': 'DTB' };
+// Reverse map: internal → TV ticker (for companies where they differ)
+const INTERNAL_TO_TV = Object.fromEntries(
+  Object.entries(TV_TO_INTERNAL)
+    .filter(([tv, internal]) => tv !== internal)
+    .map(([tv, internal]) => [internal, tv])
+);
+
+// Companies with financial data but no TradingView NSEKE ticker
+const NO_TV_TICKER = new Set(['FMLY', 'HBZE', 'TCL']);
+
+// Derive FINANCIAL_TICKERS as TV tickers from all NSE_COMPANIES entries
+// (NSE_COMPANIES is defined in data.js, loaded before app.js)
+const FINANCIAL_TICKERS = new Set(
+  Object.keys(NSE_COMPANIES).map(internal => INTERNAL_TO_TV[internal] || internal)
+);
 
 // Get TradingView NSEKE symbol from TV ticker
 function getTVSymbol(tvTicker) {
@@ -203,11 +222,26 @@ function loadCompany() {
     co ? `${tvTicker} | ${co.exchange} · ${co.sector}` : `NSE:${tvTicker} · NSE Kenya`;
 
   const priceEl = document.getElementById('company-price');
-  priceEl.textContent = 'Live on chart ↓';
-  priceEl.classList.add('tv-live-badge');
+  const hasTVChart = !NO_TV_TICKER.has(internalTicker);
+  if (hasTVChart) {
+    priceEl.textContent = 'Live on chart ↓';
+    priceEl.classList.add('tv-live-badge');
+  } else {
+    priceEl.textContent = co && co.latestPrice ? `KES ${co.latestPrice.toFixed(2)}` : '—';
+    priceEl.classList.remove('tv-live-badge');
+  }
 
-  // -- TradingView Live Price Chart (always shown; full height for price-only stocks) --
-  initTradingViewChart(tvTicker, !hasFinancials);
+  // -- TradingView Live Price Chart --
+  // Skip for companies with no NSEKE ticker (FMLY, HBZE, TCL)
+  if (hasTVChart) {
+    initTradingViewChart(tvTicker, !hasFinancials);
+  } else {
+    const section   = document.getElementById('tv-chart-section');
+    const container = document.getElementById('tradingview-chart-container');
+    section.classList.remove('hidden');
+    container.classList.remove('tv-chart-full');
+    container.innerHTML = '<div class="tv-chart-error" style="padding:24px;text-align:center;color:#64748b;font-size:13px;">Live price chart not available for this stock on TradingView (NSEKE)</div>';
+  }
 
   if (hasFinancials && co) {
     // Reset period toggle
@@ -465,7 +499,7 @@ function initTradingViewChart(ticker, fullHeight) {
   });
 }
 
-// ---- Period Toggle ----
+// ---- Period Toggle (annual / quarterly) ----
 let _currentCompany = null;
 let _currentPeriod = 'annual';
 
@@ -486,33 +520,37 @@ function setPeriod(period) {
   renderCharts(_currentCompany, period);
 }
 
-// ---- Populate dropdown from NSE_ALL_STOCKS with two optgroups ----
-// Group 1: Full Data (7 companies) — Group 2: Price Chart Only (all others)
+// ---- Populate dropdown from NSE_COMPANIES + NSE_ALL_STOCKS with two optgroups ----
+// Group 1: Full Data (all NSE_COMPANIES) — Group 2: Price Chart Only (others)
 function populateDropdown() {
   const sel = document.getElementById('company-select');
+
+  // Build Full Data entries from NSE_COMPANIES (internal tickers → TV tickers)
+  const fullDataEntries = Object.keys(NSE_COMPANIES).map(internal => {
+    const tvTicker = INTERNAL_TO_TV[internal] || internal;
+    const name = NSE_ALL_STOCKS[tvTicker] || NSE_COMPANIES[internal].name;
+    return { value: tvTicker, display: `${tvTicker} — ${name}`, name };
+  }).sort((a, b) => a.name.localeCompare(b.name));
+
+  // Set of TV tickers covered by Full Data group (to exclude from Price Chart Only)
+  const fullDataTVSet = new Set(fullDataEntries.map(e => e.value));
 
   // Full Data group
   const fullDataGrp = document.createElement('optgroup');
   fullDataGrp.label = '⭐ Full Data';
-  const fullTickers = [...FINANCIAL_TICKERS].sort((a, b) => {
-    const na = NSE_ALL_STOCKS[a] || a;
-    const nb = NSE_ALL_STOCKS[b] || b;
-    return na.localeCompare(nb);
-  });
-  for (const ticker of fullTickers) {
-    const name = NSE_ALL_STOCKS[ticker] || ticker;
+  for (const { value, display } of fullDataEntries) {
     const opt = document.createElement('option');
-    opt.value = ticker;
-    opt.textContent = `${ticker} — ${name}`;
+    opt.value = value;
+    opt.textContent = display;
     fullDataGrp.appendChild(opt);
   }
   sel.appendChild(fullDataGrp);
 
-  // Price Chart Only group (all stocks not in FINANCIAL_TICKERS)
+  // Price Chart Only group (all NSE_ALL_STOCKS not covered by Full Data)
   const priceOnlyGrp = document.createElement('optgroup');
   priceOnlyGrp.label = '📈 Price Chart Only';
   const priceOnlyEntries = Object.entries(NSE_ALL_STOCKS)
-    .filter(([ticker]) => !FINANCIAL_TICKERS.has(ticker))
+    .filter(([ticker]) => !fullDataTVSet.has(ticker))
     .sort((a, b) => a[1].localeCompare(b[1]));
   for (const [ticker, name] of priceOnlyEntries) {
     const opt = document.createElement('option');

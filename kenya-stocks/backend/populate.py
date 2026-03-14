@@ -12,26 +12,63 @@ JSON_FILE = Path(__file__).parent.parent / "data" / "nse" / "financials.json"
 DATA_JS   = Path(__file__).parent.parent / "frontend" / "data.js"
 
 # ── Company catalogue ──────────────────────────────────────────────────────────
-# Keys MUST match the ticker values emitted by extract_all.py
+# Keys MUST match the ticker values emitted by extract_all.py (internal tickers)
+# NOTE: Some internal tickers differ from TradingView tickers:
+#   DTB (internal) = DTK (TradingView)
+#   BATK (internal) = BAT (TradingView)
+#   CPKL (internal) = CRWN (TradingView)
+#   EAPC (internal) = PORT (TradingView)
+#   KAPA (internal) = KAPC (TradingView)
+#   FMLY, HBZE, TCL — no TradingView ticker
 COMPANY_META = {
+    # ── Banking ──────────────────────────────────────────────────────────────
     "KCB":  {"name": "KCB Group PLC",                   "sector": "Banking",        "logo": "🏦", "price": 42.0,  "units": "thousands"},
     "EQTY": {"name": "Equity Group Holdings PLC",        "sector": "Banking",        "logo": "🏦", "price": 52.0,  "units": "thousands"},
-    "COOP": {"name": "Co-operative Bank of Kenya",       "sector": "Banking",        "logo": "🏦", "price": 14.5, "units": "thousands"},
+    "COOP": {"name": "Co-operative Bank of Kenya",       "sector": "Banking",        "logo": "🏦", "price": 14.5,  "units": "thousands"},
     "NCBA": {"name": "NCBA Group PLC",                   "sector": "Banking",        "logo": "🏦", "price": 45.0,  "units": "thousands"},
     "ABSA": {"name": "ABSA Bank Kenya PLC",              "sector": "Banking",        "logo": "🏦", "price": 14.2,  "units": "thousands"},
     "SCBK": {"name": "Standard Chartered Bank Kenya",    "sector": "Banking",        "logo": "🏦", "price": 195.0, "units": "thousands"},
-    "CFC":  {"name": "I&M Group PLC",                    "sector": "Banking",        "logo": "🏦", "price": 24.0,  "units": "thousands"},
-    "DTK":  {"name": "Diamond Trust Bank Kenya",         "sector": "Banking",        "logo": "🏦", "price": 60.0,  "units": "thousands"},
-    "FANB": {"name": "Family Bank Ltd",                  "sector": "Banking",        "logo": "🏦", "price": 6.2,   "units": "thousands"},
+    "IMH":  {"name": "I&M Group PLC",                    "sector": "Banking",        "logo": "🏦", "price": 24.0,  "units": "thousands"},
+    "DTB":  {"name": "Diamond Trust Bank Kenya",         "sector": "Banking",        "logo": "🏦", "price": 60.0,  "units": "thousands"},
+    "FMLY": {"name": "Family Bank Ltd",                  "sector": "Banking",        "logo": "🏦", "price": 6.2,   "units": "thousands"},
+    "HFCK": {"name": "HF Group PLC",                     "sector": "Banking",        "logo": "🏦", "price": 4.5,   "units": "thousands"},
+    "SBIC": {"name": "Stanbic Holdings PLC",             "sector": "Banking",        "logo": "🏦", "price": 105.0, "units": "thousands"},
+    "BKG":  {"name": "BK Group PLC",                     "sector": "Banking",        "logo": "🏦", "price": 50.0,  "units": "thousands"},
+    # ── Telecoms ─────────────────────────────────────────────────────────────
     "SCOM": {"name": "Safaricom PLC",                    "sector": "Telecoms",       "logo": "📡", "price": 15.85, "units": "millions"},
-    "EABL": {"name": "East African Breweries Ltd",       "sector": "FMCG",           "logo": "🍺", "price": 155.0, "units": "thousands"},
+    # ── Insurance ────────────────────────────────────────────────────────────
     "JUB":  {"name": "Jubilee Holdings Limited",         "sector": "Insurance",      "logo": "🏢", "price": 230.0, "units": "thousands"},
     "BRIT": {"name": "Britam Holdings PLC",              "sector": "Insurance",      "logo": "🏢", "price": 6.0,   "units": "thousands"},
+    "SLAM": {"name": "Sanlam Allianz Kenya",             "sector": "Insurance",      "logo": "🏢", "price": 10.0,  "units": "thousands"},
+    # ── FMCG ─────────────────────────────────────────────────────────────────
+    "EABL": {"name": "East African Breweries Ltd",       "sector": "FMCG",           "logo": "🍺", "price": 155.0, "units": "thousands"},
+    "BATK": {"name": "BAT Kenya PLC",                    "sector": "FMCG",           "logo": "🏭", "price": 465.0, "units": "thousands"},
+    # ── Energy ───────────────────────────────────────────────────────────────
     "KEGN": {"name": "KenGen Co. PLC",                   "sector": "Energy",         "logo": "⚡", "price": 5.4,   "units": "thousands"},
+    "KPLC": {"name": "Kenya Power and Lighting Co.",     "sector": "Energy",         "logo": "⚡", "price": 2.0,   "units": "thousands"},
+    "UMME": {"name": "Umeme Limited",                    "sector": "Energy",         "logo": "⚡", "price": 5.0,   "units": "thousands"},
+    # ── Media ────────────────────────────────────────────────────────────────
     "NMG":  {"name": "Nation Media Group",               "sector": "Media",          "logo": "📰", "price": 14.0,  "units": "thousands"},
-    "UNGA": {"name": "Unga Group Limited",               "sector": "Agriculture",    "logo": "🌾", "price": 26.0,  "units": "thousands"},
+    "SGL":  {"name": "Standard Group PLC",               "sector": "Media",          "logo": "📰", "price": 18.0,  "units": "thousands"},
+    "SCAN": {"name": "WPP Scangroup PLC",                "sector": "Media",          "logo": "📢", "price": 4.0,   "units": "thousands"},
+    "HBZE": {"name": "Homeboyz Entertainment PLC",       "sector": "Media",          "logo": "🎵", "price": 2.5,   "units": "thousands"},
+    # ── Manufacturing / Industry ─────────────────────────────────────────────
     "CARB": {"name": "Carbacid Investments PLC",         "sector": "Manufacturing",  "logo": "🏭", "price": 12.0,  "units": "thousands"},
     "BOC":  {"name": "BOC Kenya PLC",                    "sector": "Manufacturing",  "logo": "🏭", "price": 95.0,  "units": "thousands"},
+    "BAMB": {"name": "Bamburi Cement PLC",               "sector": "Manufacturing",  "logo": "🏭", "price": 65.0,  "units": "thousands"},
+    "CPKL": {"name": "Crown Paints Kenya PLC",           "sector": "Manufacturing",  "logo": "🏭", "price": 40.0,  "units": "thousands"},
+    "EAPC": {"name": "EA Portland Cement PLC",           "sector": "Manufacturing",  "logo": "🏭", "price": 8.0,   "units": "thousands"},
+    "TCL":  {"name": "TransCentury PLC",                 "sector": "Manufacturing",  "logo": "🏭", "price": 1.5,   "units": "thousands"},
+    "FTGH": {"name": "Flame Tree Group Holdings",        "sector": "Manufacturing",  "logo": "🏭", "price": 3.0,   "units": "thousands"},
+    "XPRS": {"name": "Express Kenya Ltd",                "sector": "Logistics",      "logo": "🚚", "price": 5.0,   "units": "thousands"},
+    # ── Agriculture ──────────────────────────────────────────────────────────
+    "UNGA": {"name": "Unga Group Limited",               "sector": "Agriculture",    "logo": "🌾", "price": 26.0,  "units": "thousands"},
+    "KAPA": {"name": "Kapchorua Tea Kenya PLC",          "sector": "Agriculture",    "logo": "🌱", "price": 130.0, "units": "thousands"},
+    "SASN": {"name": "Sasini PLC",                       "sector": "Agriculture",    "logo": "🌱", "price": 20.0,  "units": "thousands"},
+    "WTK":  {"name": "Williamson Tea Kenya PLC",         "sector": "Agriculture",    "logo": "🌱", "price": 330.0, "units": "thousands"},
+    # ── Real Estate ──────────────────────────────────────────────────────────
+    "HAFR": {"name": "Home Afrika Limited",              "sector": "Real Estate",    "logo": "🏘", "price": 0.5,   "units": "thousands"},
+    # ── Other ────────────────────────────────────────────────────────────────
     "NSE":  {"name": "Nairobi Securities Exchange",      "sector": "Other",          "logo": "📈", "price": 7.0,   "units": "thousands"},
 }
 
@@ -158,6 +195,74 @@ def scrub_pat(row):
             break
     return row
 
+def parse_date_from_url(url):
+    """Try to extract a date from a URL like '...Ended-31st-December-2023.pdf'."""
+    import re
+    if not url:
+        return None
+    MONTH_NAMES = {
+        'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6,
+        'july': 7, 'august': 8, 'september': 9, 'october': 10, 'november': 11, 'december': 12,
+        'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'jun': 6, 'jul': 7, 'aug': 8,
+        'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12,
+    }
+    # Pattern: "31st-December-2023" or "31-Mar-2024"
+    m = re.search(r'(\d{1,2})(?:st|nd|rd|th)?[-\s]([A-Za-z]+)[-\s](\d{4})', url)
+    if m:
+        day, mon_str, year = int(m.group(1)), m.group(2).lower(), int(m.group(3))
+        month = MONTH_NAMES.get(mon_str)
+        if month and 2018 <= year <= 2030:
+            return f"{year}-{month:02d}-{day:02d}"
+    # Pattern: "December-2023" without day
+    m = re.search(r'([A-Za-z]+)-(\d{4})', url)
+    if m:
+        mon_str, year = m.group(1).lower(), int(m.group(2))
+        month = MONTH_NAMES.get(mon_str)
+        if month and 2018 <= year <= 2030:
+            import calendar
+            last_day = calendar.monthrange(year, month)[1]
+            return f"{year}-{month:02d}-{last_day:02d}"
+    return None
+
+
+def infer_period_type(record, date_str):
+    """Infer period_type from date and context if not set."""
+    pt = record.get("period_type")
+    if pt and pt not in (None, "unknown"):
+        return pt
+    source = (record.get("source_file") or "").lower()
+    url = (record.get("url") or "").lower()
+    # Use date month to distinguish annual from interim
+    if date_str and date_str != "0000-00-00":
+        try:
+            month = int(date_str[5:7])
+        except (ValueError, IndexError):
+            month = None
+        if month:
+            # March/June/Sep year-end → quarterly or half_year
+            if month in (3, 6, 9):
+                # Unless the company clearly has a non-Dec fiscal year (tea companies use April)
+                # and the source says "audited full year"
+                if ("full-year" in url or "full_year" in url) and month in (3,):
+                    return "annual"  # March year-end companies (Williamson, Kapchorua, NCBA)
+                return "quarter" if month == 3 else "half_year"
+            # December → annual if audited, else could be quarter (Q4 reporting)
+            if month == 12:
+                if "audited" in source or "audited" in url or "full-year" in url or "full_year" in url:
+                    return "annual"
+                # Unaudited December → likely annual or Q4; treat as annual
+                return "annual"
+            # April year-end (tea companies)
+            if month == 4:
+                if "audited" in source or "full-year" in url:
+                    return "annual"
+                return "quarter"
+    # Fallback: trust audited marker
+    if "audited" in source or "full-year" in url or "year-ended" in url or "full_year" in url:
+        return "annual"
+    return "unknown"
+
+
 def main():
     with open(JSON_FILE, encoding="utf-8") as f:
         records = json.load(f)
@@ -175,8 +280,24 @@ def main():
         meta = COMPANY_META[ticker]
         units = meta["units"]
 
+        # Enrich records: fill missing period_end_date from URL; infer period_type
+        enriched = []
+        for r in recs:
+            r = dict(r)
+            if not r.get("period_end_date"):
+                d = parse_date_from_url(r.get("url"))
+                if d:
+                    r["period_end_date"] = d
+                    if not r.get("year"):
+                        r["year"] = int(d[:4])
+            if not r.get("period_type") or r.get("period_type") == "unknown":
+                r["period_type"] = infer_period_type(r, r.get("period_end_date"))
+            enriched.append(r)
+        recs = enriched
+
         # Separate annual vs interim records
-        annuals = [r for r in recs if r.get("period_type") == "annual"]
+        # Treat "unknown" as annual if infer_period_type couldn't determine otherwise
+        annuals = [r for r in recs if r.get("period_type") in ("annual", "unknown")]
         interim = [r for r in recs if r.get("period_type") in ("half_year", "quarter")]
 
         # Deduplicate annuals by period_end_date (keep last if dupes)
@@ -198,6 +319,16 @@ def main():
         # Build annual rows
         annual_rows = [scrub_pat(build_annual_row(r, units)) for r in annuals]
         annual_rows = [row for row in annual_rows if has_useful_data(row)]
+
+        # Fallback: if no annual rows, use interim records as display data
+        if not annual_rows and interim:
+            interim_sorted = sorted(interim, key=parse_period_date)
+            interim_sorted = [r for r in interim_sorted if parse_period_date(r) != "0000-00-00"
+                              and (r.get("year") or 0) >= 2020]
+            for r in interim_sorted:
+                row = scrub_pat(build_annual_row(r, units))
+                if has_useful_data(row):
+                    annual_rows.append(row)
 
         if not annual_rows:
             continue
