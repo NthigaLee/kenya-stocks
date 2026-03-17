@@ -1,8 +1,14 @@
 {
-  "nse20": {"value": 1653, "change_pct": -0.43},
-  "nseAllShare": {"value": 169.3, "change_pct": 0.12},
-  "topGainer": {"ticker": "SCOM", "price": 30.25, "change_pct": 6.9},
-  "topLoser": {"ticker": "SCAN", "price": 2.80, "change_pct": -2.1},
-  "stocksTracked": 72,
-  "updated_at": "2025-10-31T00:00:00Z"
+  "nse20": {
+    "value": null,
+    "change_pct": null
+  },
+  "nseAllShare": {
+    "value": null,
+    "change_pct": null
+  },
+  "topGainer": null,
+  "topLoser": null,
+  "stocksTracked": 0,
+  "updated_at": "2026-03-17T16:39:30.359301Z"
 }
