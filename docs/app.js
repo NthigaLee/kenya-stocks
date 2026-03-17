@@ -274,27 +274,69 @@ function getTemplate(sector) {
 }
 
 // ---- Load Prices ----
-const API_BASE = 'https://kenya-stocks-1.onrender.com';
-
+// prices.json format: { "TICKER": { name, sector, prices: [[timestamp_ms, close], ...] } }
 async function loadPrices() {
   try {
-    const tickers = Object.keys(NSE_COMPANIES).join(',');
-    const resp = await fetch(`${API_BASE}/prices?tickers=${tickers}`);
-    if (resp.ok) {
-      const data = await resp.json();
-      NSE_PRICES = data.tickers || {};
-    }
+    const resp = await fetch('prices.json?v=4');
+    if (resp.ok) NSE_PRICES = await resp.json();
   } catch (e) {
-    console.warn('Live prices unavailable, falling back to static:', e);
     NSE_PRICES = {};
   }
-  for (const [ticker, priceData] of Object.entries(NSE_PRICES)) {
+
+  for (const [ticker, pd] of Object.entries(NSE_PRICES)) {
+    const prices = pd.prices;
+    if (!prices || prices.length < 2) continue;
+
+    const lastPrice = prices[prices.length - 1][1];
+    const prevPrice = prices[prices.length - 2][1];
+    const change = lastPrice - prevPrice;
+    const changePct = prevPrice ? (change / prevPrice) * 100 : 0;
+
+    // 52-week high/low
+    const oneYearAgo = Date.now() - 365 * 24 * 3600 * 1000;
+    const recent = prices.filter(p => p[0] >= oneYearAgo);
+    const hi52 = recent.length > 0 ? Math.max(...recent.map(p => p[1])) : lastPrice;
+    const lo52 = recent.length > 0 ? Math.min(...recent.map(p => p[1])) : lastPrice;
+
     if (NSE_COMPANIES[ticker]) {
-      NSE_COMPANIES[ticker].latestPrice = priceData.price;
-      NSE_COMPANIES[ticker].priceChange = priceData.change;
-      NSE_COMPANIES[ticker].priceChangePct = priceData.change_pct;
+      // Stock has financial data — enrich it
+      NSE_COMPANIES[ticker].latestPrice = lastPrice;
+      NSE_COMPANIES[ticker].priceChange = change;
+      NSE_COMPANIES[ticker].priceChangePct = changePct;
+      NSE_COMPANIES[ticker].hi52 = hi52;
+      NSE_COMPANIES[ticker].lo52 = lo52;
+    } else {
+      // Price-only stock — create lightweight entry
+      NSE_COMPANIES[ticker] = {
+        name: pd.name,
+        ticker: ticker,
+        exchange: 'NSE',
+        sector: pd.sector || 'Other',
+        logo: sectorEmoji(pd.sector),
+        currency: 'KES',
+        units: 'thousands',
+        latestPrice: lastPrice,
+        priceChange: change,
+        priceChangePct: changePct,
+        hi52: hi52,
+        lo52: lo52,
+        annuals: [],
+        quarters: [],
+        priceOnly: true,
+      };
     }
   }
+}
+
+function sectorEmoji(sector) {
+  const map = {
+    'Banking': '🏦', 'Agricultural': '🌾', 'Insurance': '🛡️',
+    'Manufacturing': '🏭', 'Automobiles and Accessories': '🚗',
+    'Commercial and Services': '🏢', 'Construction and Allied': '🏗️',
+    'Energy and Petroleum': '⚡', 'Investment': '📊',
+    'Investment Services': '📊', 'Telecommunication and Technology': '📱',
+  };
+  return map[sector] || '📈';
 }
 
 // ---- Chart.js Global Defaults ----
@@ -385,24 +427,20 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
             color: '#5a6a7e', font: { size: 10 },
             callback: (v) => {
               const u = opts.units;
-              // Data stored in THOUSANDS of KES:
-              //   1,000,000 thousands = 1 Billion KES  → threshold 1e6
-              //   1,000 thousands     = 1 Million KES   → threshold 1e3
-              if (u === 'thousands') {
-                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'B';
-                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'M';
-                return v + 'K';
-              }
-              // Data stored in MILLIONS of KES:
-              //   1,000 millions = 1 Billion KES → threshold 1e3
               if (u === 'millions') {
-                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'B';
+                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'T';
+                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'B';
                 return v.toFixed(0) + 'M';
               }
-              // Raw values (EPS etc.)
-              if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(1) + 'B';
-              if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'M';
-              if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'K';
+              if (u === 'thousands') {
+                if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(0) + 'B';
+                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'M';
+                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'K';
+                return v;
+              }
+              if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(0) + 'B';
+              if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'M';
+              if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'K';
               return v;
             }
           }
@@ -473,6 +511,150 @@ function buildChartGrid(template) {
   });
 }
 
+// ---- Price Chart ----
+let _priceChartInstance = null;
+let _currentRange = '1Y';
+
+function renderPriceChart(ticker, range) {
+  range = range || _currentRange;
+  _currentRange = range;
+
+  const pd = NSE_PRICES[ticker];
+  if (!pd || !pd.prices || pd.prices.length < 2) {
+    document.getElementById('price-chart-section').classList.add('hidden');
+    return;
+  }
+
+  document.getElementById('price-chart-section').classList.remove('hidden');
+
+  const allPrices = pd.prices;
+  const now = allPrices[allPrices.length - 1][0];
+
+  // Range filtering
+  const rangeMs = {
+    '1M': 30 * 24 * 3600 * 1000,
+    '3M': 91 * 24 * 3600 * 1000,
+    '6M': 182 * 24 * 3600 * 1000,
+    '1Y': 365 * 24 * 3600 * 1000,
+    '3Y': 3 * 365 * 24 * 3600 * 1000,
+    '5Y': 5 * 365 * 24 * 3600 * 1000,
+    'ALL': Infinity,
+  };
+
+  const cutoff = range === 'ALL' ? 0 : now - rangeMs[range];
+  const filtered = allPrices.filter(p => p[0] >= cutoff);
+  if (filtered.length < 2) return;
+
+  const firstPrice = filtered[0][1];
+  const lastPrice = filtered[filtered.length - 1][1];
+  const isUp = lastPrice >= firstPrice;
+
+  // Update range button UI
+  document.querySelectorAll('.range-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.range === range);
+  });
+
+  // Update price summary
+  const co = NSE_COMPANIES[ticker];
+  if (co) {
+    document.getElementById('price-value').textContent = 'KES ' + lastPrice.toFixed(2);
+    const change = lastPrice - firstPrice;
+    const changePct = firstPrice ? (change / firstPrice) * 100 : 0;
+    const sign = change >= 0 ? '+' : '';
+    const cls = change >= 0 ? 'positive' : 'negative';
+    document.getElementById('price-change').className = 'price-change ' + cls;
+    document.getElementById('price-change').textContent = sign + change.toFixed(2) + ' (' + sign + changePct.toFixed(1) + '%)';
+
+    document.getElementById('price-52hi').textContent = co.hi52 ? 'KES ' + co.hi52.toFixed(2) : '—';
+    document.getElementById('price-52lo').textContent = co.lo52 ? 'KES ' + co.lo52.toFixed(2) : '—';
+    document.getElementById('price-vol').textContent = '—';
+  }
+
+  // Build chart data
+  const chartData = filtered.map(p => ({ x: p[0], y: p[1] }));
+
+  const ctx = document.getElementById('chart-price');
+  if (_priceChartInstance) _priceChartInstance.destroy();
+
+  const gradient = ctx.getContext('2d');
+  const gradientFill = gradient.createLinearGradient(0, 0, 0, 320);
+  if (isUp) {
+    gradientFill.addColorStop(0, 'rgba(16, 185, 129, 0.25)');
+    gradientFill.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
+  } else {
+    gradientFill.addColorStop(0, 'rgba(239, 68, 68, 0.25)');
+    gradientFill.addColorStop(1, 'rgba(239, 68, 68, 0.0)');
+  }
+
+  _priceChartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      datasets: [{
+        data: chartData,
+        borderColor: isUp ? '#10b981' : '#ef4444',
+        borderWidth: 2,
+        fill: true,
+        backgroundColor: gradientFill,
+        pointRadius: 0,
+        pointHitRadius: 8,
+        tension: 0.1,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a2332',
+          borderColor: '#2a3a4e',
+          borderWidth: 1,
+          padding: 12,
+          titleFont: { size: 12, weight: 'bold' },
+          bodyFont: { size: 13 },
+          cornerRadius: 10,
+          displayColors: false,
+          callbacks: {
+            title: (items) => {
+              if (!items.length) return '';
+              return new Date(items[0].parsed.x).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+            },
+            label: (item) => 'KES ' + item.parsed.y.toFixed(2),
+          }
+        }
+      },
+      scales: {
+        x: {
+          type: 'time',
+          time: {
+            tooltipFormat: 'dd MMM yyyy',
+            displayFormats: {
+              day: 'dd MMM',
+              week: 'dd MMM',
+              month: 'MMM yy',
+              quarter: 'MMM yy',
+              year: 'yyyy',
+            }
+          },
+          grid: { display: false },
+          ticks: { color: '#5a6a7e', font: { size: 10, weight: 500 }, maxTicksLimit: 8 },
+          border: { display: false },
+        },
+        y: {
+          grid: { color: 'rgba(30, 45, 61, 0.6)', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            color: '#5a6a7e',
+            font: { size: 10 },
+            callback: (v) => v.toFixed(v >= 100 ? 0 : 2),
+          },
+        }
+      }
+    }
+  });
+}
+
 // ---- Load Company ----
 function loadCompany() {
   const sel = document.getElementById('company-select').value;
@@ -481,12 +663,11 @@ function loadCompany() {
   activeCompany = co;
   _currentCompany = co;
   _currentPeriod = 'annual';
-  document.getElementById('toggle-annual').classList.add('active');
-  document.getElementById('toggle-quarterly').classList.remove('active');
+
   document.getElementById('dashboard').classList.remove('hidden');
   document.getElementById('empty-state').classList.add('hidden');
   document.getElementById('breadcrumb-company').textContent = co.ticker + ' | NSE';
-  document.getElementById('company-logo').textContent = co.logo;
+  document.getElementById('company-logo').textContent = co.logo || '📈';
   document.getElementById('company-name').textContent = co.name;
   document.getElementById('company-meta').textContent = co.ticker + ' | ' + co.exchange + ' \u00B7 ' + co.sector;
   document.getElementById('company-price').textContent = fmtPrice(co.latestPrice);
@@ -498,18 +679,46 @@ function loadCompany() {
     changeEl.innerHTML = '';
   }
 
-  const latest = co.latestPeriod || (co.annuals && co.annuals.length > 0 ? co.annuals[0] : null);
-  if (!latest) return;
-  const latestLabel = latest.period || latest.year;
-  document.getElementById('company-eps-pill').textContent = 'EPS (' + latestLabel + '): ' + fmtEPS(latest.eps);
-  document.getElementById('company-latest-year').textContent = 'Units: KES ' + co.units + ' \u00B7 Last period: ' + latestLabel;
+  // Always render price chart
+  _currentRange = '1Y';
+  renderPriceChart(sel, '1Y');
 
-  // Get sector template and build UI
-  const template = getTemplate(co.sector);
-  renderStatsGrid(co, template);
-  buildChartGrid(template);
-  renderCharts(co, 'annual', template);
-  renderValuation(co);
+  // Check if stock has financial data
+  const hasFinancials = co.annuals && co.annuals.length > 0;
+
+  // Toggle financial sections visibility
+  const financialSections = ['stats-grid', 'sector-charts-container', 'valuation-panel'];
+  const chartControls = document.querySelector('.chart-controls');
+
+  if (hasFinancials) {
+    document.getElementById('toggle-annual').classList.add('active');
+    document.getElementById('toggle-quarterly').classList.remove('active');
+    if (chartControls) chartControls.style.display = '';
+    financialSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    });
+
+    const latest = co.latestPeriod || co.annuals[0];
+    const latestLabel = latest.period || latest.year;
+    document.getElementById('company-eps-pill').textContent = 'EPS (' + latestLabel + '): ' + fmtEPS(latest.eps);
+    document.getElementById('company-latest-year').textContent = 'Units: KES ' + co.units + ' \u00B7 Last period: ' + latestLabel;
+
+    const template = getTemplate(co.sector);
+    renderStatsGrid(co, template);
+    buildChartGrid(template);
+    renderCharts(co, 'annual', template);
+    renderValuation(co);
+  } else {
+    // Price-only stock — hide financial sections
+    if (chartControls) chartControls.style.display = 'none';
+    financialSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    });
+    document.getElementById('company-eps-pill').textContent = 'Price only — no financial data yet';
+    document.getElementById('company-latest-year').textContent = co.sector;
+  }
 }
 
 // ---- Stats Grid ----
@@ -604,95 +813,6 @@ function renderCharts(co, period, template) {
   });
 }
 
-
-// ---- Stock Price Chart ----
-const PRICE_RANGES = {
-  '1D': { interval: '5m',  range: '1d'  },
-  '1W': { interval: '30m', range: '5d'  },
-  '1M': { interval: '1d',  range: '1mo' },
-  '6M': { interval: '1d',  range: '6mo' },
-  '1Y': { interval: '1d',  range: '1y'  },
-  '5Y': { interval: '1wk', range: '5y'  },
-};
-let _activePriceRange = '1Y';
-
-async function fetchYahooChart(ticker, interval, range) {
-  // Route through our Render backend — Yahoo Finance has no NSE Kenya data
-  try {
-    const url = `${API_BASE}/history/${encodeURIComponent(ticker)}?range=${range}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
-    if (!res.ok) return null;
-    const json = await res.json();
-    if (json.points && json.points.length > 0) return json.points;
-  } catch (_) {}
-  return null;
-}
-
-function makePriceLineChart(canvasId, points, rangeKey) {
-  const ctx = document.getElementById(canvasId);
-  if (!ctx) return;
-  if (chartInstances[canvasId]) chartInstances[canvasId].destroy();
-  const labels = points.map(p => {
-    const d = new Date(p.t);
-    if (rangeKey === '1D') return d.toLocaleTimeString('en-KE', { hour: '2-digit', minute: '2-digit' });
-    if (rangeKey === '1W') return d.toLocaleDateString('en-KE', { weekday: 'short', hour: '2-digit' });
-    return d.toLocaleDateString('en-KE', { month: 'short', day: 'numeric', ...(rangeKey === '5Y' && { year: 'numeric' }) });
-  });
-  const values = points.map(p => p.v);
-  const first  = values[0] || 0;
-  const last   = values[values.length - 1] || 0;
-  const color  = last >= first ? '#10b981' : '#ef4444';
-  const bgColor = last >= first ? 'rgba(16,185,129,0.08)' : 'rgba(239,68,68,0.08)';
-  chartInstances[canvasId] = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [{ label: 'Price (KES)', data: values, borderColor: color, backgroundColor: bgColor,
-        borderWidth: 2, pointRadius: 0, tension: 0.3, fill: true }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false, animation: { duration: 300 },
-      plugins: {
-        legend: { display: false },
-        tooltip: { mode: 'index', intersect: false, backgroundColor: '#1e2d3d', borderColor: '#2a3f52',
-          borderWidth: 1, padding: 10, cornerRadius: 8,
-          callbacks: { label: (item) => ` KES ${item.raw?.toFixed(2)}` }
-        }
-      },
-      scales: {
-        x: { grid: { display: false }, ticks: { color: '#5a6a7e', font: { size: 9 }, maxTicksLimit: 8, maxRotation: 0 } },
-        y: { position: 'right', grid: { color: 'rgba(30,45,61,0.6)', drawTicks: false }, border: { display: false },
-          ticks: { color: '#5a6a7e', font: { size: 10 }, callback: (v) => 'KES ' + v.toFixed(1) } }
-      }
-    }
-  });
-}
-
-async function loadStockPrice(ticker, rangeKey) {
-  if (!ticker) return;
-  rangeKey = rangeKey || _activePriceRange;
-  _activePriceRange = rangeKey;
-  document.querySelectorAll('.price-range-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.range === rangeKey);
-  });
-  const section   = document.getElementById('price-chart-section');
-  const loadingEl = document.getElementById('price-chart-loading');
-  const errorEl   = document.getElementById('price-chart-error');
-  section.classList.remove('hidden');
-  loadingEl.classList.remove('hidden');
-  errorEl.classList.add('hidden');
-  const { interval, range } = PRICE_RANGES[rangeKey];
-  const points = await fetchYahooChart(ticker, interval, range);
-  loadingEl.classList.add('hidden');
-  if (!points || points.length === 0) { errorEl.classList.remove('hidden'); return; }
-  const first = points[0].v, last = points[points.length - 1].v;
-  const chgPct = ((last - first) / first) * 100;
-  const chgEl  = document.getElementById('price-change-pill');
-  chgEl.textContent = `${chgPct >= 0 ? '+' : ''}${chgPct.toFixed(2)}% (${rangeKey})`;
-  chgEl.className   = 'price-change-pill ' + (chgPct >= 0 ? 'positive' : 'negative');
-  makePriceLineChart('chart-price', points, rangeKey);
-}
-
 // ---- Period Toggle ----
 let _currentCompany = null;
 let _currentPeriod = 'annual';
@@ -711,22 +831,39 @@ function setPeriod(period) {
   renderCharts(_currentCompany, period);
 }
 
-// ---- Populate dropdown with prices ----
+// ---- Populate dropdown with all stocks ----
 function populateDropdown() {
   const sel = document.getElementById('company-select');
   const sectors = {};
+
   for (const [ticker, co] of Object.entries(NSE_COMPANIES)) {
-    const sec = co.sector || 'Other';
+    // Normalize sector name for grouping
+    let sec = co.sector || 'Other';
+    // Map price-data sector names to our display names
+    const sectorMap = {
+      'Telecommunication and Technology': 'Telecoms',
+      'Energy and Petroleum': 'Energy',
+      'Construction and Allied': 'Construction',
+      'Commercial and Services': 'Commercial & Services',
+      'Automobiles and Accessories': 'Automobiles',
+      'Investment Services': 'Investment',
+      'Investment': 'Investment',
+      'Agricultural': 'Agriculture',
+      'Manufacturing and Allied': 'Manufacturing',
+    };
+    sec = sectorMap[sec] || sec;
+
     if (!sectors[sec]) sectors[sec] = [];
     let priceStr = '';
     if (co.latestPrice && co.latestPrice > 0) {
       const sign = (co.priceChangePct || 0) >= 0 ? '+' : '';
       priceStr = ' | KES ' + co.latestPrice.toFixed(2) + ' (' + sign + (co.priceChangePct || 0).toFixed(1) + '%)';
     }
-    sectors[sec].push({ ticker, name: co.name, priceStr });
+    const hasFinancials = co.annuals && co.annuals.length > 0;
+    sectors[sec].push({ ticker, name: co.name, priceStr, hasFinancials });
   }
 
-  const order = ['Banking', 'Telecoms', 'FMCG', 'Insurance', 'Energy', 'Construction', 'Media', 'Agriculture', 'Manufacturing'];
+  const order = ['Banking', 'Telecoms', 'FMCG', 'Insurance', 'Energy', 'Construction', 'Media', 'Agriculture', 'Manufacturing', 'Commercial & Services', 'Investment', 'Automobiles'];
   const sorted = Object.keys(sectors).sort((a, b) => {
     const ai = order.indexOf(a), bi = order.indexOf(b);
     if (ai === -1 && bi === -1) return a.localeCompare(b);
@@ -737,11 +874,12 @@ function populateDropdown() {
 
   for (const sector of sorted) {
     const grp = document.createElement('optgroup');
-    grp.label = sector;
-    for (const { ticker, name, priceStr } of sectors[sector].sort((a, b) => a.name.localeCompare(b.name))) {
+    grp.label = sector + ' (' + sectors[sector].length + ')';
+    for (const { ticker, name, priceStr, hasFinancials } of sectors[sector].sort((a, b) => a.name.localeCompare(b.name))) {
       const opt = document.createElement('option');
       opt.value = ticker;
-      opt.textContent = ticker + ' \u2014 ' + name + priceStr;
+      const indicator = hasFinancials ? '● ' : '○ ';
+      opt.textContent = indicator + ticker + ' \u2014 ' + name + priceStr;
       grp.appendChild(opt);
     }
     sel.appendChild(grp);
@@ -989,10 +1127,18 @@ function renderValuation(co) {
 document.addEventListener('DOMContentLoaded', async () => {
   await loadPrices();
   populateDropdown();
+
   document.getElementById('company-select').addEventListener('keydown', e => {
     if (e.key === 'Enter') loadCompany();
   });
   document.getElementById('company-select').addEventListener('change', () => {
     loadCompany();
+  });
+
+  // Price chart range buttons
+  document.getElementById('price-range-btns').addEventListener('click', (e) => {
+    const btn = e.target.closest('.range-btn');
+    if (!btn || !activeCompany) return;
+    renderPriceChart(activeCompany.ticker, btn.dataset.range);
   });
 });
