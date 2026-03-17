@@ -42,7 +42,7 @@
 <body>
   <header>
     <h1>🌍 Global Stocks Dashboard</h1>
-    <p>African markets: NSE (Kenya) + JSE (South Africa) &mdash; 45 companies tracked</p>
+    <p>Multi-exchange platform: NSE Kenya • JSE South Africa • LSE London (coming) • More exchanges 2026 &mdash; 45+ companies</p>
   </header>
 
   <div class="container">
@@ -67,11 +67,11 @@
 
     <div class="filters">
       <div>
-        <label>Country: </label>
-        <select id="countryFilter" onchange="applyFilters()">
-          <option value="">All Countries</option>
-          <option value="Kenya">Kenya (NSE)</option>
-          <option value="South Africa">South Africa (JSE)</option>
+        <label>Exchange: </label>
+        <select id="exchangeFilter" onchange="applyFilters()">
+          <option value="">All Exchanges</option>
+          <option value="NSE">NSE — Kenya</option>
+          <option value="JSE">JSE — South Africa</option>
         </select>
       </div>
       <div>

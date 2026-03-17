@@ -24,12 +24,12 @@ function fmtMillions(n) {
 }
 
 function applyFilters() {
-    const country = document.getElementById('countryFilter').value;
+    const exchange = document.getElementById('exchangeFilter').value;
     const sector = document.getElementById('sectorFilter').value;
     const search = document.getElementById('searchInput').value.toLowerCase();
     
     currentData = GLOBAL_STOCKS_DATA.filter(c => {
-        if (country && c.country !== country) return false;
+        if (exchange && c.exchange !== exchange) return false;
         if (sector && c.sector !== sector) return false;
         if (search && !c.ticker.toLowerCase().includes(search) && 
             !c.company.toLowerCase().includes(search)) return false;
