@@ -4,25 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NSE Insights — Admin Review</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg-base: #090d14;
-    --bg-surface: #111827;
-    --bg-card: #1a2332;
-    --bg-card-hover: #1f2a3c;
-    --border: #1e2d3d;
-    --border-light: #2a3a4e;
-    --text-primary: #f0f4f8;
-    --text-secondary: #8896a8;
-    --text-muted: #5a6a7e;
-    --accent-primary: #10b981;
+    --bg-base: #050505;
+    --bg-surface: #0d0d0d;
+    --bg-card: #111111;
+    --bg-card-hover: #1a1a1a;
+    --border: rgba(0, 230, 118, 0.12);
+    --border-light: rgba(255, 255, 255, 0.06);
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --text-muted: #707070;
+    --accent-primary: #00e676;
     --accent-secondary: #f59e0b;
     --accent-blue: #3b82f6;
-    --up: #10b981;
-    --down: #ef4444;
+    --up: #00e676;
+    --down: #ff4444;
   }
 
   body {
@@ -82,15 +82,17 @@
   .login-btn {
     width: 100%;
     background: var(--accent-primary);
-    color: #fff;
+    color: #000;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 10px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.25);
+    transition: all 0.2s;
   }
-  .login-btn:hover { opacity: 0.9; }
+  .login-btn:hover { background: #00ff88; box-shadow: 0 0 30px rgba(0, 230, 118, 0.4); }
 
   .login-error {
     color: var(--down);
@@ -504,16 +506,17 @@
   .review-btn {
     width: 100%;
     background: var(--accent-primary);
-    color: #fff;
+    color: #000;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 10px;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: all 0.2s;
+    box-shadow: 0 0 16px rgba(0, 230, 118, 0.2);
   }
-  .review-btn:hover { opacity: 0.9; }
+  .review-btn:hover { background: #00ff88; box-shadow: 0 0 24px rgba(0, 230, 118, 0.35); }
   .review-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
   .review-info {
@@ -545,6 +548,17 @@
   .toast.success { background: var(--up); color: #fff; }
   .toast.error { background: var(--down); color: #fff; }
 
+  /* ── READ-ONLY BANNER ── */
+  .readonly-banner {
+    background: rgba(59, 130, 246, 0.12);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--accent-blue);
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .detail-panel { width: 340px; min-width: 340px; }
@@ -560,6 +574,60 @@
   /* Sort indicator */
   .sort-asc::after { content: ' \u25B2'; font-size: 9px; }
   .sort-desc::after { content: ' \u25BC'; font-size: 9px; }
+
+  /* ── PDF VIEWER ── */
+  .pdf-section {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+  }
+  .pdf-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 8px;
+  }
+  .pdf-section-header:hover .detail-section-title { color: var(--text-primary); }
+  .pdf-toggle-arrow {
+    font-size: 10px;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+  }
+  .pdf-toggle-arrow.collapsed { transform: rotate(-90deg); }
+  .pdf-container {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+  .pdf-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    display: block;
+  }
+  .pdf-open-link {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-primary);
+    text-decoration: none;
+    border-top: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .pdf-open-link:hover { color: #00ff88; }
+  .pdf-no-source {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .detail-field-value { font-family: 'JetBrains Mono', monospace; }
 </style>
 </head>
 <body>
@@ -578,9 +646,14 @@
 <!-- MAIN APP (hidden until login) -->
 <div id="app">
 
+  <!-- Read-only banner (hidden by default) -->
+  <div class="readonly-banner" id="readonly-banner" style="display:none">
+    Read-only mode — viewing static data quality report. Start <code>python backend/review_server.py</code> for full review controls.
+  </div>
+
   <!-- Top Bar -->
   <div class="topbar">
-    <span class="topbar-logo">NSE Insights</span>
+    <a href="landing.html" class="topbar-logo" style="text-decoration:none">NSE Insights</a>
     <span class="topbar-sep"></span>
     <span class="topbar-title">Admin Review</span>
     <span class="topbar-spacer"></span>
@@ -690,6 +763,21 @@
           <div class="detail-fields" id="fields-banking"></div>
         </div>
 
+        <!-- Source Document / PDF Viewer -->
+        <div class="pdf-section" id="pdf-section">
+          <div class="pdf-section-header" onclick="togglePdfSection()">
+            <div class="detail-section-title" style="margin-bottom:0">Source Document</div>
+            <span class="pdf-toggle-arrow" id="pdf-toggle-arrow">&#9660;</span>
+          </div>
+          <div id="pdf-viewer-wrap">
+            <div class="pdf-container" id="pdf-container" style="display:none">
+              <iframe id="pdf-iframe" src="about:blank"></iframe>
+              <a id="pdf-open-link" class="pdf-open-link" href="#" target="_blank">Open in new tab &#x2197;</a>
+            </div>
+            <div class="pdf-no-source" id="pdf-no-source" style="display:none">No source document available</div>
+          </div>
+        </div>
+
         <!-- Review Controls -->
         <div class="review-controls">
           <label>Review Status</label>
@@ -722,6 +810,7 @@
 // ──────────────────────────────────────────────
 const API_BASE = window.location.origin;
 let authToken = sessionStorage.getItem('nse_admin_token') || '';
+let readOnlyMode = false;
 
 // ──────────────────────────────────────────────
 // State
@@ -763,28 +852,6 @@ async function doLogin() {
 document.getElementById('login-password').addEventListener('keydown', e => {
   if (e.key === 'Enter') doLogin();
 });
-
-// Auto-login if token exists
-async function tryAutoLogin() {
-  if (!authToken) return;
-  try {
-    const r = await fetch(API_BASE + '/api/records', {
-      headers: { 'Authorization': 'Bearer ' + authToken }
-    });
-    if (r.ok) {
-      document.getElementById('login-screen').style.display = 'none';
-      document.getElementById('app').style.display = 'flex';
-      const data = await r.json();
-      allRecords = data.records || [];
-      populateYearFilter();
-      applyFilters();
-      updateStats();
-    } else {
-      sessionStorage.removeItem('nse_admin_token');
-      authToken = '';
-    }
-  } catch (e) { /* server not running */ }
-}
 
 // ──────────────────────────────────────────────
 // Data loading
@@ -1000,6 +1067,30 @@ function selectRecord(rec) {
   } else {
     info.textContent = '';
   }
+
+  // PDF viewer
+  const pdfContainer = document.getElementById('pdf-container');
+  const pdfNoSource = document.getElementById('pdf-no-source');
+  const pdfIframe = document.getElementById('pdf-iframe');
+  const pdfOpenLink = document.getElementById('pdf-open-link');
+  if (rec.url) {
+    pdfContainer.style.display = 'block';
+    pdfNoSource.style.display = 'none';
+    pdfIframe.src = rec.url;
+    pdfOpenLink.href = rec.url;
+  } else {
+    pdfContainer.style.display = 'none';
+    pdfNoSource.style.display = 'block';
+    pdfIframe.src = 'about:blank';
+  }
+}
+
+let _pdfExpanded = true;
+function togglePdfSection() {
+  _pdfExpanded = !_pdfExpanded;
+  document.getElementById('pdf-viewer-wrap').style.display = _pdfExpanded ? 'block' : 'none';
+  const arrow = document.getElementById('pdf-toggle-arrow');
+  arrow.classList.toggle('collapsed', !_pdfExpanded);
 }
 
 function renderDetailFields(containerId, fields) {
@@ -1104,9 +1195,75 @@ function showToast(msg, type = 'success') {
 }
 
 // ──────────────────────────────────────────────
+// Read-only fallback
+// ──────────────────────────────────────────────
+async function loadReadOnly() {
+  try {
+    const r = await fetch('data_quality.json?v=4');
+    if (!r.ok) throw new Error('No data quality report');
+    const data = await r.json();
+    readOnlyMode = true;
+    allRecords = data.records || [];
+
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'flex';
+    document.getElementById('readonly-banner').style.display = 'block';
+
+    // Hide review controls in read-only mode
+    document.querySelectorAll('.review-controls').forEach(el => el.style.display = 'none');
+
+    populateYearFilter();
+    applyFilters();
+    updateStats();
+  } catch (e) {
+    // No static report available either — stay on login screen
+  }
+}
+
+// ──────────────────────────────────────────────
 // Init
 // ──────────────────────────────────────────────
-tryAutoLogin();
+(async () => {
+  // Try API first (auto-login with existing token)
+  if (authToken) {
+    try {
+      const r = await fetch(API_BASE + '/api/records', {
+        headers: { 'Authorization': 'Bearer ' + authToken }
+      });
+      if (r.ok) {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('app').style.display = 'flex';
+        const data = await r.json();
+        allRecords = data.records || [];
+        populateYearFilter();
+        applyFilters();
+        updateStats();
+        return; // API works, we're done
+      }
+    } catch (e) { /* API not available */ }
+    sessionStorage.removeItem('nse_admin_token');
+    authToken = '';
+  }
+
+  // Check if API is reachable by trying a POST to /api/auth
+  try {
+    const r = await fetch(API_BASE + '/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: '' })
+    });
+    const ct = r.headers.get('content-type') || '';
+    if (ct.includes('application/json')) {
+      // API responds with JSON — server is running, show login screen
+      return;
+    }
+    // Non-JSON response means static server — fall through to read-only
+  } catch (e) {
+    // Network error — API not reachable
+  }
+  // API not available — try read-only fallback
+  await loadReadOnly();
+})();
 </script>
 </body>
 </html>
