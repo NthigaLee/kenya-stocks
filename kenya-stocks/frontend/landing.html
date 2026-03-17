@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSE Insights — Kenya Stock Market Intelligence</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="apple-icon-180.png" />
+  <meta name="theme-color" content="#00ff88" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #00e676;
+      --green-dim:   #00c853;
+      --green-glow:  rgba(0, 230, 118, 0.15);
+      --green-faint: rgba(0, 230, 118, 0.06);
+      --black:       #000000;
+      --bg:          #050505;
+      --bg2:         #0d0d0d;
+      --bg3:         #111111;
+      --border:      rgba(0, 230, 118, 0.12);
+      --border-dim:  rgba(255,255,255,0.06);
+      --text:        #f0f0f0;
+      --text-muted:  #707070;
+      --text-dim:    #404040;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ───────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 2.5rem;
+      background: rgba(5,5,5,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo .dot {
+      width: 8px; height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; box-shadow: 0 0 8px var(--green); }
+      50%      { opacity: 0.5; box-shadow: 0 0 16px var(--green); }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border-dim);
+      color: var(--text-muted);
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--green); color: var(--text); }
+
+    .btn-primary {
+      background: var(--green);
+      color: #000;
+      border: none;
+      padding: 0.5rem 1.3rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 0 20px rgba(0,230,118,0.25);
+    }
+    .btn-primary:hover { background: #00ff88; box-shadow: 0 0 30px rgba(0,230,118,0.4); }
+
+    /* ── HERO ────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 4rem;
+      position: relative;
+    }
+
+    /* radial glow behind hero */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(0,230,118,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green-faint);
+      border: 1px solid var(--border);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 99px;
+      margin-bottom: 2rem;
+    }
+    .hero-badge .blink {
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .accent {
+      color: var(--green);
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .btn-hero {
+      background: var(--green);
+      color: #000;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 0 30px rgba(0,230,118,0.3);
+    }
+    .btn-hero:hover { background: #00ff88; box-shadow: 0 0 50px rgba(0,230,118,0.5); transform: translateY(-1px); }
+
+    .btn-hero-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border-dim);
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-hero-ghost:hover { border-color: var(--green); color: var(--green); }
+
+    /* Ticker strip */
+    .ticker-strip {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--bg2);
+      border: 1px solid var(--border-dim);
+      border-radius: 12px;
+      padding: 0.75rem 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      overflow: hidden;
+      max-width: 700px;
+      width: 100%;
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    .ticker-item .sym { color: var(--green); font-weight: 600; }
+    .ticker-item .price { color: var(--text); }
+    .ticker-item .chg-up   { color: #00e676; }
+    .ticker-item .chg-down { color: #ff4444; }
+    .ticker-sep { color: var(--text-dim); }
+
+    /* ── STATS ───────────────────────────────────── */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-dim);
+      border-bottom: 1px solid var(--border-dim);
+      background: var(--bg2);
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FEATURES ────────────────────────────────── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 500px;
+      margin-bottom: 3.5rem;
+      line-height: 1.7;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg2);
+      border: 1px solid var(--border-dim);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--green-faint);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .feature-card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+    }
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-icon {
+      width: 48px; height: 48px;
+      background: var(--green-faint);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .feature-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .feature-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── DASHBOARD PREVIEW ───────────────────────── */
+    .preview-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border-dim);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .preview-wrap {
+      max-width: 1000px;
+      margin: 3rem auto 0;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 80px rgba(0,230,118,0.08);
+    }
+    .preview-topbar {
+      background: #0a0a0a;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .preview-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .preview-url {
+      flex: 1;
+      background: var(--bg3);
+      border: 1px solid var(--border-dim);
+      border-radius: 6px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin: 0 0.5rem;
+    }
+    .preview-body {
+      padding: 2rem;
+    }
+    .preview-chart-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .preview-chart-card {
+      background: var(--bg2);
+      border: 1px solid var(--border-dim);
+      border-radius: 10px;
+      padding: 1rem;
+      height: 100px;
+    }
+    .preview-chart-title {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .preview-bar-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 50px;
+    }
+    .preview-bar {
+      flex: 1;
+      background: #1a3a28;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+    .preview-bar.last { background: var(--green); }
+    .preview-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .preview-stat {
+      background: var(--bg2);
+      border: 1px solid var(--border-dim);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .preview-stat-label { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+    .preview-stat-val { font-size: 1rem; font-weight: 700; color: var(--green); font-family: 'JetBrains Mono', monospace; }
+
+    /* ── PRICING ─────────────────────────────────── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--bg2);
+      border: 1px solid var(--border-dim);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .pricing-card:hover { transform: translateY(-4px); }
+
+    .pricing-card.featured {
+      border-color: var(--green);
+      box-shadow: 0 0 40px rgba(0,230,118,0.1);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.8rem;
+      border-radius: 99px;
+    }
+    .pricing-tier {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .pricing-card.featured .pricing-tier { color: var(--green); }
+
+    .pricing-price {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pricing-price .currency { font-size: 1.2rem; vertical-align: top; margin-top: 0.5rem; display: inline-block; color: var(--text-muted); }
+    .pricing-price .period { font-size: 0.9rem; color: var(--text-muted); font-family: 'Inter', sans-serif; font-weight: 400; }
+    .pricing-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .pricing-features li .check {
+      color: var(--green);
+      font-size: 0.8rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+    .pricing-features li.disabled { opacity: 0.35; }
+    .pricing-features li.disabled .check { color: var(--text-dim); }
+
+    .btn-plan {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: all 0.2s;
+    }
+    .btn-plan-outline {
+      background: transparent;
+      border: 1px solid var(--border-dim);
+      color: var(--text);
+    }
+    .btn-plan-outline:hover { border-color: var(--green); color: var(--green); }
+    .btn-plan-green {
+      background: var(--green);
+      border: none;
+      color: #000;
+      box-shadow: 0 0 20px rgba(0,230,118,0.25);
+    }
+    .btn-plan-green:hover { background: #00ff88; box-shadow: 0 0 35px rgba(0,230,118,0.4); }
+
+    /* ── CTA BANNER ──────────────────────────────── */
+    .cta-banner {
+      margin: 0 2rem 5rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      background: linear-gradient(135deg, #0a1a10 0%, #0d0d0d 50%, #0a1a10 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(0,230,118,0.1) 0%, transparent 70%);
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner p { color: var(--text-muted); margin-bottom: 2rem; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border-dim);
+      padding: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--green); }
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    /* ── MOBILE ──────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem; }
+      .nav-links { display: none; }
+      .preview-chart-row { grid-template-columns: 1fr; }
+      .preview-stats { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="landing.html">
+      <div class="dot"></div>
+      NSE Insights
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="index.html">Dashboard</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn-ghost" href="login.html">Log in</a>
+      <a class="btn-primary" href="login.html#signup">Get started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="blink"></span>
+      Live NSE Market Data
+    </div>
+
+    <h1>
+      Kenya's Stock Market,<br />
+      <span class="accent">Decoded.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Professional-grade financial intelligence on every NSE-listed company.
+      Historical financials, live prices, sector analysis — built for the Kenyan investor.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-hero" href="login.html#signup">Start for free →</a>
+      <a class="btn-hero-ghost" href="index.html">View dashboard</a>
+    </div>
+
+    <div class="ticker-strip">
+      <div class="ticker-item"><span class="sym">KCB</span><span class="price">30.55</span><span class="chg-down">-1.61%</span></div>
+      <span class="ticker-sep">|</span>
+      <div class="ticker-item"><span class="sym">EQTY</span><span class="price">49.70</span><span class="chg-up">+0.81%</span></div>
+      <span class="ticker-sep">|</span>
+      <div class="ticker-item"><span class="sym">SCOM</span><span class="price">17.40</span><span class="chg-down">-0.57%</span></div>
+      <span class="ticker-sep">|</span>
+      <div class="ticker-item"><span class="sym">ABSA</span><span class="price">14.85</span><span class="chg-up">+1.02%</span></div>
+      <span class="ticker-sep">|</span>
+      <div class="ticker-item"><span class="sym">COOP</span><span class="price">13.20</span><span class="chg-up">+0.38%</span></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">NSE Companies</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">416</div>
+      <div class="stat-label">Annual Reports</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">10Y</div>
+      <div class="stat-label">Historical Data</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Live</div>
+      <div class="stat-label">Price Updates</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <span class="section-label">Features</span>
+    <h2 class="section-title">Everything you need to<br />invest smarter on the NSE</h2>
+    <p class="section-sub">From raw financial data to intelligent analysis — all in one place.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">10-Year Financial History</div>
+        <div class="feature-desc">Revenue, net income, EPS, DPS and balance sheet data extracted directly from company annual reports. No data gaps.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Live NSE Prices</div>
+        <div class="feature-desc">Real-time stock prices for all covered companies, updated continuously during market hours from the Nairobi Securities Exchange.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <div class="feature-title">Price History Charts</div>
+        <div class="feature-desc">Interactive price charts with 1D, 1W, 1M, 6M, 1Y and 5Y ranges. Spot trends at a glance with colour-coded momentum.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏦</div>
+        <div class="feature-title">Sector Intelligence</div>
+        <div class="feature-desc">Sector-specific templates for Banking, Telecoms, Insurance, Energy and more. See the metrics that actually matter per industry.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧮</div>
+        <div class="feature-title">Valuation Estimates</div>
+        <div class="feature-desc">P/E, P/B, dividend yield, and DCF-based fair value estimates. Know if a stock is cheap or expensive before you buy.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Quarterly Breakdown</div>
+        <div class="feature-desc">Toggle between annual and quarterly views to catch earnings acceleration before the market does. Updated as reports drop.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD PREVIEW -->
+  <div class="preview-section">
+    <span class="section-label">Dashboard</span>
+    <h2 class="section-title">Built for clarity</h2>
+    <p style="color:var(--text-muted);font-size:1rem;max-width:450px;margin:0 auto;">Clean, fast, and built specifically for NSE companies — not a generic global tool retrofitted for Kenya.</p>
+
+    <div class="preview-wrap">
+      <div class="preview-topbar">
+        <div class="preview-dot" style="background:#ff5f57"></div>
+        <div class="preview-dot" style="background:#febc2e"></div>
+        <div class="preview-dot" style="background:#28c840"></div>
+        <div class="preview-url">nthigalee.github.io/kenya-stocks</div>
+      </div>
+      <div class="preview-body">
+        <div class="preview-chart-row">
+          <div class="preview-chart-card">
+            <div class="preview-chart-title">Revenue / NII</div>
+            <div class="preview-bar-row">
+              <div class="preview-bar" style="height:40%"></div>
+              <div class="preview-bar" style="height:55%"></div>
+              <div class="preview-bar" style="height:48%"></div>
+              <div class="preview-bar" style="height:62%"></div>
+              <div class="preview-bar" style="height:70%"></div>
+              <div class="preview-bar" style="height:75%"></div>
+              <div class="preview-bar" style="height:68%"></div>
+              <div class="preview-bar last" style="height:88%"></div>
+            </div>
+          </div>
+          <div class="preview-chart-card">
+            <div class="preview-chart-title">Net Income (PAT)</div>
+            <div class="preview-bar-row">
+              <div class="preview-bar" style="height:30%"></div>
+              <div class="preview-bar" style="height:42%"></div>
+              <div class="preview-bar" style="height:38%"></div>
+              <div class="preview-bar" style="height:55%"></div>
+              <div class="preview-bar" style="height:60%"></div>
+              <div class="preview-bar" style="height:58%"></div>
+              <div class="preview-bar" style="height:65%"></div>
+              <div class="preview-bar last" style="height:80%"></div>
+            </div>
+          </div>
+          <div class="preview-chart-card">
+            <div class="preview-chart-title">EPS Growth</div>
+            <div class="preview-bar-row">
+              <div class="preview-bar" style="height:35%"></div>
+              <div class="preview-bar" style="height:45%"></div>
+              <div class="preview-bar" style="height:40%"></div>
+              <div class="preview-bar" style="height:52%"></div>
+              <div class="preview-bar" style="height:58%"></div>
+              <div class="preview-bar" style="height:62%"></div>
+              <div class="preview-bar" style="height:70%"></div>
+              <div class="preview-bar last" style="height:82%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-stats">
+          <div class="preview-stat"><div class="preview-stat-label">EPS (FY2024)</div><div class="preview-stat-val">KES 8.42</div></div>
+          <div class="preview-stat"><div class="preview-stat-label">P/E Ratio</div><div class="preview-stat-val">3.6x</div></div>
+          <div class="preview-stat"><div class="preview-stat-label">Div. Yield</div><div class="preview-stat-val">7.2%</div></div>
+          <div class="preview-stat"><div class="preview-stat-label">Total Assets</div><div class="preview-stat-val">1.3T</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <span class="section-label">Pricing</span>
+    <h2 class="section-title">Simple, transparent pricing</h2>
+    <p class="section-sub">Start free. Upgrade when you're ready to go deeper.</p>
+
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Free</div>
+        <div class="pricing-price"><span class="currency">KES </span>0</div>
+        <div class="pricing-desc">Perfect for getting started with NSE research.</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 5 companies per month</li>
+          <li><span class="check">✓</span> Annual financial data</li>
+          <li><span class="check">✓</span> Basic charts (Revenue, PAT, EPS)</li>
+          <li><span class="check">✓</span> Live price snapshot</li>
+          <li class="disabled"><span class="check">✗</span> Quarterly data</li>
+          <li class="disabled"><span class="check">✗</span> Valuation estimates</li>
+          <li class="disabled"><span class="check">✗</span> Price history charts</li>
+          <li class="disabled"><span class="check">✗</span> Sector comparisons</li>
+        </ul>
+        <a class="btn-plan btn-plan-outline" href="login.html#signup">Get started free</a>
+      </div>
+
+      <!-- Pro (Featured) -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price"><span class="currency">KES </span>499<span class="period">/mo</span></div>
+        <div class="pricing-desc">For serious investors who want the full picture.</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited companies</li>
+          <li><span class="check">✓</span> Annual + quarterly data</li>
+          <li><span class="check">✓</span> All charts (10+ metrics)</li>
+          <li><span class="check">✓</span> Live prices + price history</li>
+          <li><span class="check">✓</span> Valuation estimates (P/E, DCF)</li>
+          <li><span class="check">✓</span> Sector comparisons</li>
+          <li><span class="check">✓</span> Export to CSV/Excel</li>
+          <li class="disabled"><span class="check">✗</span> API access</li>
+        </ul>
+        <a class="btn-plan btn-plan-green" href="login.html#signup">Start 14-day free trial</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-price" style="font-size:2rem;">Custom</div>
+        <div class="pricing-desc">For funds, banks, and research firms needing raw data access.</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Pro</li>
+          <li><span class="check">✓</span> REST API access</li>
+          <li><span class="check">✓</span> Raw JSON data export</li>
+          <li><span class="check">✓</span> Bulk historical downloads</li>
+          <li><span class="check">✓</span> Team accounts</li>
+          <li><span class="check">✓</span> Priority data updates</li>
+          <li><span class="check">✓</span> SLA + dedicated support</li>
+          <li><span class="check">✓</span> Custom integrations</li>
+        </ul>
+        <a class="btn-plan btn-plan-outline" href="mailto:hello@nseinsights.co.ke">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Start making smarter<br />investment decisions today.</h2>
+    <p>Join thousands of Kenyan investors already using NSE Insights.</p>
+    <a class="btn-hero" href="login.html#signup">Create your free account →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <strong style="color:var(--green)">NSE Insights</strong> &nbsp;·&nbsp; Data from NSE company filings
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="index.html">Dashboard</a>
+      <a href="login.html">Sign in</a>
+    </div>
+    <div>© 2026 NSE Insights</div>
+  </footer>
+
+</body>
+</html>
