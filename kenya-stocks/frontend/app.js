@@ -8,6 +8,31 @@ let activeCompany = null;
 let chartInstances = {};
 let NSE_PRICES = {};
 
+// ---- Theme Toggle ----
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light');
+  localStorage.setItem('nse-theme', isLight ? 'light' : 'dark');
+  document.getElementById('theme-toggle').textContent = isLight ? '☀️' : '🌙';
+  if (activeCompany) renderCharts(activeCompany, document.getElementById('toggle-annual').classList.contains('active') ? 'annual' : 'quarterly');
+}
+
+function applyTheme() {
+  const saved = localStorage.getItem('nse-theme');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    const btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = '☀️';
+  }
+}
+
+function chartColors() {
+  const light = document.body.classList.contains('light');
+  return {
+    tick: light ? '#3d5166' : '#5a6a7e',
+    grid: light ? 'rgba(180,200,220,0.5)' : 'rgba(30,45,61,0.6)',
+  };
+}
+
 // ---- Sector Templates ----
 // Each sector defines which charts to show, in which rows,
 // and which stats to display. This way banks show loan books,
@@ -419,12 +444,12 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
         }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { color: '#5a6a7e', font: { size: 10, weight: 500 } } },
+        x: { grid: { display: false }, ticks: { color: chartColors().tick, font: { size: 10, weight: 500 } } },
         y: {
-          grid: { color: 'rgba(30, 45, 61, 0.6)', drawTicks: false },
+          grid: { color: chartColors().grid, drawTicks: false },
           border: { display: false },
           ticks: {
-            color: '#5a6a7e', font: { size: 10 },
+            color: chartColors().tick, font: { size: 10 },
             callback: (v) => {
               const u = opts.units;
               if (u === 'millions') {
@@ -638,14 +663,14 @@ function renderPriceChart(ticker, range) {
             }
           },
           grid: { display: false },
-          ticks: { color: '#5a6a7e', font: { size: 10, weight: 500 }, maxTicksLimit: 8 },
+          ticks: { color: chartColors().tick, font: { size: 10, weight: 500 }, maxTicksLimit: 8 },
           border: { display: false },
         },
         y: {
-          grid: { color: 'rgba(30, 45, 61, 0.6)', drawTicks: false },
+          grid: { color: chartColors().grid, drawTicks: false },
           border: { display: false },
           ticks: {
-            color: '#5a6a7e',
+            color: chartColors().tick,
             font: { size: 10 },
             callback: (v) => v.toFixed(v >= 100 ? 0 : 2),
           },
@@ -1125,6 +1150,7 @@ function renderValuation(co) {
 
 // ---- Init ----
 document.addEventListener('DOMContentLoaded', async () => {
+  applyTheme();
   await loadPrices();
   populateDropdown();
 

@@ -25,6 +25,80 @@
   --chart-hist: #3b82f6;
 }
 
+/* ── Light Mode Variables ───────────────────────────────── */
+body.light {
+  --bg-base: #f0f4f8;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f8ff;
+  --border: #d1dce8;
+  --border-light: #b8c9db;
+  --text-primary: #0d1117;
+  --text-secondary: #3d5166;
+  --text-muted: #6b7f94;
+  --accent-primary: #059669;
+  --accent-secondary: #d97706;
+  --accent-blue: #2563eb;
+  --accent-teal: #0d9488;
+  --up: #059669;
+  --down: #dc2626;
+  --chart-latest: #d97706;
+  --chart-hist: #2563eb;
+}
+
+body.light .topnav {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+
+body.light .search-bar-wrap {
+  background: radial-gradient(ellipse at top, rgba(5, 150, 105, 0.05) 0%, transparent 60%);
+}
+
+body.light .search-bar {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(5,150,105,0.08);
+}
+
+body.light select { color: var(--text-primary); }
+body.light select option { background: #fff; color: #0d1117; }
+body.light select optgroup { background: #fff; color: #000; }
+
+body.light .index-pill {
+  background: rgba(255,255,255,0.9);
+  border-color: var(--border);
+}
+
+body.light .price-range-btns { background: #e8eef5; }
+body.light .range-btn:hover { background: rgba(0,0,0,0.06); }
+
+body.light .period-toggle { background: #e8eef5; border-color: var(--border); }
+
+body.light .growth-pill { background: #e8eef5; border-color: var(--border); }
+
+body.light .data-updated { border-color: var(--border); }
+
+body.light .val-card-badge.undervalued { background: rgba(5,150,105,0.12); }
+body.light .val-card-badge.overvalued  { background: rgba(220,38,38,0.12); }
+body.light .val-card-badge.fair        { background: rgba(217,119,6,0.12); }
+
+/* ── Theme Toggle Button ────────────────────────────────── */
+.theme-toggle {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  line-height: 1;
+}
+.theme-toggle:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
 * { box-sizing: border-box; }
 
 body {
@@ -114,6 +188,7 @@ select {
   font-family: inherit;
 }
 select option { background: var(--bg-surface); color: var(--text-primary); }
+select optgroup { background: var(--bg-surface); color: #000; font-weight: 700; }
 
 .exchange-tag {
   background: var(--bg-card);
