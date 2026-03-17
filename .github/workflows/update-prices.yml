@@ -1,0 +1,41 @@
+name: Update NSE Prices
+
+on:
+  schedule:
+    # Run at 3:30 PM UTC (6:30 PM EAT) on weekdays — after NSE market close
+    - cron: '30 15 * * 1-5'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install yfinance requests beautifulsoup4
+
+      - name: Fetch latest prices
+        run: python backend/fetch_prices.py
+
+      - name: Copy updated files to docs/
+        run: |
+          cp frontend/market.json docs/market.json 2>/dev/null || true
+          cp frontend/prices.json docs/prices.json 2>/dev/null || true
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add frontend/market.json docs/market.json data/nse/prices.json frontend/prices.json docs/prices.json
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update NSE prices $(date -u +%Y-%m-%d)"
+          git push

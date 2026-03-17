@@ -545,6 +545,17 @@
   .toast.success { background: var(--up); color: #fff; }
   .toast.error { background: var(--down); color: #fff; }
 
+  /* ── READ-ONLY BANNER ── */
+  .readonly-banner {
+    background: rgba(59, 130, 246, 0.12);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--accent-blue);
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .detail-panel { width: 340px; min-width: 340px; }
@@ -577,6 +588,11 @@
 
 <!-- MAIN APP (hidden until login) -->
 <div id="app">
+
+  <!-- Read-only banner (hidden by default) -->
+  <div class="readonly-banner" id="readonly-banner" style="display:none">
+    Read-only mode — viewing static data quality report. Start <code>python backend/review_server.py</code> for full review controls.
+  </div>
 
   <!-- Top Bar -->
   <div class="topbar">
@@ -722,6 +738,7 @@
 // ──────────────────────────────────────────────
 const API_BASE = window.location.origin;
 let authToken = sessionStorage.getItem('nse_admin_token') || '';
+let readOnlyMode = false;
 
 // ──────────────────────────────────────────────
 // State
@@ -763,28 +780,6 @@ async function doLogin() {
 document.getElementById('login-password').addEventListener('keydown', e => {
   if (e.key === 'Enter') doLogin();
 });
-
-// Auto-login if token exists
-async function tryAutoLogin() {
-  if (!authToken) return;
-  try {
-    const r = await fetch(API_BASE + '/api/records', {
-      headers: { 'Authorization': 'Bearer ' + authToken }
-    });
-    if (r.ok) {
-      document.getElementById('login-screen').style.display = 'none';
-      document.getElementById('app').style.display = 'flex';
-      const data = await r.json();
-      allRecords = data.records || [];
-      populateYearFilter();
-      applyFilters();
-      updateStats();
-    } else {
-      sessionStorage.removeItem('nse_admin_token');
-      authToken = '';
-    }
-  } catch (e) { /* server not running */ }
-}
 
 // ──────────────────────────────────────────────
 // Data loading
@@ -1104,9 +1099,75 @@ function showToast(msg, type = 'success') {
 }
 
 // ──────────────────────────────────────────────
+// Read-only fallback
+// ──────────────────────────────────────────────
+async function loadReadOnly() {
+  try {
+    const r = await fetch('data_quality.json?v=4');
+    if (!r.ok) throw new Error('No data quality report');
+    const data = await r.json();
+    readOnlyMode = true;
+    allRecords = data.records || [];
+
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'flex';
+    document.getElementById('readonly-banner').style.display = 'block';
+
+    // Hide review controls in read-only mode
+    document.querySelectorAll('.review-controls').forEach(el => el.style.display = 'none');
+
+    populateYearFilter();
+    applyFilters();
+    updateStats();
+  } catch (e) {
+    // No static report available either — stay on login screen
+  }
+}
+
+// ──────────────────────────────────────────────
 // Init
 // ──────────────────────────────────────────────
-tryAutoLogin();
+(async () => {
+  // Try API first (auto-login with existing token)
+  if (authToken) {
+    try {
+      const r = await fetch(API_BASE + '/api/records', {
+        headers: { 'Authorization': 'Bearer ' + authToken }
+      });
+      if (r.ok) {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('app').style.display = 'flex';
+        const data = await r.json();
+        allRecords = data.records || [];
+        populateYearFilter();
+        applyFilters();
+        updateStats();
+        return; // API works, we're done
+      }
+    } catch (e) { /* API not available */ }
+    sessionStorage.removeItem('nse_admin_token');
+    authToken = '';
+  }
+
+  // Check if API is reachable by trying a POST to /api/auth
+  try {
+    const r = await fetch(API_BASE + '/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: '' })
+    });
+    const ct = r.headers.get('content-type') || '';
+    if (ct.includes('application/json')) {
+      // API responds with JSON — server is running, show login screen
+      return;
+    }
+    // Non-JSON response means static server — fall through to read-only
+  } catch (e) {
+    // Network error — API not reachable
+  }
+  // API not available — try read-only fallback
+  await loadReadOnly();
+})();
 </script>
 </body>
 </html>
