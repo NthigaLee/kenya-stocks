@@ -5,20 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NSE Insights</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="apple-icon-180.png" />
-  <meta name="theme-color" content="#00ff88" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
-      });
-    }
-  </script>
 </head>
 <body>
 
@@ -29,9 +17,9 @@
       <span class="breadcrumb">/ <span id="breadcrumb-company">Select a company</span></span>
     </div>
     <div class="topnav-right">
-      <div class="index-pill">NSE 20 <span class="idx-val" id="nse20-val">1,653</span> <span class="idx-chg negative">-0.43%</span></div>
-      <div class="index-pill">NSE All Share <span class="idx-val" id="nseall-val">169.3</span> <span class="idx-chg positive">+0.12%</span></div>
-      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌙</button>
+      <div class="index-pill">NSE 20 <span class="idx-val" id="nse20-val">—</span> <span class="idx-chg" id="nse20-chg"></span></div>
+      <div class="index-pill">NSE All Share <span class="idx-val" id="nseall-val">—</span> <span class="idx-chg" id="nseall-chg"></span></div>
+      <a href="admin_review.html" class="admin-link" title="Admin Review Panel">Admin</a>
     </div>
   </nav>
 
@@ -40,10 +28,41 @@
     <div class="search-bar">
       <select id="company-select">
         <option value="">-- Select Company --</option>
-        <!-- Options populated dynamically from NSE_COMPANIES in app.js -->
       </select>
       <span class="exchange-tag">NSE</span>
       <button id="search-btn" onclick="loadCompany()">Search</button>
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" id="btn-companies" onclick="showView('companies')">Companies</button>
+      <button class="view-btn" id="btn-sectors" onclick="showView('sectors')">Sectors</button>
+    </div>
+  </div>
+
+  <!-- Market Summary Bar -->
+  <div id="market-summary" class="market-summary">
+    <div class="market-card">
+      <div class="market-card-label">Stocks Tracked</div>
+      <div class="market-card-value" id="ms-stocks">—</div>
+    </div>
+    <div class="market-card">
+      <div class="market-card-label">Top Gainer</div>
+      <div class="market-card-value up" id="ms-gainer">—</div>
+    </div>
+    <div class="market-card">
+      <div class="market-card-label">Top Loser</div>
+      <div class="market-card-value down" id="ms-loser">—</div>
+    </div>
+    <div class="market-card">
+      <div class="market-card-label">Avg P/E (Banking)</div>
+      <div class="market-card-value" id="ms-pe">—</div>
+    </div>
+    <div class="market-card">
+      <div class="market-card-label">Avg Div Yield</div>
+      <div class="market-card-value" id="ms-divyield">—</div>
+    </div>
+    <div class="market-card">
+      <div class="market-card-label">Most Active</div>
+      <div class="market-card-value" id="ms-active">—</div>
     </div>
   </div>
 
@@ -133,6 +152,25 @@
 
   </div><!-- /#dashboard -->
 
+  <!-- Sector Overview (hidden by default) -->
+  <div id="sector-overview" class="hidden">
+    <div class="sector-grid" id="sector-grid">
+      <!-- Sector cards populated by JS -->
+    </div>
+    <div id="sector-table-wrap" class="hidden">
+      <div class="sector-table-header">
+        <button class="sector-back-btn" onclick="showSectorGrid()">&larr; All Sectors</button>
+        <span class="sector-table-title" id="sector-table-title">—</span>
+      </div>
+      <div class="sector-table-scroll">
+        <table class="sector-table" id="sector-table">
+          <thead><tr id="sector-table-head"></tr></thead>
+          <tbody id="sector-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
   <!-- Empty state -->
   <div id="empty-state" class="empty-state">
     <div class="empty-icon">📊</div>
@@ -144,7 +182,7 @@
     Prices: Jan 2013 – Oct 2025 via NSE/Mendeley &middot; Financial data extracted from company filings
   </div>
 
-  <script src="data.js?v=5"></script>
-  <script src="app.js?v=5"></script>
+  <script src="data.js?v=4"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
