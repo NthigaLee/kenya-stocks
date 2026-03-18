@@ -1403,8 +1403,29 @@ function selectFromSector(ticker) {
   loadCompany();
 }
 
+// ---- Theme Toggle ----
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light');
+  const btn = document.getElementById('theme-toggle');
+  if (btn) btn.textContent = isLight ? '🌙' : '☀️';
+  try { localStorage.setItem('nse-theme', isLight ? 'light' : 'dark'); } catch(e) {}
+  // Re-render charts to pick up new colors
+  if (activeCompany) loadCompany();
+}
+
+function initTheme() {
+  let saved = null;
+  try { saved = localStorage.getItem('nse-theme'); } catch(e) {}
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    const btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = '🌙';
+  }
+}
+
 // ---- Init ----
 document.addEventListener('DOMContentLoaded', async () => {
+  initTheme();
   await loadPrices();
   await loadMarketData();
   populateDropdown();
