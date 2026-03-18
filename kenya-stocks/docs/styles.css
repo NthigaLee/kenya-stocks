@@ -760,83 +760,87 @@ select optgroup { background: var(--bg-surface); color: #000; font-weight: 700; 
 
 /* ── Price Chart ───────────────────────────────────────────── */
 .price-chart-section {
+  max-width: 1200px;
+  margin: 0 auto 1.25rem;
+  padding: 0 1.5rem;
+}
+.price-chart-inner {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
 }
 .price-chart-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 .price-summary-row {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 .price-current {
   display: flex;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 .price-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 .price-value {
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-primary);
 }
 .price-change {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 .price-range-info {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 .price-stat {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.1rem;
 }
 .price-stat span:first-child {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 .price-stat span:last-child {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-secondary);
 }
 .price-range-btns {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.2rem;
   background: var(--bg-surface);
-  border-radius: 10px;
-  padding: 3px;
+  border-radius: 8px;
+  padding: 2px;
 }
 .range-btn {
   background: transparent;
   border: none;
   color: var(--text-muted);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  padding: 0.35rem 0.7rem;
-  border-radius: 8px;
+  padding: 0.28rem 0.55rem;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
   font-family: inherit;
@@ -850,25 +854,236 @@ select optgroup { background: var(--bg-surface); color: #000; font-weight: 700; 
   color: #fff;
 }
 .price-chart-wrap {
-  height: 320px;
+  height: 200px;
   position: relative;
 }
 
-/* ── Responsive ────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .company-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-  .company-price-block { text-align: left; }
-  .topnav-right { display: none; }
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .charts-grid { grid-template-columns: 1fr; }
-  .valuation-grid { grid-template-columns: 1fr 1fr; }
-  .price-chart-header { flex-direction: column; }
-  .price-summary-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .price-chart-wrap { height: 240px; }
-  .market-summary { grid-template-columns: repeat(3, 1fr); }
-  .sector-grid { grid-template-columns: 1fr 1fr; }
+/* ── Company + Chart side-by-side layout (desktop) ─────────── */
+.company-chart-row {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1.25rem;
 }
+.company-chart-row .company-header {
+  max-width: none;
+  margin: 0;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.company-chart-row .price-chart-section {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Stats Grid ── tighter on desktop ──────────────────────── */
+.stats-grid {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+.stat-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  transition: border-color 0.2s;
+}
+.stat-section:hover { border-color: var(--border-light); }
+.stat-section-title {
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.38rem;
+  font-size: 0.78rem;
+}
+.stat-label { color: var(--text-secondary); }
+.stat-val { font-weight: 700; color: var(--text-primary); }
+.stat-val.up { color: var(--up); }
+.stat-val.down { color: var(--down); }
+
+/* ── Charts Grid ── 3-up on desktop ────────────────────────── */
+.chart-controls {
+  max-width: 1200px;
+  margin: 1.25rem auto 0.75rem;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chart-section-label {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.period-toggle {
+  display: flex;
+  background: var(--bg-card);
+  padding: 2px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.3rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.toggle-btn.active {
+  background: var(--accent-primary);
+  color: white;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+}
+.charts-grid {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.chart-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-1px);
+}
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.chart-title { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); }
+.chart-expand { color: var(--text-muted); cursor: pointer; font-size: 0.8rem; opacity: 0; transition: opacity 0.2s; }
+.chart-card:hover .chart-expand { opacity: 1; }
+.chart-wrap { flex: 1; position: relative; width: 100%; height: 160px; }
+
+/* Growth pills */
+.growth-pills {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.growth-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.58rem;
+  font-weight: 700;
+}
+.growth-pill span { color: var(--text-muted); margin-right: 0.2rem; }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .charts-grid { grid-template-columns: repeat(2, 1fr); }
+  .company-chart-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  /* Nav — collapse to logo + hamburger-style */
+  .topnav { padding: 0 1rem; height: 48px; }
+  .topnav-center { display: none; }
+  .btn-login { display: none; }
+  .btn-getstarted { padding: 0.35rem 0.75rem; font-size: 0.78rem; }
+
+  /* Search */
+  .search-bar-wrap { padding: 1rem 0.75rem 0.75rem; }
+  .search-bar { max-width: 100%; }
+  .view-toggle { width: 100%; max-width: 100%; }
+  .view-btn { flex: 1; }
+
+  /* Market summary — 3 col */
+  .market-summary { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; padding: 0 0.75rem; }
+  .market-card { padding: 0.65rem 0.5rem; }
+  .market-card-value { font-size: 0.85rem; }
+  .market-card-label { font-size: 0.55rem; }
+
+  /* Company header */
+  .company-header { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; padding: 1rem; }
+  .company-name { font-size: 1.2rem; }
+  .company-price { font-size: 1.5rem; }
+  .company-price-block { text-align: right; }
+
+  /* Price chart */
+  .price-chart-section { padding: 0 0.75rem; }
+  .price-chart-wrap { height: 160px; }
+  .price-range-info { gap: 0.75rem; }
+  .price-stat span:last-child { font-size: 0.72rem; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; padding: 0 0.75rem; }
+
+  /* Charts — single col on mobile */
+  .charts-grid { grid-template-columns: 1fr; gap: 0.6rem; padding: 0 0.75rem; }
+  .chart-card { min-height: 180px; }
+  .chart-wrap { height: 140px; }
+  .chart-controls { padding: 0 0.75rem; }
+
+  /* Sector grid */
+  .sector-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; padding: 0 0.75rem; }
+
+  /* Valuation */
+  .valuation-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .val-card-value { font-size: 1.2rem; }
+
+  /* Footer */
+  .site-footer { padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .footer-center { gap: 1rem; }
+}
+
 @media (max-width: 480px) {
-  .market-summary { grid-template-columns: 1fr 1fr; }
-  .sector-grid { grid-template-columns: 1fr; }
+  /* Market summary — 2 col */
+  .market-summary { grid-template-columns: repeat(2, 1fr); }
+
+  /* Stats — 1 col */
+  .stats-grid { grid-template-columns: 1fr; }
+
+  /* Sector grid */
+  .sector-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Valuation */
+  .valuation-grid { grid-template-columns: 1fr; }
+
+  /* Topnav right — only Get started */
+  .theme-toggle { display: none; }
 }
