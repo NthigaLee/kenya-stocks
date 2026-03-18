@@ -340,8 +340,8 @@ function sectorEmoji(sector) {
 }
 
 // ---- Chart.js Global Defaults ----
-Chart.defaults.color = '#8896a8';
-Chart.defaults.borderColor = '#1e2d3d';
+Chart.defaults.color = '#707070';
+Chart.defaults.borderColor = 'rgba(0,230,118,0.08)';
 Chart.defaults.font.family = "'Inter', 'Segoe UI', system-ui, sans-serif";
 Chart.defaults.font.size = 11;
 
@@ -402,8 +402,8 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: '#1a2332',
-          borderColor: '#2a3a4e',
+          backgroundColor: '#111111',
+          borderColor: 'rgba(255,255,255,0.05)',
           borderWidth: 1,
           padding: 12,
           titleFont: { size: 12, weight: 'bold' },
@@ -465,7 +465,7 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
 }
 
 function barColors(n) {
-  return Array.from({ length: n }, (_, i) => i === n - 1 ? '#f59e0b' : '#3b82f6');
+  return Array.from({ length: n }, (_, i) => i === n - 1 ? '#00e676' : 'rgba(0,230,118,0.4)');
 }
 
 // ---- Build Dynamic Chart Grid ----
@@ -579,11 +579,11 @@ function renderPriceChart(ticker, range) {
   const gradient = ctx.getContext('2d');
   const gradientFill = gradient.createLinearGradient(0, 0, 0, 320);
   if (isUp) {
-    gradientFill.addColorStop(0, 'rgba(16, 185, 129, 0.25)');
-    gradientFill.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
+    gradientFill.addColorStop(0, 'rgba(0, 230, 118, 0.2)');
+    gradientFill.addColorStop(1, 'rgba(0, 230, 118, 0.0)');
   } else {
-    gradientFill.addColorStop(0, 'rgba(239, 68, 68, 0.25)');
-    gradientFill.addColorStop(1, 'rgba(239, 68, 68, 0.0)');
+    gradientFill.addColorStop(0, 'rgba(255, 68, 68, 0.2)');
+    gradientFill.addColorStop(1, 'rgba(255, 68, 68, 0.0)');
   }
 
   _priceChartInstance = new Chart(ctx, {
@@ -591,7 +591,7 @@ function renderPriceChart(ticker, range) {
     data: {
       datasets: [{
         data: chartData,
-        borderColor: isUp ? '#10b981' : '#ef4444',
+        borderColor: isUp ? '#00e676' : '#ff4444',
         borderWidth: 2,
         fill: true,
         backgroundColor: gradientFill,
@@ -607,8 +607,8 @@ function renderPriceChart(ticker, range) {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: '#1a2332',
-          borderColor: '#2a3a4e',
+          backgroundColor: '#111111',
+          borderColor: 'rgba(255,255,255,0.05)',
           borderWidth: 1,
           padding: 12,
           titleFont: { size: 12, weight: 'bold' },
@@ -1094,7 +1094,7 @@ function renderValuation(co) {
   // Render summary bar
   const barPct = Math.max(5, Math.min(95, 50 + result.upside * 0.5));
   const barColor = result.signalClass === 'undervalued' ? '#10b981' :
-                   result.signalClass === 'overvalued' ? '#ef4444' : '#f59e0b';
+                   result.signalClass === 'overvalued' ? '#ff4444' : '#ffa000';
 
   summary.innerHTML =
     '<div class="val-summary-header">' +
