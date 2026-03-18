@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NSE Insights</title>
+  <title>NSE Insights — Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
@@ -13,14 +13,19 @@
   <!-- Top Navigation -->
   <nav class="topnav">
     <div class="topnav-left">
-      <span class="logo">📈 NSE Insights</span>
-      <span class="breadcrumb">/ <span id="breadcrumb-company">Select a company</span></span>
+      <a href="landing.html" class="logo-link">
+        <span class="logo-dot"></span>
+        <span class="logo-text">NSE Insights</span>
+      </a>
+    </div>
+    <div class="topnav-center">
+      <a class="nav-link active" id="nav-dashboard" href="#" onclick="showView('companies'); return false;">Dashboard</a>
+      <a class="nav-link" id="nav-sectors" href="#" onclick="showView('sectors'); return false;">Sectors</a>
     </div>
     <div class="topnav-right">
-      <div class="index-pill">NSE 20 <span class="idx-val" id="nse20-val">—</span> <span class="idx-chg" id="nse20-chg"></span></div>
-      <div class="index-pill">NSE All Share <span class="idx-val" id="nseall-val">—</span> <span class="idx-chg" id="nseall-chg"></span></div>
       <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" onclick="toggleTheme()">☀️</button>
-      <a href="admin_review.html" class="admin-link" title="Admin Review Panel">Admin</a>
+      <a href="login.html" class="btn-login">Log in</a>
+      <a href="login.html#signup" class="btn-getstarted">Get started</a>
     </div>
   </nav>
 
@@ -28,7 +33,7 @@
   <div class="search-bar-wrap">
     <div class="search-bar">
       <select id="company-select">
-        <option value="">-- Select Company --</option>
+        <option value="">— Select Company —</option>
       </select>
       <span class="exchange-tag">NSE</span>
       <button id="search-btn" onclick="loadCompany()">Search</button>
@@ -42,8 +47,14 @@
   <!-- Market Summary Bar -->
   <div id="market-summary" class="market-summary">
     <div class="market-card">
-      <div class="market-card-label">Stocks Tracked</div>
-      <div class="market-card-value" id="ms-stocks">—</div>
+      <div class="market-card-label">NSE 20</div>
+      <div class="market-card-value" id="nse20-val">—</div>
+      <div class="market-card-chg" id="nse20-chg"></div>
+    </div>
+    <div class="market-card">
+      <div class="market-card-label">NSE All Share</div>
+      <div class="market-card-value" id="nseall-val">—</div>
+      <div class="market-card-chg" id="nseall-chg"></div>
     </div>
     <div class="market-card">
       <div class="market-card-label">Top Gainer</div>
@@ -60,10 +71,6 @@
     <div class="market-card">
       <div class="market-card-label">Avg Div Yield</div>
       <div class="market-card-value" id="ms-divyield">—</div>
-    </div>
-    <div class="market-card">
-      <div class="market-card-label">Most Active</div>
-      <div class="market-card-value" id="ms-active">—</div>
     </div>
   </div>
 
@@ -116,23 +123,19 @@
     </div>
 
     <!-- Stats Grid -->
-    <div class="stats-grid" id="stats-grid">
-      <!-- Populated by JS -->
-    </div>
+    <div class="stats-grid" id="stats-grid"></div>
 
     <!-- Chart Toggle -->
     <div class="chart-controls">
       <span class="chart-section-label">Historical Financials</span>
       <div class="period-toggle">
         <button class="toggle-btn active" id="toggle-annual" onclick="setPeriod('annual')">Annually</button>
-        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')" >Quarterly</button>
+        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')">Quarterly</button>
       </div>
     </div>
 
-    <!-- Dynamic Charts — populated by sector template in app.js -->
-    <div id="sector-charts-container">
-      <!-- JS builds chart cards here based on company sector -->
-    </div>
+    <!-- Dynamic Charts -->
+    <div id="sector-charts-container"></div>
 
     <!-- Valuation Estimates Panel -->
     <div id="valuation-panel" class="valuation-panel hidden">
@@ -140,24 +143,16 @@
         <span class="chart-section-label">Estimated Valuation</span>
         <span class="valuation-disclaimer">Estimates only — not investment advice</span>
       </div>
-      <div class="valuation-grid" id="valuation-grid">
-        <!-- Populated by JS -->
-      </div>
-      <div class="valuation-summary" id="valuation-summary">
-        <!-- Overall verdict -->
-      </div>
-      <div class="valuation-assumptions" id="valuation-assumptions">
-        <!-- Assumptions disclosure -->
-      </div>
+      <div class="valuation-grid" id="valuation-grid"></div>
+      <div class="valuation-summary" id="valuation-summary"></div>
+      <div class="valuation-assumptions" id="valuation-assumptions"></div>
     </div>
 
   </div><!-- /#dashboard -->
 
-  <!-- Sector Overview (hidden by default) -->
+  <!-- Sector Overview -->
   <div id="sector-overview" class="hidden">
-    <div class="sector-grid" id="sector-grid">
-      <!-- Sector cards populated by JS -->
-    </div>
+    <div class="sector-grid" id="sector-grid"></div>
     <div id="sector-table-wrap" class="hidden">
       <div class="sector-table-header">
         <button class="sector-back-btn" onclick="showSectorGrid()">&larr; All Sectors</button>
@@ -174,14 +169,37 @@
 
   <!-- Empty state -->
   <div id="empty-state" class="empty-state">
-    <div class="empty-icon">📊</div>
+    <div class="empty-icon">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="14" fill="url(#emptyGrad)"/>
+        <rect x="10" y="32" width="8" height="14" rx="2" fill="white" fill-opacity="0.9"/>
+        <rect x="22" y="22" width="8" height="24" rx="2" fill="white"/>
+        <rect x="34" y="14" width="8" height="32" rx="2" fill="white" fill-opacity="0.7"/>
+        <defs>
+          <linearGradient id="emptyGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#10b981"/>
+            <stop offset="1" stop-color="#3b82f6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
     <div class="empty-title">NSE Company Insights</div>
     <div class="empty-sub">Select a company above to view financials, charts, and key metrics.</div>
   </div>
 
-  <div class="data-updated" id="data-updated">
-    Prices: Jan 2013 – Oct 2025 via NSE/Mendeley &middot; Financial data extracted from company filings
-  </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span class="footer-brand">NSE Insights</span>
+      <span class="footer-tagline">Data from NSE company filings</span>
+    </div>
+    <div class="footer-center">
+      <a href="landing.html">Home</a>
+      <a href="login.html">Sign in</a>
+      <a href="admin_review.html">Admin</a>
+    </div>
+    <div class="footer-right">© 2026 NSE Insights</div>
+  </footer>
 
   <script src="data.js?v=5"></script>
   <script src="app.js?v=5"></script>

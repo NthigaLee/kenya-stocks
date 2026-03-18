@@ -670,7 +670,8 @@ function loadCompany() {
   document.getElementById('btn-companies').classList.add('active');
   document.getElementById('btn-sectors').classList.remove('active');
   _currentView = 'companies';
-  document.getElementById('breadcrumb-company').textContent = co.ticker + ' | NSE';
+  const bc = document.getElementById('breadcrumb-company');
+  if (bc) bc.textContent = co.ticker + ' | NSE';
   document.getElementById('company-logo').textContent = co.logo || '📈';
   document.getElementById('company-name').textContent = co.name;
   document.getElementById('company-meta').textContent = co.ticker + ' | ' + co.exchange + ' \u00B7 ' + co.sector;
@@ -1138,21 +1139,27 @@ async function loadMarketData() {
     NSE_MARKET = null;
   }
 
-  // Populate index pills
+  // Populate NSE index cards in market summary
   if (NSE_MARKET) {
     const nse20 = NSE_MARKET.nse20;
     const nseAll = NSE_MARKET.nseAllShare;
     if (nse20) {
-      document.getElementById('nse20-val').textContent = nse20.value.toLocaleString();
+      const valEl = document.getElementById('nse20-val');
       const chgEl = document.getElementById('nse20-chg');
-      chgEl.textContent = (nse20.change_pct >= 0 ? '+' : '') + nse20.change_pct.toFixed(2) + '%';
-      chgEl.className = 'idx-chg ' + (nse20.change_pct >= 0 ? 'positive' : 'negative');
+      if (valEl) valEl.textContent = nse20.value.toLocaleString();
+      if (chgEl) {
+        chgEl.textContent = (nse20.change_pct >= 0 ? '+' : '') + nse20.change_pct.toFixed(2) + '%';
+        chgEl.className = 'market-card-chg ' + (nse20.change_pct >= 0 ? 'positive' : 'negative');
+      }
     }
     if (nseAll) {
-      document.getElementById('nseall-val').textContent = nseAll.value.toLocaleString();
+      const valEl = document.getElementById('nseall-val');
       const chgEl = document.getElementById('nseall-chg');
-      chgEl.textContent = (nseAll.change_pct >= 0 ? '+' : '') + nseAll.change_pct.toFixed(2) + '%';
-      chgEl.className = 'idx-chg ' + (nseAll.change_pct >= 0 ? 'positive' : 'negative');
+      if (valEl) valEl.textContent = nseAll.value.toLocaleString();
+      if (chgEl) {
+        chgEl.textContent = (nseAll.change_pct >= 0 ? '+' : '') + nseAll.change_pct.toFixed(2) + '%';
+        chgEl.className = 'market-card-chg ' + (nseAll.change_pct >= 0 ? 'positive' : 'negative');
+      }
     }
   }
 }
@@ -1162,8 +1169,9 @@ function renderMarketSummary() {
   const companies = Object.entries(NSE_COMPANIES);
   const withPrices = companies.filter(([, c]) => c.latestPrice && c.latestPrice > 0);
 
-  // Stocks tracked
-  document.getElementById('ms-stocks').textContent = companies.length;
+  // Stocks tracked (element may not exist in new layout)
+  const msStocks = document.getElementById('ms-stocks');
+  if (msStocks) msStocks.textContent = companies.length;
 
   // Top gainer & loser
   if (withPrices.length > 0) {
@@ -1210,11 +1218,14 @@ function renderMarketSummary() {
     }
   }
 
-  // Most active — pick the company with most data points as a proxy
-  const withData = companies.filter(([, c]) => c.annuals && c.annuals.length > 0);
-  if (withData.length > 0) {
-    const byData = [...withData].sort((a, b) => (b[1].annuals.length + (b[1].quarters || []).length) - (a[1].annuals.length + (a[1].quarters || []).length));
-    document.getElementById('ms-active').textContent = byData[0][0];
+  // Most active (element may not exist in new layout)
+  const msActive = document.getElementById('ms-active');
+  if (msActive) {
+    const withData = companies.filter(([, c]) => c.annuals && c.annuals.length > 0);
+    if (withData.length > 0) {
+      const byData = [...withData].sort((a, b) => (b[1].annuals.length + (b[1].quarters || []).length) - (a[1].annuals.length + (a[1].quarters || []).length));
+      msActive.textContent = byData[0][0];
+    }
   }
 }
 
@@ -1225,6 +1236,11 @@ function showView(view) {
   _currentView = view;
   document.getElementById('btn-companies').classList.toggle('active', view === 'companies');
   document.getElementById('btn-sectors').classList.toggle('active', view === 'sectors');
+  // Sync center nav links
+  const navDash = document.getElementById('nav-dashboard');
+  const navSectors = document.getElementById('nav-sectors');
+  if (navDash) navDash.classList.toggle('active', view === 'companies');
+  if (navSectors) navSectors.classList.toggle('active', view === 'sectors');
 
   const dashboard = document.getElementById('dashboard');
   const emptyState = document.getElementById('empty-state');
