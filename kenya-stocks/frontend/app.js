@@ -666,6 +666,50 @@ function renderPriceChart(ticker, range) {
   });
 }
 
+function timeAgo(dateStr) {
+  const d = new Date(dateStr);
+  if (isNaN(d)) return '';
+  const diff = (Date.now() - d.getTime()) / 1000;
+  if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+  return Math.floor(diff / 86400) + 'd ago';
+}
+
+async function fetchNews(ticker, companyName) {
+  const grid = document.getElementById('news-grid');
+  if (!grid) return;
+  grid.innerHTML = '<div class="news-loading">Loading news…</div>';
+  const feeds = [
+    { url: 'https://businessdailyafrica.com/rss/39546-business-news', name: 'Business Daily', domain: 'businessdailyafrica.com' },
+    { url: 'https://www.standardmedia.co.ke/rss/business.php', name: 'The Standard', domain: 'standardmedia.co.ke' },
+    { url: 'https://www.capitalfm.co.ke/business/feed/', name: 'Capital FM', domain: 'capitalfm.co.ke' },
+  ];
+  const proxy = 'https://api.rss2json.com/v1/api.json?rss_url=';
+  const keywords = [ticker.toLowerCase(), companyName.toLowerCase().split(' ').slice(0, 2).join(' ')];
+  const results = await Promise.allSettled(
+    feeds.map(f => fetch(proxy + encodeURIComponent(f.url)).then(r => r.json()).then(data => ({ feed: f, items: (data.items || []) })))
+  );
+  let articles = [];
+  results.forEach(r => {
+    if (r.status !== 'fulfilled') return;
+    const { feed, items } = r.value;
+    items.forEach(item => {
+      const haystack = ((item.title || '') + ' ' + (item.description || '')).toLowerCase();
+      if (keywords.some(k => k.length > 2 && haystack.includes(k))) articles.push({ ...item, _feed: feed });
+    });
+  });
+  articles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+  articles = articles.slice(0, 5);
+  if (articles.length === 0) {
+    grid.innerHTML = '<div class="news-empty">No recent news found for <strong>' + ticker + '</strong> &nbsp;·&nbsp; <a href="https://businessdailyafrica.com/search?q=' + encodeURIComponent(companyName) + '" target="_blank" rel="noopener">Search Business Daily ↗</a></div>';
+    return;
+  }
+  grid.innerHTML = articles.map(a => {
+    const fav = 'https://www.google.com/s2/favicons?domain=' + a._feed.domain + '&sz=16';
+    return '<a class="news-card" href="' + a.link + '" target="_blank" rel="noopener"><div class="news-card-source"><img class="news-favicon" src="' + fav + '" alt=""><span>' + a._feed.name + '</span><span class="news-date"> · ' + timeAgo(a.pubDate) + '</span></div><div class="news-card-title">' + a.title + '</div></a>';
+  }).join('');
+}
+
 // ---- Load Company ----
 function loadCompany() {
   const sel = document.getElementById('company-select').value;
@@ -677,6 +721,8 @@ function loadCompany() {
 
   document.getElementById('dashboard').classList.remove('hidden');
   document.getElementById('empty-state').classList.add('hidden');
+  const infoRow = document.getElementById('info-row');
+  if (infoRow) infoRow.classList.remove('hidden');
   document.getElementById('sector-overview').classList.add('hidden');
   document.getElementById('btn-companies').classList.add('active');
   document.getElementById('btn-sectors').classList.remove('active');
@@ -685,6 +731,9 @@ function loadCompany() {
   if (bc) bc.textContent = co.ticker + ' | NSE';
   document.getElementById('company-logo').textContent = co.logo || '📈';
   document.getElementById('company-name').textContent = co.name;
+  const descEl = document.getElementById('company-desc-text');
+  if (descEl) descEl.textContent = co.description || 'No description available.';
+  fetchNews(co.ticker, co.name || co.ticker);
   document.getElementById('company-meta').textContent = co.ticker + ' | ' + co.exchange + ' \u00B7 ' + co.sector;
   document.getElementById('company-price').textContent = fmtPrice(co.latestPrice);
 

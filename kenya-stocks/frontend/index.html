@@ -129,6 +129,35 @@
 
     </div><!-- /.company-chart-row -->
 
+    <!-- Info Row: description + news LEFT, valuation RIGHT -->
+    <div class="info-row" id="info-row">
+      <div class="info-col-main">
+        <div class="company-desc-card">
+          <p class="company-desc-text" id="company-desc-text">—</p>
+        </div>
+        <div class="news-section">
+          <div class="news-header">
+            <span class="news-title">Latest News</span>
+            <span class="news-source-tag">Business Daily · The Standard · Capital FM</span>
+          </div>
+          <div class="news-grid" id="news-grid">
+            <div class="news-loading">Loading news…</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-col-side">
+        <div id="valuation-panel" class="valuation-panel hidden">
+          <div class="valuation-header">
+            <span class="valuation-title">Valuation Estimates</span>
+            <span class="valuation-disclaimer">Not investment advice</span>
+          </div>
+          <div class="valuation-grid" id="valuation-grid"></div>
+          <div class="valuation-summary" id="valuation-summary"></div>
+          <div class="valuation-assumptions" id="valuation-assumptions"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Stats Grid -->
     <div class="stats-grid" id="stats-grid"></div>
 
@@ -144,16 +173,6 @@
     <!-- Dynamic Charts -->
     <div id="sector-charts-container"></div>
 
-    <!-- Valuation Estimates Panel -->
-    <div id="valuation-panel" class="valuation-panel hidden">
-      <div class="chart-controls" style="margin-top:1.5rem">
-        <span class="chart-section-label">Estimated Valuation</span>
-        <span class="valuation-disclaimer">Estimates only — not investment advice</span>
-      </div>
-      <div class="valuation-grid" id="valuation-grid"></div>
-      <div class="valuation-summary" id="valuation-summary"></div>
-      <div class="valuation-assumptions" id="valuation-assumptions"></div>
-    </div>
 
   </div><!-- /#dashboard -->
 
@@ -209,6 +228,6 @@
   </footer>
 
   <script src="data.js?v=5"></script>
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
