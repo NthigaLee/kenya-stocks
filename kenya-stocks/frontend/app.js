@@ -350,15 +350,15 @@ function fmtNum(val, units) {
   if (val === null || val === undefined || isNaN(val)) return '\u2014';
   if (units === 'thousands') {
     // Raw values are in KES thousands, so 1e6 = 1B KES, 1e9 = 1T KES
-    if (Math.abs(val) >= 1e9) return (val / 1e9).toFixed(2) + 'T';
-    if (Math.abs(val) >= 1e6) return (val / 1e6).toFixed(2) + 'B';
-    if (Math.abs(val) >= 1e3) return (val / 1e3).toFixed(1) + 'M';
+    if (Math.abs(val) >= 1e9) return (val / 1e9).toFixed(1) + 'T';
+    if (Math.abs(val) >= 1e6) return (val / 1e6).toFixed(1) + 'B';
+    if (Math.abs(val) >= 1e3) return (val / 1e3).toFixed(0) + 'M';
     return val.toFixed(0) + 'K';
   }
   if (units === 'millions') {
     // Raw values are in KES millions, so 1e3 = 1B KES, 1e6 = 1T KES
-    if (Math.abs(val) >= 1e6) return (val / 1e6).toFixed(2) + 'T';
-    if (Math.abs(val) >= 1e3) return (val / 1e3).toFixed(2) + 'B';
+    if (Math.abs(val) >= 1e6) return (val / 1e6).toFixed(1) + 'T';
+    if (Math.abs(val) >= 1e3) return (val / 1e3).toFixed(1) + 'B';
     return val.toFixed(0) + 'M';
   }
   return val.toFixed(2);
@@ -437,21 +437,21 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
               }
               if (u === 'thousands') {
                 // Values in KES thousands: 1e6 = 1B, 1e9 = 1T
-                if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(1) + 'T';
-                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'B';
-                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'M';
+                if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(0) + 'T';
+                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'B';
+                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + "M";
                 return v + 'K';
               }
               if (u === 'millions') {
                 // Values in KES millions: 1e3 = 1B, 1e6 = 1T
-                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'T';
-                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'B';
+                if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'T';
+                if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'B';
                 return v.toFixed(0) + 'M';
               }
               // Fallback (raw KES or ratio)
-              if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(1) + 'B';
-              if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'M';
-              if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'K';
+              if (Math.abs(v) >= 1e9) return (v / 1e9).toFixed(0) + 'B';
+              if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(0) + 'M';
+              if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(0) + 'K';
               return v;
             }
           }
