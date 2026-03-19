@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSE Insights — Admin Review</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Admin-specific overrides ───────────────────────── */
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .admin-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .admin-header h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .admin-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-primary);
+      border: 1px solid var(--accent-primary);
+      padding: 0.2rem 0.55rem;
+      border-radius: 99px;
+    }
+    .admin-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Summary bar ─────────────────────────────────────── */
+    .summary-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .summary-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 10px;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+    .summary-chip .chip-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .summary-chip .chip-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .chip-dot.green { background: var(--accent-primary); }
+    .chip-dot.amber { background: #ffb300; }
+    .chip-dot.red   { background: var(--down); }
+
+    /* ── Filter / Search bar ─────────────────────────────── */
+    .admin-controls {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .admin-search {
+      flex: 1;
+      min-width: 200px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 8px;
+      padding: 0.55rem 0.9rem;
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .admin-search:focus { border-color: var(--accent-primary); }
+    .admin-search::placeholder { color: var(--text-muted); }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-dim);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+    .filter-btn.active { background: var(--accent-primary); color: #000; border-color: var(--accent-primary); }
+
+    /* ── Company grid ────────────────────────────────────── */
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 0.75rem;
+    }
+    .co-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+    .co-card:hover {
+      border-color: var(--accent-primary);
+      background: var(--bg-card-hover);
+      transform: translateY(-1px);
+    }
+    .co-card-top {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.6rem;
+    }
+    .co-logo { font-size: 1.4rem; line-height: 1; }
+    .co-name { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); }
+    .co-ticker { font-size: 0.65rem; font-weight: 600; color: var(--text-muted); font-family: var(--mono); letter-spacing: 0.05em; }
+    .co-sector { font-size: 0.65rem; color: var(--text-muted); }
+    .co-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .co-badge {
+      font-size: 0.58rem;
+      font-weight: 600;
+      padding: 0.18rem 0.5rem;
+      border-radius: 99px;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .co-badge.ok   { background: rgba(0,230,118,0.12); color: var(--accent-primary); border: 1px solid rgba(0,230,118,0.25); }
+    .co-badge.warn { background: rgba(255,179,0,0.12); color: #ffb300; border: 1px solid rgba(255,179,0,0.25); }
+    .co-badge.miss { background: rgba(255,68,68,0.10); color: var(--down); border: 1px solid rgba(255,68,68,0.22); }
+    .co-badge::before { font-size: 0.65rem; }
+    .co-badge.ok::before   { content: "✓"; }
+    .co-badge.warn::before { content: "~"; }
+    .co-badge.miss::before { content: "✕"; }
+
+    /* ── Detail drawer ───────────────────────────────────── */
+    .detail-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      display: flex;
+      justify-content: flex-end;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .detail-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .detail-drawer {
+      width: min(600px, 95vw);
+      height: 100%;
+      background: var(--bg-surface);
+      border-left: 1px solid var(--border-dim);
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+      display: flex;
+      flex-direction: column;
+    }
+    .detail-overlay.open .detail-drawer {
+      transform: translateX(0);
+    }
+    .drawer-header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border-dim);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg-surface);
+      z-index: 1;
+    }
+    .drawer-close {
+      margin-left: auto;
+      background: none;
+      border: 1px solid var(--border-dim);
+      color: var(--text-secondary);
+      border-radius: 6px;
+      width: 30px; height: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .drawer-close:hover { border-color: var(--down); color: var(--down); }
+    .drawer-logo { font-size: 2rem; }
+    .drawer-title { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.15rem; }
+    .drawer-meta { font-size: 0.72rem; color: var(--text-muted); font-family: var(--mono); }
+    .drawer-body { padding: 1.25rem 1.5rem; flex: 1; }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .drawer-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .drawer-desc.missing {
+      color: var(--down);
+      font-style: italic;
+      border-color: rgba(255,68,68,0.2);
+    }
+
+    /* Data fields table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.25rem;
+      font-size: 0.78rem;
+    }
+    .data-table th {
+      text-align: left;
+      color: var(--text-muted);
+      font-size: 0.62rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 0.6rem;
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .data-table td {
+      padding: 0.45rem 0.6rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .data-table td:first-child { color: var(--text-primary); font-weight: 500; }
+    .data-table .val-ok   { color: var(--accent-primary); font-weight: 600; }
+    .data-table .val-miss { color: var(--down); font-weight: 600; }
+    .data-table .val-part { color: #ffb300; font-weight: 600; }
+    .data-table .val-num  { font-family: var(--mono); font-size: 0.72rem; }
+
+    /* News list */
+    .news-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .news-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+    }
+    .news-item-title { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; margin-bottom: 0.25rem; }
+    .news-item-meta { font-size: 0.62rem; color: var(--text-muted); display: flex; gap: 0.5rem; }
+    .news-item-link { font-size: 0.65rem; color: var(--accent-primary); text-decoration: none; }
+    .news-item-link:hover { text-decoration: underline; }
+
+    .no-news {
+      font-size: 0.78rem;
+      color: var(--down);
+      font-style: italic;
+      padding: 0.5rem 0;
+    }
+
+    /* Periods list */
+    .period-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .period-chip {
+      font-size: 0.65rem;
+      font-family: var(--mono);
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      color: var(--text-secondary);
+    }
+    .period-chip.annual { border-color: rgba(0,230,118,0.3); color: var(--accent-primary); }
+    .period-chip.quarter { border-color: rgba(0,191,165,0.3); color: var(--accent-teal); }
+
+    /* Missing fields list */
+    .missing-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .missing-chip {
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      background: rgba(255,68,68,0.08);
+      border: 1px solid rgba(255,68,68,0.2);
+      color: var(--down);
+    }
+
+    .no-missing {
+      font-size: 0.78rem;
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .company-grid { grid-template-columns: 1fr; }
+      .admin-container { padding: 1rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation (matches main dashboard) -->
+  <nav class="topnav">
+    <div class="topnav-left">
+      <a href="index.html" class="logo-link">
+        <span class="logo-dot"></span>
+        <span class="logo-text">NSE Insights</span>
+      </a>
+    </div>
+    <div class="topnav-center">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link active" href="admin.html">Admin</a>
+    </div>
+    <div class="topnav-right">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" onclick="toggleTheme()">☀️</button>
+    </div>
+  </nav>
+
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1>Company Review</h1>
+      <span class="admin-badge">Admin</span>
+    </div>
+    <p class="admin-subtitle">Data coverage audit for all NSE-listed companies — spot gaps and track what's missing.</p>
+
+    <!-- Summary chips -->
+    <div class="summary-bar" id="summary-bar">
+      <div class="summary-chip"><span class="chip-dot green"></span><span class="chip-num" id="stat-full">—</span> complete</div>
+      <div class="summary-chip"><span class="chip-dot amber"></span><span class="chip-num" id="stat-partial">—</span> partial</div>
+      <div class="summary-chip"><span class="chip-dot red"></span><span class="chip-num" id="stat-miss">—</span> missing data</div>
+      <div class="summary-chip">🗞 <span class="chip-num" id="stat-news">—</span> with news</div>
+      <div class="summary-chip">📊 <span class="chip-num" id="stat-periods">—</span> total periods</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="admin-controls">
+      <input class="admin-search" type="text" id="admin-search" placeholder="Search company or ticker…" oninput="renderGrid()" />
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All</button>
+      <button class="filter-btn" data-filter="miss" onclick="setFilter('miss',this)">Missing data</button>
+      <button class="filter-btn" data-filter="no-news" onclick="setFilter('no-news',this)">No news</button>
+      <button class="filter-btn" data-filter="ok" onclick="setFilter('ok',this)">Complete</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="company-grid" id="company-grid"></div>
+  </div>
+
+  <!-- Detail drawer -->
+  <div class="detail-overlay" id="detail-overlay" onclick="closeDrawer(event)">
+    <div class="detail-drawer" id="detail-drawer">
+      <div class="drawer-header">
+        <div class="drawer-logo" id="d-logo">🏦</div>
+        <div>
+          <div class="drawer-title" id="d-name">—</div>
+          <div class="drawer-meta" id="d-meta">—</div>
+        </div>
+        <button class="drawer-close" onclick="closeDrawerDirect()">✕</button>
+      </div>
+      <div class="drawer-body" id="drawer-body"></div>
+    </div>
+  </div>
+
+  <script src="data.js?v=5"></script>
+  <script>
+    /* ── Theme ───────────────────────────────────────────── */
+    function initTheme() {
+      const saved = localStorage.getItem('nse-theme');
+      if (saved === 'light') document.body.classList.add('light');
+      updateThemeBtn();
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      localStorage.setItem('nse-theme', document.body.classList.contains('light') ? 'light' : 'dark');
+      updateThemeBtn();
+    }
+    function updateThemeBtn() {
+      const btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+    }
+    initTheme();
+
+    /* ── Helpers ─────────────────────────────────────────── */
+    const FIELDS = ['revenue','pat','eps','dps','totalAssets','totalEquity','deposits','loans','nii','pbt'];
+    const FIELD_LABELS = { revenue:'Revenue', pat:'PAT', eps:'EPS', dps:'DPS', totalAssets:'Total Assets', totalEquity:'Total Equity', deposits:'Deposits', loans:'Loans', nii:'NII', pbt:'PBT' };
+
+    function analyseCompany(ticker) {
+      const co = NSE_COMPANIES[ticker];
+      if (!co) return null;
+
+      const annuals = co.annuals || [];
+      const quarters = co.quarters || [];
+      const hasDesc = !!(co.description && co.description.trim() && co.description !== 'No description available.');
+      const hasNews = !!(co.staticNews && co.staticNews.length > 0);
+      const hasPrice = !!(co.latestPrice);
+
+      // Fields present in latest period
+      const latest = co.latestPeriod || (annuals[0] || {});
+      const presentFields = FIELDS.filter(f => latest[f] != null && latest[f] !== 0);
+      const missingFields = FIELDS.filter(f => latest[f] == null);
+
+      // Annual coverage
+      const annualYears = annuals.map(a => a.year).sort((a,b) => b-a);
+      const quarterPeriods = quarters.map(q => q.period);
+
+      // Score: 0-100
+      let score = 0;
+      if (hasDesc) score += 20;
+      if (hasNews) score += 15;
+      if (annuals.length >= 4) score += 25;
+      else if (annuals.length >= 2) score += 12;
+      if (quarters.length >= 2) score += 10;
+      score += Math.min(30, presentFields.length * 3);
+
+      const status = score >= 70 ? 'ok' : score >= 40 ? 'partial' : 'miss';
+
+      return { co, ticker, hasDesc, hasNews, hasPrice, presentFields, missingFields, annualYears, quarterPeriods, annuals, quarters, score, status };
+    }
+
+    /* ── Build company data ──────────────────────────────── */
+    let allData = [];
+    let currentFilter = 'all';
+
+    function buildData() {
+      const tickers = (typeof NSE_INDEX !== 'undefined') ? NSE_INDEX : Object.keys(NSE_COMPANIES);
+      allData = tickers.map(t => analyseCompany(t)).filter(Boolean);
+    }
+
+    /* ── Summary stats ───────────────────────────────────── */
+    function renderStats() {
+      const full = allData.filter(d => d.status === 'ok').length;
+      const partial = allData.filter(d => d.status === 'partial').length;
+      const miss = allData.filter(d => d.status === 'miss').length;
+      const withNews = allData.filter(d => d.hasNews).length;
+      const totalPeriods = allData.reduce((s,d) => s + d.annualYears.length + d.quarterPeriods.length, 0);
+      document.getElementById('stat-full').textContent = full;
+      document.getElementById('stat-partial').textContent = partial;
+      document.getElementById('stat-miss').textContent = miss;
+      document.getElementById('stat-news').textContent = withNews;
+      document.getElementById('stat-periods').textContent = totalPeriods;
+    }
+
+    /* ── Grid ────────────────────────────────────────────── */
+    function setFilter(f, btn) {
+      currentFilter = f;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGrid();
+    }
+
+    function renderGrid() {
+      const q = document.getElementById('admin-search').value.toLowerCase();
+      let list = allData;
+
+      if (q) list = list.filter(d => d.ticker.toLowerCase().includes(q) || (d.co.name||'').toLowerCase().includes(q) || (d.co.sector||'').toLowerCase().includes(q));
+
+      if (currentFilter === 'miss') list = list.filter(d => d.status === 'miss');
+      else if (currentFilter === 'no-news') list = list.filter(d => !d.hasNews);
+      else if (currentFilter === 'ok') list = list.filter(d => d.status === 'ok');
+
+      const grid = document.getElementById('company-grid');
+      if (list.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:2rem;font-size:0.85rem;">No companies match this filter.</div>';
+        return;
+      }
+
+      grid.innerHTML = list.map(d => {
+        const badges = [];
+        badges.push(`<span class="co-badge ${d.hasDesc?'ok':'miss'}">Desc</span>`);
+        badges.push(`<span class="co-badge ${d.hasNews?'ok':'miss'}">News</span>`);
+        badges.push(`<span class="co-badge ${d.annualYears.length>=3?'ok':d.annualYears.length>0?'warn':'miss'}">${d.annualYears.length} annuals</span>`);
+        badges.push(`<span class="co-badge ${d.quarterPeriods.length>=2?'ok':d.quarterPeriods.length>0?'warn':'miss'}">${d.quarterPeriods.length} qtrs</span>`);
+        if (d.hasPrice) badges.push(`<span class="co-badge ok">Live price</span>`);
+        const borderColor = d.status === 'ok' ? 'rgba(0,230,118,0.3)' : d.status === 'partial' ? 'rgba(255,179,0,0.25)' : 'rgba(255,68,68,0.25)';
+        return `<div class="co-card" style="border-color:${borderColor}" onclick="openDrawer('${d.ticker}')">
+          <div class="co-card-top">
+            <div class="co-logo">${d.co.logo||'🏢'}</div>
+            <div>
+              <div class="co-name">${d.co.name||d.ticker}</div>
+              <div class="co-ticker">${d.ticker} &nbsp;·&nbsp; <span class="co-sector">${d.co.sector||'—'}</span></div>
+            </div>
+          </div>
+          <div class="co-badges">${badges.join('')}</div>
+        </div>`;
+      }).join('');
+    }
+
+    /* ── Drawer ──────────────────────────────────────────── */
+    function openDrawer(ticker) {
+      const d = allData.find(x => x.ticker === ticker);
+      if (!d) return;
+      const co = d.co;
+
+      document.getElementById('d-logo').textContent = co.logo || '🏢';
+      document.getElementById('d-name').textContent = co.name || ticker;
+      document.getElementById('d-meta').textContent = `${ticker} · ${co.sector||'—'} · NSE`;
+
+      // Build drawer body
+      let html = '';
+
+      // Description
+      html += `<div class="section-label">Description</div>`;
+      if (d.hasDesc) {
+        html += `<div class="drawer-desc">${co.description}</div>`;
+      } else {
+        html += `<div class="drawer-desc missing">No description available — needs to be added.</div>`;
+      }
+
+      // Data coverage table
+      html += `<div class="section-label">Financial Data Coverage</div>`;
+      html += `<table class="data-table"><thead><tr><th>Field</th><th>Latest Value</th><th>Status</th></tr></thead><tbody>`;
+      const latest = co.latestPeriod || (d.annuals[0] || {});
+      for (const f of FIELDS) {
+        const val = latest[f];
+        const present = val != null && val !== 0;
+        const formatted = present ? Number(val).toLocaleString() : '—';
+        const statusClass = present ? 'val-ok' : 'val-miss';
+        const statusLabel = present ? '✓' : '✕ missing';
+        html += `<tr><td>${FIELD_LABELS[f]}</td><td class="val-num">${formatted}</td><td class="${statusClass}">${statusLabel}</td></tr>`;
+      }
+      html += `</tbody></table>`;
+
+      // Annual periods
+      html += `<div class="section-label">Annual Periods (${d.annualYears.length})</div>`;
+      if (d.annualYears.length > 0) {
+        html += `<div class="period-chips">`;
+        for (const a of d.annuals) {
+          const keyFields = ['revenue','pat','eps','dps'].filter(f => a[f] != null).length;
+          html += `<span class="period-chip annual" title="${keyFields}/4 key fields">${a.period}</span>`;
+        }
+        html += `</div>`;
+      } else {
+        html += `<p style="font-size:0.78rem;color:var(--down);font-style:italic;margin-bottom:1.25rem;">No annual data found.</p>`;
+      }
+
+      // Quarterly periods
+      html += `<div class="section-label">Interim Periods (${d.quarterPeriods.length})</div>`;
+      if (d.quarterPeriods.length > 0) {
+        html += `<div class="period-chips">`;
+        for (const q of d.quarters) {
+          html += `<span class="period-chip quarter">${q.period}</span>`;
+        }
+        html += `</div>`;
+      } else {
+        html += `<p style="font-size:0.78rem;color:var(--text-muted);font-style:italic;margin-bottom:1.25rem;">No interim data.</p>`;
+      }
+
+      // Missing fields
+      html += `<div class="section-label">Missing Fields (Latest Period)</div>`;
+      const missingImportant = d.missingFields.filter(f => ['revenue','pat','eps','totalAssets'].includes(f));
+      if (d.missingFields.length === 0) {
+        html += `<p class="no-missing" style="margin-bottom:1.25rem;">✓ All tracked fields present</p>`;
+      } else {
+        html += `<div class="missing-list">`;
+        for (const f of d.missingFields) {
+          html += `<span class="missing-chip">${FIELD_LABELS[f]}</span>`;
+        }
+        html += `</div>`;
+      }
+
+      // News
+      html += `<div class="section-label">Static News Articles (${(co.staticNews||[]).length})</div>`;
+      if (d.hasNews) {
+        html += `<div class="news-list">`;
+        for (const n of co.staticNews) {
+          html += `<div class="news-item">
+            <div class="news-item-title">${n.title}</div>
+            <div class="news-item-meta">
+              <span>${n.source}</span>
+              <span>·</span>
+              <span>${n.date}</span>
+              ${n.url ? `<a class="news-item-link" href="${n.url}" target="_blank" rel="noopener">Open ↗</a>` : '<span style="color:var(--text-muted);font-size:0.62rem">No URL</span>'}
+            </div>
+          </div>`;
+        }
+        html += `</div>`;
+      } else {
+        html += `<p class="no-news">No static news articles — needs research.</p>`;
+      }
+
+      document.getElementById('drawer-body').innerHTML = html;
+      document.getElementById('detail-overlay').classList.add('open');
+    }
+
+    function closeDrawer(e) {
+      if (e.target === document.getElementById('detail-overlay')) closeDrawerDirect();
+    }
+    function closeDrawerDirect() {
+      document.getElementById('detail-overlay').classList.remove('open');
+    }
+
+    // Keyboard close
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawerDirect(); });
+
+    /* ── Init ────────────────────────────────────────────── */
+    buildData();
+    renderStats();
+    renderGrid();
+  </script>
+</body>
+</html>

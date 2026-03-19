@@ -1243,3 +1243,17 @@ select optgroup { background: var(--bg-surface); color: #000; font-weight: 700; 
 @media (max-width: 768px) {
   .info-row { padding: 0 0.75rem; }
 }
+/* ── Admin padlock button ───────────────────────────────── */
+.admin-padlock {
+  font-size: 1rem;
+  text-decoration: none;
+  opacity: 0.4;
+  transition: opacity 0.2s, transform 0.2s;
+  padding: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+}
+.admin-padlock:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
