@@ -129,31 +129,18 @@
 
     </div><!-- /.company-chart-row -->
 
-    <!-- Info Row: description + news LEFT, valuation RIGHT -->
+    <!-- Info Row: description LEFT (2/3) + news RIGHT (1/3) -->
     <div class="info-row" id="info-row">
-      <div class="info-col-main">
-        <div class="company-desc-card">
-          <p class="company-desc-text" id="company-desc-text">—</p>
-        </div>
-        <div class="news-section">
-          <div class="news-header">
-            <span class="news-title">Latest News</span>
-            <span class="news-source-tag">Business Daily · The Standard · Capital FM</span>
-          </div>
-          <div class="news-grid" id="news-grid">
-            <div class="news-loading">Loading news…</div>
-          </div>
-        </div>
+      <div class="company-desc-card">
+        <p class="company-desc-text" id="company-desc-text">—</p>
       </div>
-      <div class="info-col-side">
-        <div id="valuation-panel" class="valuation-panel hidden">
-          <div class="valuation-header">
-            <span class="valuation-title">Valuation Estimates</span>
-            <span class="valuation-disclaimer">Not investment advice</span>
-          </div>
-          <div class="valuation-grid" id="valuation-grid"></div>
-          <div class="valuation-summary" id="valuation-summary"></div>
-          <div class="valuation-assumptions" id="valuation-assumptions"></div>
+      <div class="news-section">
+        <div class="news-header">
+          <span class="news-title">Latest News</span>
+          <span class="news-source-tag">BD · Standard · Capital</span>
+        </div>
+        <div class="news-grid" id="news-grid">
+          <div class="news-loading">Loading…</div>
         </div>
       </div>
     </div>
@@ -172,6 +159,19 @@
 
     <!-- Dynamic Charts -->
     <div id="sector-charts-container"></div>
+
+    <!-- Valuation panel — below charts -->
+    <div id="valuation-panel" class="valuation-panel hidden">
+      <div class="valuation-panel-inner">
+        <div class="valuation-header">
+          <span class="valuation-title">Valuation Estimates</span>
+          <span class="valuation-disclaimer">Not investment advice</span>
+        </div>
+        <div class="valuation-grid" id="valuation-grid"></div>
+        <div class="valuation-summary" id="valuation-summary"></div>
+        <div class="valuation-assumptions" id="valuation-assumptions"></div>
+      </div>
+    </div>
 
 
   </div><!-- /#dashboard -->
@@ -228,6 +228,6 @@
   </footer>
 
   <script src="data.js?v=5"></script>
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
