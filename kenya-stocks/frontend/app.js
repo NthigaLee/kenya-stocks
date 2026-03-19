@@ -675,10 +675,31 @@ function timeAgo(dateStr) {
   return Math.floor(diff / 86400) + 'd ago';
 }
 
+function formatStaticDate(dateStr) {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return dateStr;
+  return parts[2] + ' ' + months[parseInt(parts[1], 10) - 1] + ' ' + parts[0];
+}
+
 async function fetchNews(ticker, companyName) {
   const grid = document.getElementById('news-grid');
   if (!grid) return;
-  grid.innerHTML = '<div class="news-loading">Loading news…</div>';
+
+  // Show static news immediately if available
+  const co = NSE_COMPANIES[ticker];
+  const staticNews = co && co.staticNews && co.staticNews.length ? co.staticNews : null;
+
+  if (staticNews) {
+    grid.innerHTML = staticNews.map(a => {
+      const href = a.url ? 'href="' + a.url + '" target="_blank" rel="noopener"' : 'href="#" onclick="return false"';
+      return '<a class="news-card static" ' + href + '><div class="news-card-source"><span>' + a.source + '</span><span class="news-date"> · ' + formatStaticDate(a.date) + '</span></div><div class="news-card-title">' + a.title + '</div></a>';
+    }).join('');
+  } else {
+    grid.innerHTML = '<div class="news-loading">Loading news…</div>';
+  }
+
+  // Also fetch live RSS feeds and append any fresh articles found
   const feeds = [
     { url: 'https://businessdailyafrica.com/rss/39546-business-news', name: 'Business Daily', domain: 'businessdailyafrica.com' },
     { url: 'https://www.standardmedia.co.ke/rss/business.php', name: 'The Standard', domain: 'standardmedia.co.ke' },
@@ -701,13 +722,20 @@ async function fetchNews(ticker, companyName) {
   articles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
   articles = articles.slice(0, 5);
   if (articles.length === 0) {
-    grid.innerHTML = '<div class="news-empty">No recent news found for <strong>' + ticker + '</strong> &nbsp;·&nbsp; <a href="https://businessdailyafrica.com/search?q=' + encodeURIComponent(companyName) + '" target="_blank" rel="noopener">Search Business Daily ↗</a></div>';
+    if (!staticNews) {
+      grid.innerHTML = '<div class="news-empty">No recent news found for <strong>' + ticker + '</strong> &nbsp;·&nbsp; <a href="https://businessdailyafrica.com/search?q=' + encodeURIComponent(companyName) + '" target="_blank" rel="noopener">Search Business Daily ↗</a></div>';
+    }
     return;
   }
-  grid.innerHTML = articles.map(a => {
+  const dynamicHtml = articles.map(a => {
     const fav = 'https://www.google.com/s2/favicons?domain=' + a._feed.domain + '&sz=16';
     return '<a class="news-card" href="' + a.link + '" target="_blank" rel="noopener"><div class="news-card-source"><img class="news-favicon" src="' + fav + '" alt=""><span>' + a._feed.name + '</span><span class="news-date"> · ' + timeAgo(a.pubDate) + '</span></div><div class="news-card-title">' + a.title + '</div></a>';
   }).join('');
+  if (staticNews) {
+    grid.innerHTML += dynamicHtml;
+  } else {
+    grid.innerHTML = dynamicHtml;
+  }
 }
 
 // ---- Load Company ----
