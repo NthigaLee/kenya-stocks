@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#050505" />
   <meta name="description" content="NSE Insights - Kenya stock market financial data and analysis dashboard" />
   <title>NSE Insights — Dashboard</title>
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=11" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.1/dist/chartjs-chart-financial.min.js"></script>
@@ -290,9 +290,14 @@
       <!-- Tab navigation -->
       <div class="sd-tabs">
         <button class="sd-tab active" data-tab="overview">Overview</button>
-        <button class="sd-tab" data-tab="profitability">Profitability League</button>
-        <button class="sd-tab" data-tab="efficiency">Core Efficiency</button>
-        <button class="sd-tab" data-tab="deep-dive">Bank Deep Dive</button>
+        <button class="sd-tab" data-tab="profitability">Profitability</button>
+        <button class="sd-tab" data-tab="efficiency">Efficiency</button>
+        <button class="sd-tab" data-tab="balance-sheet">Balance Sheet</button>
+        <button class="sd-tab" data-tab="income-mix">Income Mix</button>
+        <button class="sd-tab" data-tab="deep-dive">Deep Dive</button>
+        <button class="sd-tab" data-tab="head-to-head">Head-to-Head</button>
+        <button class="sd-tab" data-tab="dividends">Pay &amp; Dividends</button>
+        <button class="sd-tab" data-tab="insights">Insights</button>
       </div>
 
       <!-- TAB 1: Overview -->
@@ -353,6 +358,49 @@
         </div>
       </div>
 
+      <!-- TAB 5: Balance Sheet -->
+      <div class="sd-panel hidden" id="sd-tab-balance-sheet">
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <h3>Total Assets — Year on Year</h3>
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-bs-assets"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <h3>Customer Deposits — Year on Year</h3>
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-bs-deposits"></canvas></div>
+          </div>
+        </div>
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <h3>Net Loans &amp; Advances — Year on Year</h3>
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-bs-loans"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <h3>Shareholders' Equity — Year on Year</h3>
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-bs-equity"></canvas></div>
+          </div>
+        </div>
+        <div class="sd-section">
+          <h3>NPL Ratio — Credit Quality</h3>
+          <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-bs-npl"></canvas></div>
+        </div>
+      </div>
+
+      <!-- TAB 6: Income Mix -->
+      <div class="sd-panel hidden" id="sd-tab-income-mix">
+        <div class="sd-section">
+          <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-im-composition"></canvas></div>
+        </div>
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-im-nii-share"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-sq"><canvas id="sd-chart-im-nir-pie"></canvas></div>
+          </div>
+        </div>
+      </div>
+
       <!-- TAB 4: Bank Deep Dive -->
       <div class="sd-panel hidden" id="sd-tab-deep-dive">
         <div class="sd-dd-header">
@@ -373,6 +421,75 @@
         </div>
         <div class="sd-section sd-radar-wrap">
           <div class="sd-chart-wrap sd-chart-sq"><canvas id="sd-chart-radar"></canvas></div>
+        </div>
+      </div>
+
+      <!-- TAB 7: Head-to-Head -->
+      <div class="sd-panel hidden" id="sd-tab-head-to-head">
+        <div class="sd-hth-controls">
+          <div class="sd-section" style="margin-bottom:0.8rem">
+            <h3>Select Companies to Compare</h3>
+            <div id="sd-hth-company-select" class="sd-hth-pills"></div>
+          </div>
+          <div class="sd-hth-metric-bar">
+            <label style="color:#909090;font-size:0.8rem">Chart metric:</label>
+            <select id="sd-hth-metric-select" class="sd-select" style="min-width:160px">
+              <option value="pat">Profit After Tax</option>
+              <option value="revenue">Total Revenue</option>
+              <option value="totalAssets">Total Assets</option>
+              <option value="nii">Net Interest Income</option>
+              <option value="totalEquity">Equity</option>
+            </select>
+          </div>
+        </div>
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <h3>Performance Radar (Peer-Normalised)</h3>
+            <div class="sd-chart-wrap sd-chart-sq"><canvas id="sd-chart-hth-radar"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <h3>Side-by-Side Comparison</h3>
+            <div class="sd-chart-wrap sd-chart-sq"><canvas id="sd-chart-hth-bar"></canvas></div>
+          </div>
+        </div>
+        <div class="sd-section">
+          <h3>Comparison Table</h3>
+          <div class="sd-cmp-table-wrap" id="sd-hth-table"></div>
+        </div>
+      </div>
+
+      <!-- TAB 8: Pay & Dividends -->
+      <div class="sd-panel hidden" id="sd-tab-dividends">
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <h3>Earnings Per Share (EPS)</h3>
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-div-eps"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <h3>Dividend Per Share (DPS)</h3>
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-div-dps"></canvas></div>
+          </div>
+        </div>
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <h3>Payout Ratio</h3>
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-div-payout"></canvas></div>
+          </div>
+          <div class="sd-section" id="sd-div-yield-list">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 9: Insights & Story -->
+      <div class="sd-panel hidden" id="sd-tab-insights">
+        <div class="sd-ins-layout">
+          <div class="sd-ins-sidebar" id="sd-ins-rankings">
+            <!-- Quick rankings populated by JS -->
+          </div>
+          <div class="sd-ins-main" id="sd-ins-story">
+            <!-- Auto-generated narrative populated by JS -->
+          </div>
         </div>
       </div>
     </div>
@@ -433,7 +550,7 @@
   </footer>
 
   <script src="data.js?v=10"></script>
-  <script src="sector-detail.js?v=1"></script>
-  <script src="app.js?v=32"></script>
+  <script src="sector-detail.js?v=2"></script>
+  <script src="app.js?v=33"></script>
 </body>
 </html>

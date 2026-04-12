@@ -2296,8 +2296,8 @@ let _sectorSortCol = null;
 let _sectorSortAsc = true;
 
 function renderSectorTable(sectorName) {
-  // Route sectors with a detail dashboard to the rich view
-  if (sectorName === 'Banking' && typeof window.renderSectorDetail === 'function') {
+  // Route all sectors to the rich sector detail dashboard
+  if (typeof window.renderSectorDetail === 'function') {
     return window.renderSectorDetail(sectorName);
   }
   document.getElementById('sector-grid').style.display = 'none';
