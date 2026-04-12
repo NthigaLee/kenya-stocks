@@ -16,3 +16,7 @@ extract_log.txt
 
 # Claude internal
 .claude/
+
+# Separate projects (not part of kenya-stocks repo)
+global-stocks/
+workspaces/

@@ -402,8 +402,8 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: '#111111',
-          borderColor: 'rgba(0,230,118,0.12)',
+          backgroundColor: '#1a2332',
+          borderColor: '#2a3a4e',
           borderWidth: 1,
           padding: 12,
           titleFont: { size: 12, weight: 'bold' },
@@ -419,12 +419,12 @@ function makeBarChart(canvasId, labels, datasets, opts = {}) {
         }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { color: '#707070', font: { size: 10, weight: 500 } } },
+        x: { grid: { display: false }, ticks: { color: '#5a6a7e', font: { size: 10, weight: 500 } } },
         y: {
-          grid: { color: 'rgba(255, 255, 255, 0.04)', drawTicks: false },
+          grid: { color: 'rgba(30, 45, 61, 0.6)', drawTicks: false },
           border: { display: false },
           ticks: {
-            color: '#707070', font: { size: 10 },
+            color: '#5a6a7e', font: { size: 10 },
             callback: (v) => {
               const u = opts.units;
               if (u === 'millions') {
@@ -577,13 +577,13 @@ function renderPriceChart(ticker, range) {
   if (_priceChartInstance) _priceChartInstance.destroy();
 
   const gradient = ctx.getContext('2d');
-  const gradientFill = gradient.createLinearGradient(0, 0, 0, 220);
+  const gradientFill = gradient.createLinearGradient(0, 0, 0, 320);
   if (isUp) {
-    gradientFill.addColorStop(0, 'rgba(0, 230, 118, 0.25)');
-    gradientFill.addColorStop(1, 'rgba(0, 230, 118, 0.0)');
+    gradientFill.addColorStop(0, 'rgba(16, 185, 129, 0.25)');
+    gradientFill.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
   } else {
-    gradientFill.addColorStop(0, 'rgba(255, 68, 68, 0.25)');
-    gradientFill.addColorStop(1, 'rgba(255, 68, 68, 0.0)');
+    gradientFill.addColorStop(0, 'rgba(239, 68, 68, 0.25)');
+    gradientFill.addColorStop(1, 'rgba(239, 68, 68, 0.0)');
   }
 
   _priceChartInstance = new Chart(ctx, {
@@ -591,7 +591,7 @@ function renderPriceChart(ticker, range) {
     data: {
       datasets: [{
         data: chartData,
-        borderColor: isUp ? '#00e676' : '#ff4444',
+        borderColor: isUp ? '#10b981' : '#ef4444',
         borderWidth: 2,
         fill: true,
         backgroundColor: gradientFill,
@@ -607,8 +607,8 @@ function renderPriceChart(ticker, range) {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: '#111111',
-          borderColor: 'rgba(0,230,118,0.12)',
+          backgroundColor: '#1a2332',
+          borderColor: '#2a3a4e',
           borderWidth: 1,
           padding: 12,
           titleFont: { size: 12, weight: 'bold' },
@@ -638,14 +638,14 @@ function renderPriceChart(ticker, range) {
             }
           },
           grid: { display: false },
-          ticks: { color: '#707070', font: { size: 10, weight: 500 }, maxTicksLimit: 8 },
+          ticks: { color: '#5a6a7e', font: { size: 10, weight: 500 }, maxTicksLimit: 8 },
           border: { display: false },
         },
         y: {
-          grid: { color: 'rgba(255, 255, 255, 0.04)', drawTicks: false },
+          grid: { color: 'rgba(30, 45, 61, 0.6)', drawTicks: false },
           border: { display: false },
           ticks: {
-            color: '#707070',
+            color: '#5a6a7e',
             font: { size: 10 },
             callback: (v) => v.toFixed(v >= 100 ? 0 : 2),
           },
@@ -670,8 +670,7 @@ function loadCompany() {
   document.getElementById('btn-companies').classList.add('active');
   document.getElementById('btn-sectors').classList.remove('active');
   _currentView = 'companies';
-  const bc = document.getElementById('breadcrumb-company');
-  if (bc) bc.textContent = co.ticker + ' | NSE';
+  document.getElementById('breadcrumb-company').textContent = co.ticker + ' | NSE';
   document.getElementById('company-logo').textContent = co.logo || '📈';
   document.getElementById('company-name').textContent = co.name;
   document.getElementById('company-meta').textContent = co.ticker + ' | ' + co.exchange + ' \u00B7 ' + co.sector;
@@ -1163,6 +1162,9 @@ function renderMarketSummary() {
   const companies = Object.entries(NSE_COMPANIES);
   const withPrices = companies.filter(([, c]) => c.latestPrice && c.latestPrice > 0);
 
+  // Stocks tracked
+  document.getElementById('ms-stocks').textContent = companies.length;
+
   // Top gainer & loser
   if (withPrices.length > 0) {
     const sorted = [...withPrices].sort((a, b) => (b[1].priceChangePct || 0) - (a[1].priceChangePct || 0));
@@ -1179,6 +1181,9 @@ function renderMarketSummary() {
     }
     if (NSE_MARKET.topLoser) {
       document.getElementById('ms-loser').textContent = NSE_MARKET.topLoser.ticker + ' ' + NSE_MARKET.topLoser.change_pct.toFixed(1) + '%';
+    }
+    if (NSE_MARKET.stocksTracked) {
+      document.getElementById('ms-stocks').textContent = NSE_MARKET.stocksTracked;
     }
   }
 
@@ -1205,6 +1210,12 @@ function renderMarketSummary() {
     }
   }
 
+  // Most active — pick the company with most data points as a proxy
+  const withData = companies.filter(([, c]) => c.annuals && c.annuals.length > 0);
+  if (withData.length > 0) {
+    const byData = [...withData].sort((a, b) => (b[1].annuals.length + (b[1].quarters || []).length) - (a[1].annuals.length + (a[1].quarters || []).length));
+    document.getElementById('ms-active').textContent = byData[0][0];
+  }
 }
 
 // ---- View Toggle ----

@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSE Insights — Admin Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-base: #090d14;
+    --bg-surface: #111827;
+    --bg-card: #1a2332;
+    --bg-card-hover: #1f2a3c;
+    --border: #1e2d3d;
+    --border-light: #2a3a4e;
+    --text-primary: #f0f4f8;
+    --text-secondary: #8896a8;
+    --text-muted: #5a6a7e;
+    --accent-primary: #10b981;
+    --accent-secondary: #f59e0b;
+    --accent-blue: #3b82f6;
+    --up: #10b981;
+    --down: #ef4444;
+  }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-size: 13px;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LOGIN SCREEN ── */
+  #login-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--bg-base);
+  }
+
+  .login-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px;
+    width: 360px;
+    text-align: center;
+  }
+
+  .login-card h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+  }
+
+  .login-card .subtitle {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .login-input {
+    width: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 10px 14px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 16px;
+  }
+  .login-input:focus { border-color: var(--accent-primary); }
+
+  .login-btn {
+    width: 100%;
+    background: var(--accent-primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .login-btn:hover { opacity: 0.9; }
+
+  .login-error {
+    color: var(--down);
+    font-size: 12px;
+    margin-top: 10px;
+    display: none;
+  }
+
+  /* ── APP LAYOUT ── */
+  #app {
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    height: 56px;
+    min-height: 56px;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    z-index: 100;
+  }
+
+  .topbar-logo {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-primary);
+    white-space: nowrap;
+    margin-right: 4px;
+  }
+
+  .topbar-sep {
+    width: 1px;
+    height: 24px;
+    background: var(--border-light);
+    margin: 0 4px;
+  }
+
+  .topbar-title {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .topbar-spacer { flex: 1; }
+
+  .topbar-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .topbar-stats .stat-val {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-left: 4px;
+  }
+
+  .back-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .back-link:hover { color: var(--text-primary); border-color: var(--border-light); }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .filter-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  .filter-select, .filter-input {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--text-primary);
+    padding: 5px 8px;
+    font-size: 12px;
+    outline: none;
+  }
+  .filter-select:focus, .filter-input:focus { border-color: var(--accent-primary); }
+  .filter-input { width: 140px; }
+
+  .filter-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .filter-pill:hover { border-color: var(--border-light); color: var(--text-primary); }
+  .filter-pill.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #fff;
+  }
+
+  .filter-pill.status-needs_fix.active {
+    background: var(--down);
+    border-color: var(--down);
+  }
+  .filter-pill.status-in_progress.active {
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+    color: #000;
+  }
+  .filter-pill.status-approved.active {
+    background: var(--up);
+    border-color: var(--up);
+  }
+
+  .filter-spacer { flex: 1; }
+
+  .record-count {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ── TABLE PANEL (left) ── */
+  .table-panel {
+    flex: 1;
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    min-width: 0;
+  }
+
+  .records-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .records-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .records-table th {
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 10px;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+  }
+  .records-table th:hover { color: var(--text-secondary); }
+
+  .records-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  .records-table tr {
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .records-table tbody tr:hover { background: var(--bg-card-hover); }
+  .records-table tbody tr.selected { background: var(--bg-card); border-left: 3px solid var(--accent-primary); }
+
+  /* Status dots */
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .status-dot.approved { background: var(--up); }
+  .status-dot.in_progress { background: var(--accent-secondary); }
+  .status-dot.needs_fix { background: var(--down); }
+
+  .status-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .status-badge.unreviewed { background: rgba(90,106,126,0.2); color: var(--text-muted); }
+  .status-badge.approved { background: rgba(16,185,129,0.15); color: var(--up); }
+  .status-badge.in_progress { background: rgba(245,158,11,0.15); color: var(--accent-secondary); }
+  .status-badge.needs_fix { background: rgba(239,68,68,0.15); color: var(--down); }
+
+  .issue-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-size: 10px;
+    background: rgba(239,68,68,0.12);
+    color: var(--down);
+    margin-right: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* ── DETAIL PANEL (right) ── */
+  .detail-panel {
+    width: 420px;
+    min-width: 420px;
+    background: var(--bg-surface);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  .detail-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .detail-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .detail-meta {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .detail-meta span {
+    background: var(--bg-card);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .detail-source {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    word-break: break-all;
+  }
+  .detail-source a { color: var(--accent-blue); text-decoration: none; }
+  .detail-source a:hover { text-decoration: underline; }
+
+  /* Detail fields */
+  .detail-section {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .detail-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent-primary);
+    margin-bottom: 10px;
+  }
+
+  .detail-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .detail-field {
+    background: var(--bg-card);
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  .detail-field-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+
+  .detail-field-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .detail-field-value.null-val {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Issues section */
+  .detail-issues {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .issues-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  /* Review controls */
+  .review-controls {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+    background: var(--bg-surface);
+  }
+
+  .review-controls label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .review-status-select {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 8px 10px;
+    font-size: 13px;
+    outline: none;
+    margin-bottom: 12px;
+  }
+  .review-status-select:focus { border-color: var(--accent-primary); }
+
+  .review-comment {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 8px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 60px;
+    margin-bottom: 12px;
+  }
+  .review-comment:focus { border-color: var(--accent-primary); }
+
+  .review-btn {
+    width: 100%;
+    background: var(--accent-primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .review-btn:hover { opacity: 0.9; }
+  .review-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .review-info {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .toast.success { background: var(--up); color: #fff; }
+  .toast.error { background: var(--down); color: #fff; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .detail-panel { width: 340px; min-width: 340px; }
+    .detail-fields { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    .main-content { flex-direction: column; }
+    .detail-panel { width: 100%; min-width: 0; max-height: 50vh; border-right: none; border-top: 1px solid var(--border); }
+    .table-panel { border-right: none; }
+  }
+
+  /* Sort indicator */
+  .sort-asc::after { content: ' \u25B2'; font-size: 9px; }
+  .sort-desc::after { content: ' \u25BC'; font-size: 9px; }
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen">
+  <div class="login-card">
+    <h1>NSE Insights</h1>
+    <div class="subtitle">Admin Review Panel</div>
+    <input type="password" id="login-password" class="login-input" placeholder="Enter admin password" autofocus>
+    <button class="login-btn" onclick="doLogin()">Sign In</button>
+    <div class="login-error" id="login-error">Invalid password. Try again.</div>
+  </div>
+</div>
+
+<!-- MAIN APP (hidden until login) -->
+<div id="app">
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <span class="topbar-logo">NSE Insights</span>
+    <span class="topbar-sep"></span>
+    <span class="topbar-title">Admin Review</span>
+    <span class="topbar-spacer"></span>
+    <div class="topbar-stats">
+      <span>Total: <span class="stat-val" id="stat-total">0</span></span>
+      <span>Reviewed: <span class="stat-val" id="stat-reviewed">0</span></span>
+      <span>Issues: <span class="stat-val" id="stat-issues">0</span></span>
+    </div>
+    <span class="topbar-sep"></span>
+    <a href="index.html" class="back-link">Back to Dashboard</a>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-label">Ticker</span>
+      <input type="text" class="filter-input" id="filter-ticker" placeholder="e.g. KCB, EQTY" oninput="applyFilters()">
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Year</span>
+      <select class="filter-select" id="filter-year" onchange="applyFilters()">
+        <option value="">All Years</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Period</span>
+      <select class="filter-select" id="filter-period" onchange="applyFilters()">
+        <option value="">All</option>
+        <option value="annual">Annual</option>
+        <option value="quarter">Quarterly</option>
+      </select>
+    </div>
+    <span class="topbar-sep"></span>
+    <div class="filter-group">
+      <span class="filter-pill active" data-filter="all" onclick="setStatusFilter('all')">All</span>
+      <span class="filter-pill status-unreviewed" data-filter="unreviewed" onclick="setStatusFilter('unreviewed')">Unreviewed</span>
+      <span class="filter-pill status-in_progress" data-filter="in_progress" onclick="setStatusFilter('in_progress')">In Progress</span>
+      <span class="filter-pill status-approved" data-filter="approved" onclick="setStatusFilter('approved')">Approved</span>
+      <span class="filter-pill status-needs_fix" data-filter="needs_fix" onclick="setStatusFilter('needs_fix')">Needs Fix</span>
+      <span class="filter-pill status-has_issues" data-filter="has_issues" onclick="setStatusFilter('has_issues')">Has Issues</span>
+    </div>
+    <span class="filter-spacer"></span>
+    <span class="record-count" id="record-count">0 records</span>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Table Panel -->
+    <div class="table-panel">
+      <table class="records-table">
+        <thead>
+          <tr>
+            <th data-sort="review_status" style="width:28px"></th>
+            <th data-sort="ticker">Ticker</th>
+            <th data-sort="company">Company</th>
+            <th data-sort="sector">Sector</th>
+            <th data-sort="year">Year</th>
+            <th data-sort="period_type">Period</th>
+            <th data-sort="review_status">Status</th>
+            <th>Issues</th>
+          </tr>
+        </thead>
+        <tbody id="records-body">
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Detail Panel -->
+    <div class="detail-panel">
+      <div class="detail-empty" id="detail-empty">Select a record to review</div>
+      <div id="detail-content" style="display:none">
+
+        <div class="detail-header">
+          <h2 id="detail-title">—</h2>
+          <div class="detail-meta" id="detail-meta"></div>
+          <div class="detail-source" id="detail-source"></div>
+        </div>
+
+        <!-- Issues -->
+        <div class="detail-issues" id="detail-issues-section" style="display:none">
+          <div class="detail-section-title">Detected Issues</div>
+          <div class="issues-list" id="detail-issues"></div>
+        </div>
+
+        <!-- Profitability -->
+        <div class="detail-section">
+          <div class="detail-section-title">Profitability</div>
+          <div class="detail-fields" id="fields-profitability"></div>
+        </div>
+
+        <!-- Per Share -->
+        <div class="detail-section">
+          <div class="detail-section-title">Per Share</div>
+          <div class="detail-fields" id="fields-pershare"></div>
+        </div>
+
+        <!-- Balance Sheet -->
+        <div class="detail-section">
+          <div class="detail-section-title">Balance Sheet</div>
+          <div class="detail-fields" id="fields-balance"></div>
+        </div>
+
+        <!-- Banking-specific -->
+        <div class="detail-section" id="fields-banking-section" style="display:none">
+          <div class="detail-section-title">Banking Metrics</div>
+          <div class="detail-fields" id="fields-banking"></div>
+        </div>
+
+        <!-- Review Controls -->
+        <div class="review-controls">
+          <label>Review Status</label>
+          <select class="review-status-select" id="review-status">
+            <option value="unreviewed">Unreviewed</option>
+            <option value="in_progress">In Progress</option>
+            <option value="approved">Approved</option>
+            <option value="needs_fix">Needs Fix</option>
+          </select>
+
+          <label>Comment</label>
+          <textarea class="review-comment" id="review-comment" placeholder="Optional notes..."></textarea>
+
+          <button class="review-btn" id="review-btn" onclick="saveReview()">Save Review</button>
+          <div class="review-info" id="review-info"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ──────────────────────────────────────────────
+// Config
+// ──────────────────────────────────────────────
+const API_BASE = window.location.origin;
+let authToken = sessionStorage.getItem('nse_admin_token') || '';
+
+// ──────────────────────────────────────────────
+// State
+// ──────────────────────────────────────────────
+let allRecords = [];
+let filteredRecords = [];
+let selectedRecord = null;
+let currentStatusFilter = 'all';
+let sortColumn = 'ticker';
+let sortDirection = 'asc';
+
+// ──────────────────────────────────────────────
+// Auth
+// ──────────────────────────────────────────────
+async function doLogin() {
+  const pw = document.getElementById('login-password').value;
+  try {
+    const r = await fetch(API_BASE + '/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw })
+    });
+    const data = await r.json();
+    if (data.ok) {
+      authToken = data.token;
+      sessionStorage.setItem('nse_admin_token', authToken);
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('app').style.display = 'flex';
+      await loadRecords();
+    } else {
+      document.getElementById('login-error').style.display = 'block';
+    }
+  } catch (e) {
+    document.getElementById('login-error').textContent = 'Server not reachable. Is review_server.py running?';
+    document.getElementById('login-error').style.display = 'block';
+  }
+}
+
+document.getElementById('login-password').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
+// Auto-login if token exists
+async function tryAutoLogin() {
+  if (!authToken) return;
+  try {
+    const r = await fetch(API_BASE + '/api/records', {
+      headers: { 'Authorization': 'Bearer ' + authToken }
+    });
+    if (r.ok) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('app').style.display = 'flex';
+      const data = await r.json();
+      allRecords = data.records || [];
+      populateYearFilter();
+      applyFilters();
+      updateStats();
+    } else {
+      sessionStorage.removeItem('nse_admin_token');
+      authToken = '';
+    }
+  } catch (e) { /* server not running */ }
+}
+
+// ──────────────────────────────────────────────
+// Data loading
+// ──────────────────────────────────────────────
+async function loadRecords() {
+  try {
+    const r = await fetch(API_BASE + '/api/records', {
+      headers: { 'Authorization': 'Bearer ' + authToken }
+    });
+    if (!r.ok) throw new Error('Failed to load records');
+    const data = await r.json();
+    allRecords = data.records || [];
+    populateYearFilter();
+    applyFilters();
+    updateStats();
+  } catch (e) {
+    showToast('Failed to load records: ' + e.message, 'error');
+  }
+}
+
+function populateYearFilter() {
+  const years = [...new Set(allRecords.map(r => r.year).filter(Boolean))].sort((a, b) => b - a);
+  const sel = document.getElementById('filter-year');
+  sel.innerHTML = '<option value="">All Years</option>';
+  for (const y of years) {
+    sel.innerHTML += `<option value="${y}">${y}</option>`;
+  }
+}
+
+// ──────────────────────────────────────────────
+// Filtering & sorting
+// ──────────────────────────────────────────────
+function applyFilters() {
+  const ticker = document.getElementById('filter-ticker').value.toUpperCase().trim();
+  const year = document.getElementById('filter-year').value;
+  const period = document.getElementById('filter-period').value;
+
+  filteredRecords = allRecords.filter(r => {
+    if (ticker && !r.ticker.toUpperCase().includes(ticker)) return false;
+    if (year && String(r.year) !== year) return false;
+    if (period && r.period_type !== period) return false;
+    if (currentStatusFilter === 'has_issues') return r.issues.length > 0;
+    if (currentStatusFilter !== 'all' && r.review_status !== currentStatusFilter) return false;
+    return true;
+  });
+
+  sortRecords();
+  renderTable();
+  document.getElementById('record-count').textContent = `${filteredRecords.length} records`;
+}
+
+function setStatusFilter(f) {
+  currentStatusFilter = f;
+  document.querySelectorAll('.filter-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.filter === f);
+  });
+  applyFilters();
+}
+
+function sortRecords() {
+  filteredRecords.sort((a, b) => {
+    let va = a[sortColumn] ?? '';
+    let vb = b[sortColumn] ?? '';
+    if (sortColumn === 'year') {
+      va = va || 0;
+      vb = vb || 0;
+      return sortDirection === 'asc' ? va - vb : vb - va;
+    }
+    va = String(va).toLowerCase();
+    vb = String(vb).toLowerCase();
+    if (va < vb) return sortDirection === 'asc' ? -1 : 1;
+    if (va > vb) return sortDirection === 'asc' ? 1 : -1;
+    return 0;
+  });
+}
+
+function handleSort(col) {
+  if (sortColumn === col) {
+    sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+  } else {
+    sortColumn = col;
+    sortDirection = 'asc';
+  }
+  // Update header indicators
+  document.querySelectorAll('.records-table th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (th.dataset.sort === col) {
+      th.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+    }
+  });
+  applyFilters();
+}
+
+// Attach sort handlers
+document.querySelectorAll('.records-table th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => handleSort(th.dataset.sort));
+});
+
+// ──────────────────────────────────────────────
+// Table rendering
+// ──────────────────────────────────────────────
+function renderTable() {
+  const tbody = document.getElementById('records-body');
+  tbody.innerHTML = '';
+
+  for (const rec of filteredRecords) {
+    const tr = document.createElement('tr');
+    if (selectedRecord && selectedRecord.key === rec.key) tr.classList.add('selected');
+    tr.onclick = () => selectRecord(rec);
+
+    const dotClass = rec.review_status !== 'unreviewed' ? ' ' + rec.review_status : '';
+    const issueCount = rec.issues.length;
+
+    tr.innerHTML = `
+      <td><span class="status-dot${dotClass}"></span></td>
+      <td><strong>${rec.ticker}</strong></td>
+      <td title="${rec.company}">${rec.company}</td>
+      <td>${rec.sector || '—'}</td>
+      <td>${rec.year || '—'}</td>
+      <td>${rec.period_type || '—'}</td>
+      <td><span class="status-badge ${rec.review_status}">${rec.review_status.replace('_', ' ')}</span></td>
+      <td>${issueCount > 0 ? `<span class="issue-tag">${issueCount} issue${issueCount > 1 ? 's' : ''}</span>` : ''}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+// ──────────────────────────────────────────────
+// Detail panel
+// ──────────────────────────────────────────────
+function selectRecord(rec) {
+  selectedRecord = rec;
+  renderTable(); // update selection highlight
+
+  document.getElementById('detail-empty').style.display = 'none';
+  document.getElementById('detail-content').style.display = 'block';
+
+  // Header
+  document.getElementById('detail-title').textContent = `${rec.ticker} — ${rec.company}`;
+
+  const meta = document.getElementById('detail-meta');
+  meta.innerHTML = '';
+  if (rec.sector) meta.innerHTML += `<span>${rec.sector}</span>`;
+  if (rec.year) meta.innerHTML += `<span>${rec.year}</span>`;
+  if (rec.period_type) meta.innerHTML += `<span>${rec.period_type}</span>`;
+  if (rec.period) meta.innerHTML += `<span>${rec.period}</span>`;
+
+  const source = document.getElementById('detail-source');
+  if (rec.url) {
+    source.innerHTML = `Source: <a href="${rec.url}" target="_blank">${rec.source_file || rec.url}</a>`;
+  } else if (rec.source_file) {
+    source.textContent = `Source: ${rec.source_file}`;
+  } else {
+    source.textContent = '';
+  }
+
+  // Issues
+  const issuesSec = document.getElementById('detail-issues-section');
+  const issuesList = document.getElementById('detail-issues');
+  if (rec.issues.length > 0) {
+    issuesSec.style.display = 'block';
+    issuesList.innerHTML = rec.issues.map(i => `<span class="issue-tag">${i}</span>`).join('');
+  } else {
+    issuesSec.style.display = 'none';
+  }
+
+  // Profitability fields
+  renderDetailFields('fields-profitability', [
+    ['Revenue', rec.data.revenue],
+    ['Profit Before Tax', rec.data.profit_before_tax],
+    ['Profit After Tax', rec.data.profit_after_tax],
+    ['EBITDA', rec.data.ebitda],
+  ]);
+
+  // Per share
+  renderDetailFields('fields-pershare', [
+    ['Basic EPS', rec.data.basic_eps],
+    ['Dividend/Share', rec.data.dividend_per_share],
+  ]);
+
+  // Balance sheet
+  renderDetailFields('fields-balance', [
+    ['Total Assets', rec.data.total_assets],
+    ['Total Equity', rec.data.total_equity],
+    ['Operating Cash Flow', rec.data.operating_cash_flow],
+    ['Capex', rec.data.capex],
+  ]);
+
+  // Banking metrics
+  const isBanking = rec.sector === 'Banking';
+  const bankingSection = document.getElementById('fields-banking-section');
+  if (isBanking) {
+    bankingSection.style.display = 'block';
+    renderDetailFields('fields-banking', [
+      ['Net Interest Income', rec.data.net_interest_income],
+      ['Customer Deposits', rec.data.customer_deposits],
+      ['Loans & Advances', rec.data.loans_and_advances],
+      ['M-Pesa Revenue', rec.data.mpesa_revenue],
+    ]);
+  } else {
+    bankingSection.style.display = 'none';
+  }
+
+  // Review controls
+  document.getElementById('review-status').value = rec.review_status;
+  document.getElementById('review-comment').value = rec.review_comment || '';
+
+  // Review info
+  const info = document.getElementById('review-info');
+  if (rec.reviewed_at) {
+    const d = new Date(rec.reviewed_at);
+    info.textContent = `Last reviewed: ${d.toLocaleDateString()} ${d.toLocaleTimeString()} by ${rec.reviewed_by || 'admin'}`;
+  } else {
+    info.textContent = '';
+  }
+}
+
+function renderDetailFields(containerId, fields) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  for (const [label, value] of fields) {
+    const isNull = value === null || value === undefined;
+    container.innerHTML += `
+      <div class="detail-field">
+        <div class="detail-field-label">${label}</div>
+        <div class="detail-field-value${isNull ? ' null-val' : ''}">${isNull ? 'N/A' : fmtNum(value)}</div>
+      </div>
+    `;
+  }
+}
+
+function fmtNum(v) {
+  if (v === null || v === undefined) return 'N/A';
+  const n = parseFloat(v);
+  if (isNaN(n)) return v;
+  if (Math.abs(n) >= 1000) return n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+  return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// ──────────────────────────────────────────────
+// Save review
+// ──────────────────────────────────────────────
+async function saveReview() {
+  if (!selectedRecord) return;
+
+  const status = document.getElementById('review-status').value;
+  const comment = document.getElementById('review-comment').value.trim();
+  const btn = document.getElementById('review-btn');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  try {
+    const r = await fetch(API_BASE + '/api/review', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + authToken,
+      },
+      body: JSON.stringify({
+        key: selectedRecord.key,
+        status: status,
+        comment: comment,
+      })
+    });
+
+    if (!r.ok) throw new Error('Server error');
+    const data = await r.json();
+
+    // Update local state
+    selectedRecord.review_status = status;
+    selectedRecord.review_comment = comment;
+    selectedRecord.reviewed_by = 'admin';
+    selectedRecord.reviewed_at = new Date().toISOString();
+
+    // Also update in allRecords
+    const idx = allRecords.findIndex(r => r.key === selectedRecord.key);
+    if (idx >= 0) {
+      allRecords[idx].review_status = status;
+      allRecords[idx].review_comment = comment;
+      allRecords[idx].reviewed_by = 'admin';
+      allRecords[idx].reviewed_at = selectedRecord.reviewed_at;
+    }
+
+    renderTable();
+    selectRecord(selectedRecord);
+    updateStats();
+    showToast(`Marked as ${status.replace('_', ' ')}`, 'success');
+  } catch (e) {
+    showToast('Save failed: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Save Review';
+  }
+}
+
+// ──────────────────────────────────────────────
+// Stats
+// ──────────────────────────────────────────────
+function updateStats() {
+  const total = allRecords.length;
+  const reviewed = allRecords.filter(r => r.review_status !== 'unreviewed').length;
+  const issues = allRecords.filter(r => r.issues.length > 0).length;
+
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-reviewed').textContent = reviewed;
+  document.getElementById('stat-issues').textContent = issues;
+}
+
+// ──────────────────────────────────────────────
+// Toast
+// ──────────────────────────────────────────────
+function showToast(msg, type = 'success') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `toast ${type} show`;
+  setTimeout(() => { el.className = 'toast'; }, 2800);
+}
+
+// ──────────────────────────────────────────────
+// Init
+// ──────────────────────────────────────────────
+tryAutoLogin();
+</script>
+</body>
+</html>
