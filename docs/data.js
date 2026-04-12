@@ -1,0 +1,5153 @@
+// Auto-generated on 2026-04-09
+// Do not edit manually
+
+const NSE_COMPANIES = {
+  "ABSA": {
+    "name": "ABSA Bank Kenya",
+    "ticker": "ABSA",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "Absa Bank Kenya is a subsidiary of South Africa's Absa Group Limited, rebranded from Barclays Bank of Kenya in February 2020, offering retail, corporate, and investment banking services across its nationwide branch and digital network.",
+    "staticNews": [
+      {
+        "title": "Absa Bank Kenya profit jumps 28% to Sh20.9bn on higher interest income",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-12"
+      },
+      {
+        "title": "Absa Kenya to pay Sh1.75 dividend per share after record annual profit",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-03-15"
+      },
+      {
+        "title": "Absa Kenya launches new SME lending programme targeting micro businesses",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2024-09-18"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 62323309.0,
+      "pat": 20875701.0,
+      "pbt": 29719669.0,
+      "nii": 46227774.0,
+      "eps": 3.84,
+      "dps": 1.75,
+      "deposits": 367114721.0,
+      "loans": 309097555.0,
+      "totalAssets": 506476258.0,
+      "totalEquity": 85204206.0,
+      "interestIncome": 64727000,
+      "interestExpense": 18499000,
+      "loanLossProvision": 7761000,
+      "provisionToInterestIncome": 12.0,
+      "totalOpex": 23508000,
+      "costToIncomeRatio": 37.7
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 62323309.0,
+        "pat": 20875701.0,
+        "pbt": 29719669.0,
+        "nii": 46227774.0,
+        "eps": 3.84,
+        "dps": 1.75,
+        "deposits": 367114721.0,
+        "loans": 309097555.0,
+        "totalAssets": 506476258.0,
+        "totalEquity": 85204206.0,
+        "interestIncome": 64727000,
+        "interestExpense": 18499000,
+        "loanLossProvision": 7761000,
+        "provisionToInterestIncome": 12.0,
+        "totalOpex": 23508000,
+        "costToIncomeRatio": 37.7
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 54571303.0,
+        "pat": 16367329.0,
+        "pbt": 23678091.0,
+        "nii": 40043785.0,
+        "eps": 3.01,
+        "dps": 1.55,
+        "totalAssets": 519795508.0,
+        "totalEquity": 69195210.0,
+        "deposits": 362749279.0,
+        "loans": 335713679.0,
+        "interestIncome": 54263000,
+        "interestExpense": 14219000,
+        "loanLossProvision": 8374000,
+        "provisionToInterestIncome": 15.4,
+        "totalOpex": 21651000,
+        "costToIncomeRatio": 39.7
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 46000000.0,
+        "pat": 14600000.0,
+        "nii": 32300000.0,
+        "eps": 2.7,
+        "dps": 1.35,
+        "totalAssets": 477200000.0,
+        "deposits": 303800000.0,
+        "loans": 283600000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 36900000.0,
+        "pat": 10900000.0,
+        "pbt": 8299860.0,
+        "nii": 23280874.0,
+        "eps": 2.0,
+        "dps": 1.1,
+        "totalAssets": 429000000.0,
+        "totalEquity": 44969283.0,
+        "deposits": 269000000.0,
+        "loans": 234000000.0,
+        "loanLossProvision": 12908863,
+        "nonInterestIncome": 10618913
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 34500000.0,
+        "pat": 4200000.0,
+        "pbt": 5100000.0,
+        "nii": 23400000.0,
+        "eps": 0.8,
+        "dps": 0.0,
+        "totalAssets": 394000000.0,
+        "totalEquity": 55800000.0,
+        "deposits": 295000000.0,
+        "loans": 208900000.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 33800000.0,
+        "pat": 7500000.0,
+        "nii": 23200000.0,
+        "eps": 1.4
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "Q3 2025",
+        "periodType": "quarter",
+        "eps": 2.54,
+        "dps": 1.75
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "eps": 1.42,
+        "dps": 0.2
+      },
+      {
+        "year": 2024,
+        "period": "Q1 2024",
+        "periodType": "quarter",
+        "eps": 0.76,
+        "dps": 1.55
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "eps": 1.09,
+        "dps": 0.2
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "pbt": 3211868.0,
+        "eps": 0.42,
+        "dps": 1.1
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "eps": 0.98,
+        "dps": 1.1
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 28144.0,
+        "totalAssets": 568015.0,
+        "totalEquity": 356582.0
+      }
+    ]
+  },
+  "BAMB": {
+    "name": "Bamburi Cement",
+    "ticker": "BAMB",
+    "exchange": "NSE",
+    "sector": "Manufacturing",
+    "logo": "🏗️",
+    "description": "Bamburi Cement was East Africa's largest cement manufacturer and part of the global Holcim Group until 2024, when Holcim divested its majority stake through a competitive process, with operations in Kenya and Uganda producing Portland cement and construction solutions.",
+    "staticNews": [
+      {
+        "title": "Savannah Clinker wins Bamburi Cement takeover bid after Holcim exit",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-05"
+      },
+      {
+        "title": "Bamburi Cement shareholders approve Holcim divestiture at Sh65 per share",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-18"
+      },
+      {
+        "title": "Bamburi Cement half-year profit dips as competition intensifies in East Africa",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-08-22"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2020,
+      "period": "FY2020",
+      "periodType": "annual",
+      "revenue": 34884.0,
+      "pat": 1129.0,
+      "pbt": 1776.0
+    },
+    "annuals": [
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 34884.0,
+        "pat": 1129.0,
+        "pbt": 1776.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 10904.0,
+        "pat": -877.0,
+        "pbt": 695.0
+      }
+    ]
+  },
+  "BATK": {
+    "name": "BAT Kenya",
+    "ticker": "BATK",
+    "exchange": "NSE",
+    "sector": "Consumer Goods",
+    "logo": "🚬",
+    "description": "British American Tobacco Kenya manufactures and markets tobacco products including Dunhill, Embassy, Sportsman, and Pall Mall cigarettes under licence, holding a dominant share of Kenya's formally regulated tobacco market.",
+    "staticNews": [
+      {
+        "title": "BAT Kenya raises cigarette prices as excise duty burden increases in Finance Act",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-07-15"
+      },
+      {
+        "title": "BAT Kenya profit declines as illicit trade and regulatory pressure weigh on volumes",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-03-10"
+      },
+      {
+        "title": "BAT Kenya to pay final dividend as volumes remain under pressure from sin taxes",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-04-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 25557000.0,
+      "pat": 5568000.0,
+      "pbt": 8022000.0,
+      "eps": 55.68,
+      "dps": 50.0,
+      "totalEquity": 16250000.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 25557000.0,
+        "pat": 5568000.0,
+        "pbt": 8022000.0,
+        "eps": 55.68,
+        "dps": 50.0,
+        "totalEquity": 16250000.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 27378000.0,
+        "pat": 6892000.0,
+        "pbt": 9913000.0,
+        "eps": 68.92,
+        "dps": 57.0,
+        "totalEquity": 16382000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 21864000.0,
+        "pat": 2925000.0,
+        "eps": 29.25
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 16615000.0,
+        "pat": 2679000.0,
+        "pbt": 3666000.0,
+        "eps": 26.79
+      }
+    ]
+  },
+  "BKG": {
+    "name": "BK Group",
+    "ticker": "BKG",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "BK Group (Bank of Kigali Group) is Rwanda's largest bank by assets and profitability, cross-listed on both the Nairobi Securities Exchange and Rwanda Stock Exchange, offering retail, corporate, and digital banking services across East Africa.",
+    "staticNews": [
+      {
+        "title": "BK Group Rwanda posts strong annual profit driven by loan book growth",
+        "url": "",
+        "source": "The East African",
+        "date": "2025-03-08"
+      },
+      {
+        "title": "Bank of Kigali expands digital banking with new mobile platform for retail customers",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-14"
+      },
+      {
+        "title": "BK Group declares dividend as Rwanda economy sustains growth momentum",
+        "url": "",
+        "source": "The East African",
+        "date": "2025-03-20"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "eps": 97.8,
+      "totalAssets": 2522.0,
+      "totalEquity": 2522.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "eps": 97.8,
+        "totalAssets": 2522.0,
+        "totalEquity": 2522.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "pbt": 501.0,
+        "totalAssets": 2127.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "eps": 57.4,
+        "totalAssets": 1590.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "May2025",
+        "periodType": "unknown",
+        "pat": 2024.0,
+        "pbt": 2024.0,
+        "eps": 108.2,
+        "totalAssets": 2606.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "pat": 2022.0,
+        "totalAssets": 1699.0
+      }
+    ]
+  },
+  "BOC": {
+    "name": "BOC Kenya",
+    "ticker": "BOC",
+    "exchange": "NSE",
+    "sector": "Manufacturing",
+    "logo": "🏭",
+    "description": "BOC Kenya, a subsidiary of global industrial gases leader Linde PLC, manufactures and distributes industrial, medical, and special gases including oxygen, nitrogen, argon, and acetylene to healthcare, manufacturing, and energy sector clients across East Africa.",
+    "staticNews": [
+      {
+        "title": "BOC Kenya declares special dividend as earnings improve on industrial demand",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-09-10"
+      },
+      {
+        "title": "BOC Kenya half-year profit rises on medical oxygen supply contracts",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-08-20"
+      },
+      {
+        "title": "BOC Kenya invests in new gas cylinder infrastructure to meet growing demand",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2024-11-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 1539342.0,
+      "pat": 198058.0,
+      "pbt": 309081.0,
+      "eps": 10.14,
+      "totalAssets": 39366.0,
+      "totalEquity": 1807496.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 1539342.0,
+        "pat": 198058.0,
+        "pbt": 309081.0,
+        "eps": 10.14,
+        "totalAssets": 39366.0,
+        "totalEquity": 1807496.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 1098104.0,
+        "pat": 101656.0,
+        "pbt": 156271.0,
+        "eps": 5.21,
+        "totalAssets": 35883.0,
+        "totalEquity": 1607568.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 589987.0,
+        "pat": 50360.0,
+        "pbt": 71635.0,
+        "eps": 2.58,
+        "totalAssets": 602.0,
+        "totalEquity": 1743492.0
+      }
+    ]
+  },
+  "BRIT": {
+    "name": "Britam Holdings",
+    "ticker": "BRIT",
+    "exchange": "NSE",
+    "sector": "Insurance",
+    "logo": "🛡️",
+    "description": "Britam Holdings is a diversified financial services group headquartered in Nairobi, offering life insurance, general insurance, health insurance, and asset management products across Kenya, Uganda, Tanzania, Rwanda, South Sudan, Malawi, and Mozambique.",
+    "staticNews": [
+      {
+        "title": "Britam Holdings swings to profit after years of restructuring and cost cuts",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-14"
+      },
+      {
+        "title": "Britam Kenya health insurance premiums rise sharply on growing medical cover demand",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-11-20"
+      },
+      {
+        "title": "Britam plans capital raise to strengthen balance sheet after tough years",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-09-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 37600000.0,
+      "pat": 5030000.0,
+      "pbt": 7330000.0,
+      "eps": 1.98,
+      "dps": 0.0,
+      "totalAssets": 208500000.0,
+      "totalEquity": 29460000.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 37600000.0,
+        "pat": 5030000.0,
+        "pbt": 7330000.0,
+        "eps": 1.98,
+        "dps": 0.0,
+        "totalAssets": 208500000.0,
+        "totalEquity": 29460000.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 36436197.0,
+        "pat": 3279119.0,
+        "pbt": 4819495.0,
+        "totalAssets": 174393970.0,
+        "totalEquity": 25688397.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 38200000.0,
+        "pat": 1690000.0,
+        "dps": 0.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "pat": 72000.0,
+        "dps": 0.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 17807972.0,
+        "pat": 2012920.0,
+        "pbt": 13271323.0,
+        "eps": 0.8,
+        "totalAssets": 188823941.0,
+        "totalEquity": 26595507.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 22700000.0,
+        "pat": 400000.0,
+        "pbt": 700000.0,
+        "eps": 0.15,
+        "totalAssets": 221000000.0,
+        "totalEquity": 27000000.0
+      }
+    ]
+  },
+  "CARB": {
+    "name": "Carbacid",
+    "ticker": "CARB",
+    "exchange": "NSE",
+    "sector": "Consumer Goods",
+    "logo": "🏭",
+    "description": "Carbacid Investments is Kenya's sole producer of food-grade and industrial carbon dioxide gas, supplying carbonated beverage manufacturers, food processors, fire suppression systems, and metal fabrication industries from its plant in Kereita, Kiambu.",
+    "staticNews": [
+      {
+        "title": "Carbacid Investments profit rises on higher demand from carbonated beverage sector",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-08"
+      },
+      {
+        "title": "Carbacid announces dividend as strong cash flows from gas supply continue",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-15"
+      },
+      {
+        "title": "Carbacid to expand CO2 capacity as EABL and Coca-Cola demand grows",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-07-22"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2025,
+      "period": "FY2025",
+      "periodType": "annual",
+      "revenue": 2099850.0,
+      "pat": 1002914.0,
+      "pbt": 1288564.0,
+      "eps": 3.94,
+      "totalEquity": 6033183.0
+    },
+    "annuals": [
+      {
+        "year": 2025,
+        "period": "FY2025",
+        "periodType": "annual",
+        "revenue": 2099850.0,
+        "pat": 1002914.0,
+        "pbt": 1288564.0,
+        "eps": 3.94,
+        "totalEquity": 6033183.0
+      },
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 2066315.0,
+        "pat": 354492.0,
+        "pbt": 1123758.0,
+        "eps": 3.2
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 630500.0,
+        "pat": 264589.0,
+        "pbt": 377153.0,
+        "eps": 262.0,
+        "totalEquity": 3335544.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "Jan2024",
+        "periodType": "unknown",
+        "revenue": 1080477.0,
+        "pat": 485162.0,
+        "pbt": 646882.0,
+        "eps": 1.9,
+        "totalEquity": 4912418.0
+      },
+      {
+        "year": 2023,
+        "period": "Jan2023",
+        "periodType": "unknown",
+        "revenue": 855525.0,
+        "pat": 411650.0,
+        "pbt": 548867.0,
+        "eps": 1.62,
+        "totalEquity": 4121429.0
+      },
+      {
+        "year": 2022,
+        "period": "Jan2022",
+        "periodType": "unknown",
+        "revenue": 701615.0,
+        "pat": 360747.0,
+        "pbt": 457978.0,
+        "eps": 1.42,
+        "totalEquity": 3661287.0
+      },
+      {
+        "year": 2021,
+        "period": "Jan2021",
+        "periodType": "unknown",
+        "revenue": 449652.0,
+        "pat": 210415.0,
+        "pbt": 276710.0,
+        "eps": 0.83,
+        "dps": 0.0,
+        "totalEquity": 3654952.0
+      },
+      {
+        "year": 2020,
+        "period": "Jan2020",
+        "periodType": "unknown",
+        "revenue": 352912.0,
+        "pat": 178688.0,
+        "pbt": 232585.0,
+        "eps": 0.7,
+        "totalEquity": 3514232.0
+      }
+    ]
+  },
+  "CFC": {
+    "name": "Stanbic Holdings",
+    "ticker": "CFC",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "Stanbic Bank Kenya (listed as CFC Stanbic Holdings) is a subsidiary of South Africa's Standard Bank Group, providing corporate banking, investment banking, personal banking, and wealth management services to businesses and individuals across Kenya.",
+    "staticNews": [
+      {
+        "title": "Stanbic Bank Kenya profit rises on strong corporate banking income growth",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-19"
+      },
+      {
+        "title": "CFC Stanbic targets infrastructure financing deals as Kenya economy recovers",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-22"
+      },
+      {
+        "title": "Stanbic Kenya expands trade finance offering for SME exporters in East Africa",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-08-14"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 39743682.0,
+      "pat": 13715652.0,
+      "pbt": 18970787.0,
+      "dps": 20.74,
+      "nii": 24338174.0,
+      "eps": 34.7,
+      "totalAssets": 454834386.0,
+      "totalEquity": 75400572.0,
+      "deposits": 339011716.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 39743682.0,
+        "pat": 13715652.0,
+        "pbt": 18970787.0,
+        "dps": 20.74,
+        "nii": 24338174.0,
+        "eps": 34.7,
+        "totalAssets": 454834386.0,
+        "totalEquity": 75400572.0,
+        "deposits": 339011716.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 41316426.0,
+        "pat": 12157619.0,
+        "pbt": 17093925.0,
+        "eps": 30.75,
+        "dps": 15.35,
+        "totalAssets": 459283854.0,
+        "totalEquity": 68554365.0,
+        "nii": 25647468.0,
+        "deposits": 347237384.0,
+        "loanLossProvision": 6235752,
+        "totalOpex": 17986749,
+        "costToIncomeRatio": 43.5
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 28900000.0,
+        "pat": 9100000.0,
+        "nii": 18900000.0,
+        "eps": 23.02,
+        "dps": 12.6,
+        "totalAssets": 400000000.0,
+        "deposits": 272000000.0,
+        "loans": 236000000.0,
+        "loanLossProvision": 4943581,
+        "totalOpex": 14967968,
+        "costToIncomeRatio": 51.8
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 37579030.0,
+        "pat": 7200000.0,
+        "pbt": 9755739.0,
+        "eps": 18.22,
+        "dps": 9.0,
+        "totalAssets": 329000000.0,
+        "totalEquity": 56453027.0,
+        "deposits": 242000000.0,
+        "loans": 185000000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 32856959.0,
+        "pat": 5180000.0,
+        "pbt": 6227154.0,
+        "eps": 13.1,
+        "dps": 3.8,
+        "totalAssets": 329000000.0,
+        "totalEquity": 51730956.0,
+        "deposits": 247000000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year",
+        "revenue": 19448635.0,
+        "pat": 6544626.0,
+        "pbt": 8607882.0,
+        "eps": 16.56,
+        "dps": 3.8,
+        "totalAssets": 473718726.0,
+        "totalEquity": 74265288.0,
+        "nii": 11827333.0,
+        "deposits": 350425398.0
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 20110998.0,
+        "pat": 7213728.0,
+        "pbt": 10028527.0,
+        "eps": 18.25,
+        "dps": 1.84,
+        "totalAssets": 497930344.0,
+        "totalEquity": 69360627.0,
+        "nii": 12553429.0,
+        "deposits": 387574113.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 45076942.0,
+        "pat": 17500.0,
+        "pbt": 9734483.0,
+        "eps": 17.84,
+        "dps": 1.15,
+        "totalAssets": 384280167.0,
+        "totalEquity": 63950939.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 39316066.0,
+        "pat": 4796402.0,
+        "eps": 12.13,
+        "dps": 9.0,
+        "totalAssets": 341579507.0,
+        "totalEquity": 58190063.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 12400000.0,
+        "pat": 3900000.0,
+        "pbt": 5600000.0,
+        "nii": 6800000.0,
+        "eps": 9.75,
+        "totalAssets": 313000000.0,
+        "totalEquity": 48500000.0,
+        "deposits": 234000000.0,
+        "loans": 174000000.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 2020.0,
+        "pat": 2553005.0,
+        "pbt": 4130700.0,
+        "eps": 6.46,
+        "dps": 7.05,
+        "totalAssets": 361504509.0,
+        "totalEquity": 49338543.0
+      }
+    ]
+  },
+  "COOP": {
+    "name": "Co-operative Bank of Kenya",
+    "ticker": "COOP",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "Co-operative Bank of Kenya is the country's third-largest bank by assets, majority-owned by Kenya's co-operative societies, with a nationwide network of over 180 branches and the MCo-op Cash mobile banking platform serving over 10 million customers.",
+    "staticNews": [
+      {
+        "title": "Co-operative Bank profit hits record Sh24bn driven by MCo-op Cash digital growth",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-19"
+      },
+      {
+        "title": "Co-op Bank to pay Sh1 dividend per share after strong 2024 performance",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-03-20"
+      },
+      {
+        "title": "MCo-op Cash transactions surpass Sh500bn milestone as digital banking expands",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2024-11-12"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 80647429.0,
+      "pat": 25456345.0,
+      "pbt": 34780319.0,
+      "nii": 51521883.0,
+      "eps": 4.33,
+      "dps": 1.5,
+      "totalAssets": 743190144.0,
+      "totalEquity": 145380078.0,
+      "deposits": 506112147.0,
+      "loans": 373732927.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 80647429.0,
+        "pat": 25456345.0,
+        "pbt": 34780319.0,
+        "nii": 51521883.0,
+        "eps": 4.33,
+        "dps": 1.5,
+        "totalAssets": 743190144.0,
+        "totalEquity": 145380078.0,
+        "deposits": 506112147.0,
+        "loans": 373732927.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 71692630.0,
+        "pat": 23188367.0,
+        "pbt": 32363849.0,
+        "nii": 45230881.0,
+        "eps": 3.92,
+        "dps": 1.5,
+        "totalAssets": 671131286.0,
+        "totalEquity": 113558596.0,
+        "deposits": 451642048.0,
+        "loans": 374227421.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 71254875.0,
+        "pat": 22038168.0,
+        "pbt": 29427223.0,
+        "nii": 45524941.0,
+        "eps": 3.72,
+        "dps": 1.5,
+        "totalAssets": 607197718.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 53800000.0,
+        "pat": 16500000.0,
+        "eps": 2.81,
+        "totalAssets": 579800000.0,
+        "totalEquity": 100200000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 48500000.0,
+        "pat": 10800000.0,
+        "pbt": 14300000.0,
+        "eps": 1.84,
+        "dps": 1.0,
+        "totalAssets": 537000000.0,
+        "totalEquity": 90700000.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "pat": 14200000.0,
+        "pbt": 19600000.0,
+        "eps": 2.42
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "9M Sep2025",
+        "periodType": "nine_month",
+        "revenue": 67383790.0,
+        "pat": 21564722.0,
+        "pbt": 30025832.0,
+        "nii": 45277770.0,
+        "eps": 3.68,
+        "dps": 1.0,
+        "totalAssets": 815266710.0,
+        "totalEquity": 164162107.0,
+        "deposits": 548575643.0,
+        "loans": 406524191.0
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 45200000.0,
+        "pat": 12400000.0,
+        "pbt": 17300000.0,
+        "nii": 27600000.0,
+        "eps": 2.12,
+        "totalAssets": 678000000.0,
+        "totalEquity": 108000000.0,
+        "deposits": 460000000.0,
+        "loans": 373000000.0
+      },
+      {
+        "year": 2024,
+        "period": "Q1 2024",
+        "periodType": "quarter",
+        "eps": 12.0,
+        "dps": 14.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "pat": 9445250.0,
+        "pbt": 9445250.0,
+        "eps": 2.08,
+        "dps": 1.5,
+        "totalAssets": 9445250.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 1270736.0,
+        "pat": 485298.0,
+        "pbt": 485298.0,
+        "totalAssets": 24998609.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "eps": 0.99,
+        "dps": 8.0
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "eps": 1.67,
+        "dps": 1.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 30700000.0,
+        "pat": 5400000.0,
+        "pbt": 7800000.0,
+        "nii": 19200000.0,
+        "eps": 0.92,
+        "totalAssets": 486000000.0,
+        "totalEquity": 73500000.0,
+        "deposits": 353000000.0,
+        "loans": 291000000.0
+      },
+      {
+        "year": 2015,
+        "period": "Q1 2015",
+        "periodType": "quarter",
+        "revenue": 602845.0,
+        "pat": -12439.0,
+        "totalAssets": 644890.0,
+        "totalEquity": 206024.0
+      }
+    ]
+  },
+  "CPKL": {
+    "name": "Crown Paints",
+    "ticker": "CPKL",
+    "exchange": "NSE",
+    "sector": "Manufacturing",
+    "logo": "🎨",
+    "description": "Centum Investment is a leading pan-African investment holding company listed on the NSE, with a diversified portfolio spanning private equity stakes, real estate development at the Two Rivers precinct in Nairobi, and fast-moving consumer goods businesses.",
+    "staticNews": [
+      {
+        "title": "Centum Investment plans divestiture of non-core assets to reduce group debt burden",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-25"
+      },
+      {
+        "title": "Centum Two Rivers Mall occupancy rises as Nairobi retail sector rebounds",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-09-16"
+      },
+      {
+        "title": "Centum Investment posts profit recovery on real estate and private equity gains",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-12-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 348993.0,
+      "eps": 0.0,
+      "totalAssets": 9291.0,
+      "totalEquity": 619309.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 348993.0,
+        "eps": 0.0,
+        "totalAssets": 9291.0,
+        "totalEquity": 619309.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 10733.0,
+        "pat": 731.0,
+        "pbt": 1124.0,
+        "eps": 6.85,
+        "totalAssets": 7808.0,
+        "totalEquity": 3430.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "pat": 317236.0,
+        "pbt": 527974.0,
+        "totalAssets": 5521541.0,
+        "totalEquity": 5521541.0
+      },
+      {
+        "year": 2018,
+        "period": "FY2018",
+        "periodType": "annual",
+        "revenue": 2018.0,
+        "pat": 183813.0,
+        "pbt": 395935.0,
+        "totalAssets": 5475693.0,
+        "totalEquity": 5475693.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year",
+        "revenue": 7412.0,
+        "pbt": 548.0,
+        "eps": 3.07,
+        "totalAssets": 8932.0,
+        "totalEquity": 3618.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "eps": 0.26,
+        "totalAssets": 8136.0,
+        "totalEquity": 3766.0
+      }
+    ]
+  },
+  "DTK": {
+    "name": "Diamond Trust Bank",
+    "ticker": "DTK",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "Diamond Trust Bank Kenya is a mid-tier commercial bank with regional presence in Uganda, Tanzania, Burundi, and Rwanda, focused on SME banking, trade finance, and retail banking services across the East African market.",
+    "staticNews": [
+      {
+        "title": "Diamond Trust Bank Kenya profit grows on higher net interest margins",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-18"
+      },
+      {
+        "title": "DTB Kenya expands SME lending portfolio as economy shows resilience",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-10"
+      },
+      {
+        "title": "Diamond Trust Bank launches new trade finance hub for regional businesses",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-08-28"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 41400000.0,
+      "pat": 7640000.0,
+      "eps": 27.33,
+      "totalAssets": 500000000.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 41400000.0,
+        "pat": 7640000.0,
+        "eps": 27.33,
+        "totalAssets": 500000000.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "pat": 7800000.0,
+        "pbt": 425708.0,
+        "eps": 24.6,
+        "dps": 6.0,
+        "totalAssets": 635000000.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 24800000.0,
+        "pat": 6060000.0,
+        "nii": 16500000.0,
+        "eps": 21.68,
+        "deposits": 387560000.0,
+        "loans": 253670000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 6835347.0,
+        "pat": 4400000.0,
+        "pbt": 6600000.0,
+        "eps": 15.74,
+        "dps": 3.0,
+        "totalAssets": 457000000.0,
+        "deposits": 331000000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 20400000.0,
+        "pat": 3500000.0,
+        "pbt": 5200000.0,
+        "eps": 12.52,
+        "dps": 0.0,
+        "totalAssets": 427000000.0,
+        "totalEquity": 58000000.0,
+        "deposits": 298000000.0,
+        "loans": 204000000.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "pat": 7100000.0,
+        "eps": 25.4,
+        "dps": 3.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year"
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 14900000.0,
+        "pat": 4800000.0,
+        "pbt": 6800000.0,
+        "nii": 9800000.0,
+        "eps": 17.14,
+        "totalAssets": 440000000.0,
+        "totalEquity": 76000000.0,
+        "deposits": 325000000.0,
+        "loans": 248000000.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 13800000.0,
+        "pat": 4400000.0,
+        "pbt": 6200000.0,
+        "nii": 9100000.0,
+        "eps": 15.71,
+        "totalAssets": 420000000.0,
+        "totalEquity": 72000000.0,
+        "deposits": 312000000.0,
+        "loans": 238000000.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "pat": 23395768.0,
+        "dps": 7718459.0,
+        "totalAssets": 485040585.0,
+        "totalEquity": 76606716.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "revenue": 7315320.0,
+        "pat": 2388325.0,
+        "pbt": 14514845.0,
+        "dps": 3.0,
+        "totalEquity": 69096848.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 10500000.0,
+        "pat": 2700000.0,
+        "pbt": 3800000.0,
+        "nii": 7200000.0,
+        "eps": 9.64,
+        "totalAssets": 381000000.0,
+        "totalEquity": 60200000.0,
+        "deposits": 281000000.0,
+        "loans": 210000000.0
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter"
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year"
+      }
+    ]
+  },
+  "EABL": {
+    "name": "East African Breweries",
+    "ticker": "EABL",
+    "exchange": "NSE",
+    "sector": "Consumer Goods",
+    "logo": "🍺",
+    "description": "East African Breweries Limited (EABL), a subsidiary of global spirits giant Diageo PLC, is East Africa's leading beverages company producing iconic brands including Tusker, White Cap, Senator Keg, Kenya Cane, and distributing Johnnie Walker and other international spirits.",
+    "staticNews": [
+      {
+        "title": "EABL raises beer prices as excise duty and sugar levy hikes bite consumers",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-07-08"
+      },
+      {
+        "title": "EABL half-year profit falls as consumers cut back on premium drinks spending",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-02-26"
+      },
+      {
+        "title": "Senator Keg volumes surge as EABL targets low-income consumers with affordable brand",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-18"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2025,
+      "period": "FY2025",
+      "periodType": "annual",
+      "revenue": 128800000.0,
+      "pat": 12200000.0,
+      "pbt": 19300000.0,
+      "eps": 11.97,
+      "dps": 8.0
+    },
+    "annuals": [
+      {
+        "year": 2025,
+        "period": "FY2025",
+        "periodType": "annual",
+        "revenue": 128800000.0,
+        "pat": 12200000.0,
+        "pbt": 19300000.0,
+        "eps": 11.97,
+        "dps": 8.0
+      },
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 124131000.0,
+        "pat": 10870000.0,
+        "pbt": 16771000.0,
+        "eps": 10.3,
+        "dps": 7.0,
+        "totalAssets": 124246000.0,
+        "totalEquity": 36732000.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 109649000.0,
+        "pat": 12323000.0,
+        "eps": 12.47,
+        "dps": 5.5,
+        "pbt": 18709000.0,
+        "totalAssets": 132593000.0,
+        "totalEquity": 31744000.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 109400000.0,
+        "pat": 15600000.0,
+        "pbt": 24016.0,
+        "eps": 19.73,
+        "dps": 11.0,
+        "totalAssets": 145000000.0,
+        "totalEquity": 26414.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 54899.0,
+        "pat": 8738.0,
+        "pbt": 12878.0,
+        "eps": 8.45,
+        "totalEquity": -28429.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 86000000.0,
+        "pat": 7000000.0,
+        "pbt": 10900000.0,
+        "eps": 8.85,
+        "dps": 0.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 75000000.0,
+        "pat": 7000000.0,
+        "eps": 8.85,
+        "dps": 3.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 82500000.0,
+        "pat": 11500000.0,
+        "eps": 14.54,
+        "dps": 11.0
+      },
+      {
+        "year": 2018,
+        "period": "FY2018",
+        "periodType": "annual",
+        "revenue": 74000000.0,
+        "pat": 9300000.0,
+        "eps": 11.76,
+        "dps": 9.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2020,
+        "period": "H1 Dec2020",
+        "periodType": "half_year",
+        "revenue": 37600000.0,
+        "pat": 2600000.0,
+        "pbt": 4200000.0,
+        "eps": 3.29,
+        "totalAssets": 120000000.0,
+        "totalEquity": 22500000.0
+      }
+    ]
+  },
+  "EAPC": {
+    "name": "East African Portland Cement Plc",
+    "ticker": "EAPC",
+    "exchange": "NSE",
+    "sector": "Manufacturing",
+    "logo": "📊",
+    "description": "East African Portland Cement Company is a Kenyan cement manufacturer majority-owned by the Government of Kenya and National Social Security Fund, producing Portland and masonry cement for the domestic construction industry from its Athi River plant.",
+    "staticNews": [
+      {
+        "title": "East African Portland Cement records another annual loss amid stiff market competition",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-22"
+      },
+      {
+        "title": "Portland Cement seeks government support to revive struggling Athi River operations",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-09-15"
+      },
+      {
+        "title": "EAPC shareholders call for strategic review as financial losses continue to mount",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-01-10"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 1838798.0,
+      "eps": -8.01,
+      "totalAssets": 32764649.0,
+      "totalEquity": 18434269.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 1838798.0,
+        "eps": -8.01,
+        "totalAssets": 32764649.0,
+        "totalEquity": 18434269.0
+      }
+    ],
+    "quarters": []
+  },
+  "EQTY": {
+    "name": "Equity Group Holdings",
+    "ticker": "EQTY",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "Equity Group Holdings is Kenya's largest bank by customer base, with banking subsidiaries operating across Kenya, DRC, Uganda, Tanzania, Rwanda, South Sudan, and Ethiopia, serving over 20 million customers with a mission focused on financial inclusion and digital banking.",
+    "staticNews": [
+      {
+        "title": "Equity Group profit rises to Sh47bn driven by strong DRC and regional performance",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-05"
+      },
+      {
+        "title": "Equity Group secures Ethiopian banking licence for East Africa expansion",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-11-14"
+      },
+      {
+        "title": "Equity BCDC becomes DRC's largest bank by customer deposits under group ownership",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-09-23"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 193782098.0,
+      "pat": 46549519.0,
+      "pbt": 60739955.0,
+      "nii": 123769000,
+      "eps": 12.34,
+      "dps": 4.25,
+      "totalAssets": 1804624428.0,
+      "totalEquity": 246866094.0,
+      "deposits": 1399648121.0,
+      "loans": 819235956.0,
+      "interestIncome": 185344000,
+      "interestExpense": 61575000,
+      "loanLossProvision": 23261000,
+      "provisionToInterestIncome": 12.6,
+      "totalOpex": 100227000
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 193782098.0,
+        "pat": 46549519.0,
+        "pbt": 60739955.0,
+        "nii": 123769000,
+        "eps": 12.34,
+        "dps": 4.25,
+        "totalAssets": 1804624428.0,
+        "totalEquity": 246866094.0,
+        "deposits": 1399648121.0,
+        "loans": 819235956.0,
+        "interestIncome": 185344000,
+        "interestExpense": 61575000,
+        "loanLossProvision": 23261000,
+        "provisionToInterestIncome": 12.6,
+        "totalOpex": 100227000
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 181682864.0,
+        "pat": 41976209.0,
+        "pbt": 51878874.0,
+        "nii": 113023000,
+        "eps": 11.12,
+        "dps": 4.0,
+        "totalAssets": 1821434520.0,
+        "totalEquity": 218135102.0,
+        "deposits": 1358227584.0,
+        "loans": 887379832.0,
+        "interestIncome": 164214000,
+        "interestExpense": 51191000,
+        "loanLossProvision": 32954000,
+        "provisionToInterestIncome": 20.1,
+        "totalOpex": 82578000
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 149700000.0,
+        "pat": 46100000.0,
+        "nii": 85900000.0,
+        "eps": 12.21,
+        "dps": 4.0,
+        "totalAssets": 1440000000.0,
+        "deposits": 1050000000.0,
+        "loans": 706000000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 113400000.0,
+        "pat": 40100000.0,
+        "pbt": 51900000.0,
+        "nii": 68800000.0,
+        "eps": 10.4,
+        "dps": 3.0,
+        "totalAssets": 1305000000.0,
+        "deposits": 959000000.0,
+        "loans": 587800000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 93700000.0,
+        "pat": 20100000.0,
+        "pbt": 20900000.0,
+        "eps": 5.2,
+        "dps": 0.0,
+        "totalAssets": 1015000000.0,
+        "totalEquity": 86697420.0,
+        "deposits": 740800000.0,
+        "loans": 477800000.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "pat": 22600000.0,
+        "eps": 5.93,
+        "dps": 2.5,
+        "totalAssets": 673700000.0,
+        "loans": 366400000.0
+      },
+      {
+        "year": 2018,
+        "period": "FY2018",
+        "periodType": "annual",
+        "revenue": 67300000.0,
+        "pat": 19800000.0,
+        "pbt": 28500000.0,
+        "eps": 5.22,
+        "dps": 2.0,
+        "totalAssets": 573400000.0,
+        "loans": 297200000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "Q3 2025",
+        "periodType": "quarter",
+        "revenue": 65849444.0,
+        "eps": 685.31,
+        "dps": 583.33,
+        "totalAssets": 985388288.0,
+        "totalEquity": 126070494.0
+      },
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year",
+        "revenue": 100200000.0,
+        "pat": 33300000.0,
+        "totalAssets": 1798900000.0,
+        "totalEquity": 276100000.0
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 44519077.0,
+        "eps": 519.87,
+        "dps": 483.33,
+        "totalAssets": 972933445.0,
+        "totalEquity": 106048896.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 94300000.0,
+        "pat": 26300000.0,
+        "pbt": 38500000.0,
+        "nii": 56700000.0,
+        "eps": 6.96,
+        "totalAssets": 1780000000.0,
+        "totalEquity": 256000000.0,
+        "deposits": 1176000000.0,
+        "loans": 876000000.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 33898064.0,
+        "eps": 479.99,
+        "dps": 233.33,
+        "totalAssets": 774729987.0,
+        "totalEquity": 98702087.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "revenue": 16532644.0,
+        "eps": 238.17,
+        "dps": 233.33,
+        "totalAssets": 717976633.0,
+        "totalEquity": 86409081.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 65800000.0,
+        "pat": 18100000.0,
+        "pbt": 27900000.0,
+        "nii": 41300000.0,
+        "eps": 4.79,
+        "totalAssets": 1120000000.0,
+        "totalEquity": 175000000.0,
+        "deposits": 772000000.0,
+        "loans": 519000000.0
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "revenue": 39980566.0,
+        "eps": 479.31,
+        "dps": 400.0,
+        "totalAssets": 511829030.0,
+        "totalEquity": 78491773.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 49500000.0,
+        "pat": 9300000.0,
+        "pbt": 14300000.0,
+        "nii": 32700000.0,
+        "eps": 2.46,
+        "totalAssets": 855000000.0,
+        "totalEquity": 149000000.0,
+        "deposits": 580000000.0,
+        "loans": 411000000.0
+      },
+      {
+        "year": 2020,
+        "period": "Q1 2020",
+        "periodType": "quarter",
+        "revenue": 12687736.0,
+        "pbt": 25856962.0,
+        "eps": 167.72,
+        "dps": 400.0,
+        "totalAssets": 4935701.0,
+        "totalEquity": 67538874.0
+      }
+    ]
+  },
+  "FANB": {
+    "name": "Family Bank",
+    "ticker": "FANB",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "Faida Investment Bank is a Nairobi Securities Exchange-licensed stockbroker and investment bank offering securities brokerage, portfolio management, investment advisory, and equity research services to retail and institutional investors in Kenya.",
+    "staticNews": [
+      {
+        "title": "Faida Investment Bank reports improved trading volumes as NSE equity market rallies",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-30"
+      },
+      {
+        "title": "Faida Investment Bank expands research coverage to broader East African stocks",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-08-15"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2021,
+      "period": "FY2021",
+      "periodType": "annual",
+      "revenue": 8927472.0,
+      "pat": 1076047.0,
+      "pbt": 1325613.0,
+      "eps": 0.84,
+      "totalAssets": 90590626.0,
+      "totalEquity": 13161565.0,
+      "interestIncome": 7303236,
+      "interestExpense": 2015431,
+      "nii": 6406043,
+      "totalOpex": 1616303,
+      "loanLossProvision": 4137787,
+      "costToIncomeRatio": 18.1,
+      "provisionToInterestIncome": 56.7,
+      "nonInterestIncome": 2521429
+    },
+    "annuals": [
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 8927472.0,
+        "pat": 1076047.0,
+        "pbt": 1325613.0,
+        "eps": 0.84,
+        "totalAssets": 90590626.0,
+        "totalEquity": 13161565.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "revenue": 5582717.0,
+        "pat": 665915.0,
+        "pbt": 951307.0,
+        "eps": 0.52,
+        "dps": 0.24,
+        "totalAssets": 78926424.0,
+        "totalEquity": 12092368.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 3542683.0,
+        "pat": 337325.0,
+        "pbt": 481892.0,
+        "eps": 0.3,
+        "totalAssets": 72596791.0,
+        "totalEquity": 11763776.0
+      },
+      {
+        "year": 2020,
+        "period": "Q1 2020",
+        "periodType": "quarter",
+        "revenue": 1755181.0,
+        "pat": 144102.0,
+        "pbt": 205861.0,
+        "eps": 0.11,
+        "totalAssets": 70149732.0,
+        "totalEquity": 11570555.0
+      },
+      {
+        "year": 2019,
+        "period": "Q3 2019",
+        "periodType": "quarter",
+        "revenue": 4900890.0,
+        "pat": 704673.0,
+        "pbt": 253668.0,
+        "eps": 0.14,
+        "totalAssets": 68730617.0,
+        "totalEquity": 11785863.0
+      }
+    ]
+  },
+  "FTGH": {
+    "name": "Flame Tree",
+    "ticker": "FTGH",
+    "exchange": "NSE",
+    "sector": "Diversified",
+    "logo": "🌳",
+    "description": "Fairtrade Holdings (formerly CMC Holdings) is one of Kenya's leading motor vehicle distributors and dealers, representing global automotive brands through a countrywide dealership and service network serving retail and fleet customers.",
+    "staticNews": [
+      {
+        "title": "Fairtrade Holdings vehicle sales rebound as credit conditions ease for buyers",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-08"
+      },
+      {
+        "title": "CMC Motors rebrands to Fairtrade Holdings following change in majority ownership",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-07-20"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 4462993507.0,
+      "eps": -0.42,
+      "totalAssets": 4011301172.0,
+      "totalEquity": 4011301172.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 4462993507.0,
+        "eps": -0.42,
+        "totalAssets": 4011301172.0,
+        "totalEquity": 4011301172.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "pat": 75180433.0,
+        "eps": 0.58,
+        "totalAssets": 2874809727.0,
+        "totalEquity": 2874809728.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 2424753503.0,
+        "pat": 75180433.0,
+        "eps": 0.25,
+        "totalAssets": 2281167940.0,
+        "totalEquity": 2281167941.0,
+        "ebitda": 393421662.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 2424753503.0,
+        "pbt": 90530158.0,
+        "eps": 0.26,
+        "totalAssets": 2281167941.0,
+        "totalEquity": 2281167941.0
+      },
+      {
+        "year": 2018,
+        "period": "FY2018",
+        "periodType": "annual",
+        "pat": 33785068.0,
+        "eps": 0.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "eps": 0.31
+      },
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year",
+        "eps": 0.05
+      }
+    ]
+  },
+  "HAFR": {
+    "name": "Home Afrika",
+    "ticker": "HAFR",
+    "exchange": "NSE",
+    "sector": "Diversified",
+    "logo": "🏠",
+    "description": "Home Afrika is a Kenyan real estate developer focused on affordable and mid-market residential housing, with its flagship Migaa Golf Estate integrated community development in Kiambu County being its primary ongoing project.",
+    "staticNews": [
+      {
+        "title": "Home Afrika Migaa Estate attracts buyers as demand for affordable housing grows",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-05"
+      },
+      {
+        "title": "Home Afrika seeks to reduce debt burden through staged asset sales programme",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-08-22"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2021,
+      "period": "FY2021",
+      "periodType": "annual",
+      "revenue": 349325969.0
+    },
+    "annuals": [
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 349325969.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 309409011.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 28200000.0,
+        "totalAssets": 4077749893.0,
+        "totalEquity": -2504269195.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 43022.0,
+        "eps": -0.15
+      },
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year",
+        "revenue": 103260.0
+      }
+    ]
+  },
+  "HBZE": {
+    "name": "Homeboyz",
+    "ticker": "HBZE",
+    "exchange": "NSE",
+    "sector": "Telecoms & Technology",
+    "logo": "🎬",
+    "description": "Habib AG Zurich Bank Kenya is a niche commercial bank affiliated with the Swiss-based Habib AG Zurich group, specialising in trade finance, foreign exchange, and personal banking services primarily serving the Asian business community and international traders.",
+    "staticNews": [
+      {
+        "title": "Habib AG Zurich Bank Kenya announces steady dividend for loyal shareholders",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-09-20"
+      },
+      {
+        "title": "Habib Bank Kenya focus on cross-border trade finance as regional commerce expands",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-07-18"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 332396860.0,
+      "eps": -0.48,
+      "totalAssets": 182912491.0,
+      "totalEquity": 2264983.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 332396860.0,
+        "eps": -0.48,
+        "totalAssets": 182912491.0,
+        "totalEquity": 2264983.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 150085489.0,
+        "eps": -0.28,
+        "totalAssets": 112551611.0,
+        "totalEquity": 11600376.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 105888920.0,
+        "eps": -0.51,
+        "totalAssets": 92607015.0,
+        "totalEquity": 29007470.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 63268538.0,
+        "eps": 0.04,
+        "totalAssets": 119558107.0,
+        "totalEquity": 31355597.0
+      }
+    ]
+  },
+  "HFCK": {
+    "name": "Housing Finance",
+    "ticker": "HFCK",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "HF Group (formerly Housing Finance Company of Kenya), established in 1965 as Kenya's pioneering mortgage lender, offers home loans, construction finance, bancassurance, and retail banking services through its banking subsidiary HFC Limited.",
+    "staticNews": [
+      {
+        "title": "HF Group mortgage book shrinks as high interest rates continue to deter home buyers",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-14"
+      },
+      {
+        "title": "HF Group targets affordable housing segment to revive mortgage lending growth",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-22"
+      },
+      {
+        "title": "HF Group posts slim profit as interest income improves on repriced loan book",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2025-03-18"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 3336595.0,
+      "eps": 25.99,
+      "totalAssets": 59145971.0,
+      "totalEquity": 8301824.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 3336595.0,
+        "eps": 25.99,
+        "totalAssets": 59145971.0,
+        "totalEquity": 8301824.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "eps": 35.01
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "Q3 2024",
+        "periodType": "quarter",
+        "eps": 26.02
+      },
+      {
+        "year": 2024,
+        "period": "Q1 2024",
+        "periodType": "quarter",
+        "revenue": 798122.0,
+        "eps": 35.73
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "eps": -5.43
+      }
+    ]
+  },
+  "IMH": {
+    "name": "I&M Holdings",
+    "ticker": "IMH",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "I&M Holdings is a regional financial services group with banking operations in Kenya, Tanzania, Rwanda, and Mauritius, serving corporate, SME, and personal banking clients through subsidiaries including I&M Bank Kenya and Bank One in Mauritius.",
+    "staticNews": [
+      {
+        "title": "I&M Holdings profit grows on higher net interest income across regional subsidiaries",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-13"
+      },
+      {
+        "title": "I&M Bank Kenya expands digital channels to grow retail and SME banking share",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-16"
+      },
+      {
+        "title": "I&M Holdings Rwanda subsidiary delivers strong earnings growth in 2024",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-09-04"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 26348750.0,
+      "pat": 2854633.0,
+      "pbt": 3993720.0,
+      "eps": 1.04,
+      "totalAssets": 61937727.0,
+      "totalEquity": 11013835.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 26348750.0,
+        "pat": 2854633.0,
+        "pbt": 3993720.0,
+        "eps": 1.04,
+        "totalAssets": 61937727.0,
+        "totalEquity": 11013835.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 137767.0,
+        "pbt": 10444.0,
+        "eps": 3.38,
+        "totalEquity": 192218.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 265670495.0,
+        "pat": -123951010.0,
+        "totalAssets": 3712525774.0,
+        "totalEquity": 3712525774.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 19168105000.0,
+        "pat": 589380000.0,
+        "eps": 0.23,
+        "totalAssets": 41540836000.0,
+        "totalEquity": 7984131000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 324669579.0,
+        "pat": 148025113.0,
+        "totalAssets": 3883746200.0,
+        "totalEquity": 3883746200.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "eps": 1.23
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "pbt": 2456582.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual"
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 567382.0,
+        "pat": 80153.0,
+        "pbt": 104499.0,
+        "eps": 0.3,
+        "totalAssets": -17223.0,
+        "totalEquity": 2242401.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 114185.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "Q3 2025",
+        "periodType": "quarter",
+        "dps": 19.0,
+        "totalEquity": 39532019.0
+      },
+      {
+        "year": 2025,
+        "period": "Aug2025",
+        "periodType": "unknown",
+        "totalAssets": 1974316.0
+      },
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year",
+        "pat": 295538.0,
+        "pbt": 435245.0,
+        "eps": 2720945.0,
+        "totalEquity": 5472048.0
+      },
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year",
+        "revenue": 324000.0,
+        "pbt": 690000.0,
+        "eps": 0.8,
+        "totalAssets": 45000.0,
+        "totalEquity": 9000.0
+      },
+      {
+        "year": 2025,
+        "period": "Q1 2025",
+        "periodType": "quarter",
+        "revenue": 2025.0
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "totalAssets": 2070276.0
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 52849.0,
+        "eps": -2.81,
+        "totalEquity": 183067.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 1174493.0,
+        "eps": -0.64,
+        "totalAssets": 5361859.0,
+        "totalEquity": 5361859.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 4319437.0,
+        "dps": 2.25,
+        "totalAssets": 35314587.0,
+        "totalEquity": 33799976.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "pat": 117498.0,
+        "pbt": 171119.0,
+        "eps": 2701382.0,
+        "totalEquity": 5595949.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 377284.0,
+        "pat": 69382.0,
+        "pbt": 92132.0,
+        "eps": 0.27,
+        "totalAssets": 260391721.0,
+        "totalEquity": 2152333.0
+      },
+      {
+        "year": 2023,
+        "period": "Q1 2023",
+        "periodType": "quarter",
+        "revenue": 234296.0,
+        "pat": 10884.0,
+        "pbt": 11275.0,
+        "eps": 0.35,
+        "totalEquity": 1421294.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 6794909.0,
+        "dps": 1.5,
+        "totalAssets": 34083580.0,
+        "totalEquity": 32100127.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 168395109.0,
+        "pat": 86162858.0,
+        "totalAssets": 3687742448.0,
+        "totalEquity": 3687742448.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "pat": 341270.0,
+        "pbt": 494668.0,
+        "totalEquity": 494668.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 5664278.0,
+        "eps": 144000000.0,
+        "totalAssets": 36303129.0,
+        "totalEquity": 308016.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "revenue": 5462.0,
+        "dps": 1.5,
+        "totalEquity": 27185346.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "revenue": 1000.0,
+        "eps": 9.0,
+        "dps": 51.0
+      },
+      {
+        "year": 2021,
+        "period": "Q3 2021",
+        "periodType": "quarter",
+        "eps": 1.0
+      },
+      {
+        "year": 2021,
+        "period": "Q3 2021",
+        "periodType": "quarter"
+      }
+    ]
+  },
+  "JUB": {
+    "name": "Jubilee Holdings",
+    "ticker": "JUB",
+    "exchange": "NSE",
+    "sector": "Insurance",
+    "logo": "🛡️",
+    "description": "Jubilee Holdings is East and Central Africa's largest insurer by premium income, offering life, general, medical, and pension insurance products across Kenya, Uganda, Tanzania, Rwanda, Burundi, and Mauritius, with a strategic partnership with global insurer Allianz.",
+    "staticNews": [
+      {
+        "title": "Jubilee Holdings profit recovers as insurance business stabilises post Allianz separation",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-20"
+      },
+      {
+        "title": "Jubilee Health Insurance volumes grow on rising demand for medical cover in Kenya",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-09"
+      },
+      {
+        "title": "Jubilee Holdings CEO outlines five-year growth strategy after Allianz partnership deal",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-08-15"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 25700000.0,
+      "pbt": 6200000.0,
+      "eps": 65.0,
+      "dps": 13.5,
+      "totalAssets": 213600000.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 25700000.0,
+        "pbt": 6200000.0,
+        "eps": 65.0,
+        "dps": 13.5,
+        "totalAssets": 213600000.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 22777897000.0,
+        "pat": 4415913000.0,
+        "pbt": 5310661000.0,
+        "eps": 59.0,
+        "totalAssets": 191696642000.0,
+        "totalEquity": 54274903000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": -7583908.0,
+        "pat": 6828655.0,
+        "pbt": 8431880.0,
+        "eps": 89.88,
+        "totalAssets": 155272618.0,
+        "totalEquity": 42278525.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 56800000.0,
+        "pat": 4100000.0,
+        "pbt": 5100000.0,
+        "eps": 56.71,
+        "dps": 5.0,
+        "totalAssets": 186000000.0,
+        "totalEquity": 44800000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 12582570000000.0,
+        "pat": 2504962000000.0,
+        "pbt": 2936691000000.0,
+        "eps": 34.45,
+        "totalAssets": 202617890000000.0,
+        "totalEquity": 56883389000000.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 33200000.0,
+        "pat": 2900000.0,
+        "pbt": 3800000.0,
+        "eps": 40.1,
+        "totalAssets": 195000000.0,
+        "totalEquity": 47000000.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 11163980.0,
+        "pat": 4506107.0,
+        "pbt": 5205978.0,
+        "totalAssets": 151724117.0,
+        "totalEquity": 39772760.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": -5368637.0,
+        "pat": 1830475.0,
+        "pbt": 2376788.0,
+        "eps": 21.94,
+        "totalAssets": 140109031.0,
+        "totalEquity": 32291041.0
+      },
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year",
+        "revenue": 9566028.0,
+        "pat": 1831413.0,
+        "pbt": 2267399.0,
+        "eps": 21.7,
+        "totalAssets": 124292382.0,
+        "totalEquity": 29755272.0
+      },
+      {
+        "year": 2018,
+        "period": "H1 Jun2018",
+        "periodType": "half_year",
+        "revenue": 8879517.0,
+        "pat": 1859611.0,
+        "pbt": 2421737.0,
+        "eps": 23.38,
+        "totalAssets": 113029622.0,
+        "totalEquity": 26215202.0
+      }
+    ]
+  },
+  "KAPA": {
+    "name": "Kapchorua Tea Kenya Plc",
+    "ticker": "KAPA",
+    "exchange": "NSE",
+    "sector": "Agriculture",
+    "logo": "📊",
+    "description": "Kapchorua Tea Company owns and operates tea estates in Kenya's Rift Valley, producing and exporting black tea through the Mombasa Tea Auction and direct sales channels to buyers in Europe and the Middle East.",
+    "staticNews": [
+      {
+        "title": "Kapchorua Tea profit jumps sharply on surge in Mombasa auction tea prices",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-28"
+      },
+      {
+        "title": "Kapchorua Tea to pay higher dividend as global tea demand strengthens",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-12-05"
+      },
+      {
+        "title": "Mombasa tea auction prices hit record highs benefiting Kenya estate companies",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-10-20"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "Apr2023",
+      "periodType": "unknown",
+      "revenue": 1485770.0,
+      "pat": 224096.0
+    },
+    "annuals": [],
+    "quarters": [
+      {
+        "year": 2023,
+        "period": "Apr2023",
+        "periodType": "unknown",
+        "revenue": 1485770.0,
+        "pat": 224096.0
+      },
+      {
+        "year": 2021,
+        "period": "Q1 2021",
+        "periodType": "quarter",
+        "pat": 7065.0,
+        "eps": 0.0
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "revenue": 39120.0,
+        "totalAssets": 1841612.0,
+        "totalEquity": 1841612.0
+      },
+      {
+        "year": 2020,
+        "period": "Q1 2020",
+        "periodType": "quarter",
+        "revenue": 1134302.0,
+        "pat": 9259.0,
+        "totalAssets": 1942002.0,
+        "totalEquity": 1942002.0
+      },
+      {
+        "year": 2019,
+        "period": "Q3 2019",
+        "periodType": "quarter",
+        "revenue": 388221.0,
+        "eps": -1.93,
+        "totalAssets": 1928784.0,
+        "totalEquity": 4194593.0
+      },
+      {
+        "year": 2018,
+        "period": "Q1 2018",
+        "periodType": "quarter",
+        "revenue": 39120.0,
+        "pat": 33647.0,
+        "eps": 2.0,
+        "totalAssets": 2489043.0,
+        "totalEquity": 2489043.0
+      }
+    ]
+  },
+  "KCB": {
+    "name": "KCB Group",
+    "ticker": "KCB",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "KCB Group is Kenya's largest bank by total assets, operating in Kenya, Uganda, Tanzania, Rwanda, Burundi, South Sudan, and the DRC through Trust Merchant Bank, providing retail, corporate, and digital banking services to over 35 million customers across Africa.",
+    "staticNews": [
+      {
+        "title": "KCB Group completes Sh36bn rights issue to strengthen capital base for regional growth",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-08-05"
+      },
+      {
+        "title": "KCB Group profit rises 17% to Sh44bn driven by regional and digital banking growth",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-03-14"
+      },
+      {
+        "title": "KCB Trust Merchant Bank DRC delivers first full-year profit contribution to group",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-22"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 204866691.0,
+      "pat": 60089353.0,
+      "pbt": 81972627.0,
+      "nii": 137346043.0,
+      "eps": 18.7,
+      "dps": 3.0,
+      "totalAssets": 1962320080.0,
+      "totalEquity": 274889584.0,
+      "deposits": 1381975669.0,
+      "loans": 990412959.0,
+      "interestIncome": 225807000,
+      "interestExpense": 76056000,
+      "loanLossProvision": 29694000,
+      "totalOpex": 90611000,
+      "provisionToInterestIncome": 13.2,
+      "costToIncomeRatio": 44.2
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 204866691.0,
+        "pat": 60089353.0,
+        "pbt": 81972627.0,
+        "nii": 137346043.0,
+        "eps": 18.7,
+        "dps": 3.0,
+        "totalAssets": 1962320080.0,
+        "totalEquity": 274889584.0,
+        "deposits": 1381975669.0,
+        "loans": 990412959.0,
+        "interestIncome": 225807000,
+        "interestExpense": 76056000,
+        "loanLossProvision": 29694000,
+        "totalOpex": 90611000,
+        "provisionToInterestIncome": 13.2,
+        "costToIncomeRatio": 44.2
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 165200000.0,
+        "pat": 37460000.0,
+        "pbt": 33252179.0,
+        "nii": 107334000.0,
+        "eps": 11.7,
+        "dps": 0.0,
+        "totalAssets": 2170000000.0,
+        "totalEquity": 236400000.0,
+        "deposits": 1116875397.0,
+        "loans": 740241723.0,
+        "interestIncome": 181653000,
+        "interestExpense": 60841000,
+        "loanLossProvision": 27415000,
+        "totalOpex": 83477000,
+        "provisionToInterestIncome": 15.1,
+        "costToIncomeRatio": 50.5
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 129900000.0,
+        "pat": 40800000.0,
+        "nii": 86700000.0,
+        "eps": 12.71,
+        "dps": 2.0,
+        "totalAssets": 1550000000.0,
+        "totalEquity": 206300000.0,
+        "deposits": 1135000000.0,
+        "loans": 863000000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 108600000.0,
+        "pat": 34200000.0,
+        "pbt": 43200000.0,
+        "nii": 77800000.0,
+        "eps": 10.65,
+        "dps": 3.0,
+        "totalAssets": 1139000000.0,
+        "totalEquity": 173500000.0,
+        "deposits": 837100000.0,
+        "loans": 675500000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 96000000.0,
+        "pat": 19600000.0,
+        "pbt": 25589.0,
+        "nii": 53470863.0,
+        "eps": 6.11,
+        "dps": 1.0,
+        "totalAssets": 987000000.0,
+        "totalEquity": 111270544.0,
+        "deposits": 767000000.0,
+        "loans": 595000000.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "pat": 25100000.0,
+        "nii": 56100000.0,
+        "eps": 7.82,
+        "dps": 3.5,
+        "totalAssets": 898500000.0
+      },
+      {
+        "year": 2018,
+        "period": "FY2018",
+        "periodType": "annual",
+        "revenue": 71800000.0,
+        "pat": 24000000.0,
+        "nii": 48800000.0,
+        "eps": 7.48,
+        "dps": 3.5,
+        "totalAssets": 714300000.0,
+        "deposits": 537500000.0,
+        "loans": 455900000.0
+      },
+      {
+        "year": 2017,
+        "period": "FY2017",
+        "periodType": "annual",
+        "revenue": 8184828.0,
+        "nii": 2924967.0,
+        "eps": 0.36,
+        "dps": 0.17,
+        "totalAssets": 4777675.0,
+        "totalEquity": 989890.0,
+        "deposits": 86611187.0,
+        "loans": 53900051.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "Q3 2025",
+        "periodType": "quarter",
+        "revenue": 98811027.0,
+        "totalAssets": 1404190326.0,
+        "totalEquity": 210325777.0
+      },
+      {
+        "year": 2025,
+        "period": "Q1 2025",
+        "periodType": "quarter",
+        "revenue": 49441660.0,
+        "pat": 16090350.0,
+        "pbt": 21181661.0,
+        "nii": 33719254.0,
+        "eps": 5.01,
+        "dps": 0.24,
+        "totalAssets": 2034172570.0,
+        "totalEquity": 297085135.0,
+        "deposits": 1427806512.0,
+        "loans": 1018573680.0
+      },
+      {
+        "year": 2024,
+        "period": "Q3 2024",
+        "periodType": "quarter",
+        "revenue": 142900000.0,
+        "pat": 45800000.0,
+        "eps": 14.27,
+        "totalAssets": 2000000000.0,
+        "totalEquity": 249000000.0,
+        "deposits": 1500000000.0,
+        "loans": 1100000000.0
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 97500000.0,
+        "pat": 23400000.0,
+        "pbt": 33700000.0,
+        "nii": 61200000.0,
+        "eps": 7.28,
+        "totalAssets": 1820000000.0,
+        "totalEquity": 254000000.0,
+        "deposits": 1220000000.0,
+        "loans": 911000000.0
+      },
+      {
+        "year": 2024,
+        "period": "Q1 2024",
+        "periodType": "quarter",
+        "revenue": 48500000.0,
+        "pat": 16500000.0,
+        "pbt": 14619526.0,
+        "nii": 20506602.0,
+        "eps": 5.14,
+        "totalAssets": 2000000000.0,
+        "totalEquity": 238600000.0,
+        "deposits": 1500000000.0,
+        "loans": 1130000000.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 73100000.0,
+        "pat": 16100000.0,
+        "pbt": 19175149.0,
+        "nii": 28522558.0,
+        "eps": 0.52,
+        "dps": 0.58,
+        "totalAssets": 1860000000.0,
+        "totalEquity": 218000000.0,
+        "deposits": 1470000000.0,
+        "loans": 964800000.0
+      },
+      {
+        "year": 2023,
+        "period": "Q1 2023",
+        "periodType": "quarter",
+        "revenue": 36900000.0,
+        "pat": 9750000.0,
+        "eps": 3.04,
+        "totalAssets": 1630000000.0,
+        "totalEquity": 214800000.0,
+        "deposits": 1200000000.0,
+        "loans": 928800000.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 44440559.0,
+        "pat": 16517335.0,
+        "pbt": 23842408.0,
+        "nii": 30321254.0,
+        "eps": 0.61,
+        "dps": 0.2,
+        "totalAssets": 887840368.0,
+        "totalEquity": 133185552.0,
+        "deposits": 674828828.0,
+        "loans": 563188212.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "revenue": 29000000.0,
+        "pat": 9900000.0,
+        "nii": 19700000.0,
+        "eps": 3.08,
+        "totalAssets": 1200000000.0,
+        "totalEquity": 181800000.0,
+        "deposits": 845800000.0,
+        "loans": 704400000.0
+      },
+      {
+        "year": 2021,
+        "period": "Q3 2021",
+        "periodType": "quarter",
+        "pat": 25200000.0,
+        "eps": 7.85,
+        "dps": 1.0,
+        "totalAssets": 1122000000.0,
+        "totalEquity": 163000000.0,
+        "loans": 718000000.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 51200000.0,
+        "pat": 15300000.0,
+        "pbt": 21900000.0,
+        "nii": 36400000.0,
+        "eps": 4.76,
+        "totalAssets": 1022200000.0,
+        "totalEquity": 152900000.0,
+        "deposits": 786000000.0,
+        "loans": 607000000.0
+      },
+      {
+        "year": 2021,
+        "period": "Q1 2021",
+        "periodType": "quarter",
+        "pat": 6400000.0,
+        "eps": 1.99,
+        "totalAssets": 1000000000.0,
+        "totalEquity": 147500000.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year"
+      },
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year",
+        "revenue": 30334870.0,
+        "pat": 11134559.0,
+        "pbt": 15833704.0,
+        "nii": 21924708.0,
+        "eps": 0.41,
+        "dps": 0.06,
+        "totalAssets": 582710853.0,
+        "totalEquity": 83188923.0,
+        "deposits": 470284229.0,
+        "loans": 386578198.0
+      },
+      {
+        "year": 2017,
+        "period": "Q3 2017",
+        "periodType": "quarter",
+        "eps": 0.0,
+        "dps": 0.0
+      }
+    ]
+  },
+  "KEGN": {
+    "name": "KenGen",
+    "ticker": "KEGN",
+    "exchange": "NSE",
+    "sector": "Energy & Utilities",
+    "logo": "⚡",
+    "description": "KenGen (Kenya Electricity Generating Company) is Kenya's dominant power producer generating approximately 75% of the country's installed electricity capacity, primarily from geothermal and hydroelectric sources at its Olkaria fields and Tana River cascades.",
+    "staticNews": [
+      {
+        "title": "KenGen commissions new Olkaria geothermal unit adding 83MW to the national grid",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-14"
+      },
+      {
+        "title": "KenGen profit rises as geothermal output grows and plant maintenance costs stabilise",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-03-12"
+      },
+      {
+        "title": "KenGen to drill new geothermal wells to help cut Kenya's high electricity tariffs",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-09-09"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2025,
+      "period": "H1 Jun2025",
+      "periodType": "half_year",
+      "revenue": 56098.0,
+      "pat": 10481.0,
+      "pbt": 15473.0,
+      "eps": 1.59,
+      "dps": 8482.0,
+      "totalEquity": 284544.0
+    },
+    "annuals": [],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year",
+        "revenue": 56098.0,
+        "pat": 10481.0,
+        "pbt": 15473.0,
+        "eps": 1.59,
+        "dps": 8482.0,
+        "totalEquity": 284544.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 44110.0,
+        "pat": 18377.0,
+        "pbt": 13790.0,
+        "eps": 0.18,
+        "dps": 0.3
+      }
+    ]
+  },
+  "KPLC": {
+    "name": "Kenya Power",
+    "ticker": "KPLC",
+    "exchange": "NSE",
+    "sector": "Energy & Utilities",
+    "logo": "⚡",
+    "description": "Kenya Power & Lighting Company (KPLC) is the sole electricity transmission and distribution company in Kenya, operating the national grid under a government-regulated utility framework and serving over 9 million electricity customers nationwide.",
+    "staticNews": [
+      {
+        "title": "Kenya Power reports annual profit recovery as government-backed financial rescue takes hold",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-25"
+      },
+      {
+        "title": "KPLC targets 2 million new electricity connections under last-mile connectivity programme",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-09-12"
+      },
+      {
+        "title": "Kenya Power electricity tariff revised upward as cost of supply continues to rise",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2024-08-20"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2025,
+      "period": "FY2025",
+      "periodType": "annual",
+      "revenue": 219290000.0,
+      "pat": 24470000.0,
+      "eps": 12.54,
+      "dps": 1.0,
+      "totalAssets": 389000000.0,
+      "totalEquity": 100000000.0
+    },
+    "annuals": [
+      {
+        "year": 2025,
+        "period": "FY2025",
+        "periodType": "annual",
+        "revenue": 219290000.0,
+        "pat": 24470000.0,
+        "eps": 12.54,
+        "dps": 1.0,
+        "totalAssets": 389000000.0,
+        "totalEquity": 100000000.0
+      },
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 107425.0,
+        "pat": 9970.0,
+        "pbt": 14065.0,
+        "eps": 5.11
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 190900000.0,
+        "pat": -3190000.0,
+        "dps": 0.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "pat": 3500000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 69014.0,
+        "pat": 6103.0,
+        "pbt": -7042.0,
+        "eps": -939.0,
+        "totalAssets": 398000000.0,
+        "totalEquity": 48000000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 231124.0,
+        "eps": 15.41
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 144120.0,
+        "pat": 1200000.0,
+        "pbt": 8198.0,
+        "eps": 0.76,
+        "totalAssets": 403000000.0,
+        "totalEquity": 50000000.0
+      }
+    ]
+  },
+  "NBK": {
+    "name": "National Bank of Kenya Ltd",
+    "ticker": "NBK",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "📊",
+    "description": "National Bank of Kenya (NBK) is a state-affiliated commercial bank and wholly-owned subsidiary of KCB Group since 2019, offering retail, corporate, SME, and Shariah-compliant banking services through its Amanah Islamic banking window.",
+    "staticNews": [
+      {
+        "title": "National Bank of Kenya completes full integration into KCB Group digital infrastructure",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-09-18"
+      },
+      {
+        "title": "NBK Amanah Islamic banking window records strong growth in Shariah deposits",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-30"
+      },
+      {
+        "title": "National Bank branches being rebranded as KCB consolidates its subsidiary network",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2024-07-15"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2019,
+      "period": "H1 Jun2019",
+      "periodType": "half_year"
+    },
+    "annuals": [],
+    "quarters": [
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year"
+      },
+      {
+        "year": 2015,
+        "period": "Q1 2015",
+        "periodType": "quarter",
+        "eps": 16.0
+      }
+    ]
+  },
+  "NCBA": {
+    "name": "NCBA Group",
+    "ticker": "NCBA",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "NCBA Group was formed from the 2019 merger of NIC Bank and Commercial Bank of Africa, best known for co-creating M-Shwari with Safaricom and the Fuliza mobile overdraft service, offering retail, corporate, and digital financial services across East and West Africa.",
+    "staticNews": [
+      {
+        "title": "NCBA Group profit grows to Sh18bn as Fuliza digital lending book expands rapidly",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-18"
+      },
+      {
+        "title": "Fuliza customers surpass 10 million users as NCBA mobile overdraft goes mainstream",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-08"
+      },
+      {
+        "title": "NCBA Loop digital banking app attracts 3 million users in two years of operation",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2024-08-20"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 62697869.0,
+      "pat": 21865767.0,
+      "pbt": 25141048.0,
+      "nii": 34514684.0,
+      "eps": 13.27,
+      "dps": 5.5,
+      "totalAssets": 665943764.0,
+      "totalEquity": 109714749.0,
+      "deposits": 502016493.0,
+      "loans": 302077630.0,
+      "interestIncome": 42021625,
+      "interestExpense": 35262483,
+      "totalOpex": 5206348,
+      "loanLossProvision": 10318955,
+      "costToIncomeRatio": 10.2,
+      "provisionToInterestIncome": 24.6,
+      "nonInterestIncome": 9173241
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 62697869.0,
+        "pat": 21865767.0,
+        "pbt": 25141048.0,
+        "nii": 34514684.0,
+        "eps": 13.27,
+        "dps": 5.5,
+        "totalAssets": 665943764.0,
+        "totalEquity": 109714749.0,
+        "deposits": 502016493.0,
+        "loans": 302077630.0,
+        "interestIncome": 42021625,
+        "interestExpense": 7506941,
+        "totalOpex": 5206348,
+        "loanLossProvision": 10318955,
+        "costToIncomeRatio": 10.2,
+        "provisionToInterestIncome": 24.6,
+        "nonInterestIncome": 9173241
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 63679638.0,
+        "pat": 21456633.0,
+        "pbt": 25481906.0,
+        "eps": 13.02,
+        "dps": 4.75,
+        "totalAssets": 734621408.0,
+        "totalEquity": 96663178.0,
+        "deposits": 579401918.0,
+        "loans": 337018150.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 60930000.0,
+        "pat": 13780000.0,
+        "nii": 30680000.0,
+        "eps": 8.37,
+        "dps": 4.25,
+        "loans": 278900000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 49000000.0,
+        "pat": 10200000.0,
+        "pbt": 15030000.0,
+        "eps": 6.19,
+        "dps": 3.0,
+        "totalAssets": 81434.0,
+        "totalEquity": 2765.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 46400000.0,
+        "pat": 4600000.0,
+        "pbt": 4980000.0,
+        "eps": 2.79,
+        "dps": 1.5,
+        "totalAssets": 528000000.0,
+        "totalEquity": 64800000.0,
+        "deposits": 421500000.0,
+        "loans": 248500000.0,
+        "interestIncome": 22927691,
+        "interestExpense": 399943,
+        "nii": 22527748,
+        "totalOpex": 18929944,
+        "loanLossProvision": 16925353,
+        "costToIncomeRatio": 45.9,
+        "provisionToInterestIncome": 73.8,
+        "nonInterestIncome": 10360072
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 33700000.0,
+        "pat": 7800000.0,
+        "pbt": 11300000.0,
+        "eps": 4.74,
+        "dps": 1.75,
+        "totalAssets": 494800000.0,
+        "deposits": 378200000.0,
+        "loans": 249400000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "Q3 2025",
+        "periodType": "quarter",
+        "eps": 25.02,
+        "dps": 11.97
+      },
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 29100000.0,
+        "pat": 9600000.0,
+        "pbt": 13200000.0,
+        "nii": 16800000.0,
+        "eps": 5.85,
+        "totalAssets": 640000000.0,
+        "totalEquity": 99800000.0,
+        "deposits": 476000000.0,
+        "loans": 323000000.0
+      },
+      {
+        "year": 2024,
+        "period": "Q1 2024",
+        "periodType": "quarter",
+        "eps": 8.41,
+        "dps": 5.31
+      },
+      {
+        "year": 2024,
+        "period": "Mar2024",
+        "periodType": "unknown",
+        "revenue": 7175.0,
+        "pat": 323074.0,
+        "pbt": 453800.0,
+        "eps": 33.41,
+        "dps": 5.31,
+        "totalAssets": 4833.0,
+        "totalEquity": 811698.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 2018.0,
+        "pat": 9348216.0,
+        "eps": 15.05,
+        "dps": 9.76
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 2018.0,
+        "pat": 7770642.0,
+        "eps": 14.58,
+        "dps": 6.08
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 22200000.0,
+        "pat": 5200000.0,
+        "pbt": 7500000.0,
+        "nii": 13800000.0,
+        "eps": 3.17,
+        "totalAssets": 520000000.0,
+        "totalEquity": 79500000.0,
+        "deposits": 396000000.0,
+        "loans": 270000000.0
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "pat": 2020.0,
+        "eps": 4.86,
+        "dps": 4.88,
+        "totalAssets": 519.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "pat": 2632161.0,
+        "eps": 4.9,
+        "dps": 4.88
+      },
+      {
+        "year": 2019,
+        "period": "Oct2019",
+        "periodType": "unknown",
+        "eps": 3.3,
+        "dps": 4.88
+      }
+    ]
+  },
+  "NMG": {
+    "name": "Nation Media Group",
+    "ticker": "NMG",
+    "exchange": "NSE",
+    "sector": "Media & Services",
+    "logo": "📰",
+    "description": "Nation Media Group is East and Central Africa's largest independent media company, publishing the Daily Nation, Business Daily, and Sunday Nation, and operating NTV television and Nation FM radio stations across Kenya, Uganda, Tanzania, and Rwanda.",
+    "staticNews": [
+      {
+        "title": "Nation Media Group moves to digital subscription paywall to counter print decline",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-14"
+      },
+      {
+        "title": "NMG annual profit shrinks as print advertising revenue continues structural decline",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-03-11"
+      },
+      {
+        "title": "Nation Media Group retrenches staff as digital transformation reshapes newsroom operations",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-07-28"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 6200000.0,
+      "pbt": -253600.0,
+      "eps": -1.5,
+      "dps": 0.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 6200000.0,
+        "pbt": -253600.0,
+        "eps": -1.5,
+        "dps": 0.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 7116.0,
+        "eps": -1.1,
+        "dps": 1.5,
+        "totalEquity": 7862.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 12900000.0,
+        "pat": 1100000.0,
+        "pbt": 1600000.0,
+        "eps": 5.84,
+        "totalAssets": 16900000.0,
+        "totalEquity": 12600000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 2021.0,
+        "pbt": 731.0,
+        "eps": 2.5,
+        "dps": 1.5,
+        "totalEquity": 8090.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 6813.0,
+        "eps": 0.2,
+        "dps": 1.5,
+        "totalEquity": 7933.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 3175.0,
+        "eps": -1.5,
+        "totalEquity": 7195.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 6200000.0,
+        "pat": 200000.0,
+        "pbt": 300000.0,
+        "eps": 1.06,
+        "totalAssets": 17200000.0,
+        "totalEquity": 12300000.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "revenue": 3696.0,
+        "eps": 1.1,
+        "totalEquity": 8310.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 5400000.0,
+        "pat": -200000.0,
+        "pbt": -100000.0,
+        "eps": -1.06,
+        "totalAssets": 15800000.0,
+        "totalEquity": 11200000.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 5700000.0,
+        "pat": -500000.0,
+        "pbt": -600000.0,
+        "eps": -2.65,
+        "totalAssets": 16700000.0,
+        "totalEquity": 11800000.0
+      }
+    ]
+  },
+  "NSE": {
+    "name": "Nairobi Securities Exchange",
+    "ticker": "NSE",
+    "exchange": "NSE",
+    "sector": "Insurance",
+    "logo": "📊",
+    "description": "The Nairobi Securities Exchange is Kenya's principal securities exchange facilitating trading in equities, bonds, exchange-traded funds, and derivatives, and is itself publicly listed on its own bourse, making it one of Africa's few self-listed exchanges.",
+    "staticNews": [
+      {
+        "title": "NSE equity market turnover rises 40% in 2024 as foreign investor interest returns",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-12-31"
+      },
+      {
+        "title": "Nairobi Securities Exchange mulls new listings in commodities ETFs and REITs",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-05"
+      },
+      {
+        "title": "NSE profit rises as equity trading volumes and bond market activity pick up",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-15"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2021,
+      "period": "FY2021",
+      "periodType": "annual",
+      "revenue": 960969.0,
+      "totalAssets": 31953.0,
+      "totalEquity": 15091.0
+    },
+    "annuals": [
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 960969.0,
+        "totalAssets": 31953.0,
+        "totalEquity": 15091.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 42017.0,
+        "pat": 364676.0,
+        "pbt": 369764.0,
+        "eps": 0.44,
+        "totalAssets": 27893974.0,
+        "totalEquity": 25921801.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 362979.0,
+        "totalAssets": 4347808.0,
+        "totalEquity": -1941178.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 725412.0,
+        "pbt": 92853.0,
+        "totalAssets": 2607585.0,
+        "totalEquity": 2607585.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 429468.0,
+        "pat": 54720.0,
+        "pbt": 80007.0,
+        "eps": 0.21,
+        "totalAssets": 2116337.0,
+        "totalEquity": 2116337.0
+      },
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year",
+        "revenue": 22725.0,
+        "pat": 199571.0,
+        "pbt": 203768.0,
+        "eps": 0.48,
+        "dps": 3.9
+      }
+    ]
+  },
+  "SASN": {
+    "name": "Sasini",
+    "ticker": "SASN",
+    "exchange": "NSE",
+    "sector": "Agriculture",
+    "logo": "🌾",
+    "description": "Sasini is a Kenyan agribusiness company with diversified operations in tea and coffee farming, processing, and export, owning estates in Kericho and Ruiru and selling through the Mombasa Tea Auction, Nairobi Coffee Exchange, and direct trade channels.",
+    "staticNews": [
+      {
+        "title": "Sasini profit doubles on surge in global tea and coffee commodity prices",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-20"
+      },
+      {
+        "title": "Sasini Tea raises dividend payout to shareholders after bumper harvest season",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-12-10"
+      },
+      {
+        "title": "Sasini coffee exports grow as premium specialty market demand from Europe rises",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-09-25"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "Q1 2024",
+      "periodType": "quarter",
+      "revenue": 2998443.0,
+      "pat": 124692.0,
+      "eps": -0.16,
+      "totalAssets": -31849.0,
+      "totalEquity": 14403282.0
+    },
+    "annuals": [],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "Q1 2024",
+        "periodType": "quarter",
+        "revenue": 2998443.0,
+        "pat": 124692.0,
+        "eps": -0.16,
+        "totalAssets": -31849.0,
+        "totalEquity": 14403282.0
+      },
+      {
+        "year": 2022,
+        "period": "Q1 2022",
+        "periodType": "quarter",
+        "revenue": 3346701.0,
+        "pat": 128776.0,
+        "pbt": 583.0,
+        "totalEquity": 13751334.0
+      },
+      {
+        "year": 2021,
+        "period": "Q3 2021",
+        "periodType": "quarter",
+        "revenue": 5261433.0,
+        "pat": 573200.0,
+        "pbt": 768096.0,
+        "dps": 1.0,
+        "totalAssets": 15142739.0,
+        "totalEquity": 13443991.0
+      }
+    ]
+  },
+  "SCAN": {
+    "name": "WPP Scangroup",
+    "ticker": "SCAN",
+    "exchange": "NSE",
+    "sector": "Media & Services",
+    "logo": "📺",
+    "description": "WPP Scangroup (Scangroup) is Sub-Saharan Africa's largest marketing and communications company, affiliated with global advertising giant WPP PLC, operating advertising, public relations, digital marketing, and media buying agencies across more than 20 African markets.",
+    "staticNews": [
+      {
+        "title": "Scangroup revenue grows as digital advertising spend rises sharply across Africa",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-18"
+      },
+      {
+        "title": "WPP Scangroup restructures agency portfolio and appoints new regional CEO",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-08-12"
+      },
+      {
+        "title": "Scangroup wins pan-African campaign mandates from major FMCG and telco clients",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-09-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 6612362.0,
+      "pat": 133300.0,
+      "pbt": 377960.0,
+      "totalAssets": 8014801.0,
+      "totalEquity": 5274475.0,
+      "interestIncome": 237729,
+      "interestExpense": 22765,
+      "loanLossProvision": 100137,
+      "provisionToInterestIncome": 42.1
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 6612362.0,
+        "pat": 133300.0,
+        "pbt": 377960.0,
+        "totalAssets": 8014801.0,
+        "totalEquity": 5274475.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 7596164.0,
+        "pat": -37940.0,
+        "totalAssets": 9444783.0,
+        "totalEquity": 5200397.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual"
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "totalAssets": -206205.0,
+        "totalEquity": 4948129.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "pbt": -106487.0,
+        "totalAssets": 5839.0,
+        "totalEquity": -124526.0
+      }
+    ]
+  },
+  "SCBK": {
+    "name": "Standard Chartered Bank Kenya",
+    "ticker": "SCBK",
+    "exchange": "NSE",
+    "sector": "Banking",
+    "logo": "🏦",
+    "description": "Standard Chartered Bank Kenya is the listed subsidiary of global banking group Standard Chartered PLC, offering premium retail, corporate, commercial, and private banking services with a focus on international trade corridors, investment, and wealth management.",
+    "staticNews": [
+      {
+        "title": "Standard Chartered Kenya profit rises 22% driven by higher interest income in 2024",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-05"
+      },
+      {
+        "title": "StanChart Kenya targets wealth management growth with new private banking hub",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-22"
+      },
+      {
+        "title": "Standard Chartered Kenya arranges green bond financing as ESG investing grows",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-09-10"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 50677085.0,
+      "pat": 20060587.0,
+      "pbt": 28208236.0,
+      "nii": 33265303,
+      "eps": 52.65,
+      "dps": 45.0,
+      "totalAssets": 384574089.0,
+      "totalEquity": 71776120.0,
+      "deposits": 295690089.0,
+      "loans": 151647379.0,
+      "interestIncome": 38815684,
+      "interestExpense": 5550381,
+      "loanLossProvision": 1763610,
+      "provisionToInterestIncome": 4.5,
+      "totalOpex": 19994088,
+      "costToIncomeRatio": 39.5
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 50677085.0,
+        "pat": 20060587,
+        "pbt": 28208236,
+        "nii": 33265303,
+        "eps": 52.65,
+        "dps": 45.0,
+        "totalAssets": 384574089.0,
+        "totalEquity": 71776120.0,
+        "deposits": 295690089.0,
+        "loans": 151647379.0,
+        "interestIncome": 38815684,
+        "interestExpense": 5550381,
+        "loanLossProvision": 1763610,
+        "provisionToInterestIncome": 4.5,
+        "totalOpex": 19994088,
+        "costToIncomeRatio": 39.5
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 41728586.0,
+        "pat": 13835467,
+        "pbt": 19668482,
+        "nii": 28844408,
+        "eps": 36.17,
+        "dps": 29.0,
+        "totalAssets": 428962175.0,
+        "totalEquity": 61532267.0,
+        "deposits": 342853241.0,
+        "loans": 163161777.0,
+        "interestIncome": 32352169,
+        "interestExpense": 3507761,
+        "loanLossProvision": 3217995,
+        "provisionToInterestIncome": 9.9,
+        "totalOpex": 17897409,
+        "costToIncomeRatio": 42.9
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 36000000.0,
+        "pat": 12100000.0,
+        "pbt": 13400000.0,
+        "nii": 22300000.0,
+        "eps": 35.9,
+        "totalAssets": 368800000.0,
+        "deposits": 260700000.0,
+        "loans": 188300000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 29200000.0,
+        "pat": 9000000.0,
+        "pbt": 12600000.0,
+        "eps": 24.0,
+        "dps": 19.0,
+        "totalAssets": 334900000.0,
+        "totalEquity": 53200000.0,
+        "deposits": 265500000.0,
+        "loans": 126000000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 27400000.0,
+        "pat": 5400000.0,
+        "pbt": 7400000.0,
+        "nii": 17800000.0,
+        "eps": 14.4,
+        "dps": 10.5,
+        "totalAssets": 325600000.0,
+        "totalEquity": 50900000.0,
+        "deposits": 256600000.0,
+        "loans": 121500000.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "pat": 8700000.0,
+        "pbt": 11500000.0,
+        "eps": 25.8,
+        "dps": 23.0,
+        "totalAssets": 330000000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 18900000.0,
+        "pat": 7200000.0,
+        "pbt": 9800000.0,
+        "nii": 12100000.0,
+        "eps": 19.7,
+        "totalAssets": 395000000.0,
+        "totalEquity": 64500000.0,
+        "deposits": 301000000.0,
+        "loans": 170000000.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 17600000.0,
+        "pat": 6500000.0,
+        "pbt": 8900000.0,
+        "nii": 11200000.0,
+        "eps": 17.8,
+        "totalAssets": 372000000.0,
+        "totalEquity": 60200000.0,
+        "deposits": 285000000.0,
+        "loans": 162000000.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "pat": 9043839.0,
+        "pbt": 7569331.0,
+        "eps": 18.0,
+        "dps": 19.0,
+        "totalAssets": 345646341.0,
+        "totalEquity": 51706369.0
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "eps": 18.0,
+        "dps": 19.0,
+        "totalAssets": 290564005.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Jun2020",
+        "periodType": "half_year",
+        "revenue": 13231587.0,
+        "pat": 3233064.0,
+        "pbt": 5105313.0,
+        "eps": 8.26,
+        "dps": 12.5,
+        "totalAssets": 327214126.0,
+        "totalEquity": 50846552.0
+      },
+      {
+        "year": 2020,
+        "period": "Q1 2020",
+        "periodType": "quarter",
+        "revenue": 6610667.0,
+        "eps": 5.14,
+        "dps": 20.0,
+        "totalAssets": 311432013.0,
+        "totalEquity": 49068888.0
+      },
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year",
+        "revenue": 14663490.0,
+        "pat": 705902.0,
+        "pbt": 920271.0,
+        "eps": 1.0,
+        "dps": 5.0,
+        "totalAssets": 95955246.0,
+        "totalEquity": 4641514.0
+      }
+    ]
+  },
+  "SCOM": {
+    "name": "Safaricom PLC",
+    "ticker": "SCOM",
+    "exchange": "NSE",
+    "sector": "Telecoms & Technology",
+    "logo": "📱",
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2025,
+      "period": "FY2025",
+      "periodType": "annual",
+      "revenue": 388680000.0,
+      "pat": 69714000.0,
+      "pbt": 93210000.0,
+      "eps": 1.74,
+      "dps": 1.2,
+      "mpesa": 161100000.0
+    },
+    "annuals": [
+      {
+        "year": 2025,
+        "period": "FY2025",
+        "periodType": "annual",
+        "revenue": 388680000.0,
+        "pat": 69714000.0,
+        "pbt": 93210000.0,
+        "eps": 1.74,
+        "dps": 1.2,
+        "mpesa": 161100000.0
+      },
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 349450000.0,
+        "pat": 62900000.0,
+        "pbt": 84690000.0,
+        "eps": 1.57,
+        "dps": 1.2,
+        "totalAssets": 641164300.0,
+        "totalEquity": 335750000.0,
+        "ebitda": -12776500.0,
+        "mpesa": 140010000.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 310904800.0,
+        "pat": 52482800.0,
+        "pbt": 88350000.0,
+        "eps": 1.55,
+        "dps": 1.2,
+        "ebitda": 85000000.0,
+        "mpesa": 117190000.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 298903000.0,
+        "pat": 69600000.0,
+        "pbt": 112709000.0,
+        "eps": 1.71,
+        "dps": 1.39,
+        "totalAssets": 412000000.0,
+        "totalEquity": 157000000.0,
+        "mpesa": 107690000.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 263800000.0,
+        "pat": 68676000.0,
+        "pbt": 106500000.0,
+        "eps": 1.71,
+        "dps": 1.37,
+        "totalAssets": 387000000.0,
+        "totalEquity": 139000000.0,
+        "mpesa": 82640000.0
+      },
+      {
+        "year": 2020,
+        "period": "FY2020",
+        "periodType": "annual",
+        "revenue": 264000000.0,
+        "pat": 73660000.0,
+        "pbt": 101000000.0,
+        "eps": 1.84,
+        "dps": 1.4,
+        "totalEquity": 143080.0,
+        "ebitda": 101000000.0,
+        "mpesa": 84440000.0
+      },
+      {
+        "year": 2019,
+        "period": "FY2019",
+        "periodType": "annual",
+        "revenue": 250500000.0,
+        "pat": 61600000.0,
+        "eps": 1.54,
+        "dps": 1.25,
+        "mpesa": 74990000.0
+      },
+      {
+        "year": 2018,
+        "period": "FY2018",
+        "periodType": "annual",
+        "revenue": 234000000.0,
+        "pat": 48400000.0,
+        "eps": 1.21,
+        "dps": 1.1,
+        "mpesa": 62890000.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "Q3 2024",
+        "periodType": "quarter",
+        "revenue": 189421900.0,
+        "pat": 10012100.0,
+        "pbt": 33859200.0,
+        "eps": 0.7,
+        "totalAssets": 483124400.0,
+        "totalEquity": 189672900.0,
+        "ebitda": 75070700.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Sep2023",
+        "periodType": "half_year",
+        "revenue": 176900000.0,
+        "pat": 28700000.0,
+        "pbt": 43500000.0,
+        "eps": 7.17,
+        "dps": 0.0,
+        "totalAssets": 605000000.0,
+        "totalEquity": 195000000.0,
+        "mpesa": 63600000.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Sep2022",
+        "periodType": "half_year",
+        "revenue": 158990000.0,
+        "pat": 33800000.0,
+        "pbt": 51200000.0,
+        "eps": 8.45,
+        "totalAssets": 561000000.0,
+        "totalEquity": 170000000.0,
+        "mpesa": 58300000.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Sep2021",
+        "periodType": "half_year",
+        "revenue": 139620000.0,
+        "pat": 37420000.0,
+        "pbt": 54400000.0,
+        "eps": 9.35,
+        "totalAssets": 397000000.0,
+        "totalEquity": 142000000.0,
+        "mpesa": 52180000.0
+      },
+      {
+        "year": 2020,
+        "period": "H1 Sep2020",
+        "periodType": "half_year",
+        "revenue": 127500000.0,
+        "pat": 35650000.0,
+        "pbt": 46600000.0,
+        "eps": 8.91,
+        "totalAssets": 370000000.0,
+        "totalEquity": 128000000.0,
+        "mpesa": 43720000.0
+      }
+    ]
+  },
+  "SGL": {
+    "name": "The Standard Group PLC",
+    "ticker": "SGL",
+    "exchange": "NSE",
+    "sector": "Media & Services",
+    "logo": "📊",
+    "description": "Stanlib Fahari I-REIT is Kenya's first listed income Real Estate Investment Trust, established in 2015 and managed by Stanlib Kenya, owning a portfolio of commercial office and retail properties in Nairobi that generate rental income distributions for unit holders.",
+    "staticNews": [
+      {
+        "title": "Stanlib Fahari I-REIT distributes income to unit holders after annual property revaluation",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-15"
+      },
+      {
+        "title": "Fahari I-REIT occupancy rates improve as Nairobi commercial office market recovers",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-09-20"
+      },
+      {
+        "title": "NSE calls for more REIT listings to deepen Kenya's real estate capital markets",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-08-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 2381425.0,
+      "eps": -14.27,
+      "dps": 30.0,
+      "totalAssets": 4097155.0,
+      "totalEquity": -1122472.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 2381425.0,
+        "eps": -14.27,
+        "dps": 30.0,
+        "totalAssets": 4097155.0,
+        "totalEquity": -1122472.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 2022.0,
+        "eps": -0.81,
+        "dps": -3765.0,
+        "totalAssets": 4354312.0,
+        "totalEquity": 1046422.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 1049205.0,
+        "eps": -1.39,
+        "totalAssets": 4303516.0,
+        "totalEquity": -1255479.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 1260781.0,
+        "eps": -1.29,
+        "dps": 57033.0,
+        "totalAssets": 4927856.0,
+        "totalEquity": 78312.0
+      },
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 1596935.0,
+        "eps": -0.67,
+        "totalAssets": 4235325.0,
+        "totalEquity": 1058365.0
+      },
+      {
+        "year": 2019,
+        "period": "H1 Jun2019",
+        "periodType": "half_year",
+        "revenue": 2403211.0,
+        "eps": 0.59,
+        "dps": -86353.0,
+        "totalAssets": 4628538.0,
+        "totalEquity": 1932987.0
+      }
+    ]
+  },
+  "SLAM": {
+    "name": "Sanlam Kenya",
+    "ticker": "SLAM",
+    "exchange": "NSE",
+    "sector": "Insurance",
+    "logo": "🛡️",
+    "description": "Sanlam Kenya (formerly Pan Africa Insurance Holdings) is a life insurance and financial services company, part of the South African Sanlam Group, offering life insurance, annuities, group schemes, and investment products to individuals and corporates in Kenya.",
+    "staticNews": [
+      {
+        "title": "Sanlam Kenya profit grows as life insurance premiums rise on post-pandemic demand",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-28"
+      },
+      {
+        "title": "Sanlam Kenya agency network rebranded under unified pan-African Sanlam strategy",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-08-14"
+      },
+      {
+        "title": "Sanlam Kenya group schemes division wins new corporate pension fund mandates",
+        "url": "",
+        "source": "Capital FM",
+        "date": "2024-11-20"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "FY2024",
+      "periodType": "annual",
+      "revenue": 7359029.0,
+      "pat": 1378870.0,
+      "pbt": 337388.0,
+      "totalAssets": 39165932.0,
+      "totalEquity": 39165932.0
+    },
+    "annuals": [
+      {
+        "year": 2024,
+        "period": "FY2024",
+        "periodType": "annual",
+        "revenue": 7359029.0,
+        "pat": 1378870.0,
+        "pbt": 337388.0,
+        "totalAssets": 39165932.0,
+        "totalEquity": 39165932.0
+      },
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 6936282.0,
+        "pat": 399836.0,
+        "pbt": 242787.0,
+        "eps": 3.17,
+        "totalAssets": 35535212.0,
+        "totalEquity": 6936282.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2025,
+        "period": "H1 Jun2025",
+        "periodType": "half_year",
+        "revenue": 3737334.0,
+        "pat": 30958.0,
+        "pbt": 49949.0,
+        "totalAssets": 41348687.0,
+        "totalEquity": 41348687.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 3723602.0,
+        "pbt": -54736.0,
+        "eps": 144000000.0,
+        "totalAssets": 35644065.0,
+        "totalEquity": 820351.0
+      }
+    ]
+  },
+  "TCL": {
+    "name": "TransCentury",
+    "ticker": "TCL",
+    "exchange": "NSE",
+    "sector": "Manufacturing",
+    "logo": "🏗️",
+    "description": "Trans-Century is a Kenyan infrastructure and engineering conglomerate with investments spanning power cables and conductors, electrical transformers, railway systems, and water infrastructure projects across East, Central, and Southern Africa.",
+    "staticNews": [
+      {
+        "title": "Trans-Century in talks with creditors over comprehensive debt restructuring plan",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-08"
+      },
+      {
+        "title": "Trans-Century power cables unit wins regional electricity infrastructure contracts",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-09-25"
+      },
+      {
+        "title": "Trans-Century annual loss narrows as revenue from infrastructure projects grows",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-14"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 2023.0,
+      "eps": -6.58,
+      "totalAssets": 12507102.0,
+      "totalEquity": 12507102.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 2023.0,
+        "eps": -6.58,
+        "totalAssets": 12507102.0,
+        "totalEquity": 12507102.0
+      },
+      {
+        "year": 2022,
+        "period": "FY2022",
+        "periodType": "annual",
+        "revenue": 5735750.0,
+        "eps": -6.58,
+        "totalAssets": 12507102.0,
+        "totalEquity": 12507102.0
+      },
+      {
+        "year": 2016,
+        "period": "FY2016",
+        "periodType": "annual",
+        "revenue": 8177350.0,
+        "eps": -1.56,
+        "totalAssets": 18911552.0,
+        "totalEquity": -440135.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "revenue": 3089106.0,
+        "eps": 0.37,
+        "totalAssets": 10789526.0,
+        "totalEquity": 10789526.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 2757062.0,
+        "eps": -1.46,
+        "totalAssets": 13768563.0,
+        "totalEquity": 13768563.0
+      }
+    ]
+  },
+  "TPSE": {
+    "name": "TPS Eastern Africa",
+    "ticker": "TPSE",
+    "exchange": "NSE",
+    "sector": "Media & Services",
+    "logo": "🏨",
+    "description": "TPS Eastern Africa (Serena Hotels) operates the prestigious Serena Hotels & Resorts chain across Kenya, Tanzania, Uganda, Rwanda, Mozambique, and Zanzibar, offering luxury and upscale hospitality to international business and leisure travellers.",
+    "staticNews": [
+      {
+        "title": "TPS Serena Hotels profit rebounds strongly as East African tourism hits five-year high",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-16"
+      },
+      {
+        "title": "Serena Hotels reports strong Safari circuit bookings as European tourist arrivals rise",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-08-22"
+      },
+      {
+        "title": "TPS Eastern Africa plans renovations at flagship Nairobi Serena Hotel property",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-11-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "H1 Jun2023",
+      "periodType": "half_year",
+      "revenue": 3759960.0,
+      "totalEquity": 10082892.0
+    },
+    "annuals": [],
+    "quarters": [
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 3759960.0,
+        "totalEquity": 10082892.0
+      }
+    ]
+  },
+  "UMME": {
+    "name": "Umeme",
+    "ticker": "UMME",
+    "exchange": "NSE",
+    "sector": "Energy & Utilities",
+    "logo": "⚡",
+    "description": "Umeme Limited is Uganda's principal electricity distribution company, cross-listed on both the Uganda Securities Exchange and Nairobi Securities Exchange, having managed Uganda's national distribution network under a government concession that expired in February 2025.",
+    "staticNews": [
+      {
+        "title": "Umeme concession ends as Uganda government takes over electricity distribution network",
+        "url": "",
+        "source": "The East African",
+        "date": "2025-02-28"
+      },
+      {
+        "title": "Umeme shareholders approve final dividend ahead of concession expiry in Uganda",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-20"
+      },
+      {
+        "title": "Umeme Uganda posts final annual results as government concession transition completes",
+        "url": "",
+        "source": "The Standard",
+        "date": "2025-03-05"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 2023.0,
+      "pat": 11470.0,
+      "pbt": 15384.0,
+      "eps": 7.1,
+      "totalAssets": 2347235.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 2023.0,
+        "pat": 11470.0,
+        "pbt": 15384.0,
+        "eps": 7.1,
+        "totalAssets": 2347235.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "H1 Jun2024",
+        "periodType": "half_year",
+        "pat": 12987.0,
+        "pbt": 23577.0,
+        "totalAssets": 2243407.0,
+        "totalEquity": 2243407.0
+      },
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 2023.0,
+        "pat": 2022.0,
+        "pbt": 16667.0,
+        "totalAssets": 33333.0,
+        "totalEquity": -2697.0,
+        "ebitda": 56547.0
+      },
+      {
+        "year": 2022,
+        "period": "H1 Jun2022",
+        "periodType": "half_year",
+        "pat": 64376.0,
+        "pbt": 92779.0,
+        "totalAssets": 10467.0,
+        "totalEquity": 2644855.0
+      }
+    ]
+  },
+  "UNGA": {
+    "name": "Unga Group Plc",
+    "ticker": "UNGA",
+    "exchange": "NSE",
+    "sector": "Consumer Goods",
+    "logo": "📊",
+    "description": "Unga Group is Kenya's leading grain processing company, milling wheat flour, maize flour, and animal feeds under well-known brands including Unga Dola, Jogoo, Starehe, and Turbo Gold, serving retail consumers, industrial bakers, and livestock farmers.",
+    "staticNews": [
+      {
+        "title": "Unga Group profit rises as wheat flour prices stabilise after global supply disruption",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2025-03-12"
+      },
+      {
+        "title": "Unga Group animal feeds volumes grow as Kenya's livestock sector expands",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-05"
+      },
+      {
+        "title": "Unga Jogoo flour market share under pressure from new entrants in milling sector",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-08-18"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual",
+      "revenue": 12426424.0,
+      "eps": -2.49,
+      "totalAssets": 10900009.0,
+      "totalEquity": 10900009.0
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual",
+        "revenue": 12426424.0,
+        "eps": -2.49,
+        "totalAssets": 10900009.0,
+        "totalEquity": 10900009.0
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual",
+        "revenue": 8822553.0,
+        "pat": 8452.0,
+        "pbt": -16743.0,
+        "eps": 0.003,
+        "totalAssets": 9905921.0,
+        "totalEquity": 9905921.0
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2021,
+        "period": "H1 Jun2021",
+        "periodType": "half_year",
+        "revenue": 17812638.0,
+        "pat": 293477.0,
+        "pbt": 485232.0,
+        "eps": 2.39,
+        "totalAssets": 10048779.0,
+        "totalEquity": 10048779.0
+      }
+    ]
+  },
+  "WTK": {
+    "name": "Williamson Tea",
+    "ticker": "WTK",
+    "exchange": "NSE",
+    "sector": "Agriculture",
+    "logo": "🌾",
+    "description": "Williamson Tea Kenya owns and operates commercial tea estates in the Kericho highlands, producing high-quality Kenyan black tea for export through the Mombasa Tea Auction and direct channels to buyers in Europe and the Middle East.",
+    "staticNews": [
+      {
+        "title": "Williamson Tea Kenya profit surges on record Mombasa tea auction prices in 2024",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-11-25"
+      },
+      {
+        "title": "Williamson Tea to increase capital expenditure on estate rehabilitation and replanting",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-10-08"
+      },
+      {
+        "title": "Kenya tea export earnings rise 20% as global demand from Middle East strengthens",
+        "url": "",
+        "source": "The East African",
+        "date": "2024-09-18"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2024,
+      "period": "Q1 2024",
+      "periodType": "quarter",
+      "eps": 2.0
+    },
+    "annuals": [],
+    "quarters": [
+      {
+        "year": 2024,
+        "period": "Q1 2024",
+        "periodType": "quarter",
+        "eps": 2.0
+      },
+      {
+        "year": 2023,
+        "period": "Apr2023",
+        "periodType": "unknown",
+        "revenue": 1982355.0,
+        "pat": 461259.0,
+        "pbt": 655840.0,
+        "eps": 25.47,
+        "totalAssets": 477110.0,
+        "totalEquity": 2024.0
+      },
+      {
+        "year": 2020,
+        "period": "Q3 2020",
+        "periodType": "quarter",
+        "revenue": 1907878.0,
+        "pat": 43902.0,
+        "eps": 1.5,
+        "totalAssets": 7791228.0,
+        "totalEquity": 5617312.0
+      },
+      {
+        "year": 2020,
+        "period": "Q1 2020",
+        "periodType": "quarter",
+        "revenue": 3069106.0,
+        "pat": 38053.0
+      },
+      {
+        "year": 2019,
+        "period": "Q3 2019",
+        "periodType": "quarter",
+        "revenue": 1317046.0,
+        "pat": -65870.0,
+        "pbt": -94100.0,
+        "eps": -3.61,
+        "totalAssets": 7973936.0,
+        "totalEquity": 5706374.0
+      },
+      {
+        "year": 2018,
+        "period": "Q1 2018",
+        "periodType": "quarter",
+        "pat": 32864.0,
+        "eps": 2.0
+      },
+      {
+        "year": 2015,
+        "period": "Q1 2015",
+        "periodType": "quarter",
+        "revenue": 2590416.0,
+        "pat": -22785.0,
+        "pbt": -29536.0,
+        "eps": 8.0
+      }
+    ]
+  },
+  "XPRS": {
+    "name": "Express Kenya",
+    "ticker": "XPRS",
+    "exchange": "NSE",
+    "sector": "Media & Services",
+    "logo": "🚚",
+    "description": "Express Kenya is a logistics and courier services company providing domestic and international parcel delivery, freight forwarding, customs clearance, and warehousing solutions, serving e-commerce platforms, retail businesses, and corporate clients across Kenya.",
+    "staticNews": [
+      {
+        "title": "Express Kenya parcel volumes grow as e-commerce boom drives courier demand",
+        "url": "",
+        "source": "Business Daily",
+        "date": "2024-10-22"
+      },
+      {
+        "title": "Express Kenya invests in new Nairobi sorting hub to handle growing package volumes",
+        "url": "",
+        "source": "The Standard",
+        "date": "2024-08-20"
+      }
+    ],
+    "currency": "KES",
+    "units": "thousands",
+    "latestPrice": null,
+    "latestPeriod": {
+      "year": 2023,
+      "period": "FY2023",
+      "periodType": "annual"
+    },
+    "annuals": [
+      {
+        "year": 2023,
+        "period": "FY2023",
+        "periodType": "annual"
+      },
+      {
+        "year": 2021,
+        "period": "FY2021",
+        "periodType": "annual"
+      }
+    ],
+    "quarters": [
+      {
+        "year": 2023,
+        "period": "H1 Jun2023",
+        "periodType": "half_year",
+        "revenue": 14138.0
+      }
+    ]
+  }
+};
+
+const NSE_INDEX = ["ABSA", "BAMB", "BATK", "BKG", "BOC", "BRIT", "CARB", "CFC", "COOP", "CPKL", "DTK", "EABL", "EAPC", "EQTY", "FANB", "FTGH", "HAFR", "HBZE", "HFCK", "IMH", "JUB", "KAPA", "KCB", "KEGN", "KPLC", "NBK", "NCBA", "NMG", "NSE", "SASN", "SCAN", "SCBK", "SCOM", "SGL", "SLAM", "TCL", "TPSE", "UMME", "UNGA", "WTK", "XPRS"];
+
+const NSE_COMPANY_COUNT = 41;

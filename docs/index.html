@@ -2,35 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NSE Insights</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="NSE Insights" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="NSE Insights - Kenya stock market financial data and analysis dashboard" />
+  <title>NSE Insights — Dashboard</title>
+  <link rel="stylesheet" href="styles.css?v=10" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.1/dist/chartjs-chart-financial.min.js"></script>
 </head>
 <body>
 
   <!-- Top Navigation -->
   <nav class="topnav">
     <div class="topnav-left">
-      <span class="logo">📈 NSE Insights</span>
-      <span class="breadcrumb">/ <span id="breadcrumb-company">Select a company</span></span>
+      <a href="landing.html" class="logo-link">
+        <span class="logo-dot"></span>
+        <span class="logo-text">NSE Insights</span>
+      </a>
+      <button class="hamburger" id="hamburger-menu" onclick="toggleMobileMenu()" title="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <div class="topnav-right">
-      <div class="index-pill">NSE 20 <span class="idx-val" id="nse20-val">—</span> <span class="idx-chg" id="nse20-chg"></span></div>
-      <div class="index-pill">NSE All Share <span class="idx-val" id="nseall-val">—</span> <span class="idx-chg" id="nseall-chg"></span></div>
-      <a href="admin_review.html" class="admin-link" title="Admin Review Panel">Admin</a>
+    <div class="topnav-center nav-desktop">
+      <a class="nav-link active" id="nav-dashboard" href="#" onclick="showView('companies'); return false;">Dashboard</a>
+      <a class="nav-link" id="nav-sectors" href="#" onclick="showView('sectors'); return false;">Sectors</a>
+    </div>
+    <div class="topnav-right nav-desktop">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" onclick="toggleTheme()">☀️</button>
+      <a href="admin.html" class="admin-padlock" title="Admin Review">🔒</a>
+      <a href="login.html" class="btn-login">Log in</a>
+      <a href="login.html#signup" class="btn-getstarted">Get started</a>
     </div>
   </nav>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu hidden" id="mobile-menu">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <span>Menu</span>
+        <button class="close-mobile-menu" onclick="toggleMobileMenu()">✕</button>
+      </div>
+      <a class="mobile-nav-link" href="#" onclick="showView('companies'); toggleMobileMenu(); return false;">Dashboard</a>
+      <a class="mobile-nav-link" href="#" onclick="showView('sectors'); toggleMobileMenu(); return false;">Sectors</a>
+      <a class="mobile-nav-link" href="admin.html" onclick="toggleMobileMenu()">Admin Review</a>
+      <hr class="mobile-menu-divider" />
+      <button class="mobile-nav-link theme-toggle" onclick="toggleTheme(); toggleMobileMenu();">
+        <span id="theme-toggle-mobile">☀️</span> Theme
+      </button>
+      <a class="mobile-nav-link" href="login.html">Log in</a>
+      <a class="mobile-nav-link" href="login.html#signup">Get started</a>
+    </div>
+  </div>
 
   <!-- Search Bar -->
   <div class="search-bar-wrap">
     <div class="search-bar">
-      <select id="company-select">
-        <option value="">-- Select Company --</option>
-      </select>
+      <div class="company-search-container">
+        <input
+          id="company-search-input"
+          type="text"
+          placeholder="Search by company name or ticker..."
+          class="company-search-input"
+          autocomplete="off"
+        />
+        <button id="search-dropdown-btn" class="search-dropdown-btn" title="Browse all companies" onclick="toggleSearchDropdown()">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="company-suggestions" class="company-suggestions-dropdown"></div>
+      </div>
       <span class="exchange-tag">NSE</span>
-      <button id="search-btn" onclick="loadCompany()">Search</button>
+      <button id="search-btn" onclick="loadCompanyFromSearch()" title="Search">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M10 10L14 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
     </div>
     <div class="view-toggle">
       <button class="view-btn active" id="btn-companies" onclick="showView('companies')">Companies</button>
@@ -41,8 +90,14 @@
   <!-- Market Summary Bar -->
   <div id="market-summary" class="market-summary">
     <div class="market-card">
-      <div class="market-card-label">Stocks Tracked</div>
-      <div class="market-card-value" id="ms-stocks">—</div>
+      <div class="market-card-label">NSE 20</div>
+      <div class="market-card-value" id="nse20-val">—</div>
+      <div class="market-card-chg" id="nse20-chg"></div>
+    </div>
+    <div class="market-card">
+      <div class="market-card-label">NSE All Share</div>
+      <div class="market-card-value" id="nseall-val">—</div>
+      <div class="market-card-chg" id="nseall-chg"></div>
     </div>
     <div class="market-card">
       <div class="market-card-label">Top Gainer</div>
@@ -60,108 +115,156 @@
       <div class="market-card-label">Avg Div Yield</div>
       <div class="market-card-value" id="ms-divyield">—</div>
     </div>
-    <div class="market-card">
-      <div class="market-card-label">Most Active</div>
-      <div class="market-card-value" id="ms-active">—</div>
-    </div>
   </div>
 
   <!-- Main Dashboard (hidden until company selected) -->
   <div id="dashboard" class="hidden">
 
-    <!-- Company Header -->
-    <div class="company-header">
-      <div class="company-info">
-        <div class="company-logo" id="company-logo">🏦</div>
-        <div>
-          <div class="company-name" id="company-name">—</div>
-          <div class="company-meta" id="company-meta">— | NSE</div>
-        </div>
-      </div>
-      <div class="company-price-block">
-        <div class="company-price" id="company-price">—</div>
-        <div class="company-price-change" id="company-price-change"></div>
-        <div class="company-eps-pill" id="company-eps-pill">Latest EPS: —</div>
-        <div class="company-latest-year" id="company-latest-year"></div>
-      </div>
-    </div>
+    <!-- Company Header + Price Chart side by side -->
+    <div class="company-chart-row">
 
-    <!-- Price Chart -->
-    <div id="price-chart-section" class="price-chart-section hidden">
-      <div class="price-chart-header">
-        <div class="price-summary-row">
-          <div class="price-current">
-            <span class="price-label">Price</span>
-            <span class="price-value" id="price-value">—</span>
-            <span class="price-change" id="price-change"></span>
-          </div>
-          <div class="price-range-info">
-            <div class="price-stat"><span>52wk Low</span><span id="price-52lo">—</span></div>
-            <div class="price-stat"><span>52wk High</span><span id="price-52hi">—</span></div>
-            <div class="price-stat"><span>Volume</span><span id="price-vol">—</span></div>
+      <!-- Company Header -->
+      <div class="company-header">
+        <div class="company-info">
+          <div class="company-logo" id="company-logo">🏦</div>
+          <div>
+            <div class="company-name" id="company-name">—</div>
+            <div class="company-meta" id="company-meta">— | NSE</div>
           </div>
         </div>
-        <div class="price-range-btns" id="price-range-btns">
-          <button class="range-btn" data-range="1M">1M</button>
-          <button class="range-btn" data-range="3M">3M</button>
-          <button class="range-btn" data-range="6M">6M</button>
-          <button class="range-btn active" data-range="1Y">1Y</button>
-          <button class="range-btn" data-range="3Y">3Y</button>
-          <button class="range-btn" data-range="5Y">5Y</button>
-          <button class="range-btn" data-range="ALL">ALL</button>
+        <div class="company-price-block">
+          <div class="company-price" id="company-price">—</div>
+          <div class="company-price-change" id="company-price-change"></div>
+          <div class="company-eps-pill" id="company-eps-pill">Latest EPS: —</div>
+          <div class="company-latest-year" id="company-latest-year"></div>
         </div>
       </div>
-      <div class="price-chart-wrap"><canvas id="chart-price"></canvas></div>
+
+      <!-- Price Chart -->
+      <div id="price-chart-section" class="price-chart-section hidden">
+        <div class="price-chart-inner">
+          <div class="price-chart-header">
+            <div class="price-summary-row">
+              <div class="price-current">
+                <span class="price-label">Price</span>
+                <span class="price-value" id="price-value">—</span>
+                <span class="price-change" id="price-change"></span>
+              </div>
+              <div class="price-range-info">
+                <div class="price-stat"><span>52wk Low</span><span id="price-52lo">—</span></div>
+                <div class="price-stat"><span>52wk High</span><span id="price-52hi">—</span></div>
+                <div class="price-stat"><span>Volume</span><span id="price-vol">—</span></div>
+              </div>
+            </div>
+            <div class="price-chart-controls">
+              <div class="price-range-btns" id="price-range-btns">
+                <button class="range-btn" data-range="1M">1M</button>
+                <button class="range-btn" data-range="3M">3M</button>
+                <button class="range-btn" data-range="6M">6M</button>
+                <button class="range-btn active" data-range="1Y">1Y</button>
+                <button class="range-btn" data-range="3Y">3Y</button>
+                <button class="range-btn" data-range="5Y">5Y</button>
+                <button class="range-btn" data-range="ALL">ALL</button>
+              </div>
+              <div class="chart-type-toggle" id="chart-type-toggle">
+                <button class="chart-type-btn active" id="btn-chart-line" onclick="setPriceChartType('line')" title="Line chart">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polyline points="1,11 5,5 8,8 13,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                </button>
+                <button class="chart-type-btn" id="btn-chart-candle" onclick="setPriceChartType('candle')" title="Candlestick">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <line x1="3" y1="1" x2="3" y2="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="1.5" y="3" width="3" height="5" rx="0.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <line x1="3" y1="8" x2="3" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="11" y1="3" x2="11" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="9.5" y="5" width="3" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <line x1="11" y1="9" x2="11" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="price-chart-wrap"><canvas id="chart-price"></canvas></div>
+        </div>
+      </div>
+
+    </div><!-- /.company-chart-row -->
+
+    <!-- Info Row: description LEFT (2/3) + news RIGHT (1/3) -->
+    <div class="info-row" id="info-row">
+      <div class="company-desc-card">
+        <p class="company-desc-text" id="company-desc-text">—</p>
+      </div>
+      <div class="news-section">
+        <div class="news-header">
+          <span class="news-title">Latest News</span>
+          <span class="news-source-tag">BD · Standard · Capital</span>
+        </div>
+        <div class="news-grid" id="news-grid">
+          <div class="news-loading">Loading…</div>
+        </div>
+      </div>
     </div>
 
     <!-- Stats Grid -->
-    <div class="stats-grid" id="stats-grid">
-      <!-- Populated by JS -->
-    </div>
+    <div class="stats-grid" id="stats-grid"></div>
 
     <!-- Chart Toggle -->
     <div class="chart-controls">
       <span class="chart-section-label">Historical Financials</span>
       <div class="period-toggle">
         <button class="toggle-btn active" id="toggle-annual" onclick="setPeriod('annual')">Annually</button>
-        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')" >Quarterly</button>
+        <button class="toggle-btn" id="toggle-quarterly" onclick="setPeriod('quarterly')">Quarterly</button>
       </div>
     </div>
 
-    <!-- Dynamic Charts — populated by sector template in app.js -->
-    <div id="sector-charts-container">
-      <!-- JS builds chart cards here based on company sector -->
-    </div>
+    <!-- Dynamic Charts -->
+    <div id="sector-charts-container"></div>
 
-    <!-- Valuation Estimates Panel -->
+    <!-- Valuation panel — below charts -->
     <div id="valuation-panel" class="valuation-panel hidden">
-      <div class="chart-controls" style="margin-top:1.5rem">
-        <span class="chart-section-label">Estimated Valuation</span>
-        <span class="valuation-disclaimer">Estimates only — not investment advice</span>
-      </div>
-      <div class="valuation-grid" id="valuation-grid">
-        <!-- Populated by JS -->
-      </div>
-      <div class="valuation-summary" id="valuation-summary">
-        <!-- Overall verdict -->
-      </div>
-      <div class="valuation-assumptions" id="valuation-assumptions">
-        <!-- Assumptions disclosure -->
+      <div class="valuation-panel-inner">
+        <div class="valuation-header">
+          <span class="valuation-title">Valuation Estimates</span>
+          <span class="valuation-disclaimer">Not investment advice</span>
+        </div>
+        <div class="valuation-grid" id="valuation-grid"></div>
+        <div class="valuation-summary" id="valuation-summary"></div>
+        <div class="valuation-assumptions" id="valuation-assumptions"></div>
       </div>
     </div>
+
 
   </div><!-- /#dashboard -->
 
-  <!-- Sector Overview (hidden by default) -->
+  <!-- Sector Overview -->
   <div id="sector-overview" class="hidden">
-    <div class="sector-grid" id="sector-grid">
-      <!-- Sector cards populated by JS -->
+    <div class="sector-heatmap-wrap">
+      <div class="sector-heatmap-title">Market Cap Heatmap <span class="sector-heatmap-sub">Size = market cap &nbsp;·&nbsp; Colour = price change</span></div>
+      <div class="sector-heatmap-row">
+        <div id="sector-heatmap"></div>
+        <div id="sector-market-summary"></div>
+      </div>
     </div>
+    <div class="sector-grid" id="sector-grid"></div>
     <div id="sector-table-wrap" class="hidden">
       <div class="sector-table-header">
         <button class="sector-back-btn" onclick="showSectorGrid()">&larr; All Sectors</button>
         <span class="sector-table-title" id="sector-table-title">—</span>
+        <button class="sector-compare-toggle" id="sector-compare-toggle" onclick="toggleSectorComparison()" title="Compare vs NSE average">📊</button>
       </div>
+
+      <!-- Sector Snapshot -->
+      <div class="sector-snapshot hidden" id="sector-snapshot">
+        <div class="snapshot-label">Sector Snapshot</div>
+        <div class="snapshot-grid" id="snapshot-grid"></div>
+      </div>
+
+      <!-- Sector Comparison -->
+      <div class="sector-comparison hidden" id="sector-comparison">
+        <div class="comparison-label">Sector vs NSE Average</div>
+        <div class="comparison-grid" id="comparison-grid"></div>
+      </div>
+
       <div class="sector-table-scroll">
         <table class="sector-table" id="sector-table">
           <thead><tr id="sector-table-head"></tr></thead>
@@ -169,20 +272,168 @@
         </table>
       </div>
     </div>
+
+    <!-- Sector Detail Dashboard (Banking-first, template for other sectors) -->
+    <div id="sector-detail" class="hidden">
+      <button class="sector-back-btn" id="sd-back-btn">&larr; All Sectors</button>
+
+      <!-- Hero banner -->
+      <div class="sd-hero">
+        <h2 id="sd-hero-title">Banking Sector: The Full Story</h2>
+        <p id="sd-hero-subtitle">13 NSE-listed companies — FY 2024 vs FY 2023</p>
+        <div class="sd-year-toggle">
+          <label><input type="radio" name="sd-year" value="2024" checked> FY 2024</label>
+          <label><input type="radio" name="sd-year" value="2023"> FY 2023</label>
+        </div>
+      </div>
+
+      <!-- Tab navigation -->
+      <div class="sd-tabs">
+        <button class="sd-tab active" data-tab="overview">Overview</button>
+        <button class="sd-tab" data-tab="profitability">Profitability League</button>
+        <button class="sd-tab" data-tab="efficiency">Core Efficiency</button>
+        <button class="sd-tab" data-tab="deep-dive">Bank Deep Dive</button>
+      </div>
+
+      <!-- TAB 1: Overview -->
+      <div class="sd-panel" id="sd-tab-overview">
+        <div class="sd-kpi-row" id="sd-kpi-row-1"></div>
+        <div class="sd-kpi-row" id="sd-kpi-row-2"></div>
+        <div class="sd-section">
+          <h3>PAT Ranking</h3>
+          <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-pat-ranking"></canvas></div>
+        </div>
+        <div class="sd-two-col">
+          <div class="sd-section" id="sd-top-earners"></div>
+          <div class="sd-section">
+            <h3>Total Assets — Market Share</h3>
+            <div class="sd-asset-treemap" id="sd-asset-treemap"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Profitability League -->
+      <div class="sd-panel hidden" id="sd-tab-profitability">
+        <div class="sd-metric-radios">
+          <label><input type="radio" name="sd-profit-metric" value="pat" checked> PAT</label>
+          <label><input type="radio" name="sd-profit-metric" value="pbt"> PBT</label>
+          <label><input type="radio" name="sd-profit-metric" value="revenue"> Revenue</label>
+          <label><input type="radio" name="sd-profit-metric" value="nii"> NII</label>
+        </div>
+        <div class="sd-section">
+          <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-profitability"></canvas></div>
+        </div>
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-pat-growth"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-rev-growth"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Core Efficiency -->
+      <div class="sd-panel hidden" id="sd-tab-efficiency">
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-nim"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-cir"></canvas></div>
+          </div>
+        </div>
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-roe"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-roa"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Bank Deep Dive -->
+      <div class="sd-panel hidden" id="sd-tab-deep-dive">
+        <div class="sd-dd-header">
+          <div>
+            <h3 id="sd-dd-name">—</h3>
+            <p id="sd-dd-subtitle">—</p>
+          </div>
+          <select id="sd-bank-select" class="sd-select"></select>
+        </div>
+        <div class="sd-kpi-row" id="sd-dd-kpis"></div>
+        <div class="sd-two-col">
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-tall"><canvas id="sd-chart-waterfall"></canvas></div>
+          </div>
+          <div class="sd-section">
+            <div class="sd-chart-wrap sd-chart-sq"><canvas id="sd-chart-balance"></canvas></div>
+          </div>
+        </div>
+        <div class="sd-section sd-radar-wrap">
+          <div class="sd-chart-wrap sd-chart-sq"><canvas id="sd-chart-radar"></canvas></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Empty state -->
   <div id="empty-state" class="empty-state">
-    <div class="empty-icon">📊</div>
+    <div class="empty-icon">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="14" fill="url(#emptyGrad)"/>
+        <rect x="10" y="32" width="8" height="14" rx="2" fill="white" fill-opacity="0.9"/>
+        <rect x="22" y="22" width="8" height="24" rx="2" fill="white"/>
+        <rect x="34" y="14" width="8" height="32" rx="2" fill="white" fill-opacity="0.7"/>
+        <defs>
+          <linearGradient id="emptyGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#10b981"/>
+            <stop offset="1" stop-color="#3b82f6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
     <div class="empty-title">NSE Company Insights</div>
     <div class="empty-sub">Select a company above to view financials, charts, and key metrics.</div>
   </div>
 
-  <div class="data-updated" id="data-updated">
-    Prices: Jan 2013 – Oct 2025 via NSE/Mendeley &middot; Financial data extracted from company filings
+  <!-- Chart Expand Modal -->
+  <div id="chart-modal" class="chart-modal hidden">
+    <div class="chart-modal-overlay"></div>
+    <div class="chart-modal-content">
+      <div class="chart-modal-header">
+        <h3 class="chart-modal-title">—</h3>
+        <div class="chart-modal-controls">
+          <button class="chart-modal-fullscreen" id="chart-modal-fullscreen" title="Open in new tab">⛶</button>
+          <button class="chart-modal-close" id="chart-modal-close" title="Close">&times;</button>
+        </div>
+      </div>
+      <div class="chart-modal-body">
+        <canvas id="chart-modal-canvas"></canvas>
+      </div>
+      <div class="chart-modal-footer">
+        <span class="chart-modal-meta" id="chart-modal-meta"></span>
+      </div>
+    </div>
   </div>
 
-  <script src="data.js?v=4"></script>
-  <script src="app.js?v=4"></script>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span class="footer-brand">NSE Insights</span>
+      <span class="footer-tagline">Data from NSE company filings</span>
+    </div>
+    <div class="footer-center">
+      <a href="landing.html">Home</a>
+      <a href="login.html">Sign in</a>
+      <a href="admin.html">Admin</a>
+    </div>
+    <div class="footer-right">© 2026 NSE Insights</div>
+  </footer>
+
+  <script src="data.js?v=10"></script>
+  <script src="sector-detail.js?v=1"></script>
+  <script src="app.js?v=32"></script>
 </body>
 </html>
